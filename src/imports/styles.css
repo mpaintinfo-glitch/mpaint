@@ -568,8 +568,12 @@ h3{font-size:clamp(1rem,2vw,1.5rem);font-weight:600;line-height:1.2;letter-spaci
   mask-size:100% 40px,100% 100%;
   mask-position:top center,0 40px;
   mask-repeat:no-repeat,no-repeat}
+.svc-block:has(.svc-half:hover),.svc-band:has(.svc-half:hover){overflow:visible}
 .svc-half{position:relative;flex:1 1 0;height:520px;overflow:hidden;cursor:pointer;
-  text-align:left;display:block;filter:saturate(.82) contrast(1)}
+  text-align:left;display:block;filter:saturate(.82) contrast(1);
+  transition:transform .35s ease,box-shadow .35s ease;will-change:transform}
+.svc-half:hover,.svc-half:focus-visible{transform:translateY(-14px);
+  box-shadow:0 28px 52px rgba(0,0,0,.5);z-index:2}
 .svc-half+.svc-half{border-left:1px solid rgba(255,255,255,.22)}
 .svc-half img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;filter:saturate(.72) contrast(1.02) brightness(.82)}
 .svc-half:hover img,.svc-half:focus-visible img{transform:scale(1.04)}
@@ -599,13 +603,15 @@ h3{font-size:clamp(1rem,2vw,1.5rem);font-weight:600;line-height:1.2;letter-spaci
 
 /* slim gradient ribbon: remaining services, no photo -- arrow signals clickable */
 .svc-ribbon{display:grid}
-.svc-seg{display:flex;align-items:center;justify-content:center;gap:var(--sp-8);min-height:40px;
+.svc-seg{position:relative;display:flex;align-items:center;justify-content:center;gap:var(--sp-8);min-height:40px;
   color:#fff;font-size:13px;font-weight:600;letter-spacing:.01em;text-align:center;
-  cursor:pointer;transition:filter .2s,gap .2s;padding:var(--sp-8) var(--sp-12)}
+  cursor:pointer;transition:filter .2s,gap .2s,transform .3s ease,box-shadow .3s ease;
+  padding:var(--sp-8) var(--sp-12)}
 .svc-seg span{overflow-wrap:break-word;line-height:1.25}
 .svc-seg svg{width:14px;height:14px;flex:0 0 auto;stroke:currentColor;fill:none;stroke-width:2;
   stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
-.svc-seg:hover,.svc-seg:focus-visible{filter:brightness(1.1);outline:none;gap:var(--sp-12)}
+.svc-seg:hover,.svc-seg:focus-visible{filter:brightness(1.1);outline:none;gap:var(--sp-12);
+  transform:translateY(-8px);box-shadow:0 18px 32px rgba(0,0,0,.45);z-index:2}
 .svc-seg:hover svg,.svc-seg:focus-visible svg{transform:translateX(2px)}
 
 /* quiet reference list, not a visual centerpiece -- no cards, no boxes */
