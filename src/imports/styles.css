@@ -509,7 +509,7 @@ h3{font-size:clamp(1rem,2vw,1.5rem);font-weight:600;line-height:1.2;letter-spaci
 .svc-page-desc{grid-area:desc;width:100%;min-width:0}
 .svc-page-desc .sub{margin-top:0;line-height:1.45;font-size:13.5px;max-width:280px;margin-left:auto;margin-right:auto}
 .svc-checklist{list-style:none;display:flex;flex-direction:column;gap:var(--sp-8);
-  margin:var(--sp-8) auto 0;max-width:270px}
+  margin:var(--sp-16) auto var(--sp-12);max-width:270px}
 .svc-checklist li{display:flex;align-items:flex-start;justify-content:flex-start;text-align:left;
   gap:var(--sp-8);font-size:12px;color:rgba(var(--overlay-rgb),.92);font-weight:600;
   letter-spacing:.01em;line-height:1.25}
@@ -524,7 +524,7 @@ h3{font-size:clamp(1rem,2vw,1.5rem);font-weight:600;line-height:1.2;letter-spaci
     align-items:center;column-gap:var(--sp-48);row-gap:var(--sp-16)}
   .svc-page-photo{width:384px;max-width:384px}
   .svc-page-desc .sub{max-width:46ch;line-height:1.7;font-size:var(--fs-md)}
-  .svc-checklist{gap:var(--sp-16);margin-top:var(--sp-16);max-width:340px}
+  .svc-checklist{gap:var(--sp-16);margin:var(--sp-24) auto;max-width:340px}
   .svc-checklist li{font-size:14.5px;font-weight:500}
   .svc-checklist svg{width:16px;height:16px}
   .svc-page-actions{gap:var(--sp-16)}
