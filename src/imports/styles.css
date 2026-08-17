@@ -43,7 +43,7 @@
 
   /* ---- theme tokens: dark (default) ---- */
   --bg-center:#0B0B0D;
-  --bg-edge:#1C1C20;
+  --bg-edge:#242230;
   --overlay-rgb:255,255,255;      /* base for translucent borders/tints/med/low text */
   --line:rgba(var(--overlay-rgb),.10);
   --white:#fff;                   /* primary text */
@@ -59,7 +59,7 @@
   --fill-text:#0A0A0C;
   --fill-text-rgb:10,10,12;        /* same as --fill-text, as channels, for on-fill translucent tints */
   --input-ph:#4A4A54;
-  --header-bg:rgba(10,7,14,.86);
+  --header-bg:rgba(26,24,36,.88);
   --bar-bg:rgba(10,7,14,.95);
   --drawer-bg:rgba(10,7,14,.98);
 }
@@ -98,31 +98,31 @@ body::before{
   background:
     /* Overhead softbox: strong center-top bloom, the primary studio light */
     radial-gradient(ellipse 110% 52% at 50% -8%,
-      rgba(255,255,255,.28) 0%,
-      rgba(210,220,255,.09) 30%,
+      rgba(255,255,255,.34) 0%,
+      rgba(210,220,255,.12) 30%,
       transparent 65%),
     /* Anamorphic lens flare: sharp cool streak, top-right corner */
     radial-gradient(ellipse 38% 110% at 106% -6%,
-      rgba(180,210,255,.22) 0%,
-      rgba(140,175,245,.05) 42%,
+      rgba(180,210,255,.28) 0%,
+      rgba(140,175,245,.07) 42%,
       transparent 68%),
     /* Bounce fill: warm violet ghost from bottom-left */
     radial-gradient(ellipse 58% 48% at -6% 92%,
-      rgba(160,140,220,.09) 0%,
+      rgba(160,140,220,.13) 0%,
       transparent 62%),
     /* Chrome sweep: wide, diffused liquid-metal sheen — soft ramp in and out, bright centre */
     linear-gradient(128deg,
       transparent           8%,
-      rgba(255,255,255,.005) 22%,
-      rgba(255,255,255,.04)  35%,
-      rgba(255,255,255,.12)  46%,
-      rgba(255,255,255,.19)  52%,
-      rgba(255,255,255,.12)  58%,
-      rgba(255,255,255,.04)  70%,
-      rgba(255,255,255,.005) 80%,
+      rgba(255,255,255,.01)  22%,
+      rgba(255,255,255,.06)  35%,
+      rgba(255,255,255,.16)  46%,
+      rgba(255,255,255,.25)  52%,
+      rgba(255,255,255,.16)  58%,
+      rgba(255,255,255,.06)  70%,
+      rgba(255,255,255,.01)  80%,
       transparent           92%),
-    /* Deep studio base – cool dark steel */
-    #08070E
+    /* Studio base – cool dark steel, a shade lighter than before */
+    #141220
 }
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
@@ -142,38 +142,7 @@ p,li,dd,dt,span,small{font-size:inherit}
   --page-block-gap: var(--space-stack);
 }
 
-/* falling paint drops: fixed layer behind all content */
-.drops{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-/* JS controls left/top/transform/opacity — CSS only sets intrinsic size and glow */
-.pdrop{
-  position:absolute;
-  width:auto;
-  pointer-events:none;
-  -webkit-user-drag:none;
-  user-select:none;
-  will-change:transform,opacity;
-  transform-origin:center center;
-  opacity:0; /* hidden until rAF loop takes over */
-}
-.pdrop[data-drop="1"]{
-  height:48vh;
-  filter:
-    drop-shadow(0 14px 64px rgba(255,46,146,.60))
-    drop-shadow(0  0 140px rgba(155,107,255,.34));
-}
-.pdrop[data-drop="2"]{
-  height:28vh;
-  filter:
-    drop-shadow(0 10px 44px rgba(255,46,146,.46))
-    drop-shadow(0  0 100px rgba(155,107,255,.28));
-}
-.pdrop[data-drop="3"]{
-  height:18vh;
-  filter:
-    drop-shadow(0  8px 36px rgba(155,107,255,.54))
-    drop-shadow(0  0  88px rgba(255,46,146,.26));
-}
-/* keep real content above the drops */
+/* keep real content above the ambient background */
 .header,main,footer,.fab-wrap,.bar,.drawer{position:relative;z-index:2}
 .header{z-index:200}.fab-wrap{z-index:300}.drawer{z-index:190}
 img{display:block;max-width:100%}

@@ -3,9 +3,6 @@ import * as Dialog from "@radix-ui/react-dialog"
 import "../imports/styles.css"
 import sfondo from "../imports/sfondo.png"
 import logoWhite from "../imports/mpain_logo_white.png"
-import drop1 from "../imports/drop 1.png"
-import drop2 from "../imports/drop 2.png"
-import drop3 from "../imports/drop 3.png"
 import imgPaintBooth from "../imports/PHOTO-2026-08-11-15-47-32.jpg"
 import imgBodywork from "../imports/mpaint.jpg"
 import QuoteFunnel from "./components/QuoteFunnel"
@@ -471,89 +468,6 @@ export default function App() {
   }
   const langRef = useRef<HTMLDivElement>(null)
 
-  // ── DROP FLOAT ANIMATION ────────────────────────────────────────────────
-  const dropRefs = useRef<(HTMLImageElement | null)[]>([null, null, null])
-  const animState = useRef({
-    time: 0,
-    page: "home" as Page,
-    opacity: 0,
-    targetOpacity: 0,
-    rafId: 0,
-    drops: [
-      // x = fixed horizontal fraction (never changes)
-      // cy = vertical center; y = current y (lerps toward target)
-      // fy = float amplitude; speed = oscillation freq; phase = start offset
-      { x: 0.07, y: 0.30, cy: 0.30, rot: 0, fy: 0.022, speed: 0.24, phase: 0.0 },
-      { x: 0.63, y: 0.52, cy: 0.52, rot: 0, fy: 0.015, speed: 0.31, phase: 2.1 },
-      { x: 0.89, y: 0.22, cy: 0.22, rot: 0, fy: 0.010, speed: 0.19, phase: 4.3 },
-    ],
-  })
-
-  useEffect(() => {
-    const a = animState.current
-    const lerp = (s: number, e: number, t: number) => s + (e - s) * t
-
-    const onScroll = () => {
-      const vh = window.innerHeight
-      const maxScroll = Math.max(1, document.documentElement.scrollHeight - vh)
-      const fraction = window.scrollY / maxScroll
-      // Fade in as user scrolls into the page (40%–80% of first viewport)
-      const fadeIn = Math.min(1, Math.max(0, (window.scrollY - vh * 0.4) / (vh * 0.35)))
-      // Fade out over the last 20% of the page
-      const fadeOut = fraction > 0.8 ? Math.max(0, 1 - (fraction - 0.8) / 0.2) : 1
-      a.targetOpacity = fadeIn * fadeOut * 0.68
-    }
-
-    const tick = () => {
-      a.rafId = requestAnimationFrame(tick)
-      a.time += 0.016
-
-      a.opacity = lerp(a.opacity, a.targetOpacity, 0.05)
-
-      a.drops.forEach((d, i) => {
-        // Pure vertical float — x is fixed, no horizontal movement
-        const ty = d.cy + Math.sin(a.time * d.speed + d.phase) * d.fy
-        d.y = lerp(d.y, ty, 0.04)
-        // Gentle independent sway, not velocity-driven (max ±4°)
-        d.rot = Math.sin(a.time * d.speed * 0.55 + d.phase + 1.0) * 4
-
-        const el = dropRefs.current[i]
-        if (el) {
-          el.style.left = `${d.x * 100}%`
-          el.style.top  = `${d.y * 100}%`
-          el.style.opacity = String(a.opacity)
-          el.style.transform = `translate(-50%, -50%) rotate(${d.rot}deg)`
-        }
-      })
-    }
-
-    window.addEventListener("scroll", onScroll, { passive: true })
-    a.rafId = requestAnimationFrame(tick)
-    return () => {
-      window.removeEventListener("scroll", onScroll)
-      cancelAnimationFrame(a.rafId)
-    }
-  }, [])
-
-  // Reset drops on page change
-  useEffect(() => {
-    const a = animState.current
-    a.page = page
-    a.targetOpacity = 0
-    a.opacity = 0
-    if (page === "home") {
-      a.drops[0].cy = 0.30; a.drops[0].y = 0.30
-      a.drops[1].cy = 0.52; a.drops[1].y = 0.52
-      a.drops[2].cy = 0.22; a.drops[2].y = 0.22
-    } else {
-      a.drops[0].cy = 0.62; a.drops[0].y = 0.62
-      a.drops[1].cy = 0.74; a.drops[1].y = 0.74
-      a.drops[2].cy = 0.55; a.drops[2].y = 0.55
-    }
-    a.drops.forEach(d => { d.rot = 0 })
-  }, [page])
-  // ────────────────────────────────────────────────────────────────────────
-
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (langRef.current && !langRef.current.contains(e.target as Node)) {
@@ -754,13 +668,6 @@ export default function App() {
           <path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.5-5.9-3.3-5.9 3.3 1.3-6.5-4.9-4.6 6.6-.8z" />
         </symbol>
       </svg>
-
-      {/* ── DROPS ── */}
-      <div className="drops" aria-hidden="true">
-        <img ref={el => { dropRefs.current[0] = el }} src={drop1} className="pdrop" data-drop="1" alt="" draggable={false} />
-        <img ref={el => { dropRefs.current[1] = el }} src={drop2} className="pdrop" data-drop="2" alt="" draggable={false} />
-        <img ref={el => { dropRefs.current[2] = el }} src={drop3} className="pdrop" data-drop="3" alt="" draggable={false} />
-      </div>
 
       {/* ── HEADER ── */}
       <header className={`header${navOpen ? " nav-open" : ""}`}>
