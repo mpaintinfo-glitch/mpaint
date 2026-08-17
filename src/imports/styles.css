@@ -494,15 +494,35 @@ h3{font-size:clamp(1rem,2vw,1.5rem);font-weight:600;line-height:1.2;letter-spaci
 .hero-secondary:hover{color:var(--white)}
 
 /* ---------------- SERVICE SUBPAGES (one-viewport pitch + checklist) ---------------- */
-.svc-page-icon{width:52px;height:52px;border-radius:var(--r-circle);margin:0 auto var(--sp-16);
-  display:flex;align-items:center;justify-content:center;
-  background:rgba(var(--overlay-rgb),.06);border:1px solid rgba(var(--overlay-rgb),.12);color:var(--white)}
-.svc-page-icon svg{width:24px;height:24px}
-.svc-checklist{list-style:none;display:inline-flex;flex-direction:column;gap:var(--sp-12);
-  margin:var(--sp-24) auto;text-align:left;max-width:380px}
-.svc-checklist li{display:flex;align-items:flex-start;gap:var(--sp-12);font-size:15px;
-  color:var(--med);font-weight:300;line-height:1.4}
-.svc-checklist svg{width:17px;height:17px;flex:0 0 auto;color:var(--pink);margin-top:2px}
+.svc-page-back{display:inline-block;margin-bottom:var(--sp-8);cursor:pointer}
+.svc-page-layout{display:flex;flex-direction:column;align-items:center;text-align:center;gap:var(--sp-8)}
+.svc-page-photo{position:relative;width:184px;max-width:52vw;aspect-ratio:1;margin:0 auto;flex:0 0 auto;
+  border-radius:var(--r-card);display:flex;align-items:center;justify-content:center;padding:var(--sp-12);
+  background:linear-gradient(150deg,rgba(255,46,146,.20) 0%,rgba(185,139,255,.12) 100%);
+  border:1px solid rgba(var(--overlay-rgb),.10)}
+.svc-page-photo img{width:100%;height:100%;border-radius:var(--r-circle);object-fit:cover;display:block;
+  box-shadow:0 14px 30px rgba(0,0,0,.35)}
+.svc-page-content{width:100%;min-width:0}
+.svc-page-content .sub{line-height:1.45}
+.svc-checklist{list-style:none;display:inline-flex;flex-direction:column;gap:var(--sp-4);
+  margin:var(--sp-8) auto;text-align:left;max-width:380px}
+.svc-checklist li{display:flex;align-items:flex-start;gap:var(--sp-12);font-size:14px;
+  color:var(--med);font-weight:300;line-height:1.3}
+.svc-checklist svg{width:16px;height:16px;flex:0 0 auto;color:var(--pink);margin-top:2px}
+.svc-page-explore{display:flex;margin:var(--sp-8) auto 0;width:fit-content}
+
+@media(min-width:820px){
+  .svc-page-back{margin-bottom:var(--sp-16)}
+  .svc-page-layout{flex-direction:row;align-items:center;text-align:left;gap:var(--sp-48)}
+  .svc-page-photo{flex:0 0 380px;width:380px;max-width:380px;padding:var(--sp-32)}
+  .svc-page-content{flex:1}
+  .svc-page-content .sub{margin-left:0;max-width:46ch;line-height:1.7}
+  .svc-page-content .svc-checklist{margin-left:0;margin-right:0;gap:var(--sp-12)}
+  .svc-page-content .svc-checklist{margin-top:var(--sp-24);margin-bottom:var(--sp-24)}
+  .svc-page-content .hero-btns{justify-content:flex-start}
+  .svc-page-content .hero-secondary{display:block;text-align:left}
+  .svc-page-explore{margin-left:0;margin-top:var(--sp-16)}
+}
 @media(min-width:768px){
   .svc-cta-zone{padding-top:var(--sp-48);padding-bottom:var(--sp-32)}
 }

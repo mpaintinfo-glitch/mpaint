@@ -1,3 +1,10 @@
+import photoPaint from "../../imports/svc-painting.png"
+import photoBody from "../../imports/svc-bodywork.png"
+import photoDent from "../../imports/svc-dent.png"
+import photoRust from "../../imports/svc-rust.png"
+import photoPolish from "../../imports/svc-polishing.png"
+import photoParts from "../../imports/svc-parts.png"
+
 export type Lang = "en" | "et" | "ru"
 export type ServiceId = "paint" | "body" | "dent" | "rust" | "polish" | "parts"
 
@@ -5,6 +12,7 @@ export interface ServiceContent {
   id: ServiceId
   slug: string
   icon: string
+  photo: string
   h1: string
   tagline: string
   bullets: string[]
@@ -31,6 +39,16 @@ const ICONS: Record<ServiceId, string> = {
   rust: "i-rust",
   polish: "i-polish",
   parts: "i-doc",
+}
+
+// real workshop photos, one per service (sourced from the previous mpaint.ee site)
+const PHOTOS: Record<ServiceId, string> = {
+  paint: photoPaint,
+  body: photoBody,
+  dent: photoDent,
+  rust: photoRust,
+  polish: photoPolish,
+  parts: photoParts,
 }
 
 const COPY: Record<Lang, Record<ServiceId, { h1: string; tagline: string; bullets: string[] }>> = {
@@ -223,7 +241,7 @@ const COPY: Record<Lang, Record<ServiceId, { h1: string; tagline: string; bullet
 }
 
 export function getServiceContent(lang: Lang, id: ServiceId): ServiceContent {
-  return { id, slug: SERVICE_SLUGS[id], icon: ICONS[id], ...COPY[lang][id] }
+  return { id, slug: SERVICE_SLUGS[id], icon: ICONS[id], photo: PHOTOS[id], ...COPY[lang][id] }
 }
 
 export function getServiceBySlug(slug: string): ServiceId | undefined {
