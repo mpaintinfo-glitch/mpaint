@@ -6,12 +6,11 @@ function Icon({ id }: { id: string }) {
 }
 
 export default function ServicePage({
-  lang, ctaLabel, backLabel, exploreLabel, onGetEstimate,
+  lang, ctaLabel, backLabel, onGetEstimate,
 }: {
   lang: Lang
   ctaLabel: string
   backLabel: string
-  exploreLabel: string
   onGetEstimate: (id: ServiceId) => void
 }) {
   const { slug } = useParams<{ slug: string }>()
@@ -33,14 +32,9 @@ export default function ServicePage({
         }}
       >
         <div className="container" style={{ maxWidth: 900 }}>
-          <div className="svc-page-nav">
-            <Link to="/services" className="link svc-page-back">
-              {backLabel}
-            </Link>
-            <Link to="/services" className="link svc-page-explore">
-              {exploreLabel}
-            </Link>
-          </div>
+          <Link to="/services" className="link svc-page-back">
+            {backLabel}
+          </Link>
           <div className="svc-page-layout">
             <h1 className="svc-page-title">{svc.h1}</h1>
             <div className="svc-page-photo">

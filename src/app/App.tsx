@@ -68,7 +68,6 @@ const STRINGS = {
       cta: "Get an estimate",
       callUs: "Or call us: +372 58-100-810",
       backToServices: "← All services",
-      exploreMore: "Explore other services",
       seoTitle: "How car painting works at Mpaint",
       seoP1: "Every repaint starts with an assessment of the damage and a read of your car's factory colour code. We prepare and sand the panel, apply primer, then spray base coat and lacquer inside a dedicated paint booth where filtered air and controlled temperature keep dust out of the finish.",
       seoP2: "We paint single panels as well as full cars. Painting one door, bumper or wing is usually enough after a parking scrape, while corrosion or accident damage across several panels is better handled as a larger job. If the paint on your car has faded unevenly, we blend into the neighbouring panels so the repair does not stand out.",
@@ -194,7 +193,6 @@ const STRINGS = {
       cta: "Küsi hinnapakkumist",
       callUs: "Või helista meile: +372 58-100-810",
       backToServices: "← Kõik teenused",
-      exploreMore: "Vaata teisi teenuseid",
       seoTitle: "Kuidas autovärvimine Mpaintis käib",
       seoP1: "Iga värvimistöö algab kahjustuse hindamisest ja auto tehase värvikoodi lugemisest. Valmistame paneeli ette ja lihvime selle, kanname peale grundi ning seejärel pihustame põhi- ja lakikihi spetsiaalses värvikambris, kus filtreeritud õhk ja kontrollitud temperatuur hoiavad tolmu pinnast eemal.",
       seoP2: "Värvime nii üksikuid paneele kui ka terveid autosid. Ühe ukse, pumperi või tiiva värvimisest piisab tavaliselt pärast parklakriimu, samas kui korrosioon või avariikahjustus mitmel paneelil sobib paremini suurema tööna teostada. Kui auto värv on ebaühtlaselt pleekinud, sobitame selle naaberpaneelidega, et remont ei paistaks silma.",
@@ -320,7 +318,6 @@ const STRINGS = {
       cta: "Получить смету",
       callUs: "Или позвоните нам: +372 58-100-810",
       backToServices: "← Все услуги",
-      exploreMore: "Другие услуги",
       seoTitle: "Как проходит покраска автомобиля в Mpaint",
       seoP1: "Каждая покраска начинается с оценки повреждения и считывания заводского кода цвета вашего автомобиля. Мы готовим и шлифуем панель, наносим грунт, затем распыляем базовое покрытие и лак в специальной покрасочной камере, где фильтрованный воздух и контролируемая температура не дают пыли попасть в покрытие.",
       seoP2: "Мы красим как отдельные панели, так и целые автомобили. Покраски одной двери, бампера или крыла обычно достаточно после царапины на парковке, тогда как коррозия или аварийные повреждения на нескольких панелях лучше решать как более крупную работу. Если краска на вашем автомобиле выцвела неравномерно, мы делаем плавный переход на соседние панели, чтобы ремонт не бросался в глаза.",
@@ -751,7 +748,6 @@ export default function App() {
                 lang={lang}
                 ctaLabel={t.services.pick}
                 backLabel={t.services.backToServices}
-                exploreLabel={t.services.exploreMore}
                 onGetEstimate={openQuote}
               />
             }

@@ -496,8 +496,7 @@ h3{font-size:clamp(1rem,2vw,1.5rem);font-weight:600;line-height:1.2;letter-spaci
 /* ---------------- SERVICE SUBPAGES (one-viewport pitch + checklist) ----------------
    grid-template-areas drives a different visual order per breakpoint (title/photo/
    desc/cta stay separate grid items) without needing separate DOM per breakpoint. */
-.svc-page-nav{display:flex;flex-direction:column;align-items:center;gap:var(--sp-4);margin-bottom:var(--sp-12)}
-.svc-page-nav .link{margin:0;cursor:pointer}
+.svc-page-back{display:block;width:fit-content;margin:0 auto var(--sp-12);cursor:pointer}
 .svc-page-layout{display:grid;grid-template-columns:1fr;
   grid-template-areas:"title" "photo" "desc" "cta";
   justify-items:center;text-align:center;gap:var(--sp-12)}
@@ -518,7 +517,7 @@ h3{font-size:clamp(1rem,2vw,1.5rem);font-weight:600;line-height:1.2;letter-spaci
 .svc-page-actions .btn{width:auto}
 
 @media(min-width:820px){
-  .svc-page-nav{flex-direction:row;justify-content:space-between;margin-bottom:var(--sp-16)}
+  .svc-page-back{margin:0 0 var(--sp-16)}
   .svc-page-layout{grid-template-columns:384px 1fr;
     grid-template-areas:"photo title" "photo desc" "photo cta";
     align-items:center;column-gap:var(--sp-48);row-gap:var(--sp-16)}
