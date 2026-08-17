@@ -6,11 +6,10 @@ function Icon({ id }: { id: string }) {
 }
 
 export default function ServicePage({
-  lang, ctaLabel, callUsLabel, backLabel, exploreLabel, onGetEstimate,
+  lang, ctaLabel, backLabel, exploreLabel, onGetEstimate,
 }: {
   lang: Lang
   ctaLabel: string
-  callUsLabel: string
   backLabel: string
   exploreLabel: string
   onGetEstimate: (id: ServiceId) => void
@@ -56,9 +55,6 @@ export default function ServicePage({
             <div className="svc-page-actions">
               <a className="btn btn-fill btn-lg" onClick={() => onGetEstimate(id)} style={{ cursor: "pointer" }}>
                 {ctaLabel}
-              </a>
-              <a className="hero-secondary" href="tel:+37258100810">
-                {callUsLabel}
               </a>
               <Link to="/services" className="btn btn-line svc-page-explore">
                 {exploreLabel}

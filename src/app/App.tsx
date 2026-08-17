@@ -750,7 +750,6 @@ export default function App() {
               <ServicePage
                 lang={lang}
                 ctaLabel={t.services.pick}
-                callUsLabel={t.services.callUs}
                 backLabel={t.services.backToServices}
                 exploreLabel={t.services.exploreMore}
                 onGetEstimate={openQuote}
