@@ -33,16 +33,16 @@ export default function ServicePage({
           justifyContent: "center",
         }}
       >
-        <div className="container center" style={{ maxWidth: 900 }}>
+        <div className="container" style={{ maxWidth: 900 }}>
           <Link to="/services" className="link svc-page-back">
             {backLabel}
           </Link>
           <div className="svc-page-layout">
+            <h1 className="svc-page-title">{svc.h1}</h1>
             <div className="svc-page-photo">
               <img src={svc.photo} alt="" />
             </div>
-            <div className="svc-page-content">
-              <h1>{svc.h1}</h1>
+            <div className="svc-page-desc">
               <p className="sub">{svc.tagline}</p>
               <ul className="svc-checklist">
                 {svc.bullets.map((b, i) => (
@@ -52,11 +52,11 @@ export default function ServicePage({
                   </li>
                 ))}
               </ul>
-              <div className="hero-btns" style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
-                <a className="btn btn-fill btn-lg" onClick={() => onGetEstimate(id)} style={{ cursor: "pointer" }}>
-                  {ctaLabel}
-                </a>
-              </div>
+            </div>
+            <div className="svc-page-actions">
+              <a className="btn btn-fill btn-lg" onClick={() => onGetEstimate(id)} style={{ cursor: "pointer" }}>
+                {ctaLabel}
+              </a>
               <a className="hero-secondary" href="tel:+37258100810">
                 {callUsLabel}
               </a>
