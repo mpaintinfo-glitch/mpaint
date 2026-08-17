@@ -516,14 +516,8 @@ h3{font-size:clamp(1rem,2vw,1.5rem);font-weight:600;line-height:1.2;letter-spaci
 .svc-checklist svg{width:13px;height:13px;flex:0 0 auto;color:var(--pink);margin-top:1px}
 .svc-page-actions{grid-area:cta;display:flex;flex-direction:column;align-items:center;gap:var(--sp-12)}
 .svc-page-actions .btn{width:auto}
-.svc-page-drop{display:none}
 
 @media(min-width:820px){
-  .svc-page-sec{position:relative;overflow:hidden}
-  .svc-page-drop{display:block;position:absolute;width:170px;height:auto;pointer-events:none;z-index:0;
-    filter:drop-shadow(0 20px 40px rgba(255,46,146,.22))}
-  .svc-page-drop-a{width:100px;top:-60px;left:-50px;transform:scaleX(-1)}
-  .svc-page-drop-b{width:150px;bottom:-55px;right:-40px}
   .svc-page-back{margin:0 0 var(--sp-16)}
   .svc-page-title{margin:0}
   .svc-page-layout{grid-template-columns:384px 1fr;
@@ -602,15 +596,13 @@ h3{font-size:clamp(1rem,2vw,1.5rem);font-weight:600;line-height:1.2;letter-spaci
 
 /* slim gradient ribbon: remaining services, no photo -- arrow signals clickable */
 .svc-ribbon{display:grid}
-.svc-seg{position:relative;display:flex;align-items:center;justify-content:center;gap:var(--sp-8);min-height:40px;
+.svc-seg{display:flex;align-items:center;justify-content:center;gap:var(--sp-8);min-height:40px;
   color:#fff;font-size:13px;font-weight:600;letter-spacing:.01em;text-align:center;
-  cursor:pointer;transition:filter .2s,gap .2s,transform .3s ease,box-shadow .3s ease;
-  padding:var(--sp-8) var(--sp-12)}
+  cursor:pointer;transition:filter .2s,gap .2s;padding:var(--sp-8) var(--sp-12)}
 .svc-seg span{overflow-wrap:break-word;line-height:1.25}
 .svc-seg svg{width:14px;height:14px;flex:0 0 auto;stroke:currentColor;fill:none;stroke-width:2;
   stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
-.svc-seg:hover,.svc-seg:focus-visible{filter:brightness(1.1);outline:none;gap:var(--sp-12);
-  transform:translateY(-8px);box-shadow:0 18px 32px rgba(0,0,0,.45);z-index:2}
+.svc-seg:hover,.svc-seg:focus-visible{filter:brightness(1.1);outline:none;gap:var(--sp-12)}
 .svc-seg:hover svg,.svc-seg:focus-visible svg{transform:translateX(2px)}
 
 /* quiet reference list, not a visual centerpiece -- no cards, no boxes */
