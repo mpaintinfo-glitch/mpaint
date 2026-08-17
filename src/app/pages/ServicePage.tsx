@@ -1,6 +1,6 @@
 import { Link, Navigate, useParams } from "react-router"
 import { getServiceBySlug, getServiceContent, type Lang, type ServiceId } from "../data/services"
-import dropA from "../../imports/svc-drop-a.png"
+import dropA from "../../imports/svc-drop-c.png"
 import dropB from "../../imports/svc-drop-b.png"
 
 function Icon({ id }: { id: string }) {

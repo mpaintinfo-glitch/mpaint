@@ -522,8 +522,8 @@ h3{font-size:clamp(1rem,2vw,1.5rem);font-weight:600;line-height:1.2;letter-spaci
   .svc-page-sec{position:relative;overflow:hidden}
   .svc-page-drop{display:block;position:absolute;width:170px;height:auto;pointer-events:none;z-index:0;
     filter:drop-shadow(0 20px 40px rgba(255,46,146,.22))}
-  .svc-page-drop-a{top:-50px;left:-40px;transform:rotate(-20deg)}
-  .svc-page-drop-b{width:150px;bottom:-40px;right:-25px;transform:rotate(158deg)}
+  .svc-page-drop-a{width:150px;top:-45px;left:-35px;transform:scaleX(-1)}
+  .svc-page-drop-b{width:150px;bottom:-40px;right:-25px}
   .svc-page-back{margin:0 0 var(--sp-16)}
   .svc-page-title{margin:0}
   .svc-page-layout{grid-template-columns:384px 1fr;
