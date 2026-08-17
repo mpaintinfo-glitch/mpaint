@@ -1,5 +1,7 @@
 import { Link, Navigate, useParams } from "react-router"
 import { getServiceBySlug, getServiceContent, type Lang, type ServiceId } from "../data/services"
+import dropA from "../../imports/svc-drop-a.png"
+import dropB from "../../imports/svc-drop-b.png"
 
 function Icon({ id }: { id: string }) {
   return <svg><use href={`#${id}`} /></svg>
@@ -23,7 +25,7 @@ export default function ServicePage({
   return (
     <div className="page on">
       <section
-        className="sec"
+        className="sec svc-page-sec"
         style={{
           minHeight: "calc(100svh - var(--nav-h))",
           display: "flex",
@@ -31,6 +33,8 @@ export default function ServicePage({
           justifyContent: "center",
         }}
       >
+        <img src={dropA} alt="" className="svc-page-drop svc-page-drop-a" aria-hidden="true" />
+        <img src={dropB} alt="" className="svc-page-drop svc-page-drop-b" aria-hidden="true" />
         <div className="container" style={{ maxWidth: 900 }}>
           <Link to="/services" className="link svc-page-back">
             {backLabel}
