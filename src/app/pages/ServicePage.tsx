@@ -33,9 +33,14 @@ export default function ServicePage({
         }}
       >
         <div className="container" style={{ maxWidth: 900 }}>
-          <Link to="/services" className="link svc-page-back">
-            {backLabel}
-          </Link>
+          <div className="svc-page-nav">
+            <Link to="/services" className="link svc-page-back">
+              {backLabel}
+            </Link>
+            <Link to="/services" className="link svc-page-explore">
+              {exploreLabel}
+            </Link>
+          </div>
           <div className="svc-page-layout">
             <h1 className="svc-page-title">{svc.h1}</h1>
             <div className="svc-page-photo">
@@ -56,9 +61,6 @@ export default function ServicePage({
               <a className="btn btn-fill btn-lg" onClick={() => onGetEstimate(id)} style={{ cursor: "pointer" }}>
                 {ctaLabel}
               </a>
-              <Link to="/services" className="btn btn-line svc-page-explore">
-                {exploreLabel}
-              </Link>
             </div>
           </div>
         </div>
