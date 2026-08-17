@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef, Fragment } from "react"
+import { useState, useEffect, useRef } from "react"
+import { Routes, Route, useNavigate, useLocation } from "react-router"
 import * as Dialog from "@radix-ui/react-dialog"
 import "../imports/styles.css"
 import sfondo from "../imports/sfondo.png"
@@ -6,17 +7,14 @@ import logoWhite from "../imports/mpain_logo_white.png"
 import imgPaintBooth from "../imports/PHOTO-2026-08-11-15-47-32.jpg"
 import imgBodywork from "../imports/mpaint.jpg"
 import QuoteFunnel from "./components/QuoteFunnel"
+import Home from "./pages/Home"
+import Services from "./pages/Services"
+import Contact from "./pages/Contact"
+import ServicePage from "./pages/ServicePage"
+import type { ServiceId } from "./data/services"
 
-type Page = "home" | "services" | "contact"
-type QuoteServiceId = "paint" | "body" | "dent" | "rust" | "polish" | "insurance"
 const IMG_SVC_L = imgPaintBooth
 const IMG_SVC_R = imgBodywork
-const IMG_W1 =
-  "https://images.unsplash.com/photo-1620584898989-d39f7f9ed1b7?w=400&q=80&auto=format&fit=crop"
-const IMG_W2 =
-  "https://images.unsplash.com/photo-1512080482556-ea648017576c?w=400&q=80&auto=format&fit=crop"
-
-const RIBBON_IDS = ["rust", "dent", "polish", "insurance"] as const
 
 const LANGS = [
   { code: "en", label: "English" },
@@ -29,7 +27,7 @@ const LANG_BADGE = { en: "ENG", et: "EST", ru: "RUS" } as const
 const STRINGS = {
   en: {
     nav: { home: "Home", services: "Services", booking: "Get a quote", contact: "Contact", bookNow: "Book now" },
-    ribbon: { rust: "Rust removal", dent: "Dent removal", polish: "Polishing", insurance: "Insurance cases" },
+    ribbon: { rust: "Rust removal", dent: "Dent removal", polish: "Polishing", parts: "Replacing parts" },
     hero: {
       titleLead: "Your car,",
       titleGrad: "repainted perfectly.",
@@ -153,7 +151,7 @@ const STRINGS = {
   },
   et: {
     nav: { home: "Avaleht", services: "Teenused", booking: "Küsi hinnapakkumist", contact: "Kontakt", bookNow: "Broneeri" },
-    ribbon: { rust: "Roostetõrje", dent: "Mõlkide eemaldamine", polish: "Poleerimine", insurance: "Kindlustusjuhtumid" },
+    ribbon: { rust: "Roostetõrje", dent: "Mõlkide eemaldamine", polish: "Poleerimine", parts: "Osade vahetus" },
     hero: {
       titleLead: "Sinu auto,",
       titleGrad: "täiuslikult värvitud.",
@@ -277,7 +275,7 @@ const STRINGS = {
   },
   ru: {
     nav: { home: "Главная", services: "Услуги", booking: "Получить смету", contact: "Контакты", bookNow: "Забронировать" },
-    ribbon: { rust: "Удаление ржавчины", dent: "Удаление вмятин", polish: "Полировка", insurance: "Страховые случаи" },
+    ribbon: { rust: "Удаление ржавчины", dent: "Удаление вмятин", polish: "Полировка", parts: "Замена деталей" },
     hero: {
       titleLead: "Ваш автомобиль,",
       titleGrad: "перекрашен безупречно.",
@@ -403,26 +401,13 @@ const STRINGS = {
 
 type Lang = keyof typeof STRINGS
 
-function Arrow() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M5 12h14M12 5l7 7-7 7" />
-    </svg>
-  )
-}
-
-function Icon({ id }: { id: string }) {
-  return <svg><use href={`#${id}`} /></svg>
-}
-
 export default function App() {
-  const [page, setPage] = useState<Page>("home")
   const [lang, setLang] = useState<Lang>("en")
   const [langOpen, setLangOpen] = useState(false)
   const [fabOpen, setFabOpen] = useState(false)
   const [navOpen, setNavOpen] = useState(false)
   const [quoteOpen, setQuoteOpen] = useState(false)
-  const [quotePreset, setQuotePreset] = useState<QuoteServiceId | null>(null)
+  const [quotePreset, setQuotePreset] = useState<ServiceId | null>(null)
   const [emailOpen, setEmailOpen] = useState(false)
   const [emailForm, setEmailForm] = useState({ name: "", email: "", phone: "", message: "" })
   const [emailSent, setEmailSent] = useState(false)
@@ -430,6 +415,8 @@ export default function App() {
   const MAX_EMAIL_PHOTOS = 5
 
   const t = STRINGS[lang]
+  const navigate = useNavigate()
+  const location = useLocation()
 
   const handleEmailSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -478,15 +465,16 @@ export default function App() {
     return () => document.removeEventListener("mousedown", handler)
   }, [])
 
-  const go = (p: Page) => {
-    setPage(p)
+  // scroll to top + close the mobile drawer on every route change (matches
+  // the old go()'s behaviour, now driven by the router instead of page state)
+  useEffect(() => {
     setNavOpen(false)
     window.scrollTo({ top: 0, left: 0, behavior: "instant" })
     document.documentElement.scrollTop = 0
     document.body.scrollTop = 0
-  }
+  }, [location.pathname])
 
-  const openQuote = (presetService?: QuoteServiceId) => {
+  const openQuote = (presetService?: ServiceId) => {
     setQuotePreset(presetService ?? null)
     setQuoteOpen(true)
     setNavOpen(false)
@@ -494,11 +482,17 @@ export default function App() {
   }
   const closeQuote = () => setQuoteOpen(false)
 
-  const openQuoteFor = (id: string) => openQuote(id as QuoteServiceId)
-
   const onNavClick = (p: "home" | "services" | "booking" | "contact") => {
-    if (p === "booking") openQuote()
-    else go(p)
+    if (p === "booking") { openQuote(); return }
+    setNavOpen(false)
+    navigate(p === "home" ? "/" : "/" + p)
+  }
+
+  const isNavActive = (p: "home" | "services" | "booking" | "contact") => {
+    if (p === "home") return location.pathname === "/"
+    if (p === "services") return location.pathname.startsWith("/services")
+    if (p === "contact") return location.pathname === "/contact"
+    return false
   }
 
   return (
@@ -631,6 +625,9 @@ export default function App() {
           <path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z" />
           <path d="M14 3v5h5M9 13h6M9 17h4" />
         </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M5 13l4 4L19 7" />
+        </symbol>
         <symbol id="i-wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
           <path d="M21 11.5a8.4 8.4 0 01-12.4 7.4L3 21l2.2-5.4A8.4 8.4 0 1121 11.5z" />
           <path d="M8.6 9.2c0 3.2 2.6 5.8 5.8 5.8l1.2-1.4-2-1-1 .8a5.6 5.6 0 01-2.4-2.4l.8-1-1-2z" />
@@ -672,7 +669,7 @@ export default function App() {
       {/* ── HEADER ── */}
       <header className={`header${navOpen ? " nav-open" : ""}`}>
         <div className="container nav">
-          <a className="logo" onClick={() => go("home")} style={{ cursor: "pointer" }}>
+          <a className="logo" onClick={() => onNavClick("home")} style={{ cursor: "pointer" }}>
             <img
               src={logoWhite}
               alt="Mpaint"
@@ -701,7 +698,7 @@ export default function App() {
             {(["home", "services", "booking", "contact"] as const).map(p => (
               <li key={p}>
                 <a
-                  className={p !== "booking" && page === p ? "active" : ""}
+                  className={p !== "booking" && isNavActive(p) ? "active" : ""}
                   onClick={() => onNavClick(p)}
                   style={{ cursor: "pointer" }}
                 >
@@ -738,309 +735,15 @@ export default function App() {
       </header>
 
       <main>
-
-        {/* ══════════════════ HOME ══════════════════ */}
-        <div className={`page page-home${page === "home" ? " on" : ""}`} aria-hidden={page !== "home" ? "true" : "false"}>
-          <section
-            className="hero relative w-full"
-            style={{
-              paddingTop: "28px",
-              paddingBottom: "16px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              alignItems: "center",
-              overflow: "hidden",
-            }}
-          >
-
-            <div className="container hero-inner text-center" style={{ zIndex: 10 }}>
-              <h1>
-                {t.hero.titleLead}{" "}
-                <span className="grad">{t.hero.titleGrad}</span>
-              </h1>
-            </div>
-
-            <div className="hero-art w-full" style={{ flexShrink: 0 }}>
-              <img
-                src={sfondo}
-                alt="MPAINT car painting workshop in Tallinn"
-                className="hero-sfondo"
-                style={{
-                  display: "block",
-                  width: "100%",
-                  height: "auto",
-                  maxHeight: "50vh",
-                  objectFit: "cover",
-                  objectPosition: "center 60%",
-                }}
-              />
-            </div>
-
-            {/* Lead + CTAs */}
-            <div
-              className="container hero-lower flex flex-col items-center"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: "2rem",
-                zIndex: 10,
-              }}
-            >
-              <p className="lead" style={{ textAlign: "center", margin: 0 }}>
-                {t.hero.leadPre} <strong style={{ color: "var(--white)", fontWeight: 700 }}>{t.hero.leadCity}</strong>.
-              </p>
-              <div className="hero-btns flex gap-4" style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
-                <a className="btn btn-fill btn-lg text-[#944ba2]" onClick={() => openQuote()} style={{ cursor: "pointer" }}>
-                  {t.hero.ctaEstimate}
-                </a>
-                <a className="btn btn-call btn-lg" onClick={() => go("services")} style={{ cursor: "pointer" }}>
-                  {t.hero.ctaWork}
-                </a>
-              </div>
-            </div>
-
-            {/* Scroll indicator */}
-            <div
-              className="hero-scroll-indicator"
-              style={{
-                opacity: 0.6,
-                pointerEvents: "none",
-                zIndex: 10,
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <style>{`
-                @keyframes subtle-bounce {
-                  0%, 100% { transform: translateY(0); }
-                  50% { transform: translateY(8px); }
-                }
-              `}</style>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                style={{ animation: "subtle-bounce 2s infinite ease-in-out" }}
-              >
-                <path d="M12 5v14M19 12l-7 7-7-7" />
-              </svg>
-            </div>
-          </section>
-
-          <section className="sec">
-            <div className="container center">
-              <h2>{t.home.whatTitle}</h2>
-              <p className="sub">{t.home.whatSub}</p>
-            </div>
-            <div className="container">
-              <div className="svc-block">
-                <div className="svc-band">
-                  <a className="svc-half" onClick={() => openQuoteFor("paint")} style={{ cursor: "pointer" }}>
-                    <img src={IMG_SVC_L} alt="Car painting" />
-                    <div className="svc-half-tint" />
-                    <div className="svc-half-info">
-                      <h3>{t.home.paintTitle}</h3>
-                      <p>{t.home.paintDesc}</p>
-                      <span className="pick">{t.home.pick} <Arrow /></span>
-                    </div>
-                  </a>
-                  <a className="svc-half" onClick={() => openQuoteFor("body")} style={{ cursor: "pointer" }}>
-                    <img src={IMG_SVC_R} alt="Welding and bodywork" />
-                    <div className="svc-half-tint" />
-                    <div className="svc-half-info">
-                      <h3>{t.home.bodyTitle}</h3>
-                      <p>{t.home.bodyDesc}</p>
-                      <span className="pick">{t.home.pick} <Arrow /></span>
-                    </div>
-                  </a>
-                </div>
-                <div
-                  className="svc-ribbon"
-                  style={{ gridTemplateColumns: "repeat(4,1fr)", background: "linear-gradient(100deg,#E0007A 0%,#8B3FD8 100%)" }}
-                >
-                  {RIBBON_IDS.map(id => (
-                    <a key={id} className="svc-seg" onClick={() => openQuoteFor(id)} style={{ cursor: "pointer" }}>
-                      <span>{t.ribbon[id]}</span>
-                      <Arrow />
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="container center section-cta">
-              <a className="btn btn-line" onClick={() => go("services")} style={{ cursor: "pointer" }}>
-                {t.home.seeAll}
-              </a>
-            </div>
-          </section>
-
-          <section className="sec section-compact">
-            <div className="container seo-block seo-block--first">
-              <h2>{t.home.seoTitle}</h2>
-              <p>{t.home.seoP1}</p>
-              <p>{t.home.seoP2}</p>
-              <p>{t.home.seoP3}</p>
-            </div>
-            <div className="container seo-block">
-              <h3>{t.home.whyTitle}</h3>
-              <ul>
-                {t.home.why.map((item, i) => <li key={i}>{item}</li>)}
-              </ul>
-            </div>
-          </section>
-        </div>
-
-        {/* ══════════════════ SERVICES ══════════════════ */}
-        <div className={`page${page === "services" ? " on" : ""}`} aria-hidden={page !== "services" ? "true" : "false"}>
-          <section
-            className="sec svc-cta-zone"
-            style={{
-              minHeight: "calc(100svh - var(--nav-h))",
-              display: "flex",
-              flexDirection: "column",
-              gap: "1.5rem",
-            }}
-          >
-            <div className="container center" style={{ maxWidth: 820 }}>
-              <h1>{t.services.h1}</h1>
-            </div>
-
-            <div className="container">
-              <div className="svc-block">
-                <div className="svc-band">
-                  <a className="svc-half" onClick={() => openQuoteFor("paint")} style={{ cursor: "pointer" }}>
-                    <img src={IMG_SVC_L} alt="Car painting booth" />
-                    <div className="svc-half-tint" />
-                    <div className="svc-half-info">
-                      <h3>{t.services.paintTitle}</h3>
-                      <p>{t.services.paintDesc}</p>
-                      <span className="pick">{t.services.pick} <Arrow /></span>
-                    </div>
-                  </a>
-                  <a className="svc-half" onClick={() => openQuoteFor("body")} style={{ cursor: "pointer" }}>
-                    <img src={IMG_SVC_R} alt="Body repair work" />
-                    <div className="svc-half-tint" />
-                    <div className="svc-half-info">
-                      <h3>{t.services.bodyTitle}</h3>
-                      <p>{t.services.bodyDesc}</p>
-                      <span className="pick">{t.services.pick} <Arrow /></span>
-                    </div>
-                  </a>
-                </div>
-                <div
-                  className="svc-ribbon"
-                  style={{ gridTemplateColumns: "repeat(4,1fr)", background: "linear-gradient(100deg,#E0007A 0%,#8B3FD8 100%)" }}
-                >
-                  {RIBBON_IDS.map(id => (
-                    <a key={id} className="svc-seg" onClick={() => openQuoteFor(id)} style={{ cursor: "pointer" }}>
-                      <span>{t.ribbon[id]}</span>
-                      <Arrow />
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="container center" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.75rem" }}>
-              <a className="btn btn-fill btn-lg" onClick={() => openQuote()} style={{ cursor: "pointer" }}>
-                {t.services.cta}
-              </a>
-              <a className="hero-secondary" href="tel:+37258100810">
-                {t.services.callUs}
-              </a>
-            </div>
-
-          </section>
-          <section className="sec">
-            <div className="container seo-block seo-block--first">
-              <h2>{t.services.seoTitle}</h2>
-              <p>{t.services.seoP1}</p>
-              <p>{t.services.seoP2}</p>
-              <p>{t.services.seoP3}</p>
-            </div>
-          </section>
-          <section className="sec">
-            <div className="container seo-block seo-block--first">
-              <h2>{t.booking.faqTitle}</h2>
-              {t.booking.faq.map((item, i) => (
-                <Fragment key={i}>
-                  <h3>{item.q}</h3>
-                  <p>{item.a}</p>
-                </Fragment>
-              ))}
-            </div>
-          </section>
-        </div>
-
-        {/* ══════════════════ CONTACT ══════════════════ */}
-        <div className={`page${page === "contact" ? " on" : ""}`} aria-hidden={page !== "contact" ? "true" : "false"}>
-          <section className="sec contact-main-sec" style={{ minHeight: "calc(100svh - var(--nav-h))" }}>
-            <div className="container center">
-              <h1>{t.contact.h1}</h1>
-            </div>
-            <div className="container contact-panel-wrap">
-              <div className="panel" style={{ padding: "1.5rem 2rem" }}>
-                <div className="c-actions">
-                  <a className="ca" href="tel:+37258100810">
-                    <span className="ic"><svg><use href="#i-phone" /></svg></span>
-                    <span><small>{t.contact.callUs}</small><b>+372 58-100-810</b></span>
-                  </a>
-                  <a className="ca" href="https://wa.me/37258100810" target="_blank" rel="noopener">
-                    <span className="ic"><svg><use href="#i-wa" /></svg></span>
-                    <span><small>{t.contact.whatsapp}</small><b>{t.contact.whatsappValue}</b></span>
-                  </a>
-                  <a className="ca" onClick={openEmail} style={{ cursor: "pointer" }}>
-                    <span className="ic"><svg><use href="#i-mail" /></svg></span>
-                    <span><small>{t.contact.email}</small><b>info@mpaint.ee</b></span>
-                  </a>
-                </div>
-                <div className="contact-grid" style={{ marginTop: "1.25rem" }}>
-                  <ul className="c-list">
-                    <li><span>{t.contact.address}</span><b>{t.contact.addressValue}</b></li>
-                    <li><span>{t.contact.monFri}</span><b>{t.contact.hours}</b></li>
-                    <li><span>{t.contact.saturday}</span><b>{t.contact.byAgreement}</b></li>
-                    <li><span>{t.contact.sunday}</span><span className="muted">{t.contact.closed}</span></li>
-                  </ul>
-                  <a
-                    className="map"
-                    href="https://www.google.com/maps/d/u/0/viewer?mid=1AMfWsWKEnTSOeom7WzBO-gVjE_9qaY0&ll=59.422193400000005%2C24.75835850000001&z=17"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label={t.contact.mapTitle}
-                    style={{ width: "192px", height: "192px", flexShrink: 0, margin: "0 auto" }}
-                  >
-                    <iframe
-                      className="map-frame"
-                      src="https://www.google.com/maps/d/embed?mid=1AMfWsWKEnTSOeom7WzBO-gVjE_9qaY0&ll=59.4221934%2C24.7583585&z=17"
-                      title={t.contact.mapTitle}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      tabIndex={-1}
-                    />
-                    <span className="map-veil">{t.contact.mapCta}</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section className="sec">
-            <div className="container seo-block seo-block--first">
-              <h2>{t.contact.seoTitle}</h2>
-              <p>{t.contact.seoP1}</p>
-              <p>{t.contact.seoP2}</p>
-              <h3>{t.contact.hoursTitle}</h3>
-              <p>{t.contact.hoursP}</p>
-            </div>
-          </section>
-        </div>
-
+        <Routes>
+          <Route path="/" element={<Home t={t} sfondo={sfondo} imgSvcL={IMG_SVC_L} imgSvcR={IMG_SVC_R} openQuote={openQuote} />} />
+          <Route path="/services" element={<Services t={t} imgSvcL={IMG_SVC_L} imgSvcR={IMG_SVC_R} openQuote={openQuote} />} />
+          <Route
+            path="/services/:slug"
+            element={<ServicePage lang={lang} ctaLabel={t.services.pick} callUsLabel={t.services.callUs} onGetEstimate={openQuote} />}
+          />
+          <Route path="/contact" element={<Contact t={t} openEmail={openEmail} />} />
+        </Routes>
       </main>
 
       {/* ── FOOTER ── */}

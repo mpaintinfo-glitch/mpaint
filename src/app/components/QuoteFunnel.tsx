@@ -3,19 +3,19 @@ import * as Dialog from "@radix-ui/react-dialog"
 import "./quote-funnel.css"
 
 type Lang = "en" | "et" | "ru"
-type ServiceId = "paint" | "body" | "dent" | "rust" | "polish" | "insurance" | "other"
+type ServiceId = "paint" | "body" | "dent" | "rust" | "polish" | "parts" | "other"
 
 // every service listed on the Services page, in the same order (paint + body
-// cards, then the rust/dent/polish/insurance ribbon); "other" is offered
+// cards, then the rust/dent/polish/parts ribbon); "other" is offered
 // separately as a small secondary chip, not a full card
-const SERVICE_IDS: Exclude<ServiceId, "other">[] = ["paint", "body", "dent", "rust", "polish", "insurance"]
+const SERVICE_IDS: Exclude<ServiceId, "other">[] = ["paint", "body", "dent", "rust", "polish", "parts"]
 const SERVICE_ICON: Record<Exclude<ServiceId, "other">, string> = {
   paint: "i-spray",
   body: "i-weld",
   dent: "i-dent",
   rust: "i-rust",
   polish: "i-polish",
-  insurance: "i-doc",
+  parts: "i-doc",
 }
 
 const STRINGS: Record<Lang, {
@@ -44,7 +44,7 @@ const STRINGS: Record<Lang, {
     step: "STEP",
     step1Title: "1 · Vehicle & Service",
     step2Title: "2 · Contact, Photos & Notes",
-    services: { paint: "Car painting", body: "Welding & bodywork", dent: "Dent removal", rust: "Rust removal", polish: "Polishing", insurance: "Insurance cases" },
+    services: { paint: "Car painting", body: "Welding & bodywork", dent: "Dent removal", rust: "Rust removal", polish: "Polishing", parts: "Replacing parts" },
     notSure: "Not sure?",
     carPlaceholder: "Car make, model, year",
     continueLabel: "Continue",
@@ -66,7 +66,7 @@ const STRINGS: Record<Lang, {
     step: "SAMM",
     step1Title: "1 · Sõiduk ja teenus",
     step2Title: "2 · Kontakt, fotod ja märkused",
-    services: { paint: "Autovärvimine", body: "Keevitus ja kerekojatööd", dent: "Mõlkide eemaldamine", rust: "Roostetõrje", polish: "Poleerimine", insurance: "Kindlustusjuhtumid" },
+    services: { paint: "Autovärvimine", body: "Keevitus ja kerekojatööd", dent: "Mõlkide eemaldamine", rust: "Roostetõrje", polish: "Poleerimine", parts: "Osade vahetus" },
     notSure: "Pole kindel?",
     carPlaceholder: "Auto mark, mudel, aasta",
     continueLabel: "Jätka",
@@ -88,7 +88,7 @@ const STRINGS: Record<Lang, {
     step: "ШАГ",
     step1Title: "1 · Автомобиль и услуга",
     step2Title: "2 · Контакты, фото и заметки",
-    services: { paint: "Покраска автомобиля", body: "Сварка и кузовные работы", dent: "Удаление вмятин", rust: "Удаление ржавчины", polish: "Полировка", insurance: "Страховые случаи" },
+    services: { paint: "Покраска автомобиля", body: "Сварка и кузовные работы", dent: "Удаление вмятин", rust: "Удаление ржавчины", polish: "Полировка", parts: "Замена деталей" },
     notSure: "Не уверены?",
     carPlaceholder: "Марка, модель, год автомобиля",
     continueLabel: "Продолжить",
