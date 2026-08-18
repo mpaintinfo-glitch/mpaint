@@ -9,6 +9,7 @@ import Image from "next/image";
 import Arrow from "../../../src/components/Arrow";
 import Footer from "../../../src/components/Footer";
 import OpenQuoteButton from "../../../src/components/OpenQuoteButton";
+import FaqJsonLd from "../../../src/components/FaqJsonLd";
 
 export async function generateMetadata({
   params,
@@ -30,9 +31,11 @@ export default async function ServicesPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations();
+  const faq = t.raw("services.faq") as FaqItem[];
 
   return (
     <div className="page on">
+      <FaqJsonLd items={faq} />
       <section
         className="sec svc-cta-zone"
         style={{ minHeight: "calc(100svh - var(--nav-h))", display: "flex", flexDirection: "column", gap: "1.5rem" }}
@@ -97,7 +100,7 @@ export default async function ServicesPage({
       <section className="sec">
         <div className="container seo-block seo-block--first">
           <h2>{t("services.faqTitle")}</h2>
-          {t.raw("services.faq").map((item: FaqItem, i: number) => (
+          {faq.map((item, i) => (
             <Fragment key={i}>
               <h3>{item.q}</h3>
               <p>{item.a}</p>

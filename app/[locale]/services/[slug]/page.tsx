@@ -10,6 +10,7 @@ import { localeAlternates } from "../../../../src/lib/alternates";
 import Icon from "../../../../src/components/Icon";
 import Footer from "../../../../src/components/Footer";
 import OpenQuoteButton from "../../../../src/components/OpenQuoteButton";
+import BreadcrumbJsonLd from "../../../../src/components/BreadcrumbJsonLd";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -43,8 +44,16 @@ export default async function ServiceDetailPage({
   const svcT = await getTranslations(`serviceDetail.${id}`);
   const bullets = svcT.raw("bullets") as string[];
 
+  const base = `https://mpaint.ee${locale === "et" ? "" : `/${locale}`}`;
+  const breadcrumbs = [
+    { name: t("nav.home"), url: base },
+    { name: t("nav.services"), url: `${base}/services` },
+    { name: svcT("h1"), url: `${base}/services/${slug}` },
+  ];
+
   return (
     <div className="page on">
+      <BreadcrumbJsonLd items={breadcrumbs} />
       <section
         className="sec svc-page-sec"
         style={{ minHeight: "calc(100svh - var(--nav-h))", display: "flex", flexDirection: "column", justifyContent: "center" }}

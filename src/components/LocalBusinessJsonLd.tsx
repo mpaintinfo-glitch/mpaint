@@ -1,4 +1,10 @@
-export default function LocalBusinessJsonLd() {
+import { getTranslations } from "next-intl/server";
+import { SERVICE_ORDER, SERVICE_SLUGS } from "../data/services";
+
+export default async function LocalBusinessJsonLd({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: "catalog" });
+  const prefix = locale === "et" ? "" : `/${locale}`;
+
   const data = {
     "@context": "https://schema.org",
     "@type": "AutoBodyShop",
@@ -35,6 +41,18 @@ export default function LocalBusinessJsonLd() {
       "@type": "PropertyValue",
       name: "Registry code",
       value: "14939293",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Mpaint services",
+      itemListElement: SERVICE_ORDER.map((id) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: t(id),
+          url: `https://mpaint.ee${prefix}/services/${SERVICE_SLUGS[id]}`,
+        },
+      })),
     },
   };
 

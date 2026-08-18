@@ -44,7 +44,7 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider>
-          <LocalBusinessJsonLd />
+          <LocalBusinessJsonLd locale={locale} />
           <ModalProvider>
             <IconSprite />
             <Header />
