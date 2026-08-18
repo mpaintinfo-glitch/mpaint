@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { BUSINESS } from "../lib/site";
 
 export default function EmailModal({
@@ -13,15 +13,37 @@ export default function EmailModal({
   onOpenChange: (open: boolean) => void;
 }) {
   const t = useTranslations("emailModal");
+  const locale = useLocale();
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const [photos, setPhotos] = useState<{ file: File; url: string }[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const MAX_PHOTOS = 5;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setSubmitting(true);
+    setSubmitError(false);
+
+    const formData = new FormData();
+    formData.set("name", form.name);
+    formData.set("email", form.email);
+    formData.set("phone", form.phone);
+    formData.set("message", form.message);
+    formData.set("locale", locale);
+    photos.forEach((p) => formData.append("photos", p.file, p.file.name));
+
+    try {
+      const res = await fetch("/api/contact", { method: "POST", body: formData });
+      if (!res.ok) throw new Error("request failed");
+      setSent(true);
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleOpenChange = (o: boolean) => {
@@ -29,6 +51,7 @@ export default function EmailModal({
     if (!o) {
       setTimeout(() => {
         setSent(false);
+        setSubmitError(false);
         setForm({ name: "", email: "", phone: "", message: "" });
         setPhotos((prev) => {
           prev.forEach((p) => URL.revokeObjectURL(p.url));
@@ -145,8 +168,11 @@ export default function EmailModal({
                     onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                   />
                 </div>
-                <button className="btn btn-fill btn-full" style={{ marginTop: "1.5rem" }} type="submit">
-                  {t("submit")}
+                {submitError && (
+                  <div className="fnote" style={{ color: "#E0007A" }}>{t("submitError")}</div>
+                )}
+                <button className="btn btn-fill btn-full" style={{ marginTop: "1.5rem" }} type="submit" disabled={submitting}>
+                  {submitting ? t("submitting") : t("submit")}
                 </button>
                 <div className="fnote">{t("fnote")}</div>
               </form>

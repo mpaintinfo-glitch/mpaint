@@ -16,3 +16,10 @@ export const BUSINESS = {
   registryCode: "14939293",
   hours: { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "19:00" },
 } as const;
+
+// Where lead notifications (quote requests, contact form) get sent.
+export const NOTIFY_EMAILS = ["info.mpaint@gmail.com", "info@mpaint.ee"];
+
+// Resend sandbox sender until the mpaint.ee domain is verified in Resend.
+// Swap to e.g. "Mpaint <noreply@mpaint.ee>" once verified.
+export const FROM_EMAIL = "Mpaint website <onboarding@resend.dev>";

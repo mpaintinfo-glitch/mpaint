@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Icon from "./Icon";
 import { SERVICE_ICON, type ServiceId } from "../data/services";
 import "./quote-funnel.css";
@@ -20,6 +20,7 @@ export default function QuoteFunnel({
 }) {
   const t = useTranslations("quoteFunnel");
   const catalog = useTranslations("catalog");
+  const locale = useLocale();
   const [step, setStep] = useState(0);
   const [dir, setDir] = useState<"fwd" | "bwd">("fwd");
   const [services, setServices] = useState<Set<ServiceId | "other">>(
@@ -30,6 +31,8 @@ export default function QuoteFunnel({
   const [phone, setPhone] = useState("");
   const [notes, setNotes] = useState("");
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const [photos, setPhotos] = useState<{ file: File; url: string }[]>([]);
   const photoInputRef = useRef<HTMLInputElement>(null);
   const MAX_PHOTOS = 5;
@@ -68,9 +71,29 @@ export default function QuoteFunnel({
     if (!o) onClose();
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setSubmitting(true);
+    setSubmitError(false);
+
+    const formData = new FormData();
+    formData.set("name", name);
+    formData.set("phone", phone);
+    formData.set("carInfo", carInfo);
+    formData.set("notes", notes);
+    formData.set("locale", locale);
+    services.forEach((id) => formData.append("services", id));
+    photos.forEach((p) => formData.append("photos", p.file, p.file.name));
+
+    try {
+      const res = await fetch("/api/quote", { method: "POST", body: formData });
+      if (!res.ok) throw new Error("request failed");
+      setSent(true);
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -205,9 +228,14 @@ export default function QuoteFunnel({
                     />
                   </div>
                   <div className="qf-disclaimer">{t("disclaimer")}</div>
+                  {submitError && (
+                    <div className="qf-disclaimer" style={{ color: "#E0007A" }}>{t("submitError")}</div>
+                  )}
                   <div className="qf-actions" style={{ marginTop: ".85rem" }}>
-                    <button className="qf-btn qf-btn-secondary" type="button" onClick={() => goStep(0)}>{t("back")}</button>
-                    <button className="qf-btn qf-btn-primary" type="submit">{t("submit")}</button>
+                    <button className="qf-btn qf-btn-secondary" type="button" onClick={() => goStep(0)} disabled={submitting}>{t("back")}</button>
+                    <button className="qf-btn qf-btn-primary" type="submit" disabled={submitting}>
+                      {submitting ? t("submitting") : t("submit")}
+                    </button>
                   </div>
                 </form>
               )}
