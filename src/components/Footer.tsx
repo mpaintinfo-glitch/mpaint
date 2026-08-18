@@ -1,10 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Link } from "../i18n/navigation";
 import { logoWhite } from "../assets";
-import OpenQuoteButton from "./OpenQuoteButton";
-
-const NAV_ITEMS = ["home", "services", "contact"] as const;
+import { BUSINESS } from "../lib/site";
 
 export default function Footer({ hasSplash }: { hasSplash: boolean }) {
   const t = useTranslations();
@@ -24,15 +21,8 @@ export default function Footer({ hasSplash }: { hasSplash: boolean }) {
             opacity: 0.75,
           }}
         />
-        <div className="f-nav">
-          {NAV_ITEMS.map((item) => (
-            <Link key={item} href={item === "home" ? "/" : `/${item}`}>
-              {t(`nav.${item}`)}
-            </Link>
-          ))}
-          <OpenQuoteButton>{t("nav.booking")}</OpenQuoteButton>
-        </div>
-        <span>{t("footer.address")} · {t("footer.regCode")}</span>
+        <a href={BUSINESS.phoneHref}>{BUSINESS.phone}</a>
+        <span>{t("footer.regCode")}</span>
         <span>{t("footer.copyright")}</span>
       </div>
     </footer>
