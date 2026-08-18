@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getResend, filesToAttachments, escapeHtml } from "../../../src/lib/mailer";
+import { getResend, filesToAttachments, escapeHtml, sendToEach } from "../../../src/lib/mailer";
 import { NOTIFY_EMAILS, FROM_EMAIL } from "../../../src/lib/site";
 
 export const runtime = "nodejs";
@@ -25,12 +25,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
 
-  let attachments;
-  try {
-    attachments = await filesToAttachments(photos);
-  } catch {
-    return NextResponse.json({ error: "Photos too large" }, { status: 413 });
-  }
+  const attachments = await filesToAttachments(photos);
 
   const html = `
     <h2>New message from the site</h2>
@@ -42,20 +37,20 @@ export async function POST(req: Request) {
     <p><strong>Photos attached:</strong> ${attachments.length}</p>
   `;
 
-  try {
-    const { error } = await resend.emails.send({
-      from: FROM_EMAIL,
-      to: NOTIFY_EMAILS,
-      replyTo: email,
-      subject: `Message from ${name}`,
-      html,
-      attachments: attachments.length ? attachments : undefined,
-    });
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 502 });
-    }
-  } catch (err) {
-    return NextResponse.json({ error: err instanceof Error ? err.message : "Send failed" }, { status: 500 });
+  const { ok, failures } = await sendToEach(resend, NOTIFY_EMAILS, {
+    from: FROM_EMAIL,
+    replyTo: email,
+    subject: `Message from ${name}`,
+    html,
+    attachments: attachments.length ? attachments : undefined,
+  });
+
+  if (!ok) {
+    console.error("contact email failed for all recipients:", failures);
+    return NextResponse.json({ error: "Send failed" }, { status: 502 });
+  }
+  if (failures.length) {
+    console.error("contact email partially failed:", failures);
   }
 
   return NextResponse.json({ ok: true });
