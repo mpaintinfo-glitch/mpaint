@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { SERVICE_ORDER, SERVICE_SLUGS } from "../data/services";
+import { SITE_URL, BUSINESS } from "../lib/site";
 
 export default async function LocalBusinessJsonLd({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "catalog" });
@@ -8,29 +9,25 @@ export default async function LocalBusinessJsonLd({ locale }: { locale: string }
   const data = {
     "@context": "https://schema.org",
     "@type": "AutoBodyShop",
-    name: "Mpaint",
-    image: "https://mpaint.ee/mpaint-workshop.jpg",
-    url: "https://mpaint.ee",
-    telephone: "+372 58-100-810",
-    email: "info@mpaint.ee",
+    name: BUSINESS.name,
+    image: `${SITE_URL}/mpaint-workshop.jpg`,
+    url: SITE_URL,
+    telephone: BUSINESS.phone,
+    email: BUSINESS.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Magasini tn 31",
-      postalCode: "10138",
-      addressLocality: "Tallinn",
-      addressCountry: "EE",
+      ...BUSINESS.address,
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 59.4221934,
-      longitude: 24.7583585,
+      ...BUSINESS.geo,
     },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "19:00",
+        dayOfWeek: BUSINESS.hours.days,
+        opens: BUSINESS.hours.opens,
+        closes: BUSINESS.hours.closes,
       },
     ],
     areaServed: {
@@ -40,7 +37,7 @@ export default async function LocalBusinessJsonLd({ locale }: { locale: string }
     identifier: {
       "@type": "PropertyValue",
       name: "Registry code",
-      value: "14939293",
+      value: BUSINESS.registryCode,
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -50,7 +47,7 @@ export default async function LocalBusinessJsonLd({ locale }: { locale: string }
         itemOffered: {
           "@type": "Service",
           name: t(id),
-          url: `https://mpaint.ee${prefix}/services/${SERVICE_SLUGS[id]}`,
+          url: `${SITE_URL}${prefix}/services/${SERVICE_SLUGS[id]}`,
         },
       })),
     },

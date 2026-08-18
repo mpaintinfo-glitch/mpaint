@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import Icon from "./Icon";
 import { useModals } from "./ModalProvider";
+import { BUSINESS } from "../lib/site";
 
 export default function Fab() {
   const t = useTranslations("fab");
@@ -13,11 +14,11 @@ export default function Fab() {
   return (
     <div className={`fab-wrap${open ? " open" : ""}`}>
       <div className="fab-menu">
-        <a className="fab-item" href="tel:+37258100810">
+        <a className="fab-item" href={BUSINESS.phoneHref}>
           <span className="fi"><Icon id="i-phone" /></span>
           <b>{t("call")}</b>
         </a>
-        <a className="fab-item" href="https://wa.me/37258100810" target="_blank" rel="noopener">
+        <a className="fab-item" href={BUSINESS.whatsappHref} target="_blank" rel="noopener">
           <span className="fi"><Icon id="i-wa" /></span>
           <b>{t("whatsapp")}</b>
         </a>

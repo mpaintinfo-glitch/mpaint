@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useTranslations } from "next-intl";
+import { BUSINESS } from "../lib/site";
 
 export default function EmailModal({
   open,
@@ -164,7 +165,7 @@ export default function EmailModal({
                 {t("successDescPre")} <strong style={{ color: "var(--white)", fontWeight: 500 }}>{form.email}</strong> {t("successDescPost")}
               </Dialog.Description>
               <p style={{ color: "var(--low)", fontSize: "13px", marginTop: "1rem", lineHeight: 1.6 }}>
-                {t("hurryPre")} <a href="tel:+37258100810" style={{ color: "var(--med)" }}>+372 58-100-810</a>.
+                {t("hurryPre")} <a href={BUSINESS.phoneHref} style={{ color: "var(--med)" }}>{BUSINESS.phone}</a>.
               </p>
               <button
                 className="btn btn-line"

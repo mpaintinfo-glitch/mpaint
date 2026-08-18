@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "../../../src/i18n/navigation";
 import { RIBBON_IDS, SERVICE_SLUGS } from "../../../src/data/services";
 import { localeAlternates } from "../../../src/lib/alternates";
+import { BUSINESS } from "../../../src/lib/site";
 import { imgPaintBooth, imgBodywork } from "../../../src/assets";
 import Image from "next/image";
 import Arrow from "../../../src/components/Arrow";
@@ -18,7 +19,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "services.meta" });
-  return { title: t("title"), description: t("description"), alternates: localeAlternates("/services") };
+  return { title: t("title"), description: t("description"), alternates: localeAlternates(locale, "/services") };
 }
 
 type FaqItem = { q: string; a: string };
@@ -82,7 +83,7 @@ export default async function ServicesPage({
 
         <div className="container center" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.75rem" }}>
           <OpenQuoteButton className="btn btn-fill btn-lg">{t("services.cta")}</OpenQuoteButton>
-          <a className="hero-secondary" href="tel:+37258100810">
+          <a className="hero-secondary" href={BUSINESS.phoneHref}>
             {t("services.callUs")}
           </a>
         </div>

@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 import { routing } from "../src/i18n/routing";
 import { SERVICE_SLUGS } from "../src/data/services";
-
-const BASE_URL = "https://mpaint.ee";
+import { SITE_URL as BASE_URL } from "../src/lib/site";
 
 function urlFor(locale: string, route: string): string {
   const prefix = locale === routing.defaultLocale ? "" : `/${locale}`;

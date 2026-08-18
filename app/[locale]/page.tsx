@@ -16,7 +16,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "home.meta" });
-  return { title: t("title"), description: t("description"), alternates: localeAlternates("") };
+  return { title: t("title"), description: t("description"), alternates: localeAlternates(locale, "") };
 }
 
 export default async function HomePage({

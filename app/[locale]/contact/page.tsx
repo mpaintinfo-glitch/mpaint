@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { dropBanner } from "../../../src/assets";
 import { localeAlternates } from "../../../src/lib/alternates";
+import { BUSINESS } from "../../../src/lib/site";
 import Icon from "../../../src/components/Icon";
 import Footer from "../../../src/components/Footer";
 import OpenEmailButton from "../../../src/components/OpenEmailButton";
@@ -14,7 +15,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "contact.meta" });
-  return { title: t("title"), description: t("description"), alternates: localeAlternates("/contact") };
+  return { title: t("title"), description: t("description"), alternates: localeAlternates(locale, "/contact") };
 }
 
 export default async function ContactPage({
@@ -36,17 +37,17 @@ export default async function ContactPage({
         <div className="container contact-panel-wrap">
           <div className="panel" style={{ padding: "1.5rem 2rem" }}>
             <div className="c-actions">
-              <a className="ca" href="tel:+37258100810">
+              <a className="ca" href={BUSINESS.phoneHref}>
                 <span className="ic"><Icon id="i-phone" /></span>
-                <span><small>{t("contact.callUs")}</small><b>+372 58-100-810</b></span>
+                <span><small>{t("contact.callUs")}</small><b>{BUSINESS.phone}</b></span>
               </a>
-              <a className="ca" href="https://wa.me/37258100810" target="_blank" rel="noopener">
+              <a className="ca" href={BUSINESS.whatsappHref} target="_blank" rel="noopener">
                 <span className="ic"><Icon id="i-wa" /></span>
                 <span><small>{t("contact.whatsapp")}</small><b>{t("contact.whatsappValue")}</b></span>
               </a>
               <OpenEmailButton className="ca">
                 <span className="ic"><Icon id="i-mail" /></span>
-                <span><small>{t("contact.email")}</small><b>info@mpaint.ee</b></span>
+                <span><small>{t("contact.email")}</small><b>{BUSINESS.email}</b></span>
               </OpenEmailButton>
             </div>
             <div className="contact-grid" style={{ marginTop: "1.25rem" }}>

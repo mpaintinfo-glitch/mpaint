@@ -7,7 +7,7 @@
   --nav-h:67px;
 
   /* ---- typography scale ---- */
-  --font-sans:'Manrope','Segoe UI',system-ui,sans-serif;
+  --font-sans:var(--font-manrope),'Segoe UI',system-ui,sans-serif;
   --fs-xxs:11px;
   --fs-xs:12px;
   --fs-sm:14px;

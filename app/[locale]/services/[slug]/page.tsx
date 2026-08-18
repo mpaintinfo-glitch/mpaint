@@ -7,6 +7,7 @@ import { Link } from "../../../../src/i18n/navigation";
 import { SERVICE_SLUGS, SERVICE_PHOTO, getServiceBySlug } from "../../../../src/data/services";
 import { dropBanner } from "../../../../src/assets";
 import { localeAlternates } from "../../../../src/lib/alternates";
+import { SITE_URL } from "../../../../src/lib/site";
 import Icon from "../../../../src/components/Icon";
 import Footer from "../../../../src/components/Footer";
 import OpenQuoteButton from "../../../../src/components/OpenQuoteButton";
@@ -27,7 +28,7 @@ export async function generateMetadata({
   const id = getServiceBySlug(slug);
   if (!id) return {};
   const t = await getTranslations({ locale, namespace: `serviceDetail.${id}` });
-  return { title: t("h1"), description: t("tagline"), alternates: localeAlternates(`/services/${slug}`) };
+  return { title: t("h1"), description: t("tagline"), alternates: localeAlternates(locale, `/services/${slug}`) };
 }
 
 export default async function ServiceDetailPage({
@@ -44,7 +45,7 @@ export default async function ServiceDetailPage({
   const svcT = await getTranslations(`serviceDetail.${id}`);
   const bullets = svcT.raw("bullets") as string[];
 
-  const base = `https://mpaint.ee${locale === "et" ? "" : `/${locale}`}`;
+  const base = `${SITE_URL}${locale === "et" ? "" : `/${locale}`}`;
   const breadcrumbs = [
     { name: t("nav.home"), url: base },
     { name: t("nav.services"), url: `${base}/services` },
