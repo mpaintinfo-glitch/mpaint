@@ -18,9 +18,9 @@ const IMG_SVC_L = imgPaintBooth
 const IMG_SVC_R = imgBodywork
 
 const LANGS = [
-  { code: "en", label: "English" },
   { code: "et", label: "Eesti" },
   { code: "ru", label: "Русский" },
+  { code: "en", label: "English" },
 ] as const
 
 const LANG_BADGE = { en: "ENG", et: "EST", ru: "RUS" } as const
@@ -427,7 +427,7 @@ const STRINGS = {
 type Lang = keyof typeof STRINGS
 
 export default function App() {
-  const [lang, setLang] = useState<Lang>("en")
+  const [lang, setLang] = useState<Lang>("et")
   const [langOpen, setLangOpen] = useState(false)
   const [fabOpen, setFabOpen] = useState(false)
   const [navOpen, setNavOpen] = useState(false)
