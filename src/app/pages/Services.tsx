@@ -81,7 +81,7 @@ export default function Services({
         </div>
 
       </section>
-      <section className="sec">
+      <section className="sec seo-content-section">
         <div className="container seo-block seo-block--first">
           <h2>{t.services.seoTitle}</h2>
           <p>{t.services.seoP1}</p>

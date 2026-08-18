@@ -1,3 +1,5 @@
+import dropBanner from "../../imports/drop-banner.png"
+
 export default function Contact({
   t, openEmail,
 }: {
@@ -7,6 +9,7 @@ export default function Contact({
   return (
     <div className="page on">
       <section className="sec contact-main-sec" style={{ minHeight: "calc(100svh - var(--nav-h))" }}>
+        <img src={dropBanner} alt="" aria-hidden="true" className="page-top-drip" />
         <div className="container center">
           <h1>{t.contact.h1}</h1>
         </div>
@@ -55,7 +58,7 @@ export default function Contact({
           </div>
         </div>
       </section>
-      <section className="sec">
+      <section className="sec seo-content-section">
         <div className="container seo-block seo-block--first">
           <h2>{t.contact.seoTitle}</h2>
           <p>{t.contact.seoP1}</p>

@@ -162,7 +162,7 @@ export default function Home({
         </div>
       </section>
 
-      <section className="sec section-compact">
+      <section className="sec section-compact seo-content-section">
         <div className="container seo-block seo-block--first">
           <h2>{t.home.seoTitle}</h2>
           <p>{t.home.seoP1}</p>

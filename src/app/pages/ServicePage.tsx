@@ -1,5 +1,6 @@
 import { Link, Navigate, useParams } from "react-router"
 import { getServiceBySlug, getServiceContent, type Lang, type ServiceId } from "../data/services"
+import dropBanner from "../../imports/drop-banner.png"
 
 function Icon({ id }: { id: string }) {
   return <svg><use href={`#${id}`} /></svg>
@@ -23,7 +24,7 @@ export default function ServicePage({
   return (
     <div className="page on">
       <section
-        className="sec"
+        className="sec svc-page-sec"
         style={{
           minHeight: "calc(100svh - var(--nav-h))",
           display: "flex",
@@ -31,6 +32,7 @@ export default function ServicePage({
           justifyContent: "center",
         }}
       >
+        <img src={dropBanner} alt="" aria-hidden="true" className="page-top-drip" />
         <div className="container" style={{ maxWidth: 900 }}>
           <Link to="/services" className="link svc-page-back">
             {backLabel}

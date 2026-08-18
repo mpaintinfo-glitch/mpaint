@@ -6,6 +6,7 @@ import sfondo from "../imports/sfondo.png"
 import logoWhite from "../imports/mpain_logo_white.png"
 import imgPaintBooth from "../imports/PHOTO-2026-08-11-15-47-32.jpg"
 import imgBodywork from "../imports/mpaint.jpg"
+import dropSplash from "../imports/drop-splash.png"
 import QuoteFunnel from "./components/QuoteFunnel"
 import Home from "./pages/Home"
 import Services from "./pages/Services"
@@ -420,6 +421,7 @@ export default function App() {
   const t = STRINGS[lang]
   const navigate = useNavigate()
   const location = useLocation()
+  const hasFooterSplash = location.pathname === "/" || location.pathname === "/services"
 
   const handleEmailSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -757,7 +759,10 @@ export default function App() {
       </main>
 
       {/* ── FOOTER ── */}
-      <footer>
+      <footer className={hasFooterSplash ? "footer-has-splash" : ""}>
+        {hasFooterSplash && (
+          <img src={dropSplash} alt="" aria-hidden="true" className="bottom-splash-accent" />
+        )}
         <div className="container f-in">
           <img
             src={logoWhite}
