@@ -1,0 +1,226 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "booking": "Our work",
+    "contact": "Contact",
+    "bookNow": "Book now"
+  },
+  "catalog": {
+    "paint": "Car painting",
+    "body": "Welding & bodywork",
+    "dent": "Dent removal",
+    "rust": "Rust removal",
+    "polish": "Polishing",
+    "parts": "Replacing parts"
+  },
+  "hero": {
+    "titleLead": "Your car,",
+    "titleGrad": "repainted perfectly.",
+    "leadPre": "Car painting and bodywork in",
+    "leadCity": "Tallinn",
+    "ctaEstimate": "Get an estimate",
+    "ctaWork": "See our work"
+  },
+  "home": {
+    "whatTitle": "What we do",
+    "whatSub": "Tap any service to send it straight into the quote form.",
+    "paintDesc": "Full resprays and single panels in our own paint booth.",
+    "bodyDesc": "Sheet metal repair and structural bodywork for all vehicles.",
+    "pick": "Get an estimate",
+    "seeAll": "See all services",
+    "seoTitle": "Car painting and bodywork in Tallinn",
+    "seoP1": "Mpaint carries out car painting and bodywork in Tallinn. We handle both individual body panels and larger painting and restoration jobs.",
+    "seoP2": "Our services include car painting, panel painting, paint damage repair, dent removal, rust damage repair, welding, body repair and polishing.",
+    "seoP3": "Surfaces to be painted are prepared beforehand according to their condition. If needed, we remove rust and old damaged paint, repair the body surface, and prepare the panel for priming and painting. The paint is matched to the car's colour code and existing paint tone.",
+    "seoP4": "We work on passenger cars and commercial vehicles, taking on both smaller panel repairs and larger bodywork jobs.",
+    "whyTitle": "Mpaint's car painting and bodywork services",
+    "why": [
+      "car painting",
+      "panel painting",
+      "bumper painting and repair",
+      "scratch and paint damage repair",
+      "dent removal",
+      "rust damage repair",
+      "body and welding work",
+      "surface preparation for painting",
+      "car polishing",
+      "major body restoration work"
+    ],
+    "seoClosing": "If your car's body or paintwork needs repair, get in touch and describe the work you need.",
+    "meta": {
+      "title": "Car painting and bodywork in Tallinn",
+      "description": "Car painting and bodywork workshop in Tallinn. Full resprays, single panels, welding, rust repair, dent removal and polishing — all under one roof."
+    }
+  },
+  "services": {
+    "h1": "Car painting and bodywork services in Tallinn",
+    "paintDesc": "Full resprays and single panels in our own filtered paint booth.",
+    "bodyDesc": "Sheet metal repair and structural bodywork for all vehicle types.",
+    "pick": "Get an estimate",
+    "cta": "Get an estimate",
+    "callUs": "Or call us: +372 58-100-810",
+    "backToServices": "← All services",
+    "seoTitle": "How car painting works at Mpaint",
+    "seoP1": "Every repaint starts with an assessment of the damage and a read of your car's factory colour code. We prepare and sand the panel, apply primer, then spray base coat and lacquer inside a dedicated paint booth where filtered air and controlled temperature keep dust out of the finish.",
+    "seoP2": "We paint single panels as well as full cars. Painting one door, bumper or wing is usually enough after a parking scrape, while corrosion or accident damage across several panels is better handled as a larger job. If the paint on your car has faded unevenly, we blend into the neighbouring panels so the repair does not stand out.",
+    "seoP3": "Alongside painting we handle welding and sheet metal repair, rust removal and anti-corrosion treatment, spotter dent pulling, body and headlight polishing, and replacement of body parts. If your repair goes through insurance, we can help with the paperwork.",
+    "faqTitle": "Common questions",
+    "faq": [
+      { "q": "How much does it cost to paint a car?", "a": "The price depends on how many panels are involved, the condition of the surface underneath and the type of paint. Send a photo of the damage and we will quote the actual job rather than a guess." },
+      { "q": "How long does the car stay at the workshop?", "a": "A single panel is usually a couple of days including preparation, painting and curing. Larger jobs involving bodywork or several panels take longer." },
+      { "q": "Will the new paint match the rest of the car?", "a": "We work from your factory colour code and blend into the surrounding panels where needed. On older cars the original paint has usually faded, so blending is what makes the repair invisible." },
+      { "q": "Do you work with insurance companies?", "a": "Yes. If your repair goes through insurance, we can help you prepare the paperwork for the claim." },
+      { "q": "Can you remove a dent without repainting?", "a": "Often yes. If the paint surface is not broken we can pull the dent with a spotter and leave the original paint intact, which is faster and cheaper than refinishing the panel." }
+    ],
+    "meta": {
+      "title": "Car painting and bodywork services in Tallinn",
+      "description": "All Mpaint services in Tallinn: car painting, panel painting, welding & bodywork, rust removal, dent removal and polishing. Get a price from a photo."
+    }
+  },
+  "serviceDetail": {
+    "paint": {
+      "h1": "Car painting",
+      "tagline": "Full resprays and single panels, painted in our own filtered booth.",
+      "bullets": [
+        "Factory colour-code matching",
+        "Full car or single-panel jobs",
+        "Dust-free finish in our own booth",
+        "Blending into faded neighbouring panels"
+      ]
+    },
+    "body": {
+      "h1": "Welding & bodywork",
+      "tagline": "Structural repair and sheet-metal work for any make or model.",
+      "bullets": [
+        "Sheet-metal & structural repair",
+        "Damaged panel replacement",
+        "Quality materials, modern equipment",
+        "Long-lasting repairs, not quick patches"
+      ]
+    },
+    "dent": {
+      "h1": "Dent removal",
+      "tagline": "Paintless spotter repair — faster and cheaper than replacing the panel.",
+      "bullets": [
+        "No repainting needed in most cases",
+        "Cheaper than a full panel swap",
+        "Free diagnosis if a dent's too deep for spotter repair",
+        "Works on all vehicle types"
+      ]
+    },
+    "rust": {
+      "h1": "Rust removal",
+      "tagline": "Stop corrosion before it spreads — cleaned, treated, and protected.",
+      "bullets": [
+        "Full cleaning & treatment of the affected area",
+        "Prevents rust from coming back",
+        "Stops further metal damage",
+        "Often paired with a colour-matched respray"
+      ]
+    },
+    "polish": {
+      "h1": "Body & headlight polishing",
+      "tagline": "Removes light scratches and restores headlight clarity.",
+      "bullets": [
+        "Minor scratch & swirl removal",
+        "Headlight clarity restoration",
+        "Better visibility & safety at night",
+        "All makes and models"
+      ]
+    },
+    "parts": {
+      "h1": "Replacing parts",
+      "tagline": "Damaged or worn parts found, sourced, and fitted.",
+      "bullets": [
+        "Full diagnosis before any work starts",
+        "New or used parts, your choice",
+        "Used parts available to save money",
+        "Competitive pricing"
+      ]
+    }
+  },
+  "contact": {
+    "eyebrow": "Find us",
+    "h1": "Find us in Tallinn",
+    "callUs": "Call us",
+    "whatsapp": "WhatsApp",
+    "whatsappValue": "Message us",
+    "email": "Email",
+    "address": "Address",
+    "addressValue": "Tallinn, Estonia",
+    "monFri": "Mon – Fri",
+    "hours": "9:00 – 19:00",
+    "saturday": "Saturday",
+    "byAgreement": "By agreement",
+    "sunday": "Sunday",
+    "closed": "Closed",
+    "mapTitle": "Mpaint workshop location on Google Maps",
+    "mapCta": "View full map",
+    "seoTitle": "Getting to the workshop",
+    "seoP1": "Our workshop is in Tallinn and we serve drivers from across Harju county. You are welcome to come by during opening hours to have damage looked at in person, though sending a photo first usually saves you a trip.",
+    "seoP2": "We speak Estonian, Russian and English. Phone and WhatsApp are the quickest way to reach us during the working day, and email is best if you want to attach several photos or an insurance case number.",
+    "hoursTitle": "Opening hours",
+    "hoursP": "Monday to Friday from 9:00 to 19:00. Saturday by agreement, so call ahead. Closed on Sunday.",
+    "meta": {
+      "title": "Find us in Tallinn",
+      "description": "Mpaint car painting and bodywork workshop in Tallinn: phone, WhatsApp, email, address and opening hours."
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 MPAINT OÜ",
+    "address": "Magasini tn 31, 10138 Tallinn",
+    "regCode": "Registration code 14939293"
+  },
+  "fab": {
+    "call": "Call us",
+    "whatsapp": "WhatsApp",
+    "email": "Email us",
+    "estimate": "Get an estimate",
+    "ariaContact": "Contact"
+  },
+  "emailModal": {
+    "eyebrow": "Get in touch",
+    "title": "Send us a message",
+    "desc": "We reply as soon as we can, on working days.",
+    "placeholderName": "Your name",
+    "placeholderEmail": "Email address",
+    "placeholderPhone": "Phone (optional)",
+    "placeholderMessage": "Describe the damage or what you need — a photo helps too.",
+    "uploadLabel": "Add photos (optional)",
+    "uploadHint": "PNG or JPG, up to 5 photos",
+    "removePhoto": "Remove photo",
+    "submit": "Send message",
+    "fnote": "We handle your details with care and never share them with third parties.",
+    "thankYou": "Thank you",
+    "successDescPre": "Your message has reached us. We will review it and reply to",
+    "successDescPost": "as soon as we can, on working days.",
+    "hurryPre": "In a hurry? Call or WhatsApp us directly at",
+    "backToSite": "Back to the site",
+    "ariaClose": "Close"
+  },
+  "quoteFunnel": {
+    "step": "STEP",
+    "step1Title": "1 · Vehicle & Service",
+    "step2Title": "2 · Contact, Photos & Notes",
+    "notSure": "Not sure?",
+    "carPlaceholder": "Car make, model, year",
+    "continueLabel": "Continue",
+    "back": "Back",
+    "submit": "Submit request",
+    "dropText": "Add a photo of the damage",
+    "removePhoto": "Remove photo",
+    "namePh": "Name",
+    "phonePh": "Phone",
+    "notesLabel": "Optional: Tell us more about the work needed…",
+    "notesPh": "e.g., specific paint color codes, specific restoration desires, insurance company info, etc.",
+    "disclaimer": "We reply as soon as we can, on working days.",
+    "close": "Close",
+    "successTitle": "Thank you!",
+    "successDesc": "Your request has been received. We'll get back to you as soon as we can, on working days.",
+    "done": "Done"
+  },
+  "aria": {
+    "openMenu": "Open menu"
+  }
+}

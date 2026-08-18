@@ -1,0 +1,226 @@
+{
+  "nav": {
+    "home": "Avaleht",
+    "services": "Teenused",
+    "booking": "Tehtud tööd",
+    "contact": "Kontakt",
+    "bookNow": "Broneeri"
+  },
+  "catalog": {
+    "paint": "Autovärvimine",
+    "body": "Keevitus ja kerekojatööd",
+    "dent": "Mõlkide eemaldamine",
+    "rust": "Roostetõrje",
+    "polish": "Poleerimine",
+    "parts": "Osade vahetus"
+  },
+  "hero": {
+    "titleLead": "Sinu auto,",
+    "titleGrad": "täiuslikult värvitud.",
+    "leadPre": "Autode värvimine ja keretööd",
+    "leadCity": "Tallinnas",
+    "ctaEstimate": "Küsi hinnapakkumist",
+    "ctaWork": "Vaata meie töid"
+  },
+  "home": {
+    "whatTitle": "Mida me teeme",
+    "whatSub": "Puuduta mõnda teenust, et see kohe hinnapäringu vormi lisada.",
+    "paintDesc": "Täisvärvimised ja üksikud paneelid meie enda värvikambris.",
+    "bodyDesc": "Plekitööd ja kere kandekonstruktsiooni remont kõikidele sõidukitele.",
+    "pick": "Küsi hinnapakkumist",
+    "seeAll": "Vaata kõiki teenuseid",
+    "seoTitle": "Autovärvimine ja keretööd Tallinnas",
+    "seoP1": "Mpaint teostab autovärvimist ja keretöid Tallinnas. Tegeleme nii üksikute keredetailide kui ka suuremate värvimis- ja taastamistöödega.",
+    "seoP2": "Meie teenuste hulka kuuluvad autode värvimine, detailide värvimine, värvikahjustuste parandamine, mõlkide eemaldamine, roostekahjustuste remont, keevitustööd, kereparandus ja poleerimine.",
+    "seoP3": "Värvitavad pinnad valmistatakse enne värvimist ette vastavalt nende seisukorrale. Vajadusel eemaldame rooste ja vana kahjustatud värvikihi, parandame kerepinna ning valmistame detaili kruntimiseks ja värvimiseks ette. Värv valitakse auto värvikoodi ja olemasoleva värvitooni järgi.",
+    "seoP4": "Teostame töid sõiduautodele ja tarbesõidukitele ning võtame vastu nii väiksemaid keredetailide parandusi kui ka mahukamaid keretöid.",
+    "whyTitle": "Mpainti autovärvimise ja keretööde teenused",
+    "why": [
+      "autovärvimine",
+      "keredetailide värvimine",
+      "stangede värvimine ja parandamine",
+      "kriimustuste ja värvikahjustuste parandamine",
+      "mõlkide eemaldamine",
+      "roostekahjustuste remont",
+      "kere- ja keevitustööd",
+      "detailide ettevalmistus värvimiseks",
+      "auto poleerimine",
+      "suuremad kere taastamistööd"
+    ],
+    "seoClosing": "Kui auto kere või värvkate vajab parandamist, võta meiega ühendust ja kirjelda soovitud tööd.",
+    "meta": {
+      "title": "Autovärvimine ja keretööd Tallinnas",
+      "description": "Autovärvimise ja keretööde töökoda Tallinnas. Täisvärvimised, üksikud paneelid, keevitus, roostetõrje, mõlkide eemaldamine ja poleerimine."
+    }
+  },
+  "services": {
+    "h1": "Autovärvimise ja kerekoja teenused Tallinnas",
+    "paintDesc": "Täisvärvimised ja üksikud paneelid meie enda filtreeritud värvikambris.",
+    "bodyDesc": "Plekitööd ja kere kandekonstruktsiooni remont kõikidele sõidukitüüpidele.",
+    "pick": "Küsi hinnapakkumist",
+    "cta": "Küsi hinnapakkumist",
+    "callUs": "Või helista meile: +372 58-100-810",
+    "backToServices": "← Kõik teenused",
+    "seoTitle": "Kuidas autovärvimine Mpaintis käib",
+    "seoP1": "Iga värvimistöö algab kahjustuse hindamisest ja auto tehase värvikoodi lugemisest. Valmistame paneeli ette ja lihvime selle, kanname peale grundi ning seejärel pihustame põhi- ja lakikihi spetsiaalses värvikambris, kus filtreeritud õhk ja kontrollitud temperatuur hoiavad tolmu pinnast eemal.",
+    "seoP2": "Värvime nii üksikuid paneele kui ka terveid autosid. Ühe ukse, pumperi või tiiva värvimisest piisab tavaliselt pärast parklakriimu, samas kui korrosioon või avariikahjustus mitmel paneelil sobib paremini suurema tööna teostada. Kui auto värv on ebaühtlaselt pleekinud, sobitame selle naaberpaneelidega, et remont ei paistaks silma.",
+    "seoP3": "Lisaks värvimisele teeme keevitust ja plekitöid, roostetõrjet ja korrosioonikaitset, mõlkide väljatõmbamist spotteriga, kere ja esitulede poleerimist ning kereosade vahetust. Kui remont käib kindlustuse kaudu, aitame paberimajandusega.",
+    "faqTitle": "Korduma kippuvad küsimused",
+    "faq": [
+      { "q": "Kui palju maksab auto värvimine?", "a": "Hind sõltub sellest, mitu paneeli on kaasatud, aluspinna seisukorrast ja värvi tüübist. Saada foto kahjustusest ja pakume tegeliku hinna, mitte oletuse." },
+      { "q": "Kui kaua auto töökojas seisab?", "a": "Üks paneel võtab tavaliselt paar päeva, sealhulgas ettevalmistus, värvimine ja kuivamine. Suuremad tööd kerekoja remondi või mitme paneeliga võtavad kauem aega." },
+      { "q": "Kas uus värv sobib ülejäänud autoga kokku?", "a": "Lähtume sinu auto tehase värvikoodist ja sobitame vajadusel naaberpaneelidega. Vanematel autodel on originaalvärv tavaliselt pleekinud, seega sobitamine ongi see, mis teeb remondi märkamatuks." },
+      { "q": "Kas teete koostööd kindlustusfirmadega?", "a": "Jah, aitame kahjunõude paberimajandusega, kui remont käib kindlustuse kaudu." },
+      { "q": "Kas mõlgi saab eemaldada ilma värvimata?", "a": "Tihtipeale jah. Kui värvipind pole katki, saame mõlgi spotteriga välja tõmmata ja originaalvärvi puutumata jätta, mis on kiirem ja odavam kui paneeli ülevärvimine." }
+    ],
+    "meta": {
+      "title": "Autovärvimise ja kerekoja teenused Tallinnas",
+      "description": "Kõik Mpainti teenused Tallinnas: autovärvimine, paneeli värvimine, keevitus ja kerekojatööd, roostetõrje, mõlkide eemaldamine ja poleerimine."
+    }
+  },
+  "serviceDetail": {
+    "paint": {
+      "h1": "Autovärvimine",
+      "tagline": "Täisvärvimised ja üksikud paneelid meie enda filtreeritud värvikambris.",
+      "bullets": [
+        "Tehase värvikoodi sobitamine",
+        "Kogu auto või üksikute paneelide värvimine",
+        "Tolmuvaba viimistlus meie oma kambris",
+        "Sobitamine pleekinud naaberpaneelidega"
+      ]
+    },
+    "body": {
+      "h1": "Keevitus ja kerekojatööd",
+      "tagline": "Kandekonstruktsiooni remont ja plekitööd kõikidele markidele ja mudelitele.",
+      "bullets": [
+        "Plekitööd ja kandekonstruktsiooni remont",
+        "Kahjustatud paneelide asendamine",
+        "Kvaliteetsed materjalid, kaasaegne varustus",
+        "Püsivad remondid, mitte kiirlapid"
+      ]
+    },
+    "dent": {
+      "h1": "Mõlkide eemaldamine",
+      "tagline": "Spotteriga mõlkide eemaldamine ilma värvimata — kiirem ja odavam kui paneeli vahetus.",
+      "bullets": [
+        "Enamasti pole ümbervärvimist vaja",
+        "Odavam kui täispaneeli vahetus",
+        "Tasuta hindamine, kui mõlk on spotteriga eemaldamiseks liiga sügav",
+        "Sobib kõikidele sõidukitüüpidele"
+      ]
+    },
+    "rust": {
+      "h1": "Roostetõrje",
+      "tagline": "Peatame korrosiooni enne levikut — puhastame, töötleme ja kaitseme.",
+      "bullets": [
+        "Kahjustatud ala täielik puhastus ja töötlus",
+        "Takistab rooste taastekkimist",
+        "Peatab metalli edasise kahjustumise",
+        "Sageli koos värvikoodile vastava värvimisega"
+      ]
+    },
+    "polish": {
+      "h1": "Kere ja esitulede poleerimine",
+      "tagline": "Eemaldab kergeid kriimustusi ja taastab esitulede selguse.",
+      "bullets": [
+        "Väiksemate kriimustuste eemaldamine",
+        "Esitulede selguse taastamine",
+        "Parem nähtavus ja ohutus pimedas",
+        "Kõik margid ja mudelid"
+      ]
+    },
+    "parts": {
+      "h1": "Osade vahetus",
+      "tagline": "Leiame, hangime ja paigaldame kahjustatud või kulunud osad.",
+      "bullets": [
+        "Täielik hindamine enne töö algust",
+        "Uued või kasutatud osad, sinu valik",
+        "Kasutatud osad raha kokkuhoiuks",
+        "Konkurentsivõimeline hind"
+      ]
+    }
+  },
+  "contact": {
+    "eyebrow": "Leia meid",
+    "h1": "Leia meid Tallinnas",
+    "callUs": "Helista meile",
+    "whatsapp": "WhatsApp",
+    "whatsappValue": "Kirjuta meile",
+    "email": "E-post",
+    "address": "Aadress",
+    "addressValue": "Tallinn, Eesti",
+    "monFri": "E – R",
+    "hours": "9:00 – 19:00",
+    "saturday": "Laupäev",
+    "byAgreement": "Kokkuleppel",
+    "sunday": "Pühapäev",
+    "closed": "Suletud",
+    "mapTitle": "Mpaint töökoja asukoht Google Mapsil",
+    "mapCta": "Vaata täissuurust kaarti",
+    "seoTitle": "Töökotta jõudmine",
+    "seoP1": "Meie töökoda asub Tallinnas ja teenindame juhte kogu Harjumaalt. Oled oodatud lahtiolekuaegadel läbi astuma, et kahjustust kohapeal näidata, kuigi foto saatmine ette hoiab tavaliselt sõidu ära.",
+    "seoP2": "Räägime eesti, vene ja inglise keelt. Telefon ja WhatsApp on kiireim viis meiega tööpäeva jooksul ühendust saada, e-post sobib kõige paremini, kui soovid lisada mitu fotot või kindlustusjuhtumi numbri.",
+    "hoursTitle": "Lahtiolekuajad",
+    "hoursP": "Esmaspäevast reedeni kell 9:00–19:00. Laupäeviti kokkuleppel, helista ette. Pühapäeviti suletud.",
+    "meta": {
+      "title": "Leia meid Tallinnas",
+      "description": "Mpainti autovärvimise ja keretööde töökoda Tallinnas: telefon, WhatsApp, e-post, aadress ja lahtiolekuajad."
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 MPAINT OÜ",
+    "address": "Magasini tn 31, 10138 Tallinn",
+    "regCode": "Registrikood 14939293"
+  },
+  "fab": {
+    "call": "Helista meile",
+    "whatsapp": "WhatsApp",
+    "email": "Kirjuta meile",
+    "estimate": "Küsi hinnapakkumist",
+    "ariaContact": "Kontakt"
+  },
+  "emailModal": {
+    "eyebrow": "Võta ühendust",
+    "title": "Saada meile sõnum",
+    "desc": "Vastame niipea kui saame, tööpäevadel.",
+    "placeholderName": "Sinu nimi",
+    "placeholderEmail": "E-posti aadress",
+    "placeholderPhone": "Telefon (valikuline)",
+    "placeholderMessage": "Kirjelda kahjustust või mida vajad — foto aitab samuti.",
+    "uploadLabel": "Lisa fotod (valikuline)",
+    "uploadHint": "PNG või JPG, kuni 5 fotot",
+    "removePhoto": "Eemalda foto",
+    "submit": "Saada sõnum",
+    "fnote": "Käsitleme sinu andmeid hoolikalt ega jaga neid kolmandate osapooltega.",
+    "thankYou": "Aitäh",
+    "successDescPre": "Sinu sõnum jõudis meieni. Vaatame selle üle ja vastame aadressile",
+    "successDescPost": "niipea kui saame, tööpäevadel.",
+    "hurryPre": "Kiire? Helista või kirjuta meile otse WhatsAppis:",
+    "backToSite": "Tagasi lehele",
+    "ariaClose": "Sulge"
+  },
+  "quoteFunnel": {
+    "step": "SAMM",
+    "step1Title": "1 · Sõiduk ja teenus",
+    "step2Title": "2 · Kontakt, fotod ja märkused",
+    "notSure": "Pole kindel?",
+    "carPlaceholder": "Auto mark, mudel, aasta",
+    "continueLabel": "Jätka",
+    "back": "Tagasi",
+    "submit": "Saada päring",
+    "dropText": "Lisa foto kahjustusest",
+    "removePhoto": "Eemalda foto",
+    "namePh": "Nimi",
+    "phonePh": "Telefon",
+    "notesLabel": "Valikuline: räägi lähemalt vajaminevast tööst…",
+    "notesPh": "nt värvi koodid, konkreetsed restaureerimissoovid, kindlustusseltsi info jne.",
+    "disclaimer": "Vastame niipea kui saame, tööpäevadel.",
+    "close": "Sulge",
+    "successTitle": "Aitäh!",
+    "successDesc": "Sinu päring on vastu võetud. Võtame sinuga ühendust niipea kui saame, tööpäevadel.",
+    "done": "Valmis"
+  },
+  "aria": {
+    "openMenu": "Ava menüü"
+  }
+}

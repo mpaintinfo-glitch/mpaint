@@ -1,11 +1,29 @@
+# Mpaint
 
-  # Fixing the issue
+Car painting and bodywork workshop site for Mpaint, Tallinn. Next.js (App Router) with `next-intl` for Estonian (default) / Russian / English.
 
-  This is a code bundle for Fixing the issue. The original project is available at https://www.figma.com/design/b5EU8v354K8v2RY6HMfw7y/Fixing-the-issue.
+## Running locally
 
-  ## Running the code
+```
+npm install
+npm run dev
+```
 
-  Run `npm i` to install the dependencies.
+Opens at `http://localhost:3000`. Estonian serves at `/`, Russian at `/ru`, English at `/en`.
 
-  Run `npm run dev` to start the development server.
-  
+## Building
+
+```
+npm run build
+```
+
+Statically generates every route for all three locales (see `next.config.ts`, `src/i18n/`, `messages/*.json`).
+
+## Structure
+
+- `app/[locale]/` — routes (home, services, services/[slug], contact)
+- `messages/{et,ru,en}.json` — all translated copy
+- `src/components/` — shared UI (header, footer, quote funnel, email modal)
+- `src/data/services.ts` — service slugs/ids shared across routes
+- `src/assets/` — real images, imported as ES modules
+- `src/styles/` — hand-written CSS (Tailwind v4 + `site.css`)
