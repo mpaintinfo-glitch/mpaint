@@ -18,7 +18,9 @@ export const BUSINESS = {
 } as const;
 
 // Where lead notifications (quote requests, contact form) get sent.
-export const NOTIFY_EMAILS = ["info.mpaint@gmail.com", "info@mpaint.ee"];
+// info@mpaint.ee needs the mpaint.ee domain verified in Resend to receive
+// reliably - add it back to this array once that's done.
+export const NOTIFY_EMAILS = ["info.mpaint@gmail.com"];
 
 // Resend sandbox sender until the mpaint.ee domain is verified in Resend.
 // Swap to e.g. "Mpaint <noreply@mpaint.ee>" once verified.
