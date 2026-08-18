@@ -222,5 +222,10 @@
   },
   "aria": {
     "openMenu": "Ava menüü"
+  },
+  "notFound": {
+    "title": "Lehte ei leitud",
+    "desc": "Otsitud lehte ei ole olemas või see on liikunud.",
+    "backHome": "Tagasi avalehele"
   }
 }
