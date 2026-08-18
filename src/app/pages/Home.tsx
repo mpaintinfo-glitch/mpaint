@@ -37,8 +37,8 @@ export default function Home({
 
         <div className="container hero-inner text-center" style={{ zIndex: 10 }}>
           <h1>
-            {t.hero.titleLead}{" "}
-            <span className="grad">{t.hero.titleGrad}</span>
+            {t.hero.leadPre}{" "}
+            <span className="grad">{t.hero.leadCity}</span>
           </h1>
         </div>
 
@@ -69,15 +69,9 @@ export default function Home({
             zIndex: 10,
           }}
         >
-          <p className="lead" style={{ textAlign: "center", margin: 0 }}>
-            {t.hero.leadPre} <strong style={{ color: "var(--white)", fontWeight: 700 }}>{t.hero.leadCity}</strong>.
-          </p>
           <div className="hero-btns flex gap-4" style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
             <a className="btn btn-fill btn-lg text-[#944ba2]" onClick={() => openQuote()} style={{ cursor: "pointer" }}>
               {t.hero.ctaEstimate}
-            </a>
-            <a className="btn btn-call btn-lg" onClick={() => navigate("/services")} style={{ cursor: "pointer" }}>
-              {t.hero.ctaWork}
             </a>
           </div>
         </div>
@@ -168,12 +162,14 @@ export default function Home({
           <p>{t.home.seoP1}</p>
           <p>{t.home.seoP2}</p>
           <p>{t.home.seoP3}</p>
+          <p>{t.home.seoP4}</p>
         </div>
         <div className="container seo-block">
           <h3>{t.home.whyTitle}</h3>
           <ul>
             {t.home.why.map((item: string, i: number) => <li key={i}>{item}</li>)}
           </ul>
+          <p>{t.home.seoClosing}</p>
         </div>
       </section>
     </div>
