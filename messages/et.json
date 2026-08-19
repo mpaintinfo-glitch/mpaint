@@ -73,11 +73,16 @@
     "seoP3": "Lisaks värvimisele teeme keevitust ja plekitöid, roostetõrjet ja korrosioonikaitset, mõlkide väljatõmbamist spotteriga, kere ja esitulede poleerimist ning kereosade vahetust. Kui remont käib kindlustuse kaudu, aitame paberimajandusega.",
     "faqTitle": "Korduma kippuvad küsimused",
     "faq": [
-      { "q": "Kui palju maksab auto värvimine?", "a": "Hind sõltub sellest, mitu paneeli on kaasatud, aluspinna seisukorrast ja värvi tüübist. Saada foto kahjustusest ja pakume tegeliku hinna, mitte oletuse." },
-      { "q": "Kui kaua auto töökojas seisab?", "a": "Üks paneel võtab tavaliselt paar päeva, sealhulgas ettevalmistus, värvimine ja kuivamine. Suuremad tööd kerekoja remondi või mitme paneeliga võtavad kauem aega." },
-      { "q": "Kas uus värv sobib ülejäänud autoga kokku?", "a": "Lähtume sinu auto tehase värvikoodist ja sobitame vajadusel naaberpaneelidega. Vanematel autodel on originaalvärv tavaliselt pleekinud, seega sobitamine ongi see, mis teeb remondi märkamatuks." },
-      { "q": "Kas teete koostööd kindlustusfirmadega?", "a": "Jah, aitame kahjunõude paberimajandusega, kui remont käib kindlustuse kaudu." },
-      { "q": "Kas mõlgi saab eemaldada ilma värvimata?", "a": "Tihtipeale jah. Kui värvipind pole katki, saame mõlgi spotteriga välja tõmmata ja originaalvärvi puutumata jätta, mis on kiirem ja odavam kui paneeli ülevärvimine." }
+      { "q": "Kas kriimustust saab parandada ilma detaili üle värvimata?", "a": "Mõnikord küll. See sõltub kriimustuse sügavusest ja värvikihi seisukorrast." },
+      { "q": "Kas mõlki saab eemaldada ilma värvimiseta?", "a": "Jah, kui värvikiht on terve ja kahjustus võimaldab värvivaba mõlgieemaldust." },
+      { "q": "Kuidas toimub roostekahjustuse remont?", "a": "Eemaldame kahjustatud ala, parandame vajadusel metalli ning valmistame pinna uuesti värvimiseks ette." },
+      { "q": "Kas roostes detaili saab alati parandada?", "a": "Mitte alati. Tugevalt kahjustatud või läbiroostetanud detail võib vajada osalist või täielikku vahetust." },
+      { "q": "Kuidas sobitatakse uus värv olemasolevaga?", "a": "Lähtume auto värvikoodist ja kontrollime tooni vastavalt olemasolevale värvkattele." },
+      { "q": "Kas plaststangesid saab parandada ja värvida?", "a": "Jah. Võimalus sõltub prao, deformatsiooni ja muu kahjustuse ulatusest." },
+      { "q": "Kas värvite ka terveid autosid?", "a": "Jah, teostame nii üksikute detailide kui ka suuremate pindade ja kogu auto värvimist." },
+      { "q": "Mida tehakse enne värvimist?", "a": "Pind puhastatakse, lihvitakse, parandatakse ja krunditakse vastavalt selle seisukorrale." },
+      { "q": "Milliseid keretöid teete?", "a": "Teostame mõlkide, rooste- ja kerakahjustuste remonti, keevitustöid ning värvimiseks ettevalmistust." },
+      { "q": "Kui kaua töö aega võtab?", "a": "See sõltub kahjustuse ulatusest, ettevalmistustöödest ja remondi mahust." }
     ],
     "meta": {
       "title": "Autovärvimise ja kerekoja teenused Tallinnas",

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Fragment } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "../../../src/i18n/navigation";
 import { RIBBON_IDS, SERVICE_SLUGS } from "../../../src/data/services";
@@ -99,14 +98,18 @@ export default async function ServicesPage({
       </section>
 
       <section className="sec">
-        <div className="container seo-block seo-block--first">
-          <h2>{t("services.faqTitle")}</h2>
-          {faq.map((item, i) => (
-            <Fragment key={i}>
-              <h3>{item.q}</h3>
-              <p>{item.a}</p>
-            </Fragment>
-          ))}
+        <div className="container seo-surface">
+          <div className="seo-block seo-block--first">
+            <h2>{t("services.faqTitle")}</h2>
+            <div className="faq-list">
+              {faq.map((item, i) => (
+                <div className="faq-item" key={i}>
+                  <h3>{item.q}</h3>
+                  <p>{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

@@ -73,11 +73,16 @@
     "seoP3": "Alongside painting we handle welding and sheet metal repair, rust removal and anti-corrosion treatment, spotter dent pulling, body and headlight polishing, and replacement of body parts. If your repair goes through insurance, we can help with the paperwork.",
     "faqTitle": "Common questions",
     "faq": [
-      { "q": "How much does it cost to paint a car?", "a": "The price depends on how many panels are involved, the condition of the surface underneath and the type of paint. Send a photo of the damage and we will quote the actual job rather than a guess." },
-      { "q": "How long does the car stay at the workshop?", "a": "A single panel is usually a couple of days including preparation, painting and curing. Larger jobs involving bodywork or several panels take longer." },
-      { "q": "Will the new paint match the rest of the car?", "a": "We work from your factory colour code and blend into the surrounding panels where needed. On older cars the original paint has usually faded, so blending is what makes the repair invisible." },
-      { "q": "Do you work with insurance companies?", "a": "Yes. If your repair goes through insurance, we can help you prepare the paperwork for the claim." },
-      { "q": "Can you remove a dent without repainting?", "a": "Often yes. If the paint surface is not broken we can pull the dent with a spotter and leave the original paint intact, which is faster and cheaper than refinishing the panel." }
+      { "q": "Can a scratch be repaired without repainting the whole panel?", "a": "Sometimes, yes. It depends on how deep the scratch is and the condition of the paint layer." },
+      { "q": "Can a dent be removed without repainting?", "a": "Yes, if the paint layer is intact and the damage allows for paintless dent removal." },
+      { "q": "How is rust damage repaired?", "a": "We remove the affected area, repair the metal if needed, and prepare the surface for repainting." },
+      { "q": "Can a rusted part always be repaired?", "a": "Not always. A severely damaged or fully rusted-through part may need partial or full replacement." },
+      { "q": "How is the new paint matched to the existing colour?", "a": "We start from your car's factory colour code and check the tone against the existing paintwork." },
+      { "q": "Can plastic bumpers be repaired and painted?", "a": "Yes. Whether it's possible depends on the extent of any cracks, deformation, or other damage." },
+      { "q": "Do you also paint whole cars?", "a": "Yes, we paint individual parts as well as larger areas and full cars." },
+      { "q": "What's done before painting?", "a": "The surface is cleaned, sanded, repaired and primed according to its condition." },
+      { "q": "What bodywork services do you offer?", "a": "We repair dents, rust and body damage, carry out welding, and prepare surfaces for painting." },
+      { "q": "How long does the work take?", "a": "It depends on the extent of the damage, the preparation needed, and the scope of the repair." }
     ],
     "meta": {
       "title": "Car painting and bodywork services in Tallinn",

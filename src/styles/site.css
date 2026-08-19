@@ -304,14 +304,14 @@ footer>.f-in{position:relative;z-index:1}
 .seo-block--first{margin-top:0;padding-top:0;border-top:none}
 @media(max-width:760px){.seo-block{margin-top:var(--sp-48);padding-top:var(--sp-32)}.seo-block p,.seo-block ul{font-size:15px}}
 
-/* ---------------- HOME: INTRO / SERVICES / WHY ----------------
-   Home's version of the SEO copy block only (scoped to .seo-surface,
-   which nothing else on the site uses) -- Services' and Contact's
-   plain centered .seo-block sections are untouched. One continuous
-   backdrop panel instead of per-item glass cards, so contrast holds
-   regardless of where the ambient background gradient/particles land,
-   and so headings can stay centered while body copy reads left-aligned
-   instead of as a centered wall of text. */
+/* ---------------- READABLE SEO CONTENT SURFACE ----------------
+   Opt-in via .seo-surface (Home's intro/services/why, Services' FAQ) --
+   plain .seo-block sections elsewhere (Services'/Contact's intro
+   paragraphs) are untouched. One continuous backdrop panel instead of
+   per-item glass cards, so contrast holds regardless of where the
+   ambient background gradient/particles land, and so headings can stay
+   centered while body copy reads left-aligned instead of as a centered
+   wall of text. */
 .seo-content-section--home::before{opacity:.4}
 .seo-surface{
   background:rgba(8,6,12,.42);
@@ -354,6 +354,17 @@ footer>.f-in{position:relative;z-index:1}
 .why-card p{color:var(--med);font-weight:300;font-size:13.5px;line-height:1.5;max-width:none;margin:0;text-align:left}
 
 .seo-closing{color:rgba(var(--overlay-rgb),.94);text-align:left;max-width:76ch;margin:var(--sp-24) auto 0}
+
+.seo-surface .seo-block .faq-list{max-width:760px;margin:var(--sp-8) auto 0;display:flex;flex-direction:column}
+.seo-surface .seo-block .faq-item{padding:var(--sp-16) 0;border-bottom:1px solid var(--line)}
+.seo-surface .seo-block .faq-item:first-child{padding-top:0}
+.seo-surface .seo-block .faq-item:last-child{border-bottom:none;padding-bottom:0}
+.seo-surface .seo-block .faq-item h3{
+  text-align:left;font-size:16px;font-weight:600;margin:0 0 var(--sp-8);color:var(--white);
+}
+.seo-surface .seo-block .faq-item p{
+  text-align:left;color:var(--med);font-weight:300;font-size:var(--fs-md);line-height:1.6;margin:0;max-width:none;
+}
 
 @media(max-width:760px){
   .seo-surface{padding:24px 20px}
