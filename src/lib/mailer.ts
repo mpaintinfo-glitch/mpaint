@@ -1,5 +1,5 @@
 import sharp from "sharp";
-import { Resend } from "resend";
+import nodemailer, { type Transporter } from "nodemailer";
 
 // Resize/compress so 5 full-resolution phone photos (often 8-12MB each)
 // reliably fit in one email instead of occasionally blowing the size limit
@@ -8,12 +8,17 @@ import { Resend } from "resend";
 const MAX_DIMENSION = 1600;
 const JPEG_QUALITY = 78;
 
-export function getResend() {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    throw new Error("RESEND_API_KEY is not set");
+export function getMailer() {
+  const user = process.env.GMAIL_USER;
+  const pass = process.env.GMAIL_APP_PASSWORD;
+  if (!user || !pass) {
+    throw new Error("GMAIL_USER / GMAIL_APP_PASSWORD is not set");
   }
-  return new Resend(apiKey);
+  // Gmail requires the From address to match the authenticated account
+  // (it silently rewrites/rejects a mismatched From), so the sender
+  // identity is derived here rather than passed in per call site.
+  const from = `"Mpaint website" <${user}>`;
+  return { transport: nodemailer.createTransport({ service: "gmail", auth: { user, pass } }), from };
 }
 
 export async function filesToAttachments(files: File[]) {
@@ -51,32 +56,27 @@ export function escapeHtml(value: string): string {
 }
 
 /**
- * Sends the same email to each recipient as an independent Resend call.
- * A failure for one address (e.g. Resend's sandbox-mode restriction on
- * unverified domains rejecting a non-account recipient) never blocks
- * delivery to the others. Returns ok:true if at least one send succeeded.
+ * Sends the same email to each recipient as an independent SMTP call, so a
+ * failure for one address never blocks delivery to the others. Returns
+ * ok:true if at least one send succeeded.
  */
 export async function sendToEach(
-  resend: Resend,
+  mailer: { transport: Transporter; from: string },
   recipients: string[],
-  message: { from: string; subject: string; html: string; replyTo?: string; attachments?: { filename: string; content: Buffer }[] }
+  message: { subject: string; html: string; replyTo?: string; attachments?: { filename: string; content: Buffer }[] }
 ) {
   const results = await Promise.allSettled(
-    recipients.map((to) => resend.emails.send({ ...message, to }))
+    recipients.map((to) => mailer.transport.sendMail({ ...message, from: mailer.from, to }))
   );
 
   const failures: string[] = [];
   let anySucceeded = false;
 
   results.forEach((result, i) => {
-    if (result.status === "fulfilled" && !result.value.error) {
+    if (result.status === "fulfilled") {
       anySucceeded = true;
     } else {
-      const reason =
-        result.status === "rejected"
-          ? String(result.reason)
-          : (result.value.error?.message ?? "unknown error");
-      failures.push(`${recipients[i]}: ${reason}`);
+      failures.push(`${recipients[i]}: ${String(result.reason)}`);
     }
   });
 

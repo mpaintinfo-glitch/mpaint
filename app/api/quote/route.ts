@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { getResend, filesToAttachments, escapeHtml, sendToEach } from "../../../src/lib/mailer";
-import { NOTIFY_EMAILS, FROM_EMAIL } from "../../../src/lib/site";
+import { getMailer, filesToAttachments, escapeHtml, sendToEach } from "../../../src/lib/mailer";
+import { NOTIFY_EMAILS } from "../../../src/lib/site";
 
 export const runtime = "nodejs";
 
@@ -15,9 +15,9 @@ const SERVICE_LABEL: Record<string, string> = {
 };
 
 export async function POST(req: Request) {
-  let resend: ReturnType<typeof getResend>;
+  let mailer: ReturnType<typeof getMailer>;
   try {
-    resend = getResend();
+    mailer = getMailer();
   } catch {
     return NextResponse.json({ error: "Email service is not configured" }, { status: 503 });
   }
@@ -51,8 +51,7 @@ export async function POST(req: Request) {
     <p><strong>Photos attached:</strong> ${attachments.length}</p>
   `;
 
-  const { ok, failures } = await sendToEach(resend, NOTIFY_EMAILS, {
-    from: FROM_EMAIL,
+  const { ok, failures } = await sendToEach(mailer, NOTIFY_EMAILS, {
     subject: `Quote request from ${name}`,
     html,
     attachments: attachments.length ? attachments : undefined,
