@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useLocale, useTranslations } from "next-intl";
 import { BUSINESS } from "../lib/site";
@@ -21,6 +21,18 @@ export default function EmailModal({
   const [photos, setPhotos] = useState<{ file: File; url: string }[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const MAX_PHOTOS = 5;
+
+  // Safety net: Radix's exit-animation-driven unmount occasionally fails to
+  // release its scroll lock (body stuck at pointer-events:none, freezing the
+  // whole page), so force-clear it shortly after every close regardless of
+  // whether Radix's own cleanup ran.
+  useEffect(() => {
+    if (open) return;
+    const timer = setTimeout(() => {
+      document.body.style.removeProperty("pointer-events");
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [open]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

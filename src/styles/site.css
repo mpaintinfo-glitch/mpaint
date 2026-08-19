@@ -83,12 +83,12 @@
   --drawer-bg:rgba(255,255,255,.98);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;overflow-x:hidden;overscroll-behavior:none}
+html{scroll-behavior:smooth;overflow-x:hidden;overscroll-behavior-x:none}
 /* solid fallback matching the vignette's edge tone, in case ::before is slow
    to paint -- avoids a flash of the wrong colour before it loads */
 body{background:var(--bg-edge);
   color:var(--white);font-family:var(--font-sans);
-  font-size:var(--fs-md);font-weight:400;line-height:var(--lh-base);-webkit-font-smoothing:antialiased;overflow-x:hidden;overscroll-behavior:none}
+  font-size:var(--fs-md);font-weight:400;line-height:var(--lh-base);-webkit-font-smoothing:antialiased;overflow-x:hidden;overscroll-behavior-x:none}
 /* one continuous ambient vignette for the whole page, fixed to the viewport
    so it never repeats/bands on tall scrollable pages -- a real fixed-position
    layer rather than background-attachment:fixed, which mobile Safari handles

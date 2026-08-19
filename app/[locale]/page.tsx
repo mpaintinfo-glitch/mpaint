@@ -83,25 +83,6 @@ export default async function HomePage({
             </OpenQuoteButton>
           </div>
         </div>
-
-        <div
-          className="hero-scroll-indicator"
-          style={{ opacity: 0.6, pointerEvents: "none", zIndex: 10, display: "flex", justifyContent: "center" }}
-        >
-          <style>{`
-            @keyframes subtle-bounce {
-              0%, 100% { transform: translateY(0); }
-              50% { transform: translateY(8px); }
-            }
-          `}</style>
-          <svg
-            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-            strokeLinecap="round" strokeLinejoin="round"
-            style={{ animation: "subtle-bounce 2s infinite ease-in-out" }}
-          >
-            <path d="M12 5v14M19 12l-7 7-7-7" />
-          </svg>
-        </div>
       </section>
 
       <section className="sec">

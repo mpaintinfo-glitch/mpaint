@@ -177,7 +177,7 @@
   padding: .55rem .25rem; color: var(--qf-text); font-family: inherit; font-size: 14px; font-weight: 600;
   transition: border-color .18s;
 }
-.qf-input::placeholder { color: #9CA3AF; font-weight: 500; }
+.qf-input::placeholder { color: #000000; font-weight: 500; }
 .qf-input:focus { outline: none; border-color: var(--qf-accent); }
 .qf-textarea {
   width: 100%; resize: vertical; min-height: 64px;
@@ -185,7 +185,7 @@
   padding: .6rem .75rem; color: var(--qf-text); font-family: inherit; font-size: 13.5px; font-weight: 500;
   line-height: 1.5; transition: border-color .18s;
 }
-.qf-textarea::placeholder { color: #9CA3AF; font-weight: 500; }
+.qf-textarea::placeholder { color: #000000; font-weight: 500; }
 .qf-textarea:focus { outline: none; border-color: var(--qf-accent); }
 
 .qf-drop {
