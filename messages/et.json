@@ -67,10 +67,12 @@
     "cta": "Küsi hinnapakkumist",
     "callUs": "Või helista meile: +372 58-100-810",
     "backToServices": "← Kõik teenused",
-    "seoTitle": "Kuidas autovärvimine Mpaintis käib",
-    "seoP1": "Iga värvimistöö algab kahjustuse hindamisest ja auto tehase värvikoodi lugemisest. Valmistame paneeli ette ja lihvime selle, kanname peale grundi ning seejärel pihustame põhi- ja lakikihi spetsiaalses värvikambris, kus filtreeritud õhk ja kontrollitud temperatuur hoiavad tolmu pinnast eemal.",
-    "seoP2": "Värvime nii üksikuid paneele kui ka terveid autosid. Ühe ukse, pumperi või tiiva värvimisest piisab tavaliselt pärast parklakriimu, samas kui korrosioon või avariikahjustus mitmel paneelil sobib paremini suurema tööna teostada. Kui auto värv on ebaühtlaselt pleekinud, sobitame selle naaberpaneelidega, et remont ei paistaks silma.",
-    "seoP3": "Lisaks värvimisele teeme keevitust ja plekitöid, roostetõrjet ja korrosioonikaitset, mõlkide väljatõmbamist spotteriga, kere ja tulede poleerimist ning kereosade vahetust. Kui remont käib kindlustuse kaudu, aitame paberimajandusega.",
+    "seoTitle": "Kuidas toimub autovärvimine ja keretöö Mpaintis",
+    "seoSteps": [
+      { "h3": "Kahjustuse hindamine ja ettevalmistus", "p": "Enne värvimist hindame kahjustuse ulatust, keredetaili seisukorda ja olemasolevat värvkatet. Vajadusel eemaldame rooste, parandame mõlgid ja valmistame pinna ette lihvimise, kruntimise ja muude eeltöödega." },
+      { "h3": "Värvitooni sobitamine ja värvimine", "p": "Värv valitakse auto tehase värvikoodi ja olemasoleva värvitooni järgi. Värvime nii üksikuid keredetaile, näiteks stangesid, uksi, tiibu ja kapotte, kui ka suuremaid kerepindu ja terveid autosid." },
+      { "h3": "Keretööd ja taastamine", "p": "Lisaks autovärvimisele teostame kereparandust, keevitustöid, roostekahjustuste remonti, mõlkide eemaldamist, detailide vahetust ja poleerimist. Töö ulatus sõltub auto seisukorrast ja kahjustuse tüübist." }
+    ],
     "faqTitle": "Korduma kippuvad küsimused",
     "faq": [
       { "q": "Kas kriimustust saab parandada ilma detaili üle värvimata?", "a": "Mõnikord küll. See sõltub kriimustuse sügavusest ja värvikihi seisukorrast." },

@@ -22,6 +22,7 @@ export async function generateMetadata({
 }
 
 type FaqItem = { q: string; a: string };
+type SeoStep = { h3: string; p: string };
 
 export default async function ServicesPage({
   params,
@@ -32,6 +33,7 @@ export default async function ServicesPage({
   setRequestLocale(locale);
   const t = await getTranslations();
   const faq = t.raw("services.faq") as FaqItem[];
+  const seoSteps = t.raw("services.seoSteps") as SeoStep[];
   const slugs = slugsForLocale(locale);
   const serviceHref = (id: keyof typeof slugs) =>
     ({ pathname: "/services/[slug]" as const, params: { slug: slugs[id] } });
@@ -91,13 +93,16 @@ export default async function ServicesPage({
         </div>
       </section>
 
-      <section className="sec seo-content-section">
-        <div className="container seo-surface">
+      <section className="sec seo-content-section seo-content-section--quiet">
+        <div className="container seo-surface seo-surface--steps">
           <div className="seo-block seo-block--first">
             <h2>{t("services.seoTitle")}</h2>
-            <p>{t("services.seoP1")}</p>
-            <p>{t("services.seoP2")}</p>
-            <p>{t("services.seoP3")}</p>
+            {seoSteps.map((step, i) => (
+              <div className="seo-step" key={i}>
+                <h3>{step.h3}</h3>
+                <p>{step.p}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

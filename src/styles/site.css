@@ -328,6 +328,28 @@ footer>.f-in{position:relative;z-index:1}
 }
 .seo-surface .seo-block h3{margin-top:var(--sp-48)}
 
+/* Services "how it works" steps: reads as a short process list rather
+   than one continuous block, so it gets a lighter backdrop than the
+   FAQ's opaque card (no border, low-alpha fill only) plus a narrower
+   reading column, left-aligned subheadings next to their paragraph,
+   and more breathing room between steps. H2 stays centered like every
+   other section title on the site. */
+.seo-surface--steps{background:rgba(8,6,12,.22);border-color:transparent}
+.seo-surface--steps .seo-block{max-width:760px;margin-left:auto;margin-right:auto}
+.seo-surface--steps .seo-block h3{text-align:left;margin:0 0 var(--sp-8)}
+.seo-step{margin-top:var(--sp-64)}
+.seo-step:first-of-type{margin-top:var(--sp-32)}
+.seo-step p{margin-bottom:0}
+
+/* Fades the ambient particle texture behind the reading column so body
+   copy stays legible without a solid card, while keeping particles
+   visible toward the section's edges rather than removing the effect
+   outright. */
+.seo-content-section--quiet::before{
+  -webkit-mask-image:linear-gradient(to right,#fff 0%,#fff 8%,rgba(255,255,255,.18) 22%,rgba(255,255,255,.18) 78%,#fff 92%,#fff 100%);
+  mask-image:linear-gradient(to right,#fff 0%,#fff 8%,rgba(255,255,255,.18) 22%,rgba(255,255,255,.18) 78%,#fff 92%,#fff 100%);
+}
+
 .seo-surface .services-grid{
   list-style:none;margin:var(--sp-8) auto 0;padding:0;max-width:760px;
   display:grid;grid-template-columns:1fr;gap:var(--sp-12) var(--sp-24);

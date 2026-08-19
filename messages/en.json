@@ -67,10 +67,12 @@
     "cta": "Get an estimate",
     "callUs": "Or call us: +372 58-100-810",
     "backToServices": "← All services",
-    "seoTitle": "How car painting works at Mpaint",
-    "seoP1": "Every repaint starts with an assessment of the damage and a read of your car's factory colour code. We prepare and sand the panel, apply primer, then spray base coat and lacquer inside a dedicated paint booth where filtered air and controlled temperature keep dust out of the finish.",
-    "seoP2": "We paint single panels as well as full cars. Painting one door, bumper or wing is usually enough after a parking scrape, while corrosion or accident damage across several panels is better handled as a larger job. If the paint on your car has faded unevenly, we blend into the neighbouring panels so the repair does not stand out.",
-    "seoP3": "Alongside painting we handle welding and sheet metal repair, rust removal and anti-corrosion treatment, spotter dent pulling, body and headlight polishing, and replacement of body parts. If your repair goes through insurance, we can help with the paperwork.",
+    "seoTitle": "How car painting and bodywork work at Mpaint",
+    "seoSteps": [
+      { "h3": "Damage assessment and preparation", "p": "Before painting, we assess the extent of the damage, the condition of the body panel and the existing paint. If needed, we remove rust, repair dents, and prepare the surface with sanding, priming and other preparatory work." },
+      { "h3": "Colour matching and painting", "p": "The paint is chosen to match the car's factory colour code and existing shade. We paint individual body parts such as bumpers, doors, wings and bonnets, as well as larger body surfaces and full cars." },
+      { "h3": "Bodywork and restoration", "p": "Alongside car painting, we carry out body repair, welding, rust damage repair, dent removal, part replacement and polishing. The scope of work depends on the car's condition and the type of damage." }
+    ],
     "faqTitle": "Common questions",
     "faq": [
       { "q": "Can a scratch be repaired without repainting the whole panel?", "a": "Sometimes, yes. It depends on how deep the scratch is and the condition of the paint layer." },
