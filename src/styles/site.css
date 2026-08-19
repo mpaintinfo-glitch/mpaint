@@ -202,7 +202,7 @@ h3{font-size:clamp(1rem,2vw,1.5rem);font-weight:600;line-height:1.2;letter-spaci
 /* Ambient particle texture behind the SEO copy blocks only -- one section
    per page (Home's "why Mpaint", Services' intro, Contact's intro), never
    the hero/card sections. background-size is capped at the source asset's
-   own resolution (drops-seo.png is 2200px wide) via min(...,100%) so a tall
+   own resolution (drops-seo.webp is 2200px wide) via min(...,100%) so a tall
    narrow section can never force an upscale past native size -- that
    upscaling was the "zoomed/blurry" bug. It still shrinks gracefully on
    narrow viewports, just never grows beyond 1:1. No background-color here --
@@ -214,7 +214,7 @@ h3{font-size:clamp(1rem,2vw,1.5rem);font-weight:600;line-height:1.2;letter-spaci
   content:'';
   position:absolute;
   inset:0;
-  background-image:url('./drops-seo.png');
+  background-image:url('./drops-seo.webp');
   background-repeat:no-repeat;
   background-position:center;
   background-size:min(2200px,100%) auto;
