@@ -80,12 +80,14 @@ export default async function ContactPage({
         </div>
       </section>
       <section className="sec seo-content-section">
-        <div className="container seo-block seo-block--first">
-          <h2>{t("contact.seoTitle")}</h2>
-          <p>{t("contact.seoP1")}</p>
-          <p>{t("contact.seoP2")}</p>
-          <h3>{t("contact.hoursTitle")}</h3>
-          <p>{t("contact.hoursP")}</p>
+        <div className="container seo-surface">
+          <div className="seo-block seo-block--first">
+            <h2>{t("contact.seoTitle")}</h2>
+            <p>{t("contact.seoP1")}</p>
+            <p>{t("contact.seoP2")}</p>
+            <h3>{t("contact.hoursTitle")}</h3>
+            <p>{t("contact.hoursP")}</p>
+          </div>
         </div>
       </section>
 

@@ -92,11 +92,13 @@ export default async function ServicesPage({
       </section>
 
       <section className="sec seo-content-section">
-        <div className="container seo-block seo-block--first">
-          <h2>{t("services.seoTitle")}</h2>
-          <p>{t("services.seoP1")}</p>
-          <p>{t("services.seoP2")}</p>
-          <p>{t("services.seoP3")}</p>
+        <div className="container seo-surface">
+          <div className="seo-block seo-block--first">
+            <h2>{t("services.seoTitle")}</h2>
+            <p>{t("services.seoP1")}</p>
+            <p>{t("services.seoP2")}</p>
+            <p>{t("services.seoP3")}</p>
+          </div>
         </div>
       </section>
 
