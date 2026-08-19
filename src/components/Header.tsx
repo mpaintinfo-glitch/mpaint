@@ -62,11 +62,8 @@ export default function Header() {
               </Link>
             </li>
           ))}
-          <li>
-            <a onClick={() => { openQuote(); setNavOpen(false); }} style={{ cursor: "pointer" }}>
-              {t("nav.booking")}
-            </a>
-          </li>
+          {/* "Tehtud tööd" hidden for now - no portfolio content yet, re-add
+              once real before/after project photos exist. See Footer.tsx too. */}
         </ul>
 
         <div className="nav-right">
