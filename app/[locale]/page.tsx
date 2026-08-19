@@ -6,8 +6,12 @@ import { RIBBON_IDS, SERVICE_SLUGS } from "../../src/data/services";
 import { localeAlternates } from "../../src/lib/alternates";
 import { sfondo, imgPaintBooth, imgBodywork } from "../../src/assets";
 import Arrow from "../../src/components/Arrow";
+import Icon from "../../src/components/Icon";
 import Footer from "../../src/components/Footer";
 import OpenQuoteButton from "../../src/components/OpenQuoteButton";
+
+type WhyCard = { title: string; desc: string };
+const WHY_ICONS = ["i-spray", "i-star", "i-weld", "i-shield"] as const;
 
 export async function generateMetadata({
   params,
@@ -144,20 +148,40 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="sec section-compact seo-content-section">
-        <div className="container seo-block seo-block--first">
-          <h2>{t("home.seoTitle")}</h2>
-          <p>{t("home.seoP1")}</p>
-          <p>{t("home.seoP2")}</p>
-          <p>{t("home.seoP3")}</p>
-          <p>{t("home.seoP4")}</p>
-        </div>
-        <div className="container seo-block">
-          <h3>{t("home.whyTitle")}</h3>
-          <ul>
-            {t.raw("home.why").map((item: string, i: number) => <li key={i}>{item}</li>)}
-          </ul>
-          <p>{t("home.seoClosing")}</p>
+      <section className="sec section-compact seo-content-section seo-content-section--home">
+        <div className="container seo-surface">
+          <div className="seo-block seo-block--first">
+            <h2>{t("home.seoTitle")}</h2>
+            <p>{t("home.seoP1")}</p>
+            <p>{t("home.seoP3")}</p>
+            <p>{t("home.seoP4")}</p>
+          </div>
+
+          <div className="seo-block">
+            <h3>{t("home.servicesTitle")}</h3>
+            <ul className="services-grid">
+              {t.raw("home.why").map((item: string, i: number) => (
+                <li key={i}>
+                  <Icon id="i-check" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="seo-block">
+            <h3>{t("home.whyMpaintTitle")}</h3>
+            <div className="why-cards">
+              {t.raw("home.whyCards").map((card: WhyCard, i: number) => (
+                <div className="why-card" key={i}>
+                  <Icon id={WHY_ICONS[i % WHY_ICONS.length]} />
+                  <h4>{card.title}</h4>
+                  <p>{card.desc}</p>
+                </div>
+              ))}
+            </div>
+            <p className="seo-closing">{t("home.seoClosing")}</p>
+          </div>
         </div>
       </section>
 

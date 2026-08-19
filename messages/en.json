@@ -31,10 +31,9 @@
     "seeAll": "See all services",
     "seoTitle": "Car painting and bodywork in Tallinn",
     "seoP1": "Mpaint carries out car painting and bodywork in Tallinn. We handle both individual body panels and larger painting and restoration jobs.",
-    "seoP2": "Our services include car painting, panel painting, paint damage repair, dent removal, rust damage repair, welding, body repair and polishing.",
     "seoP3": "Surfaces to be painted are prepared beforehand according to their condition. If needed, we remove rust and old damaged paint, repair the body surface, and prepare the panel for priming and painting. The paint is matched to the car's colour code and existing paint tone.",
     "seoP4": "We work on passenger cars and commercial vehicles, taking on both smaller panel repairs and larger bodywork jobs.",
-    "whyTitle": "Mpaint's car painting and bodywork services",
+    "servicesTitle": "Our services",
     "why": [
       "car painting",
       "panel painting",
@@ -46,6 +45,13 @@
       "surface preparation for painting",
       "car polishing",
       "major body restoration work"
+    ],
+    "whyMpaintTitle": "Why choose Mpaint",
+    "whyCards": [
+      { "title": "Our own filtered paint booth", "desc": "Dust-free finish in a booth with controlled temperature." },
+      { "title": "Precise colour-code matching", "desc": "Paint is matched to your car's factory colour code and existing tone, blended smoothly into neighbouring panels." },
+      { "title": "Everything under one roof", "desc": "Painting, welding, rust removal, dent removal and polishing, all in the same workshop." },
+      { "title": "Small and large jobs alike", "desc": "We handle both single-panel repairs and larger restoration work, for passenger cars and commercial vehicles." }
     ],
     "seoClosing": "If your car's body or paintwork needs repair, get in touch and describe the work you need.",
     "meta": {

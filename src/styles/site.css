@@ -304,6 +304,62 @@ footer>.f-in{position:relative;z-index:1}
 .seo-block--first{margin-top:0;padding-top:0;border-top:none}
 @media(max-width:760px){.seo-block{margin-top:var(--sp-48);padding-top:var(--sp-32)}.seo-block p,.seo-block ul{font-size:15px}}
 
+/* ---------------- HOME: INTRO / SERVICES / WHY ----------------
+   Home's version of the SEO copy block only (scoped to .seo-surface,
+   which nothing else on the site uses) -- Services' and Contact's
+   plain centered .seo-block sections are untouched. One continuous
+   backdrop panel instead of per-item glass cards, so contrast holds
+   regardless of where the ambient background gradient/particles land,
+   and so headings can stay centered while body copy reads left-aligned
+   instead of as a centered wall of text. */
+.seo-content-section--home::before{opacity:.4}
+.seo-surface{
+  background:rgba(8,6,12,.42);
+  border:1px solid var(--line);
+  border-radius:var(--r-card);
+  padding:clamp(28px,5vw,56px) clamp(20px,5vw,48px);
+}
+.seo-surface .seo-block{max-width:none;margin-left:0;margin-right:0}
+.seo-surface .seo-block h2,
+.seo-surface .seo-block h3{text-align:center}
+.seo-surface .seo-block p{
+  color:rgba(var(--overlay-rgb),.94);
+  text-align:left;max-width:76ch;margin-left:auto;margin-right:auto;
+}
+.seo-surface .seo-block h3{margin-top:var(--sp-48)}
+
+.seo-surface .services-grid{
+  list-style:none;margin:var(--sp-8) auto 0;padding:0;max-width:760px;
+  display:grid;grid-template-columns:1fr;gap:var(--sp-12) var(--sp-24);
+}
+.seo-surface .services-grid li{
+  display:flex;align-items:flex-start;gap:var(--sp-8);text-align:left;
+  color:rgba(var(--overlay-rgb),.94);font-size:var(--fs-md);font-weight:300;line-height:1.5;margin-bottom:0;
+}
+.seo-surface .services-grid svg{width:15px;height:15px;flex:0 0 auto;color:var(--pink);margin-top:4px}
+@media(min-width:640px){
+  .seo-surface .services-grid{grid-template-columns:1fr 1fr}
+}
+
+.why-cards{
+  display:grid;grid-template-columns:1fr;gap:var(--sp-16);
+  max-width:760px;margin:var(--sp-8) auto 0;
+}
+@media(min-width:640px){
+  .why-cards{grid-template-columns:1fr 1fr}
+}
+.why-card{text-align:left;padding:var(--sp-16);border:1px solid var(--line);border-radius:var(--r-sm)}
+.why-card svg{width:19px;height:19px;color:var(--pink);margin-bottom:var(--sp-8)}
+.why-card h4{font-size:14.5px;font-weight:600;color:var(--white);margin-bottom:4px}
+.why-card p{color:var(--med);font-weight:300;font-size:13.5px;line-height:1.5;max-width:none;margin:0;text-align:left}
+
+.seo-closing{color:rgba(var(--overlay-rgb),.94);text-align:left;max-width:76ch;margin:var(--sp-24) auto 0}
+
+@media(max-width:760px){
+  .seo-surface{padding:24px 20px}
+  .services-grid,.why-cards{grid-template-columns:1fr}
+}
+
 /* ---------------- FLOATING CONTACT WIDGET ---------------- */
 /* pointer-events:none is required here: .fab-menu's 4 items are only
    opacity/visibility-hidden when closed, which hides them individually but

@@ -31,10 +31,9 @@
     "seeAll": "Vaata kõiki teenuseid",
     "seoTitle": "Autovärvimine ja keretööd Tallinnas",
     "seoP1": "Mpaint teostab autovärvimist ja keretöid Tallinnas. Tegeleme nii üksikute keredetailide kui ka suuremate värvimis- ja taastamistöödega.",
-    "seoP2": "Meie teenuste hulka kuuluvad autode värvimine, detailide värvimine, värvikahjustuste parandamine, mõlkide eemaldamine, roostekahjustuste remont, keevitustööd, kereparandus ja poleerimine.",
     "seoP3": "Värvitavad pinnad valmistatakse enne värvimist ette vastavalt nende seisukorrale. Vajadusel eemaldame rooste ja vana kahjustatud värvikihi, parandame kerepinna ning valmistame detaili kruntimiseks ja värvimiseks ette. Värv valitakse auto värvikoodi ja olemasoleva värvitooni järgi.",
     "seoP4": "Teostame töid sõiduautodele ja tarbesõidukitele ning võtame vastu nii väiksemaid keredetailide parandusi kui ka mahukamaid keretöid.",
-    "whyTitle": "Mpainti autovärvimise ja keretööde teenused",
+    "servicesTitle": "Meie teenused",
     "why": [
       "autovärvimine",
       "keredetailide värvimine",
@@ -46,6 +45,13 @@
       "detailide ettevalmistus värvimiseks",
       "auto poleerimine",
       "suuremad kere taastamistööd"
+    ],
+    "whyMpaintTitle": "Miks valida Mpaint",
+    "whyCards": [
+      { "title": "Oma filtreeritud värvikamber", "desc": "Tolmuvaba viimistlus kontrollitud temperatuuriga värvikambris." },
+      { "title": "Täpne värvikoodi sobitus", "desc": "Värv valitakse tehase värvikoodi ja olemasoleva tooni järgi, sujuva üleminekuga naaberpaneelidele." },
+      { "title": "Kõik tööd ühe katuse all", "desc": "Värvimine, keevitus, roostetõrje, mõlkide eemaldamine ja poleerimine samas töökojas." },
+      { "title": "Väikestele ja suurtele töödele", "desc": "Teostame nii üksikute detailide parandust kui mahukamaid taastustöid, sõiduautodele ja tarbesõidukitele." }
     ],
     "seoClosing": "Kui auto kere või värvkate vajab parandamist, võta meiega ühendust ja kirjelda soovitud tööd.",
     "meta": {
