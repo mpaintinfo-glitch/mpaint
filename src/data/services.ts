@@ -3,7 +3,18 @@ import { photoPaint, photoBody, photoDent, photoRust, photoPolish, photoParts } 
 
 export type ServiceId = "paint" | "body" | "dent" | "rust" | "polish" | "parts";
 
-export const SERVICE_SLUGS: Record<ServiceId, string> = {
+// Estonian slugs, ASCII-only (no diacritics) since these go directly into
+// URLs. Russian reuses these rather than getting its own Cyrillic set.
+export const SERVICE_SLUGS_ET: Record<ServiceId, string> = {
+  paint: "varvimine",
+  body: "keretood",
+  dent: "molkide-eemaldamine",
+  rust: "roostetorje",
+  polish: "poleerimine",
+  parts: "osade-vahetus",
+};
+
+export const SERVICE_SLUGS_EN: Record<ServiceId, string> = {
   paint: "painting",
   body: "bodywork",
   dent: "dent-removal",
@@ -11,6 +22,10 @@ export const SERVICE_SLUGS: Record<ServiceId, string> = {
   polish: "polishing",
   parts: "parts-replacement",
 };
+
+export function slugsForLocale(locale: string): Record<ServiceId, string> {
+  return locale === "en" ? SERVICE_SLUGS_EN : SERVICE_SLUGS_ET;
+}
 
 export const SERVICE_ORDER: ServiceId[] = ["paint", "body", "dent", "rust", "polish", "parts"];
 
@@ -26,8 +41,9 @@ export const SERVICE_ICON: Record<ServiceId, string> = {
   parts: "i-doc",
 };
 
-export function getServiceBySlug(slug: string): ServiceId | undefined {
-  return (Object.keys(SERVICE_SLUGS) as ServiceId[]).find((id) => SERVICE_SLUGS[id] === slug);
+export function getServiceBySlug(locale: string, slug: string): ServiceId | undefined {
+  const slugs = slugsForLocale(locale);
+  return (Object.keys(slugs) as ServiceId[]).find((id) => slugs[id] === slug);
 }
 
 export const SERVICE_PHOTO: Record<ServiceId, StaticImageData> = {

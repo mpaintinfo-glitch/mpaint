@@ -70,7 +70,7 @@
     "seoTitle": "Kuidas autovärvimine Mpaintis käib",
     "seoP1": "Iga värvimistöö algab kahjustuse hindamisest ja auto tehase värvikoodi lugemisest. Valmistame paneeli ette ja lihvime selle, kanname peale grundi ning seejärel pihustame põhi- ja lakikihi spetsiaalses värvikambris, kus filtreeritud õhk ja kontrollitud temperatuur hoiavad tolmu pinnast eemal.",
     "seoP2": "Värvime nii üksikuid paneele kui ka terveid autosid. Ühe ukse, pumperi või tiiva värvimisest piisab tavaliselt pärast parklakriimu, samas kui korrosioon või avariikahjustus mitmel paneelil sobib paremini suurema tööna teostada. Kui auto värv on ebaühtlaselt pleekinud, sobitame selle naaberpaneelidega, et remont ei paistaks silma.",
-    "seoP3": "Lisaks värvimisele teeme keevitust ja plekitöid, roostetõrjet ja korrosioonikaitset, mõlkide väljatõmbamist spotteriga, kere ja esitulede poleerimist ning kereosade vahetust. Kui remont käib kindlustuse kaudu, aitame paberimajandusega.",
+    "seoP3": "Lisaks värvimisele teeme keevitust ja plekitöid, roostetõrjet ja korrosioonikaitset, mõlkide väljatõmbamist spotteriga, kere ja tulede poleerimist ning kereosade vahetust. Kui remont käib kindlustuse kaudu, aitame paberimajandusega.",
     "faqTitle": "Korduma kippuvad küsimused",
     "faq": [
       { "q": "Kas kriimustust saab parandada ilma detaili üle värvimata?", "a": "Mõnikord küll. See sõltub kriimustuse sügavusest ja värvikihi seisukorrast." },
@@ -131,11 +131,11 @@
       ]
     },
     "polish": {
-      "h1": "Kere ja esitulede poleerimine",
-      "tagline": "Eemaldab kergeid kriimustusi ja taastab esitulede selguse.",
+      "h1": "Kere ja tulede poleerimine",
+      "tagline": "Eemaldab kergeid kriimustusi ja taastab tulede selguse.",
       "bullets": [
         "Väiksemate kriimustuste eemaldamine",
-        "Esitulede selguse taastamine",
+        "Tulede selguse taastamine",
         "Parem nähtavus ja ohutus pimedas",
         "Kõik margid ja mudelid"
       ]

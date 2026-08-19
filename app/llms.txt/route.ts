@@ -1,13 +1,19 @@
 import { getTranslations } from "next-intl/server";
-import { SERVICE_ORDER, SERVICE_SLUGS } from "../../src/data/services";
+import { getPathname } from "../../src/i18n/navigation";
+import { SERVICE_ORDER, slugsForLocale } from "../../src/data/services";
 import { SITE_URL, BUSINESS } from "../../src/lib/site";
 
 export async function GET() {
   const catalog = await getTranslations({ locale: "en", namespace: "catalog" });
+  const enSlugs = slugsForLocale("en");
 
-  const serviceLines = SERVICE_ORDER.map(
-    (id) => `- [${catalog(id)}](${SITE_URL}/en/services/${SERVICE_SLUGS[id]})`
-  ).join("\n");
+  const serviceLines = SERVICE_ORDER.map((id) => {
+    const href = { pathname: "/services/[slug]" as const, params: { slug: enSlugs[id] } };
+    return `- [${catalog(id)}](${SITE_URL}${getPathname({ href, locale: "en" })})`;
+  }).join("\n");
+
+  const etServicesPath = getPathname({ href: "/services", locale: "et" });
+  const etContactPath = getPathname({ href: "/contact", locale: "et" });
 
   const body = `# Mpaint
 
@@ -25,7 +31,11 @@ ${serviceLines}
 - [All services](${SITE_URL}/en/services): full service list with an FAQ
 - [Contact](${SITE_URL}/en/contact): phone, WhatsApp, email, address, opening hours
 
-Estonian versions of every page are at the same paths without the /en prefix (e.g. ${SITE_URL}/services). Russian versions are under /ru (e.g. ${SITE_URL}/ru/services).
+Estonian is the default locale and lives at the root without a prefix, but
+with Estonian path segments rather than the English ones above, e.g.
+${SITE_URL}${etServicesPath} for services and ${SITE_URL}${etContactPath} for
+contact. Russian versions are under /ru and reuse the same Estonian path
+segments (e.g. ${SITE_URL}/ru${etServicesPath}).
 
 ## Contact
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "../../src/i18n/navigation";
-import { RIBBON_IDS, SERVICE_SLUGS } from "../../src/data/services";
+import { RIBBON_IDS, slugsForLocale } from "../../src/data/services";
 import { localeAlternates } from "../../src/lib/alternates";
 import { sfondo, imgPaintBooth, imgBodywork } from "../../src/assets";
 import Arrow from "../../src/components/Arrow";
@@ -20,7 +20,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "home.meta" });
-  return { title: t("title"), description: t("description"), alternates: localeAlternates(locale, "") };
+  return { title: t("title"), description: t("description"), alternates: localeAlternates(locale, () => "/") };
 }
 
 export default async function HomePage({
@@ -31,6 +31,9 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations();
+  const slugs = slugsForLocale(locale);
+  const serviceHref = (id: keyof typeof slugs) =>
+    ({ pathname: "/services/[slug]" as const, params: { slug: slugs[id] } });
 
   return (
     <div className="page page-home on">
@@ -109,7 +112,7 @@ export default async function HomePage({
         <div className="container">
           <div className="svc-block">
             <div className="svc-band">
-              <Link href={`/services/${SERVICE_SLUGS.paint}`} className="svc-half">
+              <Link href={serviceHref("paint")} className="svc-half">
                 <Image src={imgPaintBooth} alt="Car painting" fill sizes="(max-width: 760px) 100vw, 50vw" style={{ objectFit: "cover" }} />
                 <div className="svc-half-tint" />
                 <div className="svc-half-info">
@@ -118,7 +121,7 @@ export default async function HomePage({
                   <span className="pick">{t("home.pick")} <Arrow /></span>
                 </div>
               </Link>
-              <Link href={`/services/${SERVICE_SLUGS.body}`} className="svc-half">
+              <Link href={serviceHref("body")} className="svc-half">
                 <Image src={imgBodywork} alt="Welding and bodywork" fill sizes="(max-width: 760px) 100vw, 50vw" style={{ objectFit: "cover" }} />
                 <div className="svc-half-tint" />
                 <div className="svc-half-info">
@@ -133,7 +136,7 @@ export default async function HomePage({
               style={{ gridTemplateColumns: "repeat(4,1fr)", background: "linear-gradient(100deg,#E0007A 0%,#8B3FD8 100%)" }}
             >
               {RIBBON_IDS.map((id) => (
-                <Link key={id} href={`/services/${SERVICE_SLUGS[id]}`} className="svc-seg">
+                <Link key={id} href={serviceHref(id)} className="svc-seg">
                   <span>{t(`catalog.${id}`)}</span>
                   <Arrow />
                 </Link>

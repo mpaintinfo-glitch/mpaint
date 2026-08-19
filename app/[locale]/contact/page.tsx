@@ -15,7 +15,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "contact.meta" });
-  return { title: t("title"), description: t("description"), alternates: localeAlternates(locale, "/contact") };
+  return { title: t("title"), description: t("description"), alternates: localeAlternates(locale, () => "/contact") };
 }
 
 export default async function ContactPage({

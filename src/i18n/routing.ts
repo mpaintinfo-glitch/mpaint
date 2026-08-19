@@ -5,6 +5,12 @@ export const routing = defineRouting({
   defaultLocale: "et",
   localePrefix: "as-needed",
   localeDetection: false,
+  pathnames: {
+    "/": "/",
+    "/services": { et: "/teenused", ru: "/teenused", en: "/services" },
+    "/services/[slug]": { et: "/teenused/[slug]", ru: "/teenused/[slug]", en: "/services/[slug]" },
+    "/contact": { et: "/kontakt", ru: "/kontakt", en: "/contact" },
+  },
 });
 
 export type Locale = (typeof routing.locales)[number];

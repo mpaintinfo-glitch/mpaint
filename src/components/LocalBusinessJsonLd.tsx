@@ -1,10 +1,11 @@
 import { getTranslations } from "next-intl/server";
-import { SERVICE_ORDER, SERVICE_SLUGS } from "../data/services";
+import { SERVICE_ORDER, slugsForLocale } from "../data/services";
+import { getPathname } from "../i18n/navigation";
 import { SITE_URL, BUSINESS } from "../lib/site";
 
 export default async function LocalBusinessJsonLd({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "catalog" });
-  const prefix = locale === "et" ? "" : `/${locale}`;
+  const slugs = slugsForLocale(locale);
 
   const data = {
     "@context": "https://schema.org",
@@ -47,7 +48,7 @@ export default async function LocalBusinessJsonLd({ locale }: { locale: string }
         itemOffered: {
           "@type": "Service",
           name: t(id),
-          url: `${SITE_URL}${prefix}/services/${SERVICE_SLUGS[id]}`,
+          url: `${SITE_URL}${getPathname({ href: { pathname: "/services/[slug]", params: { slug: slugs[id] } }, locale })}`,
         },
       })),
     },

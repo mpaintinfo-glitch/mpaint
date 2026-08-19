@@ -2,8 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLocale } from "next-intl";
+import { useParams } from "next/navigation";
 import { usePathname, useRouter } from "../i18n/navigation";
 import type { Locale } from "../i18n/routing";
+import { getServiceBySlug, slugsForLocale } from "../data/services";
 
 const LANGS: { code: Locale; label: string }[] = [
   { code: "et", label: "Eesti" },
@@ -17,6 +19,7 @@ export default function LanguageSwitcher() {
   const locale = useLocale() as Locale;
   const pathname = usePathname();
   const router = useRouter();
+  const routeParams = useParams();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -31,8 +34,25 @@ export default function LanguageSwitcher() {
   }, []);
 
   const switchTo = (code: Locale) => {
-    router.replace(pathname, { locale: code });
     setOpen(false);
+
+    // Service detail pages have a locale-specific slug value (not just a
+    // translated static segment), so the slug itself has to be remapped
+    // to the target locale's slug for the same service - "as-needed"
+    // locale prefixing + pathnames can't do this part on its own.
+    const currentSlug = typeof routeParams.slug === "string" ? routeParams.slug : undefined;
+    if (currentSlug) {
+      const id = getServiceBySlug(locale, currentSlug);
+      if (id) {
+        router.replace(
+          { pathname: "/services/[slug]", params: { slug: slugsForLocale(code)[id] } },
+          { locale: code }
+        );
+        return;
+      }
+    }
+
+    router.replace(pathname as "/" | "/services" | "/contact", { locale: code });
   };
 
   return (

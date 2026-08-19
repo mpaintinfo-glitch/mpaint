@@ -23,8 +23,7 @@ export default function Header() {
     return false;
   };
 
-  const hrefFor = (item: (typeof NAV_ITEMS)[number]) =>
-    item === "home" ? "/" : `/${item}`;
+  const NAV_HREF = { home: "/", services: "/services", contact: "/contact" } as const;
 
   return (
     <header className={`header${navOpen ? " nav-open" : ""}`}>
@@ -57,7 +56,7 @@ export default function Header() {
         <ul className="nav-links" id="navMenu">
           {NAV_ITEMS.map((item) => (
             <li key={item}>
-              <Link href={hrefFor(item)} className={isActive(item) ? "active" : ""} onClick={() => setNavOpen(false)}>
+              <Link href={NAV_HREF[item]} className={isActive(item) ? "active" : ""} onClick={() => setNavOpen(false)}>
                 {t(`nav.${item}`)}
               </Link>
             </li>
