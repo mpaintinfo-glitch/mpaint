@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { logoWhite } from "../assets";
 import { BUSINESS } from "../lib/site";
+import Icon from "./Icon";
 
 export default function Footer({ hasSplash }: { hasSplash: boolean }) {
   const t = useTranslations();
@@ -18,12 +19,15 @@ export default function Footer({ hasSplash }: { hasSplash: boolean }) {
             maxWidth: "160px",
             objectFit: "contain",
             objectPosition: "left center",
-            opacity: 0.75,
           }}
         />
-        <a href={BUSINESS.phoneHref}>{BUSINESS.phone}</a>
-        <span>{t("footer.regCode")}</span>
-        <span>{t("footer.copyright")}</span>
+        <a className="f-phone" href={BUSINESS.phoneHref}>
+          <span className="f-phone-ic"><Icon id="i-phone" /></span>
+          <b>{BUSINESS.phone}</b>
+        </a>
+        <span className="f-meta">
+          {t("footer.copyright")} · {t("footer.regCode")}
+        </span>
       </div>
     </footer>
   );
