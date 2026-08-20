@@ -18,4 +18,4 @@ export const BUSINESS = {
 } as const;
 
 // Where lead notifications (quote requests, contact form) get sent.
-export const NOTIFY_EMAILS = ["info.mpaint@gmail.com"];
+export const NOTIFY_EMAILS = ["mpaint.info@gmail.com"];
