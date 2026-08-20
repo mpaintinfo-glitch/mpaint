@@ -18,7 +18,6 @@ export async function POST(req: Request) {
   const email = String(formData.get("email") ?? "").trim();
   const phone = String(formData.get("phone") ?? "").trim();
   const message = String(formData.get("message") ?? "").trim();
-  const locale = String(formData.get("locale") ?? "");
   const photos = formData.getAll("photos").filter((f): f is File => f instanceof File);
 
   if (!name || !email || !message) {
@@ -28,18 +27,17 @@ export async function POST(req: Request) {
   const attachments = await filesToAttachments(photos);
 
   const html = `
-    <h2>New message from the site</h2>
-    <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-    <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-    <p><strong>Phone:</strong> ${escapeHtml(phone) || "-"}</p>
-    <p><strong>Message:</strong><br>${escapeHtml(message).replace(/\n/g, "<br>")}</p>
-    <p><strong>Submitted from:</strong> ${escapeHtml(locale)} version of the site</p>
-    <p><strong>Photos attached:</strong> ${attachments.length}</p>
+    <h2>Uus sõnum kodulehelt</h2>
+    <p><strong>Nimi:</strong> ${escapeHtml(name)}</p>
+    <p><strong>E-post:</strong> ${escapeHtml(email)}</p>
+    <p><strong>Telefon:</strong> ${escapeHtml(phone) || "-"}</p>
+    <p><strong>Sõnum:</strong><br>${escapeHtml(message).replace(/\n/g, "<br>")}</p>
+    <p><strong>Fotosid lisatud:</strong> ${attachments.length}</p>
   `;
 
   const { ok, failures } = await sendToEach(mailer, NOTIFY_EMAILS, {
     replyTo: email,
-    subject: `Message from ${name}`,
+    subject: `Sõnum: ${name}`,
     html,
     attachments: attachments.length ? attachments : undefined,
   });

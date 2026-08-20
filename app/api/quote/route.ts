@@ -5,13 +5,13 @@ import { NOTIFY_EMAILS } from "../../../src/lib/site";
 export const runtime = "nodejs";
 
 const SERVICE_LABEL: Record<string, string> = {
-  paint: "Car painting",
-  body: "Welding & bodywork",
-  dent: "Dent removal",
-  rust: "Rust removal",
-  polish: "Polishing",
-  parts: "Replacing parts",
-  other: "Not sure / other",
+  paint: "Autovärvimine",
+  body: "Keevitus ja kerekojatööd",
+  dent: "Mõlkide eemaldamine",
+  rust: "Roostetõrje",
+  polish: "Poleerimine",
+  parts: "Osade vahetus",
+  other: "Pole kindel / muu",
 };
 
 export async function POST(req: Request) {
@@ -28,7 +28,6 @@ export async function POST(req: Request) {
   const phone = String(formData.get("phone") ?? "").trim();
   const carInfo = String(formData.get("carInfo") ?? "").trim();
   const notes = String(formData.get("notes") ?? "").trim();
-  const locale = String(formData.get("locale") ?? "");
   const services = formData.getAll("services").map(String);
   const photos = formData.getAll("photos").filter((f): f is File => f instanceof File);
 
@@ -41,18 +40,17 @@ export async function POST(req: Request) {
   const serviceLabels = services.map((id) => SERVICE_LABEL[id] ?? id).join(", ") || "-";
 
   const html = `
-    <h2>New quote request</h2>
-    <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-    <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
-    <p><strong>Services:</strong> ${escapeHtml(serviceLabels)}</p>
-    <p><strong>Car:</strong> ${escapeHtml(carInfo) || "-"}</p>
-    <p><strong>Notes:</strong> ${escapeHtml(notes) || "-"}</p>
-    <p><strong>Submitted from:</strong> ${escapeHtml(locale)} version of the site</p>
-    <p><strong>Photos attached:</strong> ${attachments.length}</p>
+    <h2>Uus hinnapäring</h2>
+    <p><strong>Nimi:</strong> ${escapeHtml(name)}</p>
+    <p><strong>Telefon:</strong> ${escapeHtml(phone)}</p>
+    <p><strong>Teenused:</strong> ${escapeHtml(serviceLabels)}</p>
+    <p><strong>Auto:</strong> ${escapeHtml(carInfo) || "-"}</p>
+    <p><strong>Märkused:</strong> ${escapeHtml(notes) || "-"}</p>
+    <p><strong>Fotosid lisatud:</strong> ${attachments.length}</p>
   `;
 
   const { ok, failures } = await sendToEach(mailer, NOTIFY_EMAILS, {
-    subject: `Quote request from ${name}`,
+    subject: `Hinnapäring: ${name}`,
     html,
     attachments: attachments.length ? attachments : undefined,
   });
