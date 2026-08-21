@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useLocale, useTranslations } from "next-intl";
 import { BUSINESS } from "../lib/site";
+import { compressImage } from "../lib/compressImage";
 
 export default function EmailModal({
   open,
@@ -73,12 +74,13 @@ export default function EmailModal({
     }
   };
 
-  const addPhotos = (files: FileList | null) => {
+  const addPhotos = async (files: FileList | null) => {
     if (!files) return;
-    const incoming = Array.from(files)
+    const selected = Array.from(files)
       .filter((f) => f.type.startsWith("image/"))
-      .slice(0, MAX_PHOTOS - photos.length)
-      .map((file) => ({ file, url: URL.createObjectURL(file) }));
+      .slice(0, MAX_PHOTOS - photos.length);
+    const compressed = await Promise.all(selected.map((file) => compressImage(file)));
+    const incoming = compressed.map((file) => ({ file, url: URL.createObjectURL(file) }));
     setPhotos((prev) => [...prev, ...incoming]);
   };
 
