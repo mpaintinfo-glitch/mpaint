@@ -10,7 +10,7 @@
     "paint": "Autovärvimine",
     "body": "Keevitus ja kerekojatööd",
     "dent": "Mõlkide eemaldamine",
-    "rust": "Roostetõrje",
+    "rust": "Rooste eemaldus",
     "polish": "Poleerimine",
     "parts": "Osade vahetus"
   },
@@ -19,7 +19,7 @@
     "titleGrad": "täiuslikult värvitud.",
     "leadPre": "Autode värvimine ja keretööd",
     "leadCity": "Tallinnas",
-    "ctaEstimate": "Küsi hinnapakkumist",
+    "ctaEstimate": "Saada päring",
     "ctaWork": "Vaata meie töid"
   },
   "home": {
@@ -27,7 +27,7 @@
     "whatSub": "Puuduta mõnda teenust, et see kohe hinnapäringu vormi lisada.",
     "paintDesc": "Täisvärvimised ja üksikud paneelid meie enda värvikambris.",
     "bodyDesc": "Plekitööd ja kere kandekonstruktsiooni remont kõikidele sõidukitele.",
-    "pick": "Küsi hinnapakkumist",
+    "pick": "Saada päring",
     "seeAll": "Vaata kõiki teenuseid",
     "seoTitle": "Autovärvimine ja keretööd Tallinnas",
     "seoP1": "Mpaint teostab autovärvimist ja keretöid Tallinnas. Tegeleme nii üksikute keredetailide kui ka suuremate värvimis- ja taastamistöödega.",
@@ -63,10 +63,13 @@
     "h1": "Autovärvimise ja kerekoja teenused Tallinnas",
     "paintDesc": "Täisvärvimised ja üksikud paneelid meie enda filtreeritud värvikambris.",
     "bodyDesc": "Plekitööd ja kere kandekonstruktsiooni remont kõikidele sõidukitüüpidele.",
-    "pick": "Küsi hinnapakkumist",
-    "cta": "Küsi hinnapakkumist",
+    "pick": "Saada päring",
+    "cta": "Saada päring",
     "callUs": "Või helista meile: +372 58-100-810",
     "backToServices": "← Kõik teenused",
+    "bulletsHeading": "Mida see hõlmab",
+    "techNotesHeading": "Tehnilised detailid",
+    "warningHeading": "Millal see ei sobi",
     "seoTitle": "Kuidas toimub autovärvimine ja keretöö Mpaintis",
     "seoSteps": [
       { "h3": "Kahjustuse hindamine ja ettevalmistus", "p": "Enne värvimist hindame kahjustuse ulatust, keredetaili seisukorda ja olemasolevat värvkatet. Vajadusel eemaldame rooste, parandame mõlgid ja valmistame pinna ette lihvimise, kruntimise ja muude eeltöödega." },
@@ -95,46 +98,73 @@
     "paint": {
       "h1": "Autovärvimine",
       "tagline": "Täisvärvimised ja üksikud paneelid meie enda filtreeritud värvikambris.",
+      "intro": "Ühe detaili värvimine võtab keskmiselt 3-4 päeva, täisvärvimine üle kuu. Suurema osa ajast võtab auto lahtivõtmine ja kokkupanek, mitte värvi kuivamine.",
       "bullets": [
         "Tehase värvikoodi sobitamine",
         "Kogu auto või üksikute paneelide värvimine",
         "Tolmuvaba viimistlus meie oma kambris",
         "Sobitamine pleekinud naaberpaneelidega"
-      ]
+      ],
+      "techNotes": [
+        "Kasutame erinevaid kvaliteetseid värvibrände, eelistades täpset värvitooni sobitust ühele kindlale tootjale. Keerulisematel juhtudel teeme spektrofotomeetriga testvärvingu enne täisvärvimist.",
+        "Metallik- ja pärlmutter-toonid on kallimad, kuna pärlmutter nõuab kahte värvikihti."
+      ],
+      "pricingNote": "Elemendi värvimine alates 250€ (v.a. kapott ja katus), kapott ja katus alates 450€."
     },
     "body": {
       "h1": "Keevitus ja kerekojatööd",
       "tagline": "Kandekonstruktsiooni remont ja plekitööd kõikidele markidele ja mudelitele.",
+      "intro": "Kosmeetiline kahjustus ei vaja erivarustust. Struktuurne kahjustus, näiteks läbiv korrosioon, vajab kas detaili vahetust või remondipaneeli sissekeevitamist.",
       "bullets": [
         "Plekitööd ja kandekonstruktsiooni remont",
         "Kahjustatud paneelide asendamine",
         "Kvaliteetsed materjalid, kaasaegne varustus",
         "Püsivad remondid, mitte kiirlapid"
-      ]
+      ],
+      "techNotes": [
+        "Kui metall on liiga õhuke spotteri jaoks, kasutame kas keemilist õhemist või tinaga õhemist. Valime tehnika vastavalt olukorrale.",
+        "Teostame ka kere plastdetailide taastamist struktuurse epoksiidvärviga ja elementide sobitamist vahede järgi."
+      ],
+      "warningNote": "Ei tee stapliga raami väljavenitamist, täielikku porde vahetust ega võta vastu suuremõõtmelisi sõidukeid."
     },
     "dent": {
       "h1": "Mõlkide eemaldamine",
-      "tagline": "Spotteriga mõlkide eemaldamine ilma värvimata — kiirem ja odavam kui paneeli vahetus.",
+      "tagline": "Spotteriga mõlkide eemaldamine ilma värvimata. Kiirem ja odavam kui paneeli vahetus.",
       "bullets": [
         "Enamasti pole ümbervärvimist vaja",
         "Odavam kui täispaneeli vahetus",
-        "Tasuta hindamine, kui mõlk on spotteriga eemaldamiseks liiga sügav",
+        "Kasutame spotter-meetodit mõlkide väljatõmbamiseks. Kui kahjustus on spotteri jaoks liiga sügav, hindame tasuta ja pakume alternatiivi.",
         "Sobib kõikidele sõidukitüüpidele"
       ]
     },
     "rust": {
-      "h1": "Roostetõrje",
-      "tagline": "Peatame korrosiooni enne levikut — puhastame, töötleme ja kaitseme.",
+      "h1": "Rooste eemaldus ja kaitse",
+      "tagline": "Peatame korrosiooni enne levikut. Puhastame, töötleme ja kaitseme.",
+      "intro": "Kahjustatud metall puhastatakse, töödeldakse happega nähtamatu korrosiooni eemaldamiseks ja kaitstakse mitmekihilise kruntimisega enne värvimist.",
+      "process": [
+        "Kahjustatud ala puhastamine enne pritsipesu",
+        "Metalli töötlemine ortofosfaathappega, et eemaldada nähtamatu korrosioon",
+        "Esmane krunt (happe- või epoksiidipõhine)",
+        "Akrüülkrunt",
+        "Värvimine"
+      ],
       "bullets": [
         "Kahjustatud ala täielik puhastus ja töötlus",
         "Takistab rooste taastekkimist",
         "Peatab metalli edasise kahjustumise",
         "Sageli koos värvikoodile vastava värvimisega"
-      ]
+      ],
+      "pricingNote": "Alates 50€, sõltuvalt kahjustuse ulatusest, sügavusest ja ligipääsetavusest.",
+      "warningNote": "Mõnikord on korrosioon jõudnud nii kaugele, et metalli enam parandada ei saa. Sellisel juhul soovitame vahetust.",
+      "secondarySection": {
+        "heading": "Ennetav roostekaitse",
+        "text": "Pakume ka ennetavat roostekaitset uuematele autodele, eriti arvestades Eesti talvist teekattesoola."
+      }
     },
     "polish": {
       "h1": "Kere ja tulede poleerimine",
       "tagline": "Eemaldab kergeid kriimustusi ja taastab tulede selguse.",
+      "intro": "Faaride taastamiseks kasutame nii keemilist kui mehaanilist meetodit, sõltuvalt katte seisukorrast.",
       "bullets": [
         "Väiksemate kriimustuste eemaldamine",
         "Tulede selguse taastamine",
@@ -153,6 +183,10 @@
       ]
     }
   },
+  "warranty": {
+    "title": "Garantii",
+    "text": "Kuni 1 aasta garantii enamikele töödele. Garantii ei kehti, kui ettevalmistustöid ei teostanud meie, või kui roosteremont tehti kliendi soovi järgi, mitte meie soovituse kohaselt."
+  },
   "contact": {
     "eyebrow": "Leia meid",
     "h1": "Leia meid Tallinnas",
@@ -161,7 +195,7 @@
     "whatsappValue": "Kirjuta meile",
     "email": "E-post",
     "address": "Aadress",
-    "addressValue": "Tallinn, Eesti",
+    "addressValue": "Magasini tn 31, 10138 Tallinn",
     "monFri": "E – R",
     "hours": "9:00 – 19:00",
     "saturday": "Laupäev",
@@ -181,14 +215,14 @@
     }
   },
   "footer": {
-    "copyright": "Mpaint ©2024-2026",
+    "copyright": "Mpaint ©2020-2026",
     "company": "Mpaint OÜ, Reg: 14939293"
   },
   "fab": {
     "call": "Helista meile",
     "whatsapp": "WhatsApp",
     "email": "Kirjuta meile",
-    "estimate": "Küsi hinnapakkumist",
+    "estimate": "Saada päring",
     "ariaContact": "Kontakt"
   },
   "emailModal": {

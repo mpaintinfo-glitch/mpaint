@@ -701,13 +701,7 @@ footer>.f-in{position:relative;z-index:1}
 .svc-page-photo img{width:100%;height:100%;border-radius:var(--r-circle);object-fit:cover;display:block}
 .svc-page-desc{grid-area:desc;width:100%;min-width:0}
 .svc-page-desc .sub{margin-top:0;line-height:1.45;font-size:13.5px;max-width:280px;margin-left:auto;margin-right:auto}
-.svc-checklist{list-style:none;display:flex;flex-direction:column;gap:var(--sp-8);
-  margin:var(--sp-16) auto var(--sp-12);max-width:270px}
-.svc-checklist li{display:flex;align-items:flex-start;justify-content:flex-start;text-align:left;
-  gap:var(--sp-8);font-size:12px;color:rgba(var(--overlay-rgb),.92);font-weight:600;
-  letter-spacing:.01em;line-height:1.25}
-.svc-checklist svg{width:13px;height:13px;flex:0 0 auto;color:var(--pink);margin-top:1px}
-.svc-page-actions{grid-area:cta;display:flex;flex-direction:column;align-items:center;gap:var(--sp-12)}
+.svc-page-actions{grid-area:cta;display:flex;flex-direction:column;align-items:center;gap:var(--sp-12);margin-top:var(--sp-4)}
 .svc-page-actions .btn{width:auto}
 
 @media(min-width:820px){
@@ -718,11 +712,85 @@ footer>.f-in{position:relative;z-index:1}
     align-items:center;column-gap:var(--sp-48);row-gap:var(--sp-16)}
   .svc-page-photo{width:384px;max-width:384px;padding:10px}
   .svc-page-desc .sub{max-width:46ch;line-height:1.7;font-size:var(--fs-md)}
-  .svc-checklist{gap:var(--sp-16);margin:var(--sp-24) auto;max-width:340px}
-  .svc-checklist li{font-size:14.5px;font-weight:500}
-  .svc-checklist svg{width:16px;height:16px}
-  .svc-page-actions{gap:var(--sp-16)}
+  .svc-page-actions{gap:var(--sp-16);margin-top:var(--sp-8)}
 }
+
+/* ---------------- SERVICE DETAIL: EXTENDED CONTENT ----------------
+   Real process/technical content lives in its own section below the
+   hero, for people who want to read more before converting - but the
+   hero itself already has the price (when known) and a working CTA, so
+   nobody has to scroll to act. Order: intro -> process (connected step
+   tracker) -> bullets ("Mida see hõlmab" chip cards) -> techNotes
+   ("Tehnilised detailid" chip cards, only when the general/added-later
+   bullets need separating) -> warningNote ("Millal see ei sobi" accent
+   callout) -> secondarySection. Reuses the site's existing card/badge
+   language (glossy bordered chip like the contact action cards, the
+   gradient-filled circle already used for buttons) instead of a third
+   visual style. All fields except bullets are optional. */
+.svc-detail-sec .container{max-width:760px}
+.svc-intro{color:var(--med);font-weight:300;font-size:var(--fs-md);line-height:1.75;margin-bottom:var(--sp-32);text-align:left}
+
+.svc-group{margin-bottom:var(--sp-32)}
+.svc-group-label{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--pink);margin:0 0 var(--sp-12);text-align:left}
+
+/* connected vertical step tracker - a linking rail behind the numbered
+   circles reads as an actual sequence, not just a numbered list */
+.svc-process{position:relative;list-style:none;margin:0 0 var(--sp-32);padding:0;counter-reset:svc-step}
+.svc-process li{position:relative;display:flex;align-items:flex-start;gap:var(--sp-16);
+  text-align:left;counter-increment:svc-step;padding-bottom:var(--sp-16)}
+.svc-process li:last-child{padding-bottom:0}
+.svc-process li:not(:last-child)::after{
+  content:'';position:absolute;left:13px;top:28px;bottom:0;width:2px;
+  background:rgba(var(--overlay-rgb),.12)}
+.svc-process li::before{
+  content:counter(svc-step);position:relative;z-index:1;
+  flex:0 0 auto;width:28px;height:28px;border-radius:var(--r-circle);
+  background:var(--grad-btn);color:#fff;font-size:12.5px;font-weight:800;
+  box-shadow:0 4px 14px rgba(224,0,122,.32);
+  display:flex;align-items:center;justify-content:center}
+.svc-process li span{color:rgba(var(--overlay-rgb),.92);font-weight:500;font-size:14.5px;line-height:1.5;padding-top:4px}
+
+/* bullet/techNote chip cards - same bordered, glassy card language as
+   the contact page's action cards (.ca) and home's why-cards */
+.svc-chip-list{list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:var(--sp-12)}
+.svc-chip{display:flex;align-items:flex-start;gap:var(--sp-12);text-align:left;
+  padding:var(--sp-12) var(--sp-16);border:1px solid var(--line);border-radius:var(--r-card);
+  background:rgba(var(--overlay-rgb),.03)}
+.svc-chip-ic{flex:0 0 auto;width:26px;height:26px;border-radius:var(--r-circle);margin-top:1px;
+  background:var(--grad-btn);display:flex;align-items:center;justify-content:center}
+.svc-chip-ic svg{width:12px;height:12px;color:#fff;stroke:currentColor;fill:none;stroke-width:2.4}
+.svc-chip span:last-child{color:rgba(var(--overlay-rgb),.92);font-weight:500;font-size:14.5px;line-height:1.5;padding-top:3px}
+
+.svc-pricing-note{
+  display:inline-block;color:var(--white);font-weight:700;font-size:14.5px;
+  background:linear-gradient(135deg,rgba(255,46,146,.14) 0%,rgba(155,107,255,.14) 100%);
+  border:1px solid rgba(255,46,146,.3);border-radius:var(--r-pill);
+  padding:var(--sp-12) var(--sp-16)
+}
+.svc-pricing-note--hero{margin-top:var(--sp-12);font-size:13px;padding:var(--sp-8) var(--sp-16)}
+
+/* warning/limitation callout - tinted with the site's accent gradient
+   at low alpha instead of plain italic text, so it reads as important */
+.svc-warning-note{display:flex;align-items:flex-start;gap:var(--sp-12);text-align:left;
+  background:linear-gradient(135deg,rgba(255,46,146,.10) 0%,rgba(155,107,255,.10) 100%);
+  border:1px solid rgba(255,46,146,.28);border-radius:var(--r-card);
+  padding:var(--sp-16)}
+.svc-warning-note svg{flex:0 0 auto;width:20px;height:20px;color:var(--pink);margin-top:1px;
+  stroke:currentColor;fill:none;stroke-width:1.8}
+.svc-warning-note p{color:rgba(var(--overlay-rgb),.92);font-weight:400;font-size:13.5px;line-height:1.6;margin:0}
+
+.svc-secondary{border-top:1px solid var(--line);padding-top:var(--sp-24);margin-bottom:var(--sp-32)}
+.svc-secondary h3{font-size:17px;margin-bottom:var(--sp-8)}
+.svc-secondary p{color:var(--med);font-weight:300;font-size:var(--fs-md);line-height:1.75;margin:0}
+
+@media(min-width:640px){
+  .svc-chip-list{grid-template-columns:1fr 1fr}
+}
+
+.warranty-note h2{font-size:clamp(19px,2.2vw,24px);margin-bottom:var(--sp-12)}
+.warranty-note p{color:var(--med);font-weight:300;font-size:14.5px;line-height:1.7;margin:0}
 @media(min-width:768px){
   .svc-cta-zone{padding-top:var(--sp-48);padding-bottom:var(--sp-32)}
 }

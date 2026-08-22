@@ -23,6 +23,18 @@ export async function generateMetadata({
 
 type FaqItem = { q: string; a: string };
 type SeoStep = { h3: string; p: string };
+type Warranty = { title: string; text: string };
+
+// "warranty" isn't translated into every locale yet (rolling out ET-first),
+// so read it defensively instead of letting a missing-namespace error take
+// down the whole page for locales that don't have it.
+function safeRaw<T>(t: Awaited<ReturnType<typeof getTranslations>>, key: string): T | undefined {
+  try {
+    return t.raw(key) as T;
+  } catch {
+    return undefined;
+  }
+}
 
 export default async function ServicesPage({
   params,
@@ -34,6 +46,7 @@ export default async function ServicesPage({
   const t = await getTranslations();
   const faq = t.raw("services.faq") as FaqItem[];
   const seoSteps = t.raw("services.seoSteps") as SeoStep[];
+  const warranty = safeRaw<Warranty>(t, "warranty");
   const slugs = slugsForLocale(locale);
   const serviceHref = (id: keyof typeof slugs) =>
     ({ pathname: "/services/[slug]" as const, params: { slug: slugs[id] } });
@@ -106,6 +119,15 @@ export default async function ServicesPage({
           </div>
         </div>
       </section>
+
+      {warranty?.title && (
+        <section className="sec section-compact">
+          <div className="container center warranty-note" style={{ maxWidth: 640 }}>
+            <h2>{warranty.title}</h2>
+            <p>{warranty.text}</p>
+          </div>
+        </section>
+      )}
 
       <section className="sec">
         <div className="container seo-surface">
