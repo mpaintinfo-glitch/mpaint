@@ -67,6 +67,9 @@
     "cta": "Get an estimate",
     "callUs": "Or call us: +372 58-100-810",
     "backToServices": "← All services",
+    "bulletsHeading": "What this covers",
+    "techNotesHeading": "Technical details",
+    "warningHeading": "When this doesn't apply",
     "seoTitle": "How car painting and bodywork work at Mpaint",
     "seoSteps": [
       { "h3": "Damage assessment and preparation", "p": "Before painting, we assess the extent of the damage, the condition of the body panel and the existing paint. If needed, we remove rust, repair dents, and prepare the surface with sanding, priming and other preparatory work." },
@@ -95,46 +98,73 @@
     "paint": {
       "h1": "Car painting",
       "tagline": "Full resprays and single panels, painted in our own filtered booth.",
+      "intro": "Painting a single panel takes 3-4 days on average, a full respray takes over a month. Most of that time goes into taking the car apart and putting it back together, not the paint drying.",
       "bullets": [
         "Factory colour-code matching",
         "Full car or single-panel jobs",
         "Dust-free finish in our own booth",
         "Blending into faded neighbouring panels"
-      ]
+      ],
+      "techNotes": [
+        "We use several quality paint brands, preferring an exact colour match from one specific manufacturer. For trickier cases, we do a spectrophotometer test spray before the full repaint.",
+        "Metallic and pearl finishes cost more, since pearl needs two coats of paint."
+      ],
+      "pricingNote": "Painting a panel from 250€, bonnet and roof from 450€."
     },
     "body": {
       "h1": "Welding & bodywork",
       "tagline": "Structural repair and sheet-metal work for any make or model.",
+      "intro": "Cosmetic damage doesn't need special equipment. Structural damage, such as through-corrosion, needs either a part replacement or welding in a repair panel.",
       "bullets": [
         "Sheet-metal & structural repair",
         "Damaged panel replacement",
         "Quality materials, modern equipment",
         "Long-lasting repairs, not quick patches"
-      ]
+      ],
+      "techNotes": [
+        "If the metal's too thin for the spotter, we use either chemical thinning or tin thinning, choosing the technique based on the situation.",
+        "We also restore plastic body parts with structural epoxy paint and fit panels to match the gaps."
+      ],
+      "warningNote": "We don't do frame pulling on a bench, full sill replacement, or take on oversized vehicles."
     },
     "dent": {
       "h1": "Dent removal",
-      "tagline": "Paintless spotter repair — faster and cheaper than replacing the panel.",
+      "tagline": "Paintless spotter repair. Faster and cheaper than replacing the panel.",
       "bullets": [
         "No repainting needed in most cases",
         "Cheaper than a full panel swap",
-        "Free diagnosis if a dent's too deep for spotter repair",
+        "We use the spotter method to pull dents out. If the damage is too deep for the spotter, we assess it for free and offer an alternative.",
         "Works on all vehicle types"
       ]
     },
     "rust": {
-      "h1": "Rust removal",
-      "tagline": "Stop corrosion before it spreads — cleaned, treated, and protected.",
+      "h1": "Rust removal and protection",
+      "tagline": "Stop corrosion before it spreads. We clean, treat, and protect.",
+      "intro": "Damaged metal is cleaned, treated with acid to remove invisible corrosion, and protected with multiple layers of primer before painting.",
+      "process": [
+        "Cleaning the damaged area before pressure washing",
+        "Treating the metal with phosphoric acid to remove invisible corrosion",
+        "Initial primer (acid-based or epoxy)",
+        "Acrylic primer",
+        "Painting"
+      ],
       "bullets": [
         "Full cleaning & treatment of the affected area",
         "Prevents rust from coming back",
         "Stops further metal damage",
         "Often paired with a colour-matched respray"
-      ]
+      ],
+      "pricingNote": "From 50€, depending on the extent and depth of the damage and how accessible it is.",
+      "warningNote": "Sometimes corrosion has spread too far for the metal to be repaired. In that case, we recommend replacement.",
+      "secondarySection": {
+        "heading": "Preventive rust protection",
+        "text": "We also offer preventive rust protection for newer cars, especially given Estonia's winter road salt."
+      }
     },
     "polish": {
       "h1": "Body & headlight polishing",
       "tagline": "Removes light scratches and restores headlight clarity.",
+      "intro": "For headlight restoration we use both chemical and mechanical methods, depending on the condition of the coating.",
       "bullets": [
         "Minor scratch & swirl removal",
         "Headlight clarity restoration",
@@ -152,6 +182,10 @@
         "Competitive pricing"
       ]
     }
+  },
+  "warranty": {
+    "title": "Warranty",
+    "text": "Up to 1 year warranty on most work. The warranty doesn't apply if we didn't carry out the preparation work, or if rust repair was done at the client's request rather than our recommendation."
   },
   "contact": {
     "eyebrow": "Find us",
