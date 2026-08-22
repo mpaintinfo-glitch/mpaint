@@ -8,7 +8,7 @@
   },
   "catalog": {
     "paint": "Autovärvimine",
-    "body": "Keevitus ja kerekojatööd",
+    "body": "Keevitus ja keretööd",
     "dent": "Mõlkide eemaldamine",
     "rust": "Rooste eemaldus",
     "polish": "Poleerimine",
@@ -91,7 +91,7 @@
     ],
     "meta": {
       "title": "Autovärvimise ja kerekoja teenused Tallinnas",
-      "description": "Kõik Mpainti teenused Tallinnas: autovärvimine, paneeli värvimine, keevitus ja kerekojatööd, roostetõrje, mõlkide eemaldamine ja poleerimine."
+      "description": "Kõik Mpainti teenused Tallinnas: autovärvimine, paneeli värvimine, keevitus ja keretööd, roostetõrje, mõlkide eemaldamine ja poleerimine."
     }
   },
   "serviceDetail": {
@@ -112,7 +112,7 @@
       "pricingNote": "Elemendi värvimine alates 250€, kapott ja katus alates 450€."
     },
     "body": {
-      "h1": "Keevitus ja kerekojatööd",
+      "h1": "Keevitus ja keretööd",
       "tagline": "Kandekonstruktsiooni remont ja plekitööd kõikidele markidele ja mudelitele.",
       "intro": "Kosmeetiline kahjustus ei vaja erivarustust. Struktuurne kahjustus, näiteks läbiv korrosioon, vajab kas detaili vahetust või remondipaneeli sissekeevitamist.",
       "bullets": [
