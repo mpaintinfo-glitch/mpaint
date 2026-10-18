@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { getMailer, filesToAttachments, escapeHtml, sendToEach } from "../../../src/lib/mailer";
-import { NOTIFY_EMAILS } from "../../../src/lib/site";
+import { getMailer, filesToAttachments, escapeHtml, sendNotification } from "../../../src/lib/mailer";
+import { NOTIFY_TO, NOTIFY_CC } from "../../../src/lib/site";
 
 export const runtime = "nodejs";
 
@@ -35,7 +35,7 @@ export async function POST(req: Request) {
     <p><strong>Fotosid lisatud:</strong> ${attachments.length}</p>
   `;
 
-  const { ok, failures } = await sendToEach(mailer, NOTIFY_EMAILS, {
+  const { ok, failures } = await sendNotification(mailer, { to: NOTIFY_TO, cc: NOTIFY_CC }, {
     replyTo: email,
     subject: `Sõnum: ${name}`,
     html,
@@ -43,12 +43,8 @@ export async function POST(req: Request) {
   });
 
   if (!ok) {
-    console.error("contact email failed for all recipients:", failures);
+    console.error("contact email failed:", failures);
     return NextResponse.json({ error: "Send failed" }, { status: 502 });
   }
-  if (failures.length) {
-    console.error("contact email partially failed:", failures);
-  }
-
   return NextResponse.json({ ok: true });
 }

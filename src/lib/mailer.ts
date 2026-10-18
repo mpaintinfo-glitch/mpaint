@@ -56,29 +56,28 @@ export function escapeHtml(value: string): string {
 }
 
 /**
- * Sends the same email to each recipient as an independent SMTP call, so a
- * failure for one address never blocks delivery to the others. Returns
- * ok:true if at least one send succeeded.
+ * Sends one real email addressed to everyone at once (real To + Cc headers,
+ * not N separate copies), so workers and the owner land in the same thread
+ * and a "Reply All" naturally reaches everyone. Previously this fired an
+ * independent SMTP call per recipient (needed for Resend's old sandbox
+ * restrictions); plain Gmail SMTP has no such per-recipient restriction, so
+ * a single combined send is both simpler and the correct behavior for a
+ * shared inbox + CC'd owner setup.
  */
-export async function sendToEach(
+export async function sendNotification(
   mailer: { transport: Transporter; from: string },
-  recipients: string[],
+  recipients: { to: string[]; cc?: string[] },
   message: { subject: string; html: string; replyTo?: string; attachments?: { filename: string; content: Buffer }[] }
 ) {
-  const results = await Promise.allSettled(
-    recipients.map((to) => mailer.transport.sendMail({ ...message, from: mailer.from, to }))
-  );
-
-  const failures: string[] = [];
-  let anySucceeded = false;
-
-  results.forEach((result, i) => {
-    if (result.status === "fulfilled") {
-      anySucceeded = true;
-    } else {
-      failures.push(`${recipients[i]}: ${String(result.reason)}`);
-    }
-  });
-
-  return { ok: anySucceeded, failures };
+  try {
+    await mailer.transport.sendMail({
+      ...message,
+      from: mailer.from,
+      to: recipients.to,
+      cc: recipients.cc,
+    });
+    return { ok: true, failures: [] as string[] };
+  } catch (err) {
+    return { ok: false, failures: [String(err)] };
+  }
 }

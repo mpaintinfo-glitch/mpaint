@@ -18,4 +18,8 @@ export const BUSINESS = {
 } as const;
 
 // Where lead notifications (quote requests, contact form) get sent.
-export const NOTIFY_EMAILS = ["mpaint.info@gmail.com"];
+// info@mpaint.ee is the inbox workers actually check and act from (primary
+// recipient); mpaint.info@gmail.com is CC'd so the owner can track leads
+// without manually forwarding every one.
+export const NOTIFY_TO = ["info@mpaint.ee"];
+export const NOTIFY_CC = ["mpaint.info@gmail.com"];
