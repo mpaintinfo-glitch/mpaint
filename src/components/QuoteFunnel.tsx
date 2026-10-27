@@ -228,16 +228,16 @@ export default function QuoteFunnel({
                       {t("dropText")}
                     </div>
                   )}
+                  <div className="qf-field-block">
+                    <input className="qf-input" type="text" placeholder={t("namePh")} required value={name} onChange={(e) => setName(e.target.value)} />
+                  </div>
                   <div className="qf-row">
-                    <div className="qf-field-block">
-                      <input className="qf-input" type="text" placeholder={t("namePh")} required value={name} onChange={(e) => setName(e.target.value)} />
-                    </div>
                     <div className="qf-field-block">
                       <input className="qf-input" type="tel" placeholder={t("phonePh")} required value={phone} onChange={(e) => setPhone(e.target.value)} />
                     </div>
-                  </div>
-                  <div className="qf-field-block">
-                    <input className="qf-input" type="email" placeholder={t("emailPh")} required value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <div className="qf-field-block">
+                      <input className="qf-input" type="email" placeholder={t("emailPh")} required value={email} onChange={(e) => setEmail(e.target.value)} />
+                    </div>
                   </div>
                   <div className="qf-field-block">
                     <label className="qf-field-label">{t("notesLabel")}</label>
