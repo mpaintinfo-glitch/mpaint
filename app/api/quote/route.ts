@@ -26,12 +26,13 @@ export async function POST(req: Request) {
 
   const name = String(formData.get("name") ?? "").trim();
   const phone = String(formData.get("phone") ?? "").trim();
+  const email = String(formData.get("email") ?? "").trim();
   const carInfo = String(formData.get("carInfo") ?? "").trim();
   const notes = String(formData.get("notes") ?? "").trim();
   const services = formData.getAll("services").map(String);
   const photos = formData.getAll("photos").filter((f): f is File => f instanceof File);
 
-  if (!name || !phone) {
+  if (!name || !phone || !email) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
 
@@ -43,6 +44,7 @@ export async function POST(req: Request) {
     <h2>Uus hinnapäring</h2>
     <p><strong>Nimi:</strong> ${escapeHtml(name)}</p>
     <p><strong>Telefon:</strong> ${escapeHtml(phone)}</p>
+    <p><strong>E-post:</strong> ${escapeHtml(email)}</p>
     <p><strong>Teenused:</strong> ${escapeHtml(serviceLabels)}</p>
     <p><strong>Auto:</strong> ${escapeHtml(carInfo) || "-"}</p>
     <p><strong>Märkused:</strong> ${escapeHtml(notes) || "-"}</p>
@@ -50,6 +52,7 @@ export async function POST(req: Request) {
   `;
 
   const { ok, failures } = await sendNotification(mailer, { to: NOTIFY_TO, cc: NOTIFY_CC }, {
+    replyTo: email,
     subject: `Hinnapäring: ${name}`,
     html,
     attachments: attachments.length ? attachments : undefined,

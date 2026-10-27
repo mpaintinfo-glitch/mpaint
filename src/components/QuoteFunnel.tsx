@@ -30,6 +30,7 @@ export default function QuoteFunnel({
   const [carInfo, setCarInfo] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
   const [notes, setNotes] = useState("");
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -93,6 +94,7 @@ export default function QuoteFunnel({
     const formData = new FormData();
     formData.set("name", name);
     formData.set("phone", phone);
+    formData.set("email", email);
     formData.set("carInfo", carInfo);
     formData.set("notes", notes);
     formData.set("locale", locale);
@@ -233,6 +235,9 @@ export default function QuoteFunnel({
                     <div className="qf-field-block">
                       <input className="qf-input" type="tel" placeholder={t("phonePh")} required value={phone} onChange={(e) => setPhone(e.target.value)} />
                     </div>
+                  </div>
+                  <div className="qf-field-block">
+                    <input className="qf-input" type="email" placeholder={t("emailPh")} required value={email} onChange={(e) => setEmail(e.target.value)} />
                   </div>
                   <div className="qf-field-block">
                     <label className="qf-field-label">{t("notesLabel")}</label>
