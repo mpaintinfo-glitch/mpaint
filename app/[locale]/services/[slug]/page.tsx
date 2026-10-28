@@ -97,7 +97,7 @@ export default async function ServiceDetailPage({
           <div className="svc-page-layout">
             <h1 className="svc-page-title">{h1}</h1>
             <div className="svc-page-photo">
-              <Image src={SERVICE_PHOTO[id]} alt="" />
+              <Image src={SERVICE_PHOTO[id]} alt={h1} />
             </div>
             <div className="svc-page-desc">
               <p className="sub">{tagline}</p>

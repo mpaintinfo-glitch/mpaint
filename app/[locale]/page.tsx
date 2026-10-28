@@ -59,7 +59,7 @@ export default async function HomePage({
         <div className="hero-art w-full" style={{ flexShrink: 0 }}>
           <Image
             src={sfondo}
-            alt="MPAINT car painting workshop in Tallinn"
+            alt={t("hero.imageAlt")}
             className="hero-sfondo"
             priority
             style={{
@@ -94,7 +94,7 @@ export default async function HomePage({
           <div className="svc-block">
             <div className="svc-band">
               <Link href={serviceHref("paint")} className="svc-half">
-                <Image src={imgPaintBooth} alt="Car painting" fill sizes="(max-width: 760px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+                <Image src={imgPaintBooth} alt={t("catalog.paint")} fill sizes="(max-width: 760px) 100vw, 50vw" style={{ objectFit: "cover" }} />
                 <div className="svc-half-tint" />
                 <div className="svc-half-info">
                   <h3>{t("catalog.paint")}</h3>
@@ -103,7 +103,7 @@ export default async function HomePage({
                 </div>
               </Link>
               <Link href={serviceHref("body")} className="svc-half">
-                <Image src={imgBodywork} alt="Welding and bodywork" fill sizes="(max-width: 760px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+                <Image src={imgBodywork} alt={t("catalog.body")} fill sizes="(max-width: 760px) 100vw, 50vw" style={{ objectFit: "cover" }} />
                 <div className="svc-half-tint" />
                 <div className="svc-half-info">
                   <h3>{t("catalog.body")}</h3>
