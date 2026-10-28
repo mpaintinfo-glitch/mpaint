@@ -294,6 +294,17 @@ footer>.f-in{position:relative;z-index:1}
 .pricing-row:last-child{border-bottom:none}
 .pricing-row span{color:var(--med);font-weight:300;font-size:14px;text-align:right}
 
+/* Repair case-study card (before/after). Unused until CASE_STUDIES in
+   src/data/caseStudies.ts has real entries - see that file. */
+.case-study-card{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden}
+.case-study-images{display:grid;grid-template-columns:1fr 1fr}
+.case-study-image{position:relative;aspect-ratio:4/3;background:var(--media-2)}
+.case-study-tag{position:absolute;top:var(--sp-8);left:var(--sp-8);background:rgba(0,0,0,.65);color:#fff;
+  font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:4px}
+.case-study-body{padding:var(--sp-16)}
+.case-study-body h3{font-size:16px;margin-bottom:var(--sp-4)}
+.case-study-body p{color:var(--med);font-weight:300;font-size:14px;line-height:1.6;margin-bottom:var(--sp-8)}
+
 
 .btn-lg{padding:var(--sp-12) var(--sp-24);font-size:14.5px;border-radius:var(--r-pill)}
 @media(max-width:520px){.btn-lg{width:100%}}
