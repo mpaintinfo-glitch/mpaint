@@ -10,6 +10,7 @@ export const routing = defineRouting({
     "/services": { et: "/teenused", ru: "/teenused", en: "/services" },
     "/services/[slug]": { et: "/teenused/[slug]", ru: "/teenused/[slug]", en: "/services/[slug]" },
     "/contact": { et: "/kontakt", ru: "/kontakt", en: "/contact" },
+    "/pricing": { et: "/hinnakiri", ru: "/hinnakiri", en: "/pricing" },
   },
 });
 

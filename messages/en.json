@@ -2,6 +2,7 @@
   "nav": {
     "home": "Home",
     "services": "Services",
+    "pricing": "Pricing",
     "booking": "Our work",
     "contact": "Contact",
     "bookNow": "Book now"
@@ -210,6 +211,22 @@
         { "q": "Do you use new or used parts?", "a": "Both — it's your choice. Used parts are the cheaper option; new parts make sense if you want to keep things factory-original." }
       ]
     }
+  },
+  "pricing": {
+    "meta": {
+      "title": "Car painting and bodywork pricing",
+      "description": "Mpaint price list in Tallinn: painting a panel from 250€, rust protection from 50€. Pricing for other work depends on the damage — request a free quote."
+    },
+    "h1": "Car painting and bodywork pricing",
+    "intro": "The final price always depends on the extent of the damage, how much work is needed, and the condition of the car. Below are our confirmed starting prices — for the other services we give a more exact quote once we have seen the damage.",
+    "genericNote": "Price depends on the extent of the damage and the work involved. Request a free quote.",
+    "viewService": "View service",
+    "cta": "Get an estimate",
+    "faqTitle": "Common questions",
+    "faq": [
+      { "q": "Why is there no fixed price for every service?", "a": "Most of our work, such as bodywork, dent removal, polishing and parts replacement, depends directly on the extent of the damage and the condition of the car. We can only give an exact price once we have seen it." },
+      { "q": "Is getting a quote free?", "a": "Yes, requesting a quote costs nothing." }
+    ]
   },
   "warranty": {
     "title": "Warranty",

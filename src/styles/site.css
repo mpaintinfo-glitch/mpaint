@@ -289,6 +289,10 @@ footer>.f-in{position:relative;z-index:1}
   padding-bottom:var(--sp-4);cursor:pointer;transition:all .2s}
 .link:hover{color:var(--white);border-color:var(--pink)}
 .svc-related-links{display:flex;flex-wrap:wrap;gap:var(--sp-24);justify-content:center;margin-top:var(--sp-16)}
+.pricing-list{list-style:none}
+.pricing-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:var(--sp-16) var(--sp-24);padding:var(--sp-16) 0;border-bottom:1px solid var(--line)}
+.pricing-row:last-child{border-bottom:none}
+.pricing-row span{color:var(--med);font-weight:300;font-size:14px;text-align:right}
 
 
 .btn-lg{padding:var(--sp-12) var(--sp-24);font-size:14.5px;border-radius:var(--r-pill)}

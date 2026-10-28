@@ -2,6 +2,7 @@
   "nav": {
     "home": "Avaleht",
     "services": "Teenused",
+    "pricing": "Hinnakiri",
     "booking": "Tehtud tööd",
     "contact": "Kontakt",
     "bookNow": "Broneeri"
@@ -210,6 +211,22 @@
         { "q": "Kas kasutate uusi või kasutatud varuosi?", "a": "Mõlemat — valiku teed sina. Kasutatud osad on odavam lahendus, uued osad sobivad, kui soovid originaalseisukorda." }
       ]
     }
+  },
+  "pricing": {
+    "meta": {
+      "title": "Autovärvimise ja keretöö hinnad",
+      "description": "Mpainti hinnakiri Tallinnas: elemendi värvimine alates 250€, roostetõrje alates 50€. Teiste tööde hind sõltub kahjustuse ulatusest — küsi tasuta hinnapakkumist."
+    },
+    "h1": "Autovärvimise ja keretöö hinnad",
+    "intro": "Lõplik hind sõltub alati kahjustuse ulatusest, vajaliku töö mahust ja auto seisukorrast. Allpool on meie kinnitatud alghinnad — ülejäänud teenuste puhul anname täpsema hinnapakkumise pärast kahjustuse nägemist.",
+    "genericNote": "Hind sõltub kahjustuse ulatusest ja vajalikust tööst. Küsi tasuta hinnapakkumist.",
+    "viewService": "Vaata teenust",
+    "cta": "Saada päring",
+    "faqTitle": "Korduma kippuvad küsimused",
+    "faq": [
+      { "q": "Miks ei ole kõigile teenustele kindlat hinda?", "a": "Enamik meie töid, näiteks keretööd, mõlkide eemaldamine, poleerimine ja osade vahetus, sõltuvad otseselt kahjustuse ulatusest ja auto seisukorrast. Täpsema hinna saame anda alles pärast kahjustuse nägemist." },
+      { "q": "Kas hinnapakkumise küsimine on tasuta?", "a": "Jah, hinnapakkumise küsimine ei maksa midagi." }
+    ]
   },
   "warranty": {
     "title": "Garantii",
