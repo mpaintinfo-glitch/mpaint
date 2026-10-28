@@ -54,3 +54,17 @@ export const SERVICE_PHOTO: Record<ServiceId, StaticImageData> = {
   polish: photoPolish,
   parts: photoParts,
 };
+
+// Cross-links shown at the bottom of each service detail page. Pairings
+// reflect a real reason a visitor researching one service would want the
+// other (e.g. paint/polish because "is my scratch light enough to polish,
+// or does it need paint?" is a genuine decision point), not an arbitrary
+// shuffle.
+export const RELATED_SERVICES: Record<ServiceId, ServiceId[]> = {
+  paint: ["body", "polish"],
+  body: ["paint", "rust"],
+  dent: ["paint", "polish"],
+  rust: ["paint", "body"],
+  polish: ["paint", "dent"],
+  parts: ["body", "paint"],
+};

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "../../../../src/i18n/routing";
 import { Link, getPathname } from "../../../../src/i18n/navigation";
-import { SERVICE_PHOTO, getServiceBySlug, slugsForLocale } from "../../../../src/data/services";
+import { SERVICE_PHOTO, RELATED_SERVICES, getServiceBySlug, slugsForLocale } from "../../../../src/data/services";
 import { dropBanner } from "../../../../src/assets";
 import { localeAlternates } from "../../../../src/lib/alternates";
 import { SITE_URL } from "../../../../src/lib/site";
@@ -48,6 +48,7 @@ type ServiceDetailContent = {
   pricingNote?: string;
   warningNote?: string;
   secondarySection?: { heading: string; text: string };
+  faq?: { q: string; a: string }[];
 };
 
 export default async function ServiceDetailPage({
@@ -63,7 +64,9 @@ export default async function ServiceDetailPage({
   const t = await getTranslations();
   const svcT = await getTranslations(`serviceDetail.${id}`);
   const detail = t.raw(`serviceDetail.${id}`) as ServiceDetailContent;
-  const { h1, tagline, bullets, intro, process, techNotes, pricingNote, warningNote, secondarySection } = detail;
+  const { h1, tagline, bullets, intro, process, techNotes, pricingNote, warningNote, secondarySection, faq } = detail;
+  const related = RELATED_SERVICES[id];
+  const slugs = slugsForLocale(locale);
   // These group-heading labels aren't translated into every locale yet (ET
   // rolled out first) - t.raw() returns the actual JSON value with no
   // fallback-string substitution, so a missing key is silently undefined
@@ -171,6 +174,45 @@ export default async function ServiceDetailPage({
                 <p>{secondarySection.text}</p>
               </div>
             )}
+          </div>
+        </section>
+      )}
+
+      {faq && faq.length > 0 && (
+        <section className="sec">
+          <div className="container seo-surface">
+            <div className="seo-block seo-block--first">
+              <h2>{t("services.faqTitle")}</h2>
+              <div className="faq-list">
+                {faq.map((item, i) => (
+                  <div className="faq-item" key={i}>
+                    <h3>{item.q}</h3>
+                    <p>{item.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {related.length > 0 && (
+        <section className="sec section-compact">
+          <div className="container">
+            <div className="seo-block seo-block--first" style={{ textAlign: "center" }}>
+              <h3>{t("services.relatedHeading")}</h3>
+              <div className="svc-related-links">
+                {related.map((relId) => (
+                  <Link
+                    key={relId}
+                    href={{ pathname: "/services/[slug]", params: { slug: slugs[relId] } }}
+                    className="link"
+                  >
+                    {t(`catalog.${relId}`)}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
       )}

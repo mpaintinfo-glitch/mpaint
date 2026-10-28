@@ -288,6 +288,7 @@ footer>.f-in{position:relative;z-index:1}
 .link{font-size:14px;font-weight:600;color:var(--med);border-bottom:1px solid rgba(var(--overlay-rgb),.22);
   padding-bottom:var(--sp-4);cursor:pointer;transition:all .2s}
 .link:hover{color:var(--white);border-color:var(--pink)}
+.svc-related-links{display:flex;flex-wrap:wrap;gap:var(--sp-24);justify-content:center;margin-top:var(--sp-16)}
 
 
 .btn-lg{padding:var(--sp-12) var(--sp-24);font-size:14.5px;border-radius:var(--r-pill)}

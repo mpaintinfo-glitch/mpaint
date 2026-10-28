@@ -76,7 +76,7 @@
       { "h3": "Colour matching and painting", "p": "The paint is chosen to match the car's factory colour code and existing shade. We paint individual body parts such as bumpers, doors, wings and bonnets, as well as larger body surfaces and full cars." },
       { "h3": "Bodywork and restoration", "p": "Alongside car painting, we carry out body repair, welding, rust damage repair, dent removal, part replacement and polishing. The scope of work depends on the car's condition and the type of damage." }
     ],
-    "faqTitle": "Common questions",
+    "faqTitle": "Common questions", "relatedHeading": "Related services",
     "faq": [
       { "q": "Can a scratch be repaired without repainting the whole panel?", "a": "Sometimes, yes. It depends on how deep the scratch is and the condition of the paint layer." },
       { "q": "Can a dent be removed without repainting?", "a": "Yes, if the paint layer is intact and the damage allows for paintless dent removal." },
@@ -109,7 +109,17 @@
         "We use several quality paint brands, preferring an exact colour match from one specific manufacturer. For trickier cases, we do a spectrophotometer test spray before the full repaint.",
         "Metallic and pearl finishes cost more, since pearl needs two coats of paint."
       ],
-      "pricingNote": "Painting a panel from 250€, bonnet and roof from 450€."
+      "pricingNote": "Painting a panel from 250€, bonnet and roof from 450€.",
+      "secondarySection": {
+        "heading": "Bumper painting",
+        "text": "The bumper is one of the most commonly painted single parts. Painting plastic bumpers needs slightly different prep than metal panels — the plastic surface needs an adhesion primer so the paint holds properly. Pricing stays in the same range as any other single part, from 250€."
+      },
+      "faq": [
+        { "q": "Can a scratch be fixed without repainting the part?", "a": "Sometimes — if the scratch is surface-level and the paint layer is intact, polishing is often enough. If the scratch goes through the paint or down to the metal, it needs painting." },
+        { "q": "Can plastic bumpers be repaired and painted?", "a": "Yes. Whether it's possible depends on the crack, deformation, and extent of the damage." },
+        { "q": "Do you paint whole cars too?", "a": "Yes, we do everything from single parts to larger panels and full-car resprays." },
+        { "q": "What's done before painting?", "a": "The surface is cleaned, sanded, repaired where needed, and primed according to its condition." }
+      ]
     },
     "body": {
       "h1": "Welding & bodywork",
@@ -125,16 +135,23 @@
         "If the metal's too thin for the spotter, we use either chemical thinning or tin thinning, choosing the technique based on the situation.",
         "We also restore plastic body parts with structural epoxy paint and fit panels to match the gaps."
       ],
-      "warningNote": "We don't do frame pulling on a bench, full sill replacement, or take on oversized vehicles."
+      "warningNote": "We don't do frame pulling on a bench, full sill replacement, or take on oversized vehicles.",
+      "faq": [
+        { "q": "What bodywork do you do?", "a": "We handle dent, rust and body damage repair, welding work, and prep for painting." }
+      ]
     },
     "dent": {
       "h1": "Dent removal",
       "tagline": "Paintless spotter repair. Faster and cheaper than replacing the panel.",
+      "intro": "If the metal isn't torn and the paint isn't broken, most dents can be pulled out with the spotter method without repainting. Keeping the original factory paint also means the car's value drops less than it would after a repainted panel.",
       "bullets": [
         "No repainting needed in most cases",
         "Cheaper than a full panel swap",
         "We use the spotter method to pull dents out. If the damage is too deep for the spotter, we assess it for free and offer an alternative.",
         "Works on all vehicle types"
+      ],
+      "faq": [
+        { "q": "Can a dent be removed without painting?", "a": "Yes, if the paint layer is intact and the damage allows for paintless dent repair." }
       ]
     },
     "rust": {
@@ -159,27 +176,38 @@
       "secondarySection": {
         "heading": "Preventive rust protection",
         "text": "We also offer preventive rust protection for newer cars, especially given Estonia's winter road salt."
-      }
+      },
+      "faq": [
+        { "q": "How does rust damage repair work?", "a": "We remove the damaged area, repair the metal where needed, and prepare the surface for repainting." },
+        { "q": "Can a rusted part always be repaired?", "a": "Not always. A heavily damaged or fully rusted-through part may need a partial or full replacement." }
+      ]
     },
     "polish": {
       "h1": "Body & headlight polishing",
       "tagline": "Removes light scratches and restores headlight clarity.",
-      "intro": "For headlight restoration we use both chemical and mechanical methods, depending on the condition of the coating.",
+      "intro": "For headlight restoration we use both chemical and mechanical methods, depending on the condition of the coating. Polishing only helps with surface-level scratches — if a scratch goes down to the paint layer, the part needs repainting.",
       "bullets": [
         "Minor scratch & swirl removal",
         "Headlight clarity restoration",
         "Better visibility & safety at night",
         "All makes and models"
+      ],
+      "faq": [
+        { "q": "Does polishing remove all scratches?", "a": "Only surface-level ones. If a scratch goes down to the paint layer, the part needs painting — see our car painting service." }
       ]
     },
     "parts": {
       "h1": "Replacing parts",
       "tagline": "Damaged or worn parts found, sourced, and fitted.",
+      "intro": "Before starting any work, we assess whether a damaged part is worth repairing or better off replaced. If it needs replacing, we offer both new and used parts, depending on your budget and the car's age.",
       "bullets": [
         "Full diagnosis before any work starts",
         "New or used parts, your choice",
         "Used parts available to save money",
         "Competitive pricing"
+      ],
+      "faq": [
+        { "q": "Do you use new or used parts?", "a": "Both — it's your choice. Used parts are the cheaper option; new parts make sense if you want to keep things factory-original." }
       ]
     }
   },

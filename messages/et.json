@@ -76,7 +76,7 @@
       { "h3": "Värvitooni sobitamine ja värvimine", "p": "Värv valitakse auto tehase värvikoodi ja olemasoleva värvitooni järgi. Värvime nii üksikuid keredetaile, näiteks stangesid, uksi, tiibu ja kapotte, kui ka suuremaid kerepindu ja terveid autosid." },
       { "h3": "Keretööd ja taastamine", "p": "Lisaks autovärvimisele teostame kereparandust, keevitustöid, roostekahjustuste remonti, mõlkide eemaldamist, detailide vahetust ja poleerimist. Töö ulatus sõltub auto seisukorrast ja kahjustuse tüübist." }
     ],
-    "faqTitle": "Korduma kippuvad küsimused",
+    "faqTitle": "Korduma kippuvad küsimused", "relatedHeading": "Seotud teenused",
     "faq": [
       { "q": "Kas kriimustust saab parandada ilma detaili üle värvimata?", "a": "Mõnikord küll. See sõltub kriimustuse sügavusest ja värvikihi seisukorrast." },
       { "q": "Kas mõlki saab eemaldada ilma värvimiseta?", "a": "Jah, kui värvikiht on terve ja kahjustus võimaldab värvivaba mõlgieemaldust." },
@@ -109,7 +109,17 @@
         "Kasutame erinevaid kvaliteetseid värvibrände, eelistades täpset värvitooni sobitust ühele kindlale tootjale. Keerulisematel juhtudel teeme spektrofotomeetriga testvärvingu enne täisvärvimist.",
         "Metallik- ja pärlmutter-toonid on kallimad, kuna pärlmutter nõuab kahte värvikihti."
       ],
-      "pricingNote": "Elemendi värvimine alates 250€, kapott ja katus alates 450€."
+      "pricingNote": "Elemendi värvimine alates 250€, kapott ja katus alates 450€.",
+      "secondarySection": {
+        "heading": "Stange värvimine",
+        "text": "Stange on üks levinumaid detaile, mida üksikult värvime. Plaststangede värvimine nõuab tavapärasest veidi erinevat ettevalmistust, kuna plasti pind vajab sobivat aluskrunti, et värv korralikult kinnituks. Hind jääb samasse vahemikku mis teiste üksikute detailide värvimisel, alates 250€."
+      },
+      "faq": [
+        { "q": "Kas kriimustust saab parandada ilma detaili üle värvimata?", "a": "Mõnikord küll — kui kriimustus on pindmine ja värvikiht terve, piisab tihti poleerimisest. Kui kriimustus ulatub värvikihist läbi või metallini, on vaja värvida." },
+        { "q": "Kas plaststangesid saab parandada ja värvida?", "a": "Jah. Võimalus sõltub prao, deformatsiooni ja muu kahjustuse ulatusest." },
+        { "q": "Kas värvite ka terveid autosid?", "a": "Jah, teostame nii üksikute detailide kui ka suuremate pindade ja kogu auto värvimist." },
+        { "q": "Mida tehakse enne värvimist?", "a": "Pind puhastatakse, lihvitakse, parandatakse ja krunditakse vastavalt selle seisukorrale." }
+      ]
     },
     "body": {
       "h1": "Keevitus ja keretööd",
@@ -125,16 +135,23 @@
         "Kui metall on liiga õhuke spotteri jaoks, kasutame kas keemilist õhemist või tinaga õhemist. Valime tehnika vastavalt olukorrale.",
         "Teostame ka kere plastdetailide taastamist struktuurse epoksiidvärviga ja elementide sobitamist vahede järgi."
       ],
-      "warningNote": "Ei tee stapliga raami väljavenitamist, täielikku porde vahetust ega võta vastu suuremõõtmelisi sõidukeid."
+      "warningNote": "Ei tee stapliga raami väljavenitamist, täielikku porde vahetust ega võta vastu suuremõõtmelisi sõidukeid.",
+      "faq": [
+        { "q": "Milliseid keretöid teete?", "a": "Teostame mõlkide, rooste- ja kerakahjustuste remonti, keevitustöid ning värvimiseks ettevalmistust." }
+      ]
     },
     "dent": {
       "h1": "Mõlkide eemaldamine",
       "tagline": "Spotteriga mõlkide eemaldamine ilma värvimata. Kiirem ja odavam kui paneeli vahetus.",
+      "intro": "Kui metall pole rebenenud ega värv kahjustatud, saab enamiku mõlkidest eemaldada spotter-meetodil ilma üle värvimata. Säilinud originaalvärv tähendab ka seda, et auto väärtus ei vähene nii nagu üle värvitud paneeli puhul.",
       "bullets": [
         "Enamasti pole ümbervärvimist vaja",
         "Odavam kui täispaneeli vahetus",
         "Kasutame spotter-meetodit mõlkide väljatõmbamiseks. Kui kahjustus on spotteri jaoks liiga sügav, hindame tasuta ja pakume alternatiivi.",
         "Sobib kõikidele sõidukitüüpidele"
+      ],
+      "faq": [
+        { "q": "Kas mõlki saab eemaldada ilma värvimiseta?", "a": "Jah, kui värvikiht on terve ja kahjustus võimaldab värvivaba mõlgieemaldust." }
       ]
     },
     "rust": {
@@ -159,27 +176,38 @@
       "secondarySection": {
         "heading": "Ennetav roostekaitse",
         "text": "Pakume ka ennetavat roostekaitset uuematele autodele, eriti arvestades Eesti talvist teekattesoola."
-      }
+      },
+      "faq": [
+        { "q": "Kuidas toimub roostekahjustuse remont?", "a": "Eemaldame kahjustatud ala, parandame vajadusel metalli ning valmistame pinna uuesti värvimiseks ette." },
+        { "q": "Kas roostes detaili saab alati parandada?", "a": "Mitte alati. Tugevalt kahjustatud või läbiroostetanud detail võib vajada osalist või täielikku vahetust." }
+      ]
     },
     "polish": {
       "h1": "Kere ja tulede poleerimine",
       "tagline": "Eemaldab kergeid kriimustusi ja taastab tulede selguse.",
-      "intro": "Faaride taastamiseks kasutame nii keemilist kui mehaanilist meetodit, sõltuvalt katte seisukorrast.",
+      "intro": "Faaride taastamiseks kasutame nii keemilist kui mehaanilist meetodit, sõltuvalt katte seisukorrast. Poleerimine aitab ainult pindmiste kriimustuste puhul — kui kriimustus ulatub värvikihist läbi, on vaja ala üle värvida.",
       "bullets": [
         "Väiksemate kriimustuste eemaldamine",
         "Tulede selguse taastamine",
         "Parem nähtavus ja ohutus pimedas",
         "Kõik margid ja mudelid"
+      ],
+      "faq": [
+        { "q": "Kas poleerimine eemaldab kõik kriimustused?", "a": "Ainult pindmised. Kui kriimustus ulatub värvikihist läbi, on vaja ala üle värvida — vaata meie autovärvimise teenust." }
       ]
     },
     "parts": {
       "h1": "Osade vahetus",
       "tagline": "Leiame, hangime ja paigaldame kahjustatud või kulunud osad.",
+      "intro": "Enne töö algust hindame, kas kahjustatud osa tasub parandada või on mõistlikum välja vahetada. Vahetuse korral pakume nii uusi kui kasutatud osi, olenevalt sinu eelarvest ja auto vanusest.",
       "bullets": [
         "Täielik hindamine enne töö algust",
         "Uued või kasutatud osad, sinu valik",
         "Kasutatud osad raha kokkuhoiuks",
         "Konkurentsivõimeline hind"
+      ],
+      "faq": [
+        { "q": "Kas kasutate uusi või kasutatud varuosi?", "a": "Mõlemat — valiku teed sina. Kasutatud osad on odavam lahendus, uued osad sobivad, kui soovid originaalseisukorda." }
       ]
     }
   },
