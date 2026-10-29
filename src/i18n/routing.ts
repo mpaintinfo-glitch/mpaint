@@ -11,6 +11,9 @@ export const routing = defineRouting({
     "/services/[slug]": { et: "/teenused/[slug]", ru: "/teenused/[slug]", en: "/services/[slug]" },
     "/contact": { et: "/kontakt", ru: "/kontakt", en: "/contact" },
     "/pricing": { et: "/hinnakiri", ru: "/hinnakiri", en: "/pricing" },
+    "/blog": { et: "/blogi", ru: "/blogi", en: "/blog" },
+    "/blog/[slug]": { et: "/blogi/[slug]", ru: "/blogi/[slug]", en: "/blog/[slug]" },
+    "/accident": { et: "/avarii", ru: "/avarii", en: "/accident" },
   },
 });
 

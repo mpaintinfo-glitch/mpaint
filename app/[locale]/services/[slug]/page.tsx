@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "../../../../src/i18n/routing";
 import { Link, getPathname } from "../../../../src/i18n/navigation";
 import { SERVICE_PHOTO, RELATED_SERVICES, getServiceBySlug, slugsForLocale } from "../../../../src/data/services";
+import { SERVICE_RELATED_ARTICLES, articleSlugsForLocale, getArticleContent } from "../../../../src/data/blog";
 import { dropBanner } from "../../../../src/assets";
 import { localeAlternates } from "../../../../src/lib/alternates";
 import { SITE_URL } from "../../../../src/lib/site";
@@ -67,6 +68,8 @@ export default async function ServiceDetailPage({
   const { h1, tagline, bullets, intro, process, techNotes, pricingNote, warningNote, secondarySection, faq } = detail;
   const related = RELATED_SERVICES[id];
   const slugs = slugsForLocale(locale);
+  const relatedArticles = SERVICE_RELATED_ARTICLES[id];
+  const articleSlugs = articleSlugsForLocale(locale);
   // These group-heading labels aren't translated into every locale yet (ET
   // rolled out first) - t.raw() returns the actual JSON value with no
   // fallback-string substitution, so a missing key is silently undefined
@@ -196,23 +199,41 @@ export default async function ServiceDetailPage({
         </section>
       )}
 
-      {related.length > 0 && (
+      {(related.length > 0 || relatedArticles.length > 0) && (
         <section className="sec section-compact">
           <div className="container">
-            <div className="seo-block seo-block--first" style={{ textAlign: "center" }}>
-              <h3>{t("services.relatedHeading")}</h3>
-              <div className="svc-related-links">
-                {related.map((relId) => (
-                  <Link
-                    key={relId}
-                    href={{ pathname: "/services/[slug]", params: { slug: slugs[relId] } }}
-                    className="link"
-                  >
-                    {t(`catalog.${relId}`)}
-                  </Link>
-                ))}
+            {related.length > 0 && (
+              <div className="seo-block seo-block--first" style={{ textAlign: "center" }}>
+                <h3>{t("services.relatedHeading")}</h3>
+                <div className="svc-related-links">
+                  {related.map((relId) => (
+                    <Link
+                      key={relId}
+                      href={{ pathname: "/services/[slug]", params: { slug: slugs[relId] } }}
+                      className="link"
+                    >
+                      {t(`catalog.${relId}`)}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
+            {relatedArticles.length > 0 && (
+              <div className="seo-block" style={{ textAlign: "center" }}>
+                <h3>{t("blog.relatedArticlesHeading")}</h3>
+                <div className="svc-related-links">
+                  {relatedArticles.map((articleId) => (
+                    <Link
+                      key={articleId}
+                      href={{ pathname: "/blog/[slug]", params: { slug: articleSlugs[articleId] } }}
+                      className="link"
+                    >
+                      {getArticleContent(locale, articleId).title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </section>
       )}

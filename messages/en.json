@@ -3,6 +3,7 @@
     "home": "Home",
     "services": "Services",
     "pricing": "Pricing",
+    "blog": "Blog",
     "booking": "Our work",
     "contact": "Contact",
     "bookNow": "Book now"
@@ -226,6 +227,44 @@
     "faq": [
       { "q": "Why is there no fixed price for every service?", "a": "Most of our work, such as bodywork, dent removal, polishing and parts replacement, depends directly on the extent of the damage and the condition of the car. We can only give an exact price once we have seen it." },
       { "q": "Is getting a quote free?", "a": "Yes, requesting a quote costs nothing." }
+    ]
+  },
+  "blog": {
+    "meta": {
+      "title": "Car painting and bodywork blog",
+      "description": "Practical guides on car painting, bodywork, rust, and post-accident repair. Mpaint's blog helps you understand what your car actually needs."
+    },
+    "h1": "Blog",
+    "intro": "Practical guides and explanations on car painting, bodywork, and repair decisions.",
+    "readMore": "Read more",
+    "publishedOn": "Published",
+    "relatedArticlesHeading": "Related articles",
+    "backToBlog": "← All articles"
+  },
+  "accident": {
+    "meta": {
+      "title": "Car damaged in an accident? Bodywork and painting in Tallinn",
+      "description": "Post-accident bodywork and painting in Tallinn: how to request a quote, when an in-person inspection is needed, and how to get your car to the workshop if it is not drivable."
+    },
+    "h1": "Car damaged in an accident? Bodywork and painting in Tallinn",
+    "intro": "After an accident, it is often hard to judge how extensive the damage really is. Here is what Mpaint takes into account for post-accident bodywork and painting, and how to get a damaged car to our workshop.",
+    "sections": [
+      { "heading": "What kind of damage needs inspecting", "paragraphs": ["Visible damage, such as dents, scratches, a cracked bumper, or a loose body part, is the easiest to notice. But even a minor collision can affect the car's alignment or structure in a way that does not show from the outside. If the car was involved in an accident, it is worth having it inspected even if the damage looks minor."] },
+      { "heading": "How to request a quote", "paragraphs": ["The easiest way to start is by sending us photos of the damage. The more angles and the better the lighting, the more accurate our initial estimate can be."] },
+      { "heading": "Why photos help with the initial assessment", "paragraphs": ["Photos give us an initial picture of the type and extent of the damage and help decide whether it is purely cosmetic or needs a more thorough inspection. This speeds up the process and lets us give a preliminary estimate before the car even arrives at the workshop."] },
+      { "heading": "When an in-person inspection is needed", "paragraphs": ["For a more serious accident, suspected structural damage, or several damaged areas, photos alone are not enough. In that case we only give an exact quote after seeing the car, since the real extent of the damage often only becomes clear during an in-person inspection."] },
+      { "heading": "Why some damage does not show from the outside", "paragraphs": ["The force of a collision does not always stay contained to the visible impact point - it can affect the car's structure or alignment even if only a small dent or scratch is visible from the outside."] },
+      { "heading": "How bodywork, parts replacement, and painting fit together", "paragraphs": ["Post-accident repair often involves several stages together: repairing or replacing damaged body parts, rust protection where needed, and always painting, so the colour matches the rest of the car."] }
+    ],
+    "safetyNote": "If the steering feels harder to turn after an accident, the car pulls to one side while driving, you hear an unusual sound when braking, or a body or plastic part is loose, the car should not be driven any further.",
+    "towingHeading": "How to get your car to the workshop if it is not drivable",
+    "towingText": "If it is not safe to drive the car, it can be brought to our workshop by a suitable recovery or towing service. Mpaint does not provide towing itself, but we will give you clear directions and the workshop address, and agree on a time for the car to arrive.",
+    "towingCta": "Car not drivable? Get in touch with us and arrange to bring it to the workshop.",
+    "cta": "Get an estimate",
+    "faqTitle": "Common questions",
+    "faq": [
+      { "q": "Does Mpaint handle insurance claims?", "a": "No, we do not handle insurance claims or on-site accident assistance - our job is the bodywork and paint repair itself." },
+      { "q": "Do you offer a towing service?", "a": "No, Mpaint does not provide towing itself. We recommend using a suitable recovery or towing service, and we will give you the workshop address and agree on a delivery time." }
     ]
   },
   "warranty": {

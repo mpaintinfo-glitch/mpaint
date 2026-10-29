@@ -3,6 +3,7 @@
     "home": "Avaleht",
     "services": "Teenused",
     "pricing": "Hinnakiri",
+    "blog": "Blogi",
     "booking": "Tehtud tööd",
     "contact": "Kontakt",
     "bookNow": "Broneeri"
@@ -226,6 +227,44 @@
     "faq": [
       { "q": "Miks ei ole kõigile teenustele kindlat hinda?", "a": "Enamik meie töid, näiteks keretööd, mõlkide eemaldamine, poleerimine ja osade vahetus, sõltuvad otseselt kahjustuse ulatusest ja auto seisukorrast. Täpsema hinna saame anda alles pärast kahjustuse nägemist." },
       { "q": "Kas hinnapakkumise küsimine on tasuta?", "a": "Jah, hinnapakkumise küsimine ei maksa midagi." }
+    ]
+  },
+  "blog": {
+    "meta": {
+      "title": "Autovärvimise ja keretöö blogi",
+      "description": "Praktilised juhendid autovärvimisest, keretöödest, roostest ja avariijärgsest remondist. Mpainti blogi aitab mõista, mida su auto vajab."
+    },
+    "h1": "Blogi",
+    "intro": "Praktilised juhendid ja selgitused autovärvimisest, keretöödest ja remondiotsustest.",
+    "readMore": "Loe edasi",
+    "publishedOn": "Avaldatud",
+    "relatedArticlesHeading": "Seotud artiklid",
+    "backToBlog": "← Kõik artiklid"
+  },
+  "accident": {
+    "meta": {
+      "title": "Auto sai avariis kahjustada? Keretööd ja värvimine Tallinnas",
+      "description": "Avariijärgne keretööd ja värvimine Tallinnas: kuidas küsida hinnapakkumist, millal on vaja füüsilist ülevaatust ja kuidas toimetada sõiduk töökotta, kui see ei ole sõidukorras."
+    },
+    "h1": "Auto sai avariis kahjustada? Keretööd ja värvimine Tallinnas",
+    "intro": "Avarii järel on tihti raske hinnata, kui ulatuslik kahjustus tegelikult on. Siin on, mida Mpaint avariijärgse keretöö ja värvimise juures arvestab, ning kuidas toimetada kahjustatud auto meie töökotta.",
+    "sections": [
+      { "heading": "Millised kahjustused vajavad ülevaatust", "paragraphs": ["Nähtavad kahjustused, nagu mõlgid, kriimustused, pragunenud stange või lahtine keredetail, on kõige lihtsamini märgatavad. Aga ka väiksem kokkupõrge võib kahjustada kere joondust või kandekonstruktsiooni viisil, mis väliselt ei paista. Kui auto oli avariis osaline, tasub lasta see üle vaadata ka siis, kui kahjustus tundub väike."] },
+      { "heading": "Kuidas hinnapakkumist küsida", "paragraphs": ["Lihtsaim viis alustada on saata meile fotod kahjustusest. Mida rohkem nurki ja mida parem valgus, seda täpsema esmase hinnangu saame anda."] },
+      { "heading": "Miks fotod aitavad esmasel hindamisel", "paragraphs": ["Fotod annavad meile esmase ülevaate kahjustuse tüübist ja ulatusest ning aitavad otsustada, kas tegu on puhtalt kosmeetilise kahjustusega või on vaja põhjalikumat ülevaatust. See kiirendab protsessi ja aitab anda esialgse hinnangu juba enne auto töökotta jõudmist."] },
+      { "heading": "Millal on vaja füüsilist ülevaatust", "paragraphs": ["Suurema avarii, kandekonstruktsiooni kahjustuse kahtluse või mitme kahjustatud ala korral ei piisa ainult fotodest. Sellisel juhul anname täpsema hinnapakkumise alles pärast auto nägemist, sest kahjustuse tegelik ulatus selgub tihti alles füüsilisel ülevaatusel."] },
+      { "heading": "Miks mõni kahjustus väljast ei paista", "paragraphs": ["Kokkupõrke jõud ei kandu alati ainult nähtavasse kohta — löök võib kahjustada kandekonstruktsiooni või joondust, isegi kui väliselt paistab ainult väike mõlk või kriimustus."] },
+      { "heading": "Keretööde, osade vahetuse ja värvimise seos", "paragraphs": ["Avariijärgne remont hõlmab tihti mitut etappi koos: kahjustatud keredetailide parandust või vahetust, vajadusel roostekaitset ja alati värvimist, et toon sobituks ülejäänud autoga."] }
+    ],
+    "safetyNote": "Kui pärast avariid on rooliseade raskem liikuda, auto tõmbab sõidu ajal ühele poole, kuuled pidurdades ebatavalist heli, või mõni kere- või plastidetail on lahti, ei tohi autoga enam sõita.",
+    "towingHeading": "Kuidas toimetada sõiduk töökotta, kui see ei ole sõidukorras",
+    "towingText": "Kui auto ei ole ohutu sõita, saab selle meie töökotta toimetada sobiva evakuaatori või puksiiriteenusega. Mpaint ise puksiiriteenust ei paku, kuid anname sulle täpsed suunised ja töökoja aadressi ning lepime kokku, millal auto kohale tuua.",
+    "towingCta": "Auto ei ole sõidukorras? Võta meiega ühendust ja lepi kokku auto töökotta toomine.",
+    "cta": "Küsi hinnapakkumist",
+    "faqTitle": "Korduma kippuvad küsimused",
+    "faq": [
+      { "q": "Kas Mpaint tegeleb kindlustusjuhtumitega?", "a": "Ei, me ei tegele kindlustuse haldamise ega avariijärgse abiga sündmuskohal — meie ülesanne on auto kere- ja värvitööde teostamine." },
+      { "q": "Kas te pakute puksiiriteenust?", "a": "Ei, Mpaint ei paku ise puksiiriteenust. Soovitame kasutada sobivat evakuaatori- või puksiiriteenust ning anname sulle töökoja aadressi ja lepime kokku auto toomise aja." }
     ]
   },
   "warranty": {
