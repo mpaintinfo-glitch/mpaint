@@ -14,7 +14,7 @@ export const content_en: Record<ArticleId, ArticleContent> = {
       {
         heading: "What affects the price the most",
         paragraphs: [
-          "The biggest factor is the size of the surface being painted and the number of panels. Painting one door or a bumper is a completely different job from a full respray, which means taking the whole car apart and putting it back together - that takes up most of the time, not the paint drying.",
+          "The biggest factor is the size of the surface being painted and the number of panels. Painting one door or a bumper is a completely different job from a full respray, which means taking the whole car apart and putting it back together. That takes up most of the time, not the paint drying.",
           "The second big factor is the paint type. A standard solid colour is the cheapest option. Metallic finishes cost more because they need a more precise colour match, and pearl finishes cost even more, since they need two separate coats of paint to get the right depth.",
           "The third factor is prep work: whether the surface just needs cleaning and sanding, or whether rust needs removing first, dents need pulling out, or damaged parts need replacing. The more prep work involved, the higher the final price.",
         ],
@@ -34,7 +34,7 @@ export const content_en: Record<ArticleId, ArticleContent> = {
       {
         heading: "How to keep the price reasonable",
         paragraphs: [
-          "If the damage is minor and the paint layer is intact, it is worth considering polishing first - it is cheaper than painting and works for surface-level scratches. But if a scratch goes through the paint layer, polishing will not fix it and the area needs painting.",
+          "If the damage is minor and the paint layer is intact, it is worth considering polishing first: it is cheaper than painting and works for surface-level scratches. But if a scratch goes through the paint layer, polishing will not fix it and the area needs painting.",
         ],
       },
     ],
@@ -59,7 +59,7 @@ export const content_en: Record<ArticleId, ArticleContent> = {
         heading: "A simple way to check a scratch yourself",
         paragraphs: [
           "Run your fingernail gently over the scratch. If your nail does not catch on it, and the scratch almost disappears when the surface is wet, it is likely a surface-level clearcoat scratch. If your nail clearly catches on the scratch and you can see a different colour underneath, the scratch has probably gone through the paint layer.",
-          "Also look at the colour inside the scratch. If you see white or grey, that is plastic or primer. If you see a metallic shine, the scratch has reached the car's metal body - in that case there is also a risk of rust, and painting is needed sooner.",
+          "Also look at the colour inside the scratch. If you see white or grey, that is plastic or primer. If you see a metallic shine, the scratch has reached the car's metal body. In that case there is also a risk of rust, and painting is needed sooner.",
         ],
       },
       {
@@ -71,20 +71,20 @@ export const content_en: Record<ArticleId, ArticleContent> = {
       {
         heading: "When painting is needed",
         paragraphs: [
-          "If the scratch goes through the paint layer down to the primer or metal, polishing will not fix it - the scratch stays visible, and exposed metal will start to rust. In that case the part needs repainting. The whole panel is usually painted, not just the scratched spot, so the colour stays even.",
+          "If the scratch goes through the paint layer down to the primer or metal, polishing will not fix it: the scratch stays visible, and exposed metal will start to rust. In that case the part needs repainting. The whole panel is usually painted, not just the scratched spot, so the colour stays even.",
         ],
       },
       {
         heading: "What not to do",
         paragraphs: [
-          "Internet tips like toothpaste or nail polish remover to hide a scratch do not restore the paint layer - they can temporarily make a surface scratch less visible, but they do not fix damage that goes through the paint, and they can damage the surface further.",
+          "Internet tips like toothpaste or nail polish remover to hide a scratch do not restore the paint layer. They can temporarily make a surface scratch less visible, but they do not fix damage that goes through the paint, and they can damage the surface further.",
         ],
       },
     ],
     faq: [
       {
         q: "Can a scratch be fixed without repainting the part?",
-        a: "Sometimes - if the scratch is surface-level and the paint layer is intact, polishing is often enough. If the scratch goes through the paint or down to the metal, it needs painting.",
+        a: "Sometimes. If the scratch is surface-level and the paint layer is intact, polishing is often enough. If the scratch goes through the paint or down to the metal, it needs painting.",
       },
       { q: "Can polishing remove any scratch?", a: "No. Polishing only works for surface-level scratches. Deeper scratches need painting." },
     ],
@@ -101,7 +101,7 @@ export const content_en: Record<ArticleId, ArticleContent> = {
       {
         heading: "Document the damage",
         paragraphs: [
-          "Before moving the car, if it is safe to do so, take photos of the damage from several angles - this is useful both for insurance and for a repair shop's initial assessment. Take close-up shots of the damage details as well as wider shots showing the whole side of the car.",
+          "Before moving the car, if it is safe to do so, take photos of the damage from several angles: this is useful both for insurance and for a repair shop's initial assessment. Take close-up shots of the damage details as well as wider shots showing the whole side of the car.",
         ],
       },
       {
@@ -132,7 +132,7 @@ export const content_en: Record<ArticleId, ArticleContent> = {
     faq: [
       {
         q: "Can I drive my car myself after an accident?",
-        a: "Only if the car is definitely drivable - the steering, brakes, and lights work properly, and no body or plastic parts are loose. If in doubt, it is safer to have the car transported.",
+        a: "Only if the car is definitely drivable: the steering, brakes, and lights work properly, and no body or plastic parts are loose. If in doubt, it is safer to have the car transported.",
       },
     ],
   },
@@ -148,7 +148,7 @@ export const content_en: Record<ArticleId, ArticleContent> = {
       {
         heading: "Surface rust versus metal rusted through",
         paragraphs: [
-          "Surface rust means corrosion has only reached the outer layer of the metal, without weakening its strength. It is removed, the metal is cleaned and treated with acid to remove invisible corrosion too, and then protected with multiple layers of primer before painting. Metal rusted through means the corrosion has eaten through the metal - in that case, simply cleaning and priming is no longer enough, because the metal itself has lost its strength.",
+          "Surface rust means corrosion has only reached the outer layer of the metal, without weakening its strength. It is removed, the metal is cleaned and treated with acid to remove invisible corrosion too, and then protected with multiple layers of primer before painting. Metal rusted through means the corrosion has eaten through the metal. In that case, simply cleaning and priming is no longer enough, because the metal itself has lost its strength.",
         ],
       },
       {
@@ -160,7 +160,7 @@ export const content_en: Record<ArticleId, ArticleContent> = {
       {
         heading: "When to consider replacement instead",
         paragraphs: [
-          "If corrosion has gone far enough that the metal has rusted through or lost its structural strength, we usually recommend replacing the part rather than repairing it - patching metal that has rusted through does not give a lasting result, and the rust usually comes back.",
+          "If corrosion has gone far enough that the metal has rusted through or lost its structural strength, we usually recommend replacing the part rather than repairing it: patching metal that has rusted through does not give a lasting result, and the rust usually comes back.",
         ],
       },
       {
@@ -193,7 +193,7 @@ export const content_en: Record<ArticleId, ArticleContent> = {
       {
         heading: "What kind of damage is usually repairable",
         paragraphs: [
-          "Cracks, scratches, minor deformation, and smaller damage around the mounting points are usually repairable. The repair involves welding or bonding the plastic at the crack, levelling the surface, and then painting. Painting a plastic bumper needs slightly different prep than usual - the plastic surface needs an adhesion primer so the paint holds properly.",
+          "Cracks, scratches, minor deformation, and smaller damage around the mounting points are usually repairable. The repair involves welding or bonding the plastic at the crack, levelling the surface, and then painting. Painting a plastic bumper needs slightly different prep than usual: the plastic surface needs an adhesion primer so the paint holds properly.",
         ],
       },
       {
@@ -229,7 +229,7 @@ export const content_en: Record<ArticleId, ArticleContent> = {
     description: "Car painting step by step: prep, colour matching, painting in a dust-free booth, and finishing.",
     excerpt: "A good paint result depends heavily on preparation. Here is what actually happens during the painting process.",
     intro: [
-      "A good paint result does not just come out of a spray gun - most of the work and time actually goes into preparation and finishing, not applying the paint itself.",
+      "A good paint result does not just come out of a spray gun. Most of the work and time actually goes into preparation and finishing, not applying the paint itself.",
     ],
     sections: [
       {

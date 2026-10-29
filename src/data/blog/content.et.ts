@@ -14,7 +14,7 @@ export const content_et: Record<ArticleId, ArticleContent> = {
       {
         heading: "Mis hinda kõige rohkem mõjutab",
         paragraphs: [
-          "Suurim hinnategur on värvitava pinna suurus ja detailide arv. Ühe ukse või stange värvimine on hoopis teine töö kui terve auto täisvärvimine — viimane tähendab kogu auto lahtivõtmist ja kokkupanekut, mis võtab suurema osa ajast, mitte värvi kuivamine.",
+          "Suurim hinnategur on värvitava pinna suurus ja detailide arv. Ühe ukse või stange värvimine on hoopis teine töö kui terve auto täisvärvimine. Viimane tähendab kogu auto lahtivõtmist ja kokkupanekut, mis võtab suurema osa ajast, mitte värvi kuivamine.",
           "Teine suur tegur on värvitüüp. Tavaline ühevärviline toon on odavaim variant. Metallik-toonid on kallimad, kuna nõuavad täpsemat värvisegu, ning pärlmutter-toonid on kallimad veelgi, sest need vajavad kahte eraldi värvikihti õige sügavuse saavutamiseks.",
           "Kolmas tegur on ettevalmistus: kas pind on lihtsalt puhastada ja lihvida, või on vaja enne roostet eemaldada, mõlke välja tõmmata või kahjustatud detaile vahetada. Mida rohkem ettevalmistustööd, seda kõrgem on lõpphind.",
         ],
@@ -34,7 +34,7 @@ export const content_et: Record<ArticleId, ArticleContent> = {
       {
         heading: "Kuidas hinda mõistlikult hoida",
         paragraphs: [
-          "Kui kahjustus on väike ja värvikiht terve, tasub kõigepealt kaaluda poleerimist — see on odavam kui värvimine ja sobib pindmiste kriimustuste puhul. Kui aga kriimustus ulatub värvikihist läbi, poleerimine tulemust ei anna ja ala tuleb värvida.",
+          "Kui kahjustus on väike ja värvikiht terve, tasub kõigepealt kaaluda poleerimist: see on odavam kui värvimine ja sobib pindmiste kriimustuste puhul. Kui aga kriimustus ulatub värvikihist läbi, poleerimine tulemust ei anna ja ala tuleb värvida.",
         ],
       },
     ],
@@ -59,7 +59,7 @@ export const content_et: Record<ArticleId, ArticleContent> = {
         heading: "Lihtne viis kriimustust ise kontrollida",
         paragraphs: [
           "Käi kriimustusel küünega õrnalt üle. Kui küüs kriimustuse sisse kinni ei jää ja kriimustus on peaaegu nähtamatu, kui pind on märg, on tõenäoliselt tegu pindmise lakikahjustusega. Kui küüs jääb selgelt kriimustuse sisse ja all paistab erinev värv, on kriimustus tõenäoliselt värvikihist läbi ulatunud.",
-          "Vaata ka kriimustuse värvi. Kui kriimustuse sees on näha valget või halli tooni, on tegu plasti- või krundikihiga. Kui näed metalli läiget, on kriimustus jõudnud kere metallini — sellisel juhul on oht ka roostele ja värvimine on vajalik kiiremini.",
+          "Vaata ka kriimustuse värvi. Kui kriimustuse sees on näha valget või halli tooni, on tegu plasti- või krundikihiga. Kui näed metalli läiget, on kriimustus jõudnud kere metallini. Sellisel juhul on oht ka roostele ja värvimine on vajalik kiiremini.",
         ],
       },
       {
@@ -71,20 +71,20 @@ export const content_et: Record<ArticleId, ArticleContent> = {
       {
         heading: "Millal on vaja värvida",
         paragraphs: [
-          "Kui kriimustus ulatub värvikihist läbi kuni krundi või metallini, poleerimine tulemust ei anna — kriimustus jääb nähtavaks ja paljastunud metall hakkab roostetama. Sellisel juhul tuleb detail üle värvida. Enamasti värvitakse terve detail, mitte ainult kriimustatud koht, et toon jääks ühtlaseks.",
+          "Kui kriimustus ulatub värvikihist läbi kuni krundi või metallini, poleerimine tulemust ei anna: kriimustus jääb nähtavaks ja paljastunud metall hakkab roostetama. Sellisel juhul tuleb detail üle värvida. Enamasti värvitakse terve detail, mitte ainult kriimustatud koht, et toon jääks ühtlaseks.",
         ],
       },
       {
         heading: "Mida mitte teha",
         paragraphs: [
-          "Interneti nõuanded, nagu hambapasta või küünelakieemaldi kriimustuse peitmiseks, ei paranda värvikihti — need võivad pindmist kriimustust ajutiselt vähem nähtavaks muuta, aga värvikihist läbi ulatuvat kahjustust need ei lahenda ja võivad pinda hoopis rohkem kahjustada.",
+          "Interneti nõuanded, nagu hambapasta või küünelakieemaldi kriimustuse peitmiseks, ei paranda värvikihti. Need võivad pindmist kriimustust ajutiselt vähem nähtavaks muuta, aga värvikihist läbi ulatuvat kahjustust need ei lahenda ja võivad pinda hoopis rohkem kahjustada.",
         ],
       },
     ],
     faq: [
       {
         q: "Kas kriimustust saab parandada ilma detaili üle värvimata?",
-        a: "Mõnikord küll — kui kriimustus on pindmine ja värvikiht terve, piisab tihti poleerimisest. Kui kriimustus ulatub värvikihist läbi või metallini, on vaja värvida.",
+        a: "Mõnikord küll. Kui kriimustus on pindmine ja värvikiht terve, piisab tihti poleerimisest. Kui kriimustus ulatub värvikihist läbi või metallini, on vaja värvida.",
       },
       { q: "Kas kõiki kriimustusi saab poleerimisega eemaldada?", a: "Ei. Poleerimine toimib ainult pindmiste kriimustuste puhul. Sügavamad kriimustused vajavad värvimist." },
     ],
@@ -101,7 +101,7 @@ export const content_et: Record<ArticleId, ArticleContent> = {
       {
         heading: "Dokumenteeri kahjustus",
         paragraphs: [
-          "Enne auto liigutamist, kui see on ohutu, tee fotod kahjustusest mitmest nurgast — see on kasulik nii kindlustuse jaoks kui ka remonditöökojale esmase hinnangu andmiseks. Pildista nii lähedalt, kahjustuse detailid, kui kaugemalt, terve auto küljevaade.",
+          "Enne auto liigutamist, kui see on ohutu, tee fotod kahjustusest mitmest nurgast. See on kasulik nii kindlustuse jaoks kui ka remonditöökojale esmase hinnangu andmiseks. Pildista nii lähedalt, kahjustuse detailid, kui kaugemalt, terve auto küljevaade.",
         ],
       },
       {
@@ -132,7 +132,7 @@ export const content_et: Record<ArticleId, ArticleContent> = {
     faq: [
       {
         q: "Kas tohin avarii järel ise autoga sõita?",
-        a: "Ainult siis, kui auto on kindlalt sõidukorras — rool, pidurid ja valgustus töötavad korralikult ning kere- või plastidetailid ei ole lahti. Kahtluse korral on turvalisem lasta auto transportida.",
+        a: "Ainult siis, kui auto on kindlalt sõidukorras: rool, pidurid ja valgustus töötavad korralikult ning kere- või plastidetailid ei ole lahti. Kahtluse korral on turvalisem lasta auto transportida.",
       },
     ],
   },
@@ -148,7 +148,7 @@ export const content_et: Record<ArticleId, ArticleContent> = {
       {
         heading: "Pindmine rooste versus läbiroostetanud metall",
         paragraphs: [
-          "Pindmine rooste tähendab, et korrosioon on jõudnud ainult metalli pinnakihti, kahjustamata selle tugevust. Selline rooste eemaldatakse, metall puhastatakse ja töödeldakse happega, et eemaldada ka nähtamatu korrosioon, ning kaetakse seejärel mitmekihilise kruntimisega enne värvimist. Läbiroostetanud metall tähendab, et korrosioon on söönud metalli läbi — sellisel juhul ei ole lihtsalt puhastamisest ja kruntimisest enam kasu, sest metall ise on kaotanud oma tugevuse.",
+          "Pindmine rooste tähendab, et korrosioon on jõudnud ainult metalli pinnakihti, kahjustamata selle tugevust. Selline rooste eemaldatakse, metall puhastatakse ja töödeldakse happega, et eemaldada ka nähtamatu korrosioon, ning kaetakse seejärel mitmekihilise kruntimisega enne värvimist. Läbiroostetanud metall tähendab, et korrosioon on söönud metalli läbi. Sellisel juhul ei ole lihtsalt puhastamisest ja kruntimisest enam kasu, sest metall ise on kaotanud oma tugevuse.",
         ],
       },
       {
@@ -160,7 +160,7 @@ export const content_et: Record<ArticleId, ArticleContent> = {
       {
         heading: "Millal tasub kaaluda vahetust",
         paragraphs: [
-          "Kui korrosioon on jõudnud nii kaugele, et metall on läbi roostetanud või kaotanud oma kandevõime, soovitame tavaliselt detaili vahetust, mitte parandust — paigatud läbiroostetanud metall ei anna püsivat tulemust ja rooste tuleb tavaliselt tagasi.",
+          "Kui korrosioon on jõudnud nii kaugele, et metall on läbi roostetanud või kaotanud oma kandevõime, soovitame tavaliselt detaili vahetust, mitte parandust: paigatud läbiroostetanud metall ei anna püsivat tulemust ja rooste tuleb tavaliselt tagasi.",
         ],
       },
       {
@@ -232,7 +232,7 @@ export const content_et: Record<ArticleId, ArticleContent> = {
     description: "Auto värvimine samm-sammult: ettevalmistus, värvitooni sobitamine, värvimine tolmuvabas kambris ja viimistlus.",
     excerpt: "Hea värvitulemus sõltub suuresti ettevalmistusest. Vaatame, mis täpselt värvimisprotsessi käigus toimub.",
     intro: [
-      "Hea värvitulemus ei teki ainult värvipritsist — enamik tööst ja ajast kulub tegelikult ettevalmistusele ja järeltöötlusele, mitte värvi enda pealekandmisele.",
+      "Hea värvitulemus ei teki ainult värvipritsist. Enamik tööst ja ajast kulub tegelikult ettevalmistusele ja järeltöötlusele, mitte värvi enda pealekandmisele.",
     ],
     sections: [
       {
