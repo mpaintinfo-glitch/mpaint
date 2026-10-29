@@ -69,6 +69,12 @@ export default async function PricingPage({
                   </li>
                 );
               })}
+              <li className="pricing-row">
+                <Link href="/bumper-painting" className="link">
+                  {t("bumperPainting.h1")}
+                </Link>
+                <span>{t("bumperPainting.pricingNote")}</span>
+              </li>
             </ul>
           </div>
           <div className="container center" style={{ marginTop: "2rem" }}>

@@ -155,6 +155,11 @@ export default async function BlogArticlePage({
                   {t(`catalog.${svcId}`)}
                 </Link>
               ))}
+              {id === "bumperRepair" && (
+                <Link href="/bumper-painting" className="link">
+                  {t("bumperPainting.h1")}
+                </Link>
+              )}
             </div>
           </div>
 

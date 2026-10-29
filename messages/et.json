@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Avaleht",
+    "about": "Meist",
     "services": "Teenused",
     "pricing": "Hinnakiri",
     "blog": "Blogi",
@@ -22,7 +23,8 @@
     "leadPre": "Autode värvimine ja keretööd",
     "leadCity": "Tallinnas",
     "ctaEstimate": "Saada päring",
-    "ctaWork": "Vaata meie töid", "imageAlt": "MPAINT autovärvimistöökoda Tallinnas"
+    "ctaWork": "Vaata meie töid",
+    "imageAlt": "MPAINT autovärvimistöökoda Tallinnas"
   },
   "home": {
     "whatTitle": "Mida me teeme",
@@ -50,10 +52,22 @@
     ],
     "whyMpaintTitle": "Miks valida Mpaint",
     "whyCards": [
-      { "title": "Oma filtreeritud värvikamber", "desc": "Tolmuvaba viimistlus kontrollitud temperatuuriga värvikambris." },
-      { "title": "Täpne värvikoodi sobitus", "desc": "Värv valitakse tehase värvikoodi ja olemasoleva tooni järgi, sujuva üleminekuga naaberpaneelidele." },
-      { "title": "Kõik tööd ühe katuse all", "desc": "Värvimine, keevitus, roostetõrje, mõlkide eemaldamine ja poleerimine samas töökojas." },
-      { "title": "Väikestele ja suurtele töödele", "desc": "Teostame nii üksikute detailide parandust kui mahukamaid taastustöid, sõiduautodele ja tarbesõidukitele." }
+      {
+        "title": "Oma filtreeritud värvikamber",
+        "desc": "Tolmuvaba viimistlus kontrollitud temperatuuriga värvikambris."
+      },
+      {
+        "title": "Täpne värvikoodi sobitus",
+        "desc": "Värv valitakse tehase värvikoodi ja olemasoleva tooni järgi, sujuva üleminekuga naaberpaneelidele."
+      },
+      {
+        "title": "Kõik tööd ühe katuse all",
+        "desc": "Värvimine, keevitus, roostetõrje, mõlkide eemaldamine ja poleerimine samas töökojas."
+      },
+      {
+        "title": "Väikestele ja suurtele töödele",
+        "desc": "Teostame nii üksikute detailide parandust kui mahukamaid taastustöid, sõiduautodele ja tarbesõidukitele."
+      }
     ],
     "seoClosing": "Kui auto kere või värvkate vajab parandamist, võta meiega ühendust ja kirjelda soovitud tööd.",
     "meta": {
@@ -74,22 +88,62 @@
     "warningHeading": "Millal see ei sobi",
     "seoTitle": "Kuidas toimub autovärvimine ja keretöö Mpaintis",
     "seoSteps": [
-      { "h3": "Kahjustuse hindamine ja ettevalmistus", "p": "Enne värvimist hindame kahjustuse ulatust, keredetaili seisukorda ja olemasolevat värvkatet. Vajadusel eemaldame rooste, parandame mõlgid ja valmistame pinna ette lihvimise, kruntimise ja muude eeltöödega." },
-      { "h3": "Värvitooni sobitamine ja värvimine", "p": "Värv valitakse auto tehase värvikoodi ja olemasoleva värvitooni järgi. Värvime nii üksikuid keredetaile, näiteks stangesid, uksi, tiibu ja kapotte, kui ka suuremaid kerepindu ja terveid autosid." },
-      { "h3": "Keretööd ja taastamine", "p": "Lisaks autovärvimisele teostame kereparandust, keevitustöid, roostekahjustuste remonti, mõlkide eemaldamist, detailide vahetust ja poleerimist. Töö ulatus sõltub auto seisukorrast ja kahjustuse tüübist." }
+      {
+        "h3": "Kahjustuse hindamine ja ettevalmistus",
+        "p": "Enne värvimist hindame kahjustuse ulatust, keredetaili seisukorda ja olemasolevat värvkatet. Vajadusel eemaldame rooste, parandame mõlgid ja valmistame pinna ette lihvimise, kruntimise ja muude eeltöödega."
+      },
+      {
+        "h3": "Värvitooni sobitamine ja värvimine",
+        "p": "Värv valitakse auto tehase värvikoodi ja olemasoleva värvitooni järgi. Värvime nii üksikuid keredetaile, näiteks stangesid, uksi, tiibu ja kapotte, kui ka suuremaid kerepindu ja terveid autosid."
+      },
+      {
+        "h3": "Keretööd ja taastamine",
+        "p": "Lisaks autovärvimisele teostame kereparandust, keevitustöid, roostekahjustuste remonti, mõlkide eemaldamist, detailide vahetust ja poleerimist. Töö ulatus sõltub auto seisukorrast ja kahjustuse tüübist."
+      }
     ],
-    "faqTitle": "Korduma kippuvad küsimused", "relatedHeading": "Seotud teenused",
+    "faqTitle": "Korduma kippuvad küsimused",
+    "relatedHeading": "Seotud teenused",
     "faq": [
-      { "q": "Kas kriimustust saab parandada ilma detaili üle värvimata?", "a": "Mõnikord küll. See sõltub kriimustuse sügavusest ja värvikihi seisukorrast." },
-      { "q": "Kas mõlki saab eemaldada ilma värvimiseta?", "a": "Jah, kui värvikiht on terve ja kahjustus võimaldab värvivaba mõlgieemaldust." },
-      { "q": "Kuidas toimub roostekahjustuse remont?", "a": "Eemaldame kahjustatud ala, parandame vajadusel metalli ning valmistame pinna uuesti värvimiseks ette." },
-      { "q": "Kas roostes detaili saab alati parandada?", "a": "Mitte alati. Tugevalt kahjustatud või läbiroostetanud detail võib vajada osalist või täielikku vahetust." },
-      { "q": "Kuidas sobitatakse uus värv olemasolevaga?", "a": "Lähtume auto värvikoodist ja kontrollime tooni vastavalt olemasolevale värvkattele." },
-      { "q": "Kas plaststangesid saab parandada ja värvida?", "a": "Jah. Võimalus sõltub prao, deformatsiooni ja muu kahjustuse ulatusest." },
-      { "q": "Kas värvite ka terveid autosid?", "a": "Jah, teostame nii üksikute detailide kui ka suuremate pindade ja kogu auto värvimist." },
-      { "q": "Mida tehakse enne värvimist?", "a": "Pind puhastatakse, lihvitakse, parandatakse ja krunditakse vastavalt selle seisukorrale." },
-      { "q": "Milliseid keretöid teete?", "a": "Teostame mõlkide, rooste- ja kerakahjustuste remonti, keevitustöid ning värvimiseks ettevalmistust." },
-      { "q": "Kui kaua töö aega võtab?", "a": "See sõltub kahjustuse ulatusest, ettevalmistustöödest ja remondi mahust." }
+      {
+        "q": "Kas kriimustust saab parandada ilma detaili üle värvimata?",
+        "a": "Mõnikord küll. See sõltub kriimustuse sügavusest ja värvikihi seisukorrast."
+      },
+      {
+        "q": "Kas mõlki saab eemaldada ilma värvimiseta?",
+        "a": "Jah, kui värvikiht on terve ja kahjustus võimaldab värvivaba mõlgieemaldust."
+      },
+      {
+        "q": "Kuidas toimub roostekahjustuse remont?",
+        "a": "Eemaldame kahjustatud ala, parandame vajadusel metalli ning valmistame pinna uuesti värvimiseks ette."
+      },
+      {
+        "q": "Kas roostes detaili saab alati parandada?",
+        "a": "Mitte alati. Tugevalt kahjustatud või läbiroostetanud detail võib vajada osalist või täielikku vahetust."
+      },
+      {
+        "q": "Kuidas sobitatakse uus värv olemasolevaga?",
+        "a": "Lähtume auto värvikoodist ja kontrollime tooni vastavalt olemasolevale värvkattele."
+      },
+      {
+        "q": "Kas plaststangesid saab parandada ja värvida?",
+        "a": "Jah. Võimalus sõltub prao, deformatsiooni ja muu kahjustuse ulatusest."
+      },
+      {
+        "q": "Kas värvite ka terveid autosid?",
+        "a": "Jah, teostame nii üksikute detailide kui ka suuremate pindade ja kogu auto värvimist."
+      },
+      {
+        "q": "Mida tehakse enne värvimist?",
+        "a": "Pind puhastatakse, lihvitakse, parandatakse ja krunditakse vastavalt selle seisukorrale."
+      },
+      {
+        "q": "Milliseid keretöid teete?",
+        "a": "Teostame mõlkide, rooste- ja kerakahjustuste remonti, keevitustöid ning värvimiseks ettevalmistust."
+      },
+      {
+        "q": "Kui kaua töö aega võtab?",
+        "a": "See sõltub kahjustuse ulatusest, ettevalmistustöödest ja remondi mahust."
+      }
     ],
     "meta": {
       "title": "Autovärvimise ja kerekoja teenused Tallinnas",
@@ -117,10 +171,22 @@
         "text": "Stange on üks levinumaid detaile, mida üksikult värvime. Plaststangede värvimine nõuab tavapärasest veidi erinevat ettevalmistust, kuna plasti pind vajab sobivat aluskrunti, et värv korralikult kinnituks. Hind jääb samasse vahemikku mis teiste üksikute detailide värvimisel, alates 250€."
       },
       "faq": [
-        { "q": "Kas kriimustust saab parandada ilma detaili üle värvimata?", "a": "Mõnikord küll — kui kriimustus on pindmine ja värvikiht terve, piisab tihti poleerimisest. Kui kriimustus ulatub värvikihist läbi või metallini, on vaja värvida." },
-        { "q": "Kas plaststangesid saab parandada ja värvida?", "a": "Jah. Võimalus sõltub prao, deformatsiooni ja muu kahjustuse ulatusest." },
-        { "q": "Kas värvite ka terveid autosid?", "a": "Jah, teostame nii üksikute detailide kui ka suuremate pindade ja kogu auto värvimist." },
-        { "q": "Mida tehakse enne värvimist?", "a": "Pind puhastatakse, lihvitakse, parandatakse ja krunditakse vastavalt selle seisukorrale." }
+        {
+          "q": "Kas kriimustust saab parandada ilma detaili üle värvimata?",
+          "a": "Mõnikord küll. Kui kriimustus on pindmine ja värvikiht terve, piisab tihti poleerimisest. Kui kriimustus ulatub värvikihist läbi või metallini, on vaja värvida."
+        },
+        {
+          "q": "Kas plaststangesid saab parandada ja värvida?",
+          "a": "Jah. Võimalus sõltub prao, deformatsiooni ja muu kahjustuse ulatusest."
+        },
+        {
+          "q": "Kas värvite ka terveid autosid?",
+          "a": "Jah, teostame nii üksikute detailide kui ka suuremate pindade ja kogu auto värvimist."
+        },
+        {
+          "q": "Mida tehakse enne värvimist?",
+          "a": "Pind puhastatakse, lihvitakse, parandatakse ja krunditakse vastavalt selle seisukorrale."
+        }
       ]
     },
     "body": {
@@ -139,7 +205,10 @@
       ],
       "warningNote": "Ei tee stapliga raami väljavenitamist, täielikku porde vahetust ega võta vastu suuremõõtmelisi sõidukeid.",
       "faq": [
-        { "q": "Milliseid keretöid teete?", "a": "Teostame mõlkide, rooste- ja kerakahjustuste remonti, keevitustöid ning värvimiseks ettevalmistust." }
+        {
+          "q": "Milliseid keretöid teete?",
+          "a": "Teostame mõlkide, rooste- ja kerakahjustuste remonti, keevitustöid ning värvimiseks ettevalmistust."
+        }
       ]
     },
     "dent": {
@@ -153,7 +222,10 @@
         "Sobib kõikidele sõidukitüüpidele"
       ],
       "faq": [
-        { "q": "Kas mõlki saab eemaldada ilma värvimiseta?", "a": "Jah, kui värvikiht on terve ja kahjustus võimaldab värvivaba mõlgieemaldust." }
+        {
+          "q": "Kas mõlki saab eemaldada ilma värvimiseta?",
+          "a": "Jah, kui värvikiht on terve ja kahjustus võimaldab värvivaba mõlgieemaldust."
+        }
       ]
     },
     "rust": {
@@ -180,14 +252,20 @@
         "text": "Pakume ka ennetavat roostekaitset uuematele autodele, eriti arvestades Eesti talvist teekattesoola."
       },
       "faq": [
-        { "q": "Kuidas toimub roostekahjustuse remont?", "a": "Eemaldame kahjustatud ala, parandame vajadusel metalli ning valmistame pinna uuesti värvimiseks ette." },
-        { "q": "Kas roostes detaili saab alati parandada?", "a": "Mitte alati. Tugevalt kahjustatud või läbiroostetanud detail võib vajada osalist või täielikku vahetust." }
+        {
+          "q": "Kuidas toimub roostekahjustuse remont?",
+          "a": "Eemaldame kahjustatud ala, parandame vajadusel metalli ning valmistame pinna uuesti värvimiseks ette."
+        },
+        {
+          "q": "Kas roostes detaili saab alati parandada?",
+          "a": "Mitte alati. Tugevalt kahjustatud või läbiroostetanud detail võib vajada osalist või täielikku vahetust."
+        }
       ]
     },
     "polish": {
       "h1": "Kere ja tulede poleerimine",
       "tagline": "Eemaldab kergeid kriimustusi ja taastab tulede selguse.",
-      "intro": "Faaride taastamiseks kasutame nii keemilist kui mehaanilist meetodit, sõltuvalt katte seisukorrast. Poleerimine aitab ainult pindmiste kriimustuste puhul — kui kriimustus ulatub värvikihist läbi, on vaja ala üle värvida.",
+      "intro": "Faaride taastamiseks kasutame nii keemilist kui mehaanilist meetodit, sõltuvalt katte seisukorrast. Poleerimine aitab ainult pindmiste kriimustuste puhul: kui kriimustus ulatub värvikihist läbi, on vaja ala üle värvida.",
       "bullets": [
         "Väiksemate kriimustuste eemaldamine",
         "Tulede selguse taastamine",
@@ -195,7 +273,10 @@
         "Kõik margid ja mudelid"
       ],
       "faq": [
-        { "q": "Kas poleerimine eemaldab kõik kriimustused?", "a": "Ainult pindmised. Kui kriimustus ulatub värvikihist läbi, on vaja ala üle värvida — vaata meie autovärvimise teenust." }
+        {
+          "q": "Kas poleerimine eemaldab kõik kriimustused?",
+          "a": "Ainult pindmised. Kui kriimustus ulatub värvikihist läbi, on vaja ala üle värvida. Vaata meie autovärvimise teenust."
+        }
       ]
     },
     "parts": {
@@ -209,24 +290,33 @@
         "Konkurentsivõimeline hind"
       ],
       "faq": [
-        { "q": "Kas kasutate uusi või kasutatud varuosi?", "a": "Mõlemat — valiku teed sina. Kasutatud osad on odavam lahendus, uued osad sobivad, kui soovid originaalseisukorda." }
+        {
+          "q": "Kas kasutate uusi või kasutatud varuosi?",
+          "a": "Mõlemat, valiku teed sina. Kasutatud osad on odavam lahendus, uued osad sobivad, kui soovid originaalseisukorda."
+        }
       ]
     }
   },
   "pricing": {
     "meta": {
       "title": "Autovärvimise ja keretöö hinnad",
-      "description": "Mpainti hinnakiri Tallinnas: elemendi värvimine alates 250€, roostetõrje alates 50€. Teiste tööde hind sõltub kahjustuse ulatusest — küsi tasuta hinnapakkumist."
+      "description": "Mpainti hinnakiri Tallinnas: elemendi värvimine alates 250€, roostetõrje alates 50€. Teiste tööde hind sõltub kahjustuse ulatusest, küsi tasuta hinnapakkumist."
     },
     "h1": "Autovärvimise ja keretöö hinnad",
-    "intro": "Lõplik hind sõltub alati kahjustuse ulatusest, vajaliku töö mahust ja auto seisukorrast. Allpool on meie kinnitatud alghinnad — ülejäänud teenuste puhul anname täpsema hinnapakkumise pärast kahjustuse nägemist.",
+    "intro": "Lõplik hind sõltub alati kahjustuse ulatusest, vajaliku töö mahust ja auto seisukorrast. Allpool on meie kinnitatud alghinnad. Ülejäänud teenuste puhul anname täpsema hinnapakkumise pärast kahjustuse nägemist.",
     "genericNote": "Hind sõltub kahjustuse ulatusest ja vajalikust tööst. Küsi tasuta hinnapakkumist.",
     "viewService": "Vaata teenust",
     "cta": "Saada päring",
     "faqTitle": "Korduma kippuvad küsimused",
     "faq": [
-      { "q": "Miks ei ole kõigile teenustele kindlat hinda?", "a": "Enamik meie töid, näiteks keretööd, mõlkide eemaldamine, poleerimine ja osade vahetus, sõltuvad otseselt kahjustuse ulatusest ja auto seisukorrast. Täpsema hinna saame anda alles pärast kahjustuse nägemist." },
-      { "q": "Kas hinnapakkumise küsimine on tasuta?", "a": "Jah, hinnapakkumise küsimine ei maksa midagi." }
+      {
+        "q": "Miks ei ole kõigile teenustele kindlat hinda?",
+        "a": "Enamik meie töid, näiteks keretööd, mõlkide eemaldamine, poleerimine ja osade vahetus, sõltuvad otseselt kahjustuse ulatusest ja auto seisukorrast. Täpsema hinna saame anda alles pärast kahjustuse nägemist."
+      },
+      {
+        "q": "Kas hinnapakkumise küsimine on tasuta?",
+        "a": "Jah, hinnapakkumise küsimine ei maksa midagi."
+      }
     ]
   },
   "blog": {
@@ -249,12 +339,42 @@
     "h1": "Auto sai avariis kahjustada? Keretööd ja värvimine Tallinnas",
     "intro": "Avarii järel on tihti raske hinnata, kui ulatuslik kahjustus tegelikult on. Siin on, mida Mpaint avariijärgse keretöö ja värvimise juures arvestab, ning kuidas toimetada kahjustatud auto meie töökotta.",
     "sections": [
-      { "heading": "Millised kahjustused vajavad ülevaatust", "paragraphs": ["Nähtavad kahjustused, nagu mõlgid, kriimustused, pragunenud stange või lahtine keredetail, on kõige lihtsamini märgatavad. Aga ka väiksem kokkupõrge võib kahjustada kere joondust või kandekonstruktsiooni viisil, mis väliselt ei paista. Kui auto oli avariis osaline, tasub lasta see üle vaadata ka siis, kui kahjustus tundub väike."] },
-      { "heading": "Kuidas hinnapakkumist küsida", "paragraphs": ["Lihtsaim viis alustada on saata meile fotod kahjustusest. Mida rohkem nurki ja mida parem valgus, seda täpsema esmase hinnangu saame anda."] },
-      { "heading": "Miks fotod aitavad esmasel hindamisel", "paragraphs": ["Fotod annavad meile esmase ülevaate kahjustuse tüübist ja ulatusest ning aitavad otsustada, kas tegu on puhtalt kosmeetilise kahjustusega või on vaja põhjalikumat ülevaatust. See kiirendab protsessi ja aitab anda esialgse hinnangu juba enne auto töökotta jõudmist."] },
-      { "heading": "Millal on vaja füüsilist ülevaatust", "paragraphs": ["Suurema avarii, kandekonstruktsiooni kahjustuse kahtluse või mitme kahjustatud ala korral ei piisa ainult fotodest. Sellisel juhul anname täpsema hinnapakkumise alles pärast auto nägemist, sest kahjustuse tegelik ulatus selgub tihti alles füüsilisel ülevaatusel."] },
-      { "heading": "Miks mõni kahjustus väljast ei paista", "paragraphs": ["Kokkupõrke jõud ei kandu alati ainult nähtavasse kohta — löök võib kahjustada kandekonstruktsiooni või joondust, isegi kui väliselt paistab ainult väike mõlk või kriimustus."] },
-      { "heading": "Keretööde, osade vahetuse ja värvimise seos", "paragraphs": ["Avariijärgne remont hõlmab tihti mitut etappi koos: kahjustatud keredetailide parandust või vahetust, vajadusel roostekaitset ja alati värvimist, et toon sobituks ülejäänud autoga."] }
+      {
+        "heading": "Millised kahjustused vajavad ülevaatust",
+        "paragraphs": [
+          "Nähtavad kahjustused, nagu mõlgid, kriimustused, pragunenud stange või lahtine keredetail, on kõige lihtsamini märgatavad. Aga ka väiksem kokkupõrge võib kahjustada kere joondust või kandekonstruktsiooni viisil, mis väliselt ei paista. Kui auto oli avariis osaline, tasub lasta see üle vaadata ka siis, kui kahjustus tundub väike."
+        ]
+      },
+      {
+        "heading": "Kuidas hinnapakkumist küsida",
+        "paragraphs": [
+          "Lihtsaim viis alustada on saata meile fotod kahjustusest. Mida rohkem nurki ja mida parem valgus, seda täpsema esmase hinnangu saame anda."
+        ]
+      },
+      {
+        "heading": "Miks fotod aitavad esmasel hindamisel",
+        "paragraphs": [
+          "Fotod annavad meile esmase ülevaate kahjustuse tüübist ja ulatusest ning aitavad otsustada, kas tegu on puhtalt kosmeetilise kahjustusega või on vaja põhjalikumat ülevaatust. See kiirendab protsessi ja aitab anda esialgse hinnangu juba enne auto töökotta jõudmist."
+        ]
+      },
+      {
+        "heading": "Millal on vaja füüsilist ülevaatust",
+        "paragraphs": [
+          "Suurema avarii, kandekonstruktsiooni kahjustuse kahtluse või mitme kahjustatud ala korral ei piisa ainult fotodest. Sellisel juhul anname täpsema hinnapakkumise alles pärast auto nägemist, sest kahjustuse tegelik ulatus selgub tihti alles füüsilisel ülevaatusel."
+        ]
+      },
+      {
+        "heading": "Miks mõni kahjustus väljast ei paista",
+        "paragraphs": [
+          "Kokkupõrke jõud ei kandu alati ainult nähtavasse kohta. Löök võib kahjustada kandekonstruktsiooni või joondust, isegi kui väliselt paistab ainult väike mõlk või kriimustus."
+        ]
+      },
+      {
+        "heading": "Keretööde, osade vahetuse ja värvimise seos",
+        "paragraphs": [
+          "Avariijärgne remont hõlmab tihti mitut etappi koos: kahjustatud keredetailide parandust või vahetust, vajadusel roostekaitset ja alati värvimist, et toon sobituks ülejäänud autoga."
+        ]
+      }
     ],
     "safetyNote": "Kui pärast avariid on rooliseade raskem liikuda, auto tõmbab sõidu ajal ühele poole, kuuled pidurdades ebatavalist heli, või mõni kere- või plastidetail on lahti, ei tohi autoga enam sõita.",
     "towingHeading": "Kuidas toimetada sõiduk töökotta, kui see ei ole sõidukorras",
@@ -263,9 +383,87 @@
     "cta": "Küsi hinnapakkumist",
     "faqTitle": "Korduma kippuvad küsimused",
     "faq": [
-      { "q": "Kas Mpaint tegeleb kindlustusjuhtumitega?", "a": "Ei, me ei tegele kindlustuse haldamise ega avariijärgse abiga sündmuskohal — meie ülesanne on auto kere- ja värvitööde teostamine." },
-      { "q": "Kas te pakute puksiiriteenust?", "a": "Ei, Mpaint ei paku ise puksiiriteenust. Soovitame kasutada sobivat evakuaatori- või puksiiriteenust ning anname sulle töökoja aadressi ja lepime kokku auto toomise aja." }
+      {
+        "q": "Kas Mpaint tegeleb kindlustusjuhtumitega?",
+        "a": "Ei, me ei tegele kindlustuse haldamise ega avariijärgse abiga sündmuskohal. Meie ülesanne on auto kere- ja värvitööde teostamine."
+      },
+      {
+        "q": "Kas te pakute puksiiriteenust?",
+        "a": "Ei, Mpaint ei paku ise puksiiriteenust. Soovitame kasutada sobivat evakuaatori- või puksiiriteenust ning anname sulle töökoja aadressi ja lepime kokku auto toomise aja."
+      },
+      {
+        "q": "Kas avariijärgsed keretööd erinevad tavapärasest remondist?",
+        "a": "Kasutame samu keevitus- ja plekitöö võtteid, mis tavapärase keretöö puhul. Erinevus on hindamises: avarii järel tuleb täpsemalt selgitada, kas kahjustus on ainult kosmeetiline või mõjutab kere kandekonstruktsiooni."
+      }
     ]
+  },
+  "about": {
+    "meta": {
+      "title": "Mpaint töökoda Tallinnas | Autovärvimine ja keretööd",
+      "description": "Mpaint on autovärvimise ja keretööde töökoda Tallinnas. Oma filtreeritud värvikamber, kuni 1 aasta garantii, kõik tööd ühe katuse all."
+    },
+    "h1": "Mpaint töökoda Tallinnas",
+    "intro": "Mpaint teostab autovärvimist ja keretöid Tallinnas, Magasini tänaval. Oleme täisteenuse töökoda: värvimine, keevitus, roostetõrje, mõlkide eemaldamine, poleerimine ja osade vahetus toimuvad kõik ühe katuse all.",
+    "photosHeading": "Meie töökoda",
+    "photoPaintCaption": "Oma filtreeritud värvikamber",
+    "photoBodyCaption": "Keretööde ja keevituse tööala",
+    "servicesHeading": "Teenused ja spetsialiseerumine",
+    "servicesIntro": "Teeme nii üksikute detailide parandust kui mahukamaid taastustöid, sõiduautodele ja tarbesõidukitele.",
+    "assessmentHeading": "Kuidas hinnapakkumine käib",
+    "assessmentP1": "Lihtsaim viis alustada on saata meile fotod kahjustusest. Mida rohkem nurki ja mida parem valgus, seda täpsema esmase hinnangu saame anda.",
+    "assessmentP2": "Kergemate ja selgelt kosmeetiliste kahjustuste korral piisab fotodest esialgse hinnangu andmiseks. Suurema kahjustuse, mitme kahjustatud ala või kahtlustatava kandekonstruktsiooni kahjustuse korral anname täpsema hinnapakkumise alles pärast auto nägemist.",
+    "qualityHeading": "Kvaliteet ja garantii",
+    "qualityP1": "Värv valitakse auto tehase värvikoodi ja olemasoleva tooni järgi. Keerulisematel juhtudel teeme spektrofotomeetriga testvärvingu enne täisvärvimist, et toon sobituks naaberpaneelidega.",
+    "qualityP2": "Kuni 1 aasta garantii enamikele töödele. Garantii ei kehti, kui ettevalmistustöid ei teostanud meie, või kui roosteremont tehti kliendi soovi järgi, mitte meie soovituse kohaselt.",
+    "limitsHeading": "Mida me ei teosta",
+    "limitsText": "Ausalt öeldes: ei tee stapliga raami väljavenitamist, täielikku porde vahetust ega võta vastu suuremõõtmelisi sõidukeid.",
+    "locationHeading": "Asukoht ja kontakt",
+    "locationText": "Töökoda asub Tallinnas, Magasini tn 31. Kõik kontaktandmed ja täpne asukoht leiad kontaktleheküljelt.",
+    "contactLinkText": "Vaata kontaktandmeid ja asukohta",
+    "cta": "Saada päring"
+  },
+  "bumperPainting": {
+    "meta": {
+      "title": "Stange värvimine Tallinnas",
+      "description": "Plaststangede värvimine ja parandus Tallinnas, alates 250€. Tehase värvikoodi sobitus, sobiv aluskrunt plastile, filtreeritud värvikamber."
+    },
+    "h1": "Stange värvimine Tallinnas",
+    "tagline": "Plaststangede värvimine ja parandus meie filtreeritud värvikambris, alates 250€.",
+    "bulletsHeading": "Mida teenus sisaldab",
+    "bullets": [
+      "Pragude, kriimustuste ja löökaukude parandus enne värvimist",
+      "Plastile sobiv aluskrunt, et värv korralikult kinnituks",
+      "Tehase värvikoodi täpne sobitus olemasoleva tooniga",
+      "Stange eemaldamine ja tagasipaigaldus, kui töö seda vajab"
+    ],
+    "processHeading": "Kuidas töö käib",
+    "process": [
+      "Saadad meile fotod kahjustatud stangest, et saaksime anda esialgse hinnangu.",
+      "Pragunenud või deformeerunud kohad parandatakse enne värvimist.",
+      "Pind lihvitakse ja kaetakse plastile sobiva aluskrundiga.",
+      "Stange värvitakse auto tehase värvikoodi järgi meie filtreeritud, tolmuvabas kambris."
+    ],
+    "pricingNote": "Stange värvimine alates 250€. Täpne hind sõltub kahjustuse ulatusest, hinnapakkumise saadame fotode põhjal.",
+    "faqTitle": "Korduma kippuvad küsimused",
+    "faq": [
+      {
+        "q": "Kui kiiresti saab stange värvitud?",
+        "a": "Üksiku detaili, näiteks stange värvimine võtab keskmiselt 3-4 päeva."
+      },
+      {
+        "q": "Kas pragunenud stange tuleb enne värvimist parandada?",
+        "a": "Jah. Praod ja deformatsioonid parandatakse enne lihvimist ja värvimist, vastasel juhul tuleb kahjustus värvi alt tagasi nähtavale."
+      },
+      {
+        "q": "Kas plaststangesid saab üldse värvida?",
+        "a": "Jah. Plasti pind vajab sobivat aluskrunti, et värv korralikult kinnituks. See on tavapärasest metallpaneelist pisut erinev, aga tavaline osa töö ettevalmistusest."
+      },
+      {
+        "q": "Millest hind sõltub?",
+        "a": "Hind sõltub kahjustuse ulatusest ja sellest, kas stange tuleb enne värvimist eemaldada. Täpse hinnangu saame fotode põhjal."
+      }
+    ],
+    "cta": "Saada päring"
   },
   "warranty": {
     "title": "Garantii",
@@ -316,7 +514,7 @@
     "placeholderName": "Sinu nimi",
     "placeholderEmail": "E-posti aadress",
     "placeholderPhone": "Telefon (valikuline)",
-    "placeholderMessage": "Kirjelda kahjustust või mida vajad — foto aitab samuti.",
+    "placeholderMessage": "Kirjelda kahjustust või mida vajad, foto aitab samuti.",
     "uploadLabel": "Lisa fotod (valikuline)",
     "uploadHint": "PNG või JPG, kuni 5 fotot",
     "removePhoto": "Eemalda foto",

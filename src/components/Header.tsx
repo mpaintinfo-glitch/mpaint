@@ -8,7 +8,7 @@ import { logoWhite } from "../assets";
 import { useModals } from "./ModalProvider";
 import LanguageSwitcher from "./LanguageSwitcher";
 
-const NAV_ITEMS = ["home", "services", "pricing", "blog", "contact"] as const;
+const NAV_ITEMS = ["home", "about", "services", "pricing", "blog", "contact"] as const;
 
 export default function Header() {
   const t = useTranslations();
@@ -18,6 +18,7 @@ export default function Header() {
 
   const isActive = (item: (typeof NAV_ITEMS)[number]) => {
     if (item === "home") return pathname === "/";
+    if (item === "about") return pathname === "/about";
     if (item === "services") return pathname.startsWith("/services");
     if (item === "pricing") return pathname === "/pricing";
     if (item === "blog") return pathname.startsWith("/blog");
@@ -25,7 +26,7 @@ export default function Header() {
     return false;
   };
 
-  const NAV_HREF = { home: "/", services: "/services", pricing: "/pricing", blog: "/blog", contact: "/contact" } as const;
+  const NAV_HREF = { home: "/", about: "/about", services: "/services", pricing: "/pricing", blog: "/blog", contact: "/contact" } as const;
 
   return (
     <header className={`header${navOpen ? " nav-open" : ""}`}>

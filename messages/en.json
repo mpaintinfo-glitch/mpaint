@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Home",
+    "about": "About",
     "services": "Services",
     "pricing": "Pricing",
     "blog": "Blog",
@@ -22,7 +23,8 @@
     "leadPre": "Car painting and bodywork in",
     "leadCity": "Tallinn",
     "ctaEstimate": "Get an estimate",
-    "ctaWork": "See our work", "imageAlt": "MPAINT car painting workshop in Tallinn"
+    "ctaWork": "See our work",
+    "imageAlt": "MPAINT car painting workshop in Tallinn"
   },
   "home": {
     "whatTitle": "What we do",
@@ -50,15 +52,27 @@
     ],
     "whyMpaintTitle": "Why choose Mpaint",
     "whyCards": [
-      { "title": "Our own filtered paint booth", "desc": "Dust-free finish in a booth with controlled temperature." },
-      { "title": "Precise colour-code matching", "desc": "Paint is matched to your car's factory colour code and existing tone, blended smoothly into neighbouring panels." },
-      { "title": "Everything under one roof", "desc": "Painting, welding, rust removal, dent removal and polishing, all in the same workshop." },
-      { "title": "Small and large jobs alike", "desc": "We handle both single-panel repairs and larger restoration work, for passenger cars and commercial vehicles." }
+      {
+        "title": "Our own filtered paint booth",
+        "desc": "Dust-free finish in a booth with controlled temperature."
+      },
+      {
+        "title": "Precise colour-code matching",
+        "desc": "Paint is matched to your car's factory colour code and existing tone, blended smoothly into neighbouring panels."
+      },
+      {
+        "title": "Everything under one roof",
+        "desc": "Painting, welding, rust removal, dent removal and polishing, all in the same workshop."
+      },
+      {
+        "title": "Small and large jobs alike",
+        "desc": "We handle both single-panel repairs and larger restoration work, for passenger cars and commercial vehicles."
+      }
     ],
     "seoClosing": "If your car's body or paintwork needs repair, get in touch and describe the work you need.",
     "meta": {
       "title": "Car painting and bodywork in Tallinn",
-      "description": "Car painting and bodywork workshop in Tallinn. Full resprays, single panels, welding, rust repair, dent removal and polishing — all under one roof."
+      "description": "Car painting and bodywork workshop in Tallinn. Full resprays, single panels, welding, rust repair, dent removal and polishing, all under one roof."
     }
   },
   "services": {
@@ -74,22 +88,62 @@
     "warningHeading": "When this doesn't apply",
     "seoTitle": "How car painting and bodywork work at Mpaint",
     "seoSteps": [
-      { "h3": "Damage assessment and preparation", "p": "Before painting, we assess the extent of the damage, the condition of the body panel and the existing paint. If needed, we remove rust, repair dents, and prepare the surface with sanding, priming and other preparatory work." },
-      { "h3": "Colour matching and painting", "p": "The paint is chosen to match the car's factory colour code and existing shade. We paint individual body parts such as bumpers, doors, wings and bonnets, as well as larger body surfaces and full cars." },
-      { "h3": "Bodywork and restoration", "p": "Alongside car painting, we carry out body repair, welding, rust damage repair, dent removal, part replacement and polishing. The scope of work depends on the car's condition and the type of damage." }
+      {
+        "h3": "Damage assessment and preparation",
+        "p": "Before painting, we assess the extent of the damage, the condition of the body panel and the existing paint. If needed, we remove rust, repair dents, and prepare the surface with sanding, priming and other preparatory work."
+      },
+      {
+        "h3": "Colour matching and painting",
+        "p": "The paint is chosen to match the car's factory colour code and existing shade. We paint individual body parts such as bumpers, doors, wings and bonnets, as well as larger body surfaces and full cars."
+      },
+      {
+        "h3": "Bodywork and restoration",
+        "p": "Alongside car painting, we carry out body repair, welding, rust damage repair, dent removal, part replacement and polishing. The scope of work depends on the car's condition and the type of damage."
+      }
     ],
-    "faqTitle": "Common questions", "relatedHeading": "Related services",
+    "faqTitle": "Common questions",
+    "relatedHeading": "Related services",
     "faq": [
-      { "q": "Can a scratch be repaired without repainting the whole panel?", "a": "Sometimes, yes. It depends on how deep the scratch is and the condition of the paint layer." },
-      { "q": "Can a dent be removed without repainting?", "a": "Yes, if the paint layer is intact and the damage allows for paintless dent removal." },
-      { "q": "How is rust damage repaired?", "a": "We remove the affected area, repair the metal if needed, and prepare the surface for repainting." },
-      { "q": "Can a rusted part always be repaired?", "a": "Not always. A severely damaged or fully rusted-through part may need partial or full replacement." },
-      { "q": "How is the new paint matched to the existing colour?", "a": "We start from your car's factory colour code and check the tone against the existing paintwork." },
-      { "q": "Can plastic bumpers be repaired and painted?", "a": "Yes. Whether it's possible depends on the extent of any cracks, deformation, or other damage." },
-      { "q": "Do you also paint whole cars?", "a": "Yes, we paint individual parts as well as larger areas and full cars." },
-      { "q": "What's done before painting?", "a": "The surface is cleaned, sanded, repaired and primed according to its condition." },
-      { "q": "What bodywork services do you offer?", "a": "We repair dents, rust and body damage, carry out welding, and prepare surfaces for painting." },
-      { "q": "How long does the work take?", "a": "It depends on the extent of the damage, the preparation needed, and the scope of the repair." }
+      {
+        "q": "Can a scratch be repaired without repainting the whole panel?",
+        "a": "Sometimes, yes. It depends on how deep the scratch is and the condition of the paint layer."
+      },
+      {
+        "q": "Can a dent be removed without repainting?",
+        "a": "Yes, if the paint layer is intact and the damage allows for paintless dent removal."
+      },
+      {
+        "q": "How is rust damage repaired?",
+        "a": "We remove the affected area, repair the metal if needed, and prepare the surface for repainting."
+      },
+      {
+        "q": "Can a rusted part always be repaired?",
+        "a": "Not always. A severely damaged or fully rusted-through part may need partial or full replacement."
+      },
+      {
+        "q": "How is the new paint matched to the existing colour?",
+        "a": "We start from your car's factory colour code and check the tone against the existing paintwork."
+      },
+      {
+        "q": "Can plastic bumpers be repaired and painted?",
+        "a": "Yes. Whether it's possible depends on the extent of any cracks, deformation, or other damage."
+      },
+      {
+        "q": "Do you also paint whole cars?",
+        "a": "Yes, we paint individual parts as well as larger areas and full cars."
+      },
+      {
+        "q": "What's done before painting?",
+        "a": "The surface is cleaned, sanded, repaired and primed according to its condition."
+      },
+      {
+        "q": "What bodywork services do you offer?",
+        "a": "We repair dents, rust and body damage, carry out welding, and prepare surfaces for painting."
+      },
+      {
+        "q": "How long does the work take?",
+        "a": "It depends on the extent of the damage, the preparation needed, and the scope of the repair."
+      }
     ],
     "meta": {
       "title": "Car painting and bodywork services in Tallinn",
@@ -114,13 +168,25 @@
       "pricingNote": "Painting a panel from 250€, bonnet and roof from 450€.",
       "secondarySection": {
         "heading": "Bumper painting",
-        "text": "The bumper is one of the most commonly painted single parts. Painting plastic bumpers needs slightly different prep than metal panels — the plastic surface needs an adhesion primer so the paint holds properly. Pricing stays in the same range as any other single part, from 250€."
+        "text": "The bumper is one of the most commonly painted single parts. Painting plastic bumpers needs slightly different prep than metal panels: the plastic surface needs an adhesion primer so the paint holds properly. Pricing stays in the same range as any other single part, from 250€."
       },
       "faq": [
-        { "q": "Can a scratch be fixed without repainting the part?", "a": "Sometimes — if the scratch is surface-level and the paint layer is intact, polishing is often enough. If the scratch goes through the paint or down to the metal, it needs painting." },
-        { "q": "Can plastic bumpers be repaired and painted?", "a": "Yes. Whether it's possible depends on the crack, deformation, and extent of the damage." },
-        { "q": "Do you paint whole cars too?", "a": "Yes, we do everything from single parts to larger panels and full-car resprays." },
-        { "q": "What's done before painting?", "a": "The surface is cleaned, sanded, repaired where needed, and primed according to its condition." }
+        {
+          "q": "Can a scratch be fixed without repainting the part?",
+          "a": "Sometimes. If the scratch is surface-level and the paint layer is intact, polishing is often enough. If the scratch goes through the paint or down to the metal, it needs painting."
+        },
+        {
+          "q": "Can plastic bumpers be repaired and painted?",
+          "a": "Yes. Whether it's possible depends on the crack, deformation, and extent of the damage."
+        },
+        {
+          "q": "Do you paint whole cars too?",
+          "a": "Yes, we do everything from single parts to larger panels and full-car resprays."
+        },
+        {
+          "q": "What's done before painting?",
+          "a": "The surface is cleaned, sanded, repaired where needed, and primed according to its condition."
+        }
       ]
     },
     "body": {
@@ -139,7 +205,10 @@
       ],
       "warningNote": "We don't do frame pulling on a bench, full sill replacement, or take on oversized vehicles.",
       "faq": [
-        { "q": "What bodywork do you do?", "a": "We handle dent, rust and body damage repair, welding work, and prep for painting." }
+        {
+          "q": "What bodywork do you do?",
+          "a": "We handle dent, rust and body damage repair, welding work, and prep for painting."
+        }
       ]
     },
     "dent": {
@@ -153,7 +222,10 @@
         "Works on all vehicle types"
       ],
       "faq": [
-        { "q": "Can a dent be removed without painting?", "a": "Yes, if the paint layer is intact and the damage allows for paintless dent repair." }
+        {
+          "q": "Can a dent be removed without painting?",
+          "a": "Yes, if the paint layer is intact and the damage allows for paintless dent repair."
+        }
       ]
     },
     "rust": {
@@ -180,14 +252,20 @@
         "text": "We also offer preventive rust protection for newer cars, especially given Estonia's winter road salt."
       },
       "faq": [
-        { "q": "How does rust damage repair work?", "a": "We remove the damaged area, repair the metal where needed, and prepare the surface for repainting." },
-        { "q": "Can a rusted part always be repaired?", "a": "Not always. A heavily damaged or fully rusted-through part may need a partial or full replacement." }
+        {
+          "q": "How does rust damage repair work?",
+          "a": "We remove the damaged area, repair the metal where needed, and prepare the surface for repainting."
+        },
+        {
+          "q": "Can a rusted part always be repaired?",
+          "a": "Not always. A heavily damaged or fully rusted-through part may need a partial or full replacement."
+        }
       ]
     },
     "polish": {
       "h1": "Body & headlight polishing",
       "tagline": "Removes light scratches and restores headlight clarity.",
-      "intro": "For headlight restoration we use both chemical and mechanical methods, depending on the condition of the coating. Polishing only helps with surface-level scratches — if a scratch goes down to the paint layer, the part needs repainting.",
+      "intro": "For headlight restoration we use both chemical and mechanical methods, depending on the condition of the coating. Polishing only helps with surface-level scratches: if a scratch goes down to the paint layer, the part needs repainting.",
       "bullets": [
         "Minor scratch & swirl removal",
         "Headlight clarity restoration",
@@ -195,7 +273,10 @@
         "All makes and models"
       ],
       "faq": [
-        { "q": "Does polishing remove all scratches?", "a": "Only surface-level ones. If a scratch goes down to the paint layer, the part needs painting — see our car painting service." }
+        {
+          "q": "Does polishing remove all scratches?",
+          "a": "Only surface-level ones. If a scratch goes down to the paint layer, the part needs painting. See our car painting service."
+        }
       ]
     },
     "parts": {
@@ -209,24 +290,33 @@
         "Competitive pricing"
       ],
       "faq": [
-        { "q": "Do you use new or used parts?", "a": "Both — it's your choice. Used parts are the cheaper option; new parts make sense if you want to keep things factory-original." }
+        {
+          "q": "Do you use new or used parts?",
+          "a": "Both, it's your choice. Used parts are the cheaper option; new parts make sense if you want to keep things factory-original."
+        }
       ]
     }
   },
   "pricing": {
     "meta": {
       "title": "Car painting and bodywork pricing",
-      "description": "Mpaint price list in Tallinn: painting a panel from 250€, rust protection from 50€. Pricing for other work depends on the damage — request a free quote."
+      "description": "Mpaint price list in Tallinn: painting a panel from 250€, rust protection from 50€. Pricing for other work depends on the damage. Request a free quote."
     },
     "h1": "Car painting and bodywork pricing",
-    "intro": "The final price always depends on the extent of the damage, how much work is needed, and the condition of the car. Below are our confirmed starting prices — for the other services we give a more exact quote once we have seen the damage.",
+    "intro": "The final price always depends on the extent of the damage, how much work is needed, and the condition of the car. Below are our confirmed starting prices. For the other services we give a more exact quote once we have seen the damage.",
     "genericNote": "Price depends on the extent of the damage and the work involved. Request a free quote.",
     "viewService": "View service",
     "cta": "Get an estimate",
     "faqTitle": "Common questions",
     "faq": [
-      { "q": "Why is there no fixed price for every service?", "a": "Most of our work, such as bodywork, dent removal, polishing and parts replacement, depends directly on the extent of the damage and the condition of the car. We can only give an exact price once we have seen it." },
-      { "q": "Is getting a quote free?", "a": "Yes, requesting a quote costs nothing." }
+      {
+        "q": "Why is there no fixed price for every service?",
+        "a": "Most of our work, such as bodywork, dent removal, polishing and parts replacement, depends directly on the extent of the damage and the condition of the car. We can only give an exact price once we have seen it."
+      },
+      {
+        "q": "Is getting a quote free?",
+        "a": "Yes, requesting a quote costs nothing."
+      }
     ]
   },
   "blog": {
@@ -249,12 +339,42 @@
     "h1": "Car damaged in an accident? Bodywork and painting in Tallinn",
     "intro": "After an accident, it is often hard to judge how extensive the damage really is. Here is what Mpaint takes into account for post-accident bodywork and painting, and how to get a damaged car to our workshop.",
     "sections": [
-      { "heading": "What kind of damage needs inspecting", "paragraphs": ["Visible damage, such as dents, scratches, a cracked bumper, or a loose body part, is the easiest to notice. But even a minor collision can affect the car's alignment or structure in a way that does not show from the outside. If the car was involved in an accident, it is worth having it inspected even if the damage looks minor."] },
-      { "heading": "How to request a quote", "paragraphs": ["The easiest way to start is by sending us photos of the damage. The more angles and the better the lighting, the more accurate our initial estimate can be."] },
-      { "heading": "Why photos help with the initial assessment", "paragraphs": ["Photos give us an initial picture of the type and extent of the damage and help decide whether it is purely cosmetic or needs a more thorough inspection. This speeds up the process and lets us give a preliminary estimate before the car even arrives at the workshop."] },
-      { "heading": "When an in-person inspection is needed", "paragraphs": ["For a more serious accident, suspected structural damage, or several damaged areas, photos alone are not enough. In that case we only give an exact quote after seeing the car, since the real extent of the damage often only becomes clear during an in-person inspection."] },
-      { "heading": "Why some damage does not show from the outside", "paragraphs": ["The force of a collision does not always stay contained to the visible impact point - it can affect the car's structure or alignment even if only a small dent or scratch is visible from the outside."] },
-      { "heading": "How bodywork, parts replacement, and painting fit together", "paragraphs": ["Post-accident repair often involves several stages together: repairing or replacing damaged body parts, rust protection where needed, and always painting, so the colour matches the rest of the car."] }
+      {
+        "heading": "What kind of damage needs inspecting",
+        "paragraphs": [
+          "Visible damage, such as dents, scratches, a cracked bumper, or a loose body part, is the easiest to notice. But even a minor collision can affect the car's alignment or structure in a way that does not show from the outside. If the car was involved in an accident, it is worth having it inspected even if the damage looks minor."
+        ]
+      },
+      {
+        "heading": "How to request a quote",
+        "paragraphs": [
+          "The easiest way to start is by sending us photos of the damage. The more angles and the better the lighting, the more accurate our initial estimate can be."
+        ]
+      },
+      {
+        "heading": "Why photos help with the initial assessment",
+        "paragraphs": [
+          "Photos give us an initial picture of the type and extent of the damage and help decide whether it is purely cosmetic or needs a more thorough inspection. This speeds up the process and lets us give a preliminary estimate before the car even arrives at the workshop."
+        ]
+      },
+      {
+        "heading": "When an in-person inspection is needed",
+        "paragraphs": [
+          "For a more serious accident, suspected structural damage, or several damaged areas, photos alone are not enough. In that case we only give an exact quote after seeing the car, since the real extent of the damage often only becomes clear during an in-person inspection."
+        ]
+      },
+      {
+        "heading": "Why some damage does not show from the outside",
+        "paragraphs": [
+          "The force of a collision does not always stay contained to the visible impact point. It can affect the car's structure or alignment even if only a small dent or scratch is visible from the outside."
+        ]
+      },
+      {
+        "heading": "How bodywork, parts replacement, and painting fit together",
+        "paragraphs": [
+          "Post-accident repair often involves several stages together: repairing or replacing damaged body parts, rust protection where needed, and always painting, so the colour matches the rest of the car."
+        ]
+      }
     ],
     "safetyNote": "If the steering feels harder to turn after an accident, the car pulls to one side while driving, you hear an unusual sound when braking, or a body or plastic part is loose, the car should not be driven any further.",
     "towingHeading": "How to get your car to the workshop if it is not drivable",
@@ -263,9 +383,87 @@
     "cta": "Get an estimate",
     "faqTitle": "Common questions",
     "faq": [
-      { "q": "Does Mpaint handle insurance claims?", "a": "No, we do not handle insurance claims or on-site accident assistance - our job is the bodywork and paint repair itself." },
-      { "q": "Do you offer a towing service?", "a": "No, Mpaint does not provide towing itself. We recommend using a suitable recovery or towing service, and we will give you the workshop address and agree on a delivery time." }
+      {
+        "q": "Does Mpaint handle insurance claims?",
+        "a": "No, we do not handle insurance claims or on-site accident assistance. Our job is the bodywork and paint repair itself."
+      },
+      {
+        "q": "Do you offer a towing service?",
+        "a": "No, Mpaint does not provide towing itself. We recommend using a suitable recovery or towing service, and we will give you the workshop address and agree on a delivery time."
+      },
+      {
+        "q": "Is post-accident bodywork different from regular repair?",
+        "a": "We use the same welding and sheet-metal techniques as for regular bodywork. The difference is in the assessment: after an accident, it matters more to pin down whether the damage is purely cosmetic or affects the car's structure."
+      }
     ]
+  },
+  "about": {
+    "meta": {
+      "title": "Mpaint workshop in Tallinn | Car painting and bodywork",
+      "description": "Mpaint is a car painting and bodywork workshop in Tallinn. Our own filtered paint booth, up to 1 year warranty, everything under one roof."
+    },
+    "h1": "Mpaint workshop in Tallinn",
+    "intro": "Mpaint carries out car painting and bodywork in Tallinn, on Magasini street. We're a full-service workshop: painting, welding, rust protection, dent removal, polishing and parts replacement all happen under one roof.",
+    "photosHeading": "Our workshop",
+    "photoPaintCaption": "Our own filtered paint booth",
+    "photoBodyCaption": "Bodywork and welding area",
+    "servicesHeading": "Services and specialisations",
+    "servicesIntro": "We do everything from single-part repairs to larger restoration work, for passenger cars and commercial vehicles alike.",
+    "assessmentHeading": "How we put together an estimate",
+    "assessmentP1": "The easiest way to start is by sending us photos of the damage. The more angles and the better the lighting, the more accurate our initial estimate can be.",
+    "assessmentP2": "For light, clearly cosmetic damage, photos are enough for an initial estimate. For more serious damage, several damaged areas, or suspected structural damage, we only give an exact quote after seeing the car.",
+    "qualityHeading": "Quality and warranty",
+    "qualityP1": "Paint is matched to the car's factory colour code and existing shade. For trickier cases, we do a spectrophotometer test spray before the full repaint so the tone matches the neighbouring panels.",
+    "qualityP2": "Up to 1 year warranty on most work. The warranty doesn't apply if we didn't carry out the preparation work, or if rust repair was done at the client's request rather than our recommendation.",
+    "limitsHeading": "What we don't do",
+    "limitsText": "To be upfront: we don't do frame pulling on a bench, full sill replacement, or take on oversized vehicles.",
+    "locationHeading": "Location and contact",
+    "locationText": "The workshop is in Tallinn, at Magasini tn 31. You'll find all contact details and the exact location on our contact page.",
+    "contactLinkText": "See contact details and location",
+    "cta": "Get an estimate"
+  },
+  "bumperPainting": {
+    "meta": {
+      "title": "Bumper painting in Tallinn",
+      "description": "Plastic bumper painting and repair in Tallinn, from 250€. Exact factory colour matching, the right primer for plastic, filtered paint booth."
+    },
+    "h1": "Bumper painting in Tallinn",
+    "tagline": "Plastic bumper painting and repair in our own filtered paint booth, from 250€.",
+    "bulletsHeading": "What the service includes",
+    "bullets": [
+      "Repairing cracks, scratches and dents before painting",
+      "The right adhesion primer for plastic, so the paint holds properly",
+      "Exact factory colour-code matching to the existing shade",
+      "Removing and refitting the bumper when the job needs it"
+    ],
+    "processHeading": "How the job works",
+    "process": [
+      "You send us photos of the damaged bumper so we can give an initial estimate.",
+      "Cracks or deformation are repaired before painting.",
+      "The surface is sanded and coated with a primer suited to plastic.",
+      "The bumper is painted to the car's factory colour code in our filtered, dust-free booth."
+    ],
+    "pricingNote": "Bumper painting from 250€. The exact price depends on the extent of the damage, we give a quote based on photos.",
+    "faqTitle": "Common questions",
+    "faq": [
+      {
+        "q": "How fast can a bumper be painted?",
+        "a": "Painting a single part, such as a bumper, takes 3-4 days on average."
+      },
+      {
+        "q": "Does a cracked bumper need repairing before painting?",
+        "a": "Yes. Cracks and deformation are repaired before sanding and painting, otherwise the damage will show through the paint again."
+      },
+      {
+        "q": "Can plastic bumpers even be painted?",
+        "a": "Yes. The plastic surface needs a suitable primer so the paint holds properly. That's a bit different from a regular metal panel, but it's a normal part of the prep work."
+      },
+      {
+        "q": "What determines the price?",
+        "a": "The price depends on the extent of the damage and whether the bumper needs to come off before painting. We give an exact estimate based on photos."
+      }
+    ],
+    "cta": "Get an estimate"
   },
   "warranty": {
     "title": "Warranty",
@@ -316,7 +514,7 @@
     "placeholderName": "Your name",
     "placeholderEmail": "Email address",
     "placeholderPhone": "Phone (optional)",
-    "placeholderMessage": "Describe the damage or what you need — a photo helps too.",
+    "placeholderMessage": "Describe the damage or what you need, a photo helps too.",
     "uploadLabel": "Add photos (optional)",
     "uploadHint": "PNG or JPG, up to 5 photos",
     "removePhoto": "Remove photo",

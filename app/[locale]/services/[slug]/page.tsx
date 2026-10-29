@@ -175,6 +175,13 @@ export default async function ServiceDetailPage({
               <div className="svc-secondary">
                 <h3>{secondarySection.heading}</h3>
                 <p>{secondarySection.text}</p>
+                {id === "paint" && (
+                  <p>
+                    <Link href="/bumper-painting" className="link">
+                      {t("bumperPainting.h1")}
+                    </Link>
+                  </p>
+                )}
               </div>
             )}
           </div>
