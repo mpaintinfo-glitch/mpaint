@@ -168,7 +168,7 @@
       "pricingNote": "Painting a panel from 250€, bonnet and roof from 450€.",
       "secondarySection": {
         "heading": "Bumper painting",
-        "text": "The bumper is one of the most commonly painted single parts. Painting plastic bumpers needs slightly different prep than metal panels: the plastic surface needs an adhesion primer so the paint holds properly. Pricing stays in the same range as any other single part, from 250€."
+        "text": "The bumper is one of the most commonly painted single parts. Painting plastic bumpers needs slightly different prep than metal panels: the plastic surface needs an adhesion primer so the paint holds properly. The exact price depends on the extent of the damage, we give a quote based on photos."
       },
       "faq": [
         {
@@ -399,7 +399,7 @@
   },
   "about": {
     "meta": {
-      "title": "Mpaint workshop in Tallinn | Car painting and bodywork",
+      "title": "Car painting and bodywork workshop in Tallinn",
       "description": "Mpaint is a car painting and bodywork workshop in Tallinn. Our own filtered paint booth, up to 1 year warranty, everything under one roof."
     },
     "h1": "Mpaint workshop in Tallinn",
@@ -425,10 +425,10 @@
   "bumperPainting": {
     "meta": {
       "title": "Bumper painting in Tallinn",
-      "description": "Plastic bumper painting and repair in Tallinn, from 250€. Exact factory colour matching, the right primer for plastic, filtered paint booth."
+      "description": "Plastic bumper painting and repair in Tallinn. Exact factory colour matching, the right primer for plastic, filtered paint booth. The exact price depends on the damage, we give a quote based on photos."
     },
     "h1": "Bumper painting in Tallinn",
-    "tagline": "Plastic bumper painting and repair in our own filtered paint booth, from 250€.",
+    "tagline": "Plastic bumper painting and repair in our own filtered paint booth.",
     "bulletsHeading": "What the service includes",
     "bullets": [
       "Repairing cracks, scratches and dents before painting",
@@ -443,7 +443,7 @@
       "The surface is sanded and coated with a primer suited to plastic.",
       "The bumper is painted to the car's factory colour code in our filtered, dust-free booth."
     ],
-    "pricingNote": "Bumper painting from 250€. The exact price depends on the extent of the damage, we give a quote based on photos.",
+    "pricingNote": "The exact price depends on the extent of the damage. Send us photos of the damage and request a free quote.",
     "faqTitle": "Common questions",
     "faq": [
       {

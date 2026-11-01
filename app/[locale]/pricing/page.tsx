@@ -73,7 +73,7 @@ export default async function PricingPage({
                 <Link href="/bumper-painting" className="link">
                   {t("bumperPainting.h1")}
                 </Link>
-                <span>{t("bumperPainting.pricingNote")}</span>
+                <span>{t("pricing.genericNote")}</span>
               </li>
             </ul>
           </div>

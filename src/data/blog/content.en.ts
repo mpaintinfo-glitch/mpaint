@@ -22,7 +22,7 @@ export const content_en: Record<ArticleId, ArticleContent> = {
       {
         heading: "Our confirmed starting prices",
         paragraphs: [
-          "At Mpaint, painting a single panel, such as a door, bumper, or wing, starts from 250 euros. Painting the bonnet or roof, which are larger and more complex surfaces, starts from 450 euros. Cleaning and treating rust damage starts from 50 euros, depending on the extent and depth of the damage and how accessible it is. The exact price is always confirmed after we have seen the damage.",
+          "At Mpaint, painting a single panel, such as a door or wing, starts from 250 euros. Painting the bonnet or roof, which are larger and more complex surfaces, starts from 450 euros. Cleaning and treating rust damage starts from 50 euros, depending on the extent and depth of the damage and how accessible it is. The exact price is always confirmed after we have seen the damage.",
         ],
       },
       {
@@ -211,7 +211,7 @@ export const content_en: Record<ArticleId, ArticleContent> = {
       {
         heading: "What to expect from a repair job",
         paragraphs: [
-          "We first assess the extent of the damage and decide whether a repair makes sense. If it does, the paint is matched to the car's factory colour code and the bumper is painted in our own dust-free booth. Painting a single part, such as a bumper, starts from 250 euros.",
+          "We first assess the extent of the damage and decide whether a repair makes sense. If it does, the paint is matched to the car's factory colour code and the bumper is painted in our own dust-free booth. The exact price depends on the extent of the damage, we give a quote based on photos.",
         ],
       },
     ],

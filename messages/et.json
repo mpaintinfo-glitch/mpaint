@@ -168,7 +168,7 @@
       "pricingNote": "Elemendi värvimine alates 250€, kapott ja katus alates 450€.",
       "secondarySection": {
         "heading": "Stange värvimine",
-        "text": "Stange on üks levinumaid detaile, mida üksikult värvime. Plaststangede värvimine nõuab tavapärasest veidi erinevat ettevalmistust, kuna plasti pind vajab sobivat aluskrunti, et värv korralikult kinnituks. Hind jääb samasse vahemikku mis teiste üksikute detailide värvimisel, alates 250€."
+        "text": "Stange on üks levinumaid detaile, mida üksikult värvime. Plaststangede värvimine nõuab tavapärasest veidi erinevat ettevalmistust, kuna plasti pind vajab sobivat aluskrunti, et värv korralikult kinnituks. Täpne hind sõltub kahjustuse ulatusest, hinnapakkumise saadame fotode põhjal."
       },
       "faq": [
         {
@@ -399,7 +399,7 @@
   },
   "about": {
     "meta": {
-      "title": "Mpaint töökoda Tallinnas | Autovärvimine ja keretööd",
+      "title": "Autovärvimise ja keretööde töökoda Tallinnas",
       "description": "Mpaint on autovärvimise ja keretööde töökoda Tallinnas. Oma filtreeritud värvikamber, kuni 1 aasta garantii, kõik tööd ühe katuse all."
     },
     "h1": "Mpaint töökoda Tallinnas",
@@ -425,10 +425,10 @@
   "bumperPainting": {
     "meta": {
       "title": "Stange värvimine Tallinnas",
-      "description": "Plaststangede värvimine ja parandus Tallinnas, alates 250€. Tehase värvikoodi sobitus, sobiv aluskrunt plastile, filtreeritud värvikamber."
+      "description": "Plaststangede värvimine ja parandus Tallinnas. Tehase värvikoodi sobitus, sobiv aluskrunt plastile, filtreeritud värvikamber. Täpne hind sõltub kahjustusest, saadame hinnapakkumise fotode põhjal."
     },
     "h1": "Stange värvimine Tallinnas",
-    "tagline": "Plaststangede värvimine ja parandus meie filtreeritud värvikambris, alates 250€.",
+    "tagline": "Plaststangede värvimine ja parandus meie filtreeritud värvikambris.",
     "bulletsHeading": "Mida teenus sisaldab",
     "bullets": [
       "Pragude, kriimustuste ja löökaukude parandus enne värvimist",
@@ -443,7 +443,7 @@
       "Pind lihvitakse ja kaetakse plastile sobiva aluskrundiga.",
       "Stange värvitakse auto tehase värvikoodi järgi meie filtreeritud, tolmuvabas kambris."
     ],
-    "pricingNote": "Stange värvimine alates 250€. Täpne hind sõltub kahjustuse ulatusest, hinnapakkumise saadame fotode põhjal.",
+    "pricingNote": "Täpne hind sõltub kahjustuse ulatusest. Saada fotod kahjustusest ja küsi tasuta hinnapakkumist.",
     "faqTitle": "Korduma kippuvad küsimused",
     "faq": [
       {

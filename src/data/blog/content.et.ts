@@ -22,7 +22,7 @@ export const content_et: Record<ArticleId, ArticleContent> = {
       {
         heading: "Meie kinnitatud alghinnad",
         paragraphs: [
-          "Mpaintis maksab ühe elemendi, näiteks ukse, stange või tiiva, värvimine alates 250 eurost. Kapoti või katuse värvimine, mis on suuremad ja keerukamad pinnad, algab 450 eurost. Roostekahjustuse puhastus ja töötlus algab 50 eurost, olenevalt kahjustuse ulatusest, sügavusest ja ligipääsetavusest. Täpne hind selgub alati pärast kahjustuse nägemist.",
+          "Mpaintis maksab ühe elemendi, näiteks ukse või tiiva, värvimine alates 250 eurost. Kapoti või katuse värvimine, mis on suuremad ja keerukamad pinnad, algab 450 eurost. Roostekahjustuse puhastus ja töötlus algab 50 eurost, olenevalt kahjustuse ulatusest, sügavusest ja ligipääsetavusest. Täpne hind selgub alati pärast kahjustuse nägemist.",
         ],
       },
       {
@@ -214,7 +214,7 @@ export const content_et: Record<ArticleId, ArticleContent> = {
       {
         heading: "Mida oodata parandustöö puhul",
         paragraphs: [
-          "Esmalt hindame kahjustuse ulatust ja otsustame, kas parandus on mõistlik. Parandusvõimaluse korral sobitatakse värv auto tehase värvikoodi järgi ning stange värvitakse meie oma tolmuvabas kambris. Üksiku detaili, näiteks stange, värvimine on alates 250 eurost.",
+          "Esmalt hindame kahjustuse ulatust ja otsustame, kas parandus on mõistlik. Parandusvõimaluse korral sobitatakse värv auto tehase värvikoodi järgi ning stange värvitakse meie oma tolmuvabas kambris. Täpne hind sõltub kahjustuse ulatusest, hinnapakkumise saame anda fotode põhjal.",
         ],
       },
     ],
