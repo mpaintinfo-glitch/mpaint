@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "../../src/i18n/navigation";
 import { RIBBON_IDS, slugsForLocale } from "../../src/data/services";
 import { localeAlternates } from "../../src/lib/alternates";
+import { BUSINESS } from "../../src/lib/site";
 import { sfondo, imgPaintBooth, imgBodywork } from "../../src/assets";
 import Arrow from "../../src/components/Arrow";
 import Icon from "../../src/components/Icon";
@@ -165,6 +166,12 @@ export default async function HomePage({
               ))}
             </div>
             <p className="seo-closing">{t("home.seoClosing")}</p>
+            <p className="seo-closing">
+              {t("home.reviewsText")}{" "}
+              <a href={BUSINESS.googleReviewsUrl} target="_blank" rel="noopener" className="link">
+                {t("home.reviewsLinkText")}
+              </a>
+            </p>
           </div>
         </div>
       </section>

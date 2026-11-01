@@ -141,8 +141,8 @@ export default async function MinorDamagePage({
           <div className="seo-block" style={{ textAlign: "center" }}>
             <h3>{t("blog.relatedArticlesHeading")}</h3>
             <div className="svc-related-links">
-              <Link href={{ pathname: "/blog/[slug]", params: { slug: articleSlugs.scratchRepair } }} className="link">
-                {getArticleContent(locale, "scratchRepair").title}
+              <Link href={{ pathname: "/blog/[slug]", params: { slug: articleSlugs.rustRepair } }} className="link">
+                {getArticleContent(locale, "rustRepair").title}
               </Link>
               <Link href={{ pathname: "/blog/[slug]", params: { slug: articleSlugs.paintingProcess } }} className="link">
                 {getArticleContent(locale, "paintingProcess").title}

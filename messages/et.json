@@ -73,7 +73,9 @@
     "meta": {
       "title": "Autovärvimine ja keretööd Tallinnas",
       "description": "Autovärvimise ja keretööde töökoda Tallinnas. Täisvärvimised, üksikud paneelid, keevitus, roostetõrje, mõlkide eemaldamine ja poleerimine."
-    }
+    },
+    "reviewsText": "Meie kliendid on hinnanud Mpainti tööd Google'is 4,9 punktiga 5-st.",
+    "reviewsLinkText": "Vaata hinnanguid Google Mapsis"
   },
   "services": {
     "h1": "Autovärvimise ja kerekoja teenused Tallinnas",
@@ -215,7 +217,7 @@
         },
         {
           "q": "Kui kaua avariijärgsed keretööd aega võtavad?",
-          "a": "Tüüpiline avariijärgne remont võtab orienteeruvalt 3-4 tööpäeva, olenevalt kahjustuse ulatusest. Pikemad tööd, varjatud kahjustused ja varuosade tarneajad võivad ajakava mõjutada. Täpse ajakava saame anda pärast kahjustuse nägemist."
+          "a": "Tüüpiline avariijärgne remont võtab orienteeruvalt 3-4 tööpäeva, olenevalt kahjustuse ulatusest. See on orienteeruv aeg, mitte garantii. Pikemad tööd, varjatud kahjustused ja varuosade tarneajad võivad ajakava mõjutada. Täpse ajakava saame anda pärast kahjustuse nägemist."
         }
       ]
     },
@@ -434,7 +436,7 @@
       },
       {
         "q": "Kui kaua avariijärgne remont aega võtab?",
-        "a": "Tüüpiline avariijärgne remont võtab orienteeruvalt 3-4 tööpäeva, olenevalt kahjustuse ulatusest. Pikemad tööd, varjatud kahjustused ja varuosade tarneajad võivad ajakava mõjutada. Täpse ajakava saame anda pärast kahjustuse nägemist."
+        "a": "Tüüpiline avariijärgne remont võtab orienteeruvalt 3-4 tööpäeva, olenevalt kahjustuse ulatusest. See on orienteeruv aeg, mitte garantii. Pikemad tööd, varjatud kahjustused ja varuosade tarneajad võivad ajakava mõjutada. Täpse ajakava saame anda pärast kahjustuse nägemist."
       }
     ]
   },
@@ -519,7 +521,7 @@
     "bulletsHeading": "Mida parandame",
     "bullets": [
       "Kivitäked ja väikesed löögijäljed värvikihil",
-      "Pindmised kriimustused, mis ei ulatu metallini",
+      "Hinnang, kas sobib kiirem parandus või on vaja täispaneeli värvimist",
       "Värvi täpne sobitamine auto tehase värvikoodiga",
       "Esmane hinnang fotode põhjal"
     ],
@@ -543,8 +545,8 @@
         "a": "Ei alati. Kui kahjustus ulatub värvikihist läbi metallini või on tegu mitme kahjustatud kohaga, võib olla vajalik täispaneeli värvimine, mis võtab kauem aega."
       },
       {
-        "q": "Kas väikesed kriimustused vajavad alati värvimist?",
-        "a": "Ei. Pindmised kriimustused, mis ei ulatu värvikihist läbi, saab tihti kõrvaldada poleerimisega. Kui kriimustus ulatub metallini, on vaja värvida."
+        "q": "Kuidas kivitäkked tekivad?",
+        "a": "Kivitäkked tekivad tavaliselt teelt üles paiskuvate kivikeste tabamusest, enamasti auto esiosale, näiteks kapotile või iluvõre ja esitulede piirkonda."
       },
       {
         "q": "Millest hind sõltub?",

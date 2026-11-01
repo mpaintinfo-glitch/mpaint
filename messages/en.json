@@ -73,7 +73,9 @@
     "meta": {
       "title": "Car painting and bodywork in Tallinn",
       "description": "Car painting and bodywork workshop in Tallinn. Full resprays, single panels, welding, rust repair, dent removal and polishing, all under one roof."
-    }
+    },
+    "reviewsText": "Our customers have rated Mpaint's work 4.9 out of 5 on Google.",
+    "reviewsLinkText": "See our reviews on Google Maps"
   },
   "services": {
     "h1": "Car painting and bodywork services in Tallinn",
@@ -215,7 +217,7 @@
         },
         {
           "q": "How long does post-accident bodywork take?",
-          "a": "A typical post-accident repair takes roughly 3-4 working days, depending on the extent of the damage. Longer jobs, hidden damage, and parts delivery times can affect the schedule. We give an exact timeframe after we see the damage."
+          "a": "A typical post-accident repair takes roughly 3-4 working days, depending on the extent of the damage. This is an indicative timeframe, not a guarantee. Longer jobs, hidden damage, and parts delivery times can affect the schedule. We give an exact timeframe after we see the damage."
         }
       ]
     },
@@ -434,7 +436,7 @@
       },
       {
         "q": "How long does post-accident repair take?",
-        "a": "A typical post-accident repair takes roughly 3-4 working days, depending on the extent of the damage. Longer jobs, hidden damage, and parts delivery times can affect the schedule. We give an exact timeframe after we see the damage."
+        "a": "A typical post-accident repair takes roughly 3-4 working days, depending on the extent of the damage. This is an indicative timeframe, not a guarantee. Longer jobs, hidden damage, and parts delivery times can affect the schedule. We give an exact timeframe after we see the damage."
       }
     ]
   },
@@ -519,7 +521,7 @@
     "bulletsHeading": "What we fix",
     "bullets": [
       "Stone chips and small impact marks in the paint layer",
-      "Surface scratches that don't reach the metal",
+      "Assessing whether a faster fix works, or whether the full panel needs painting",
       "Exact colour matching to the car's factory code",
       "Initial assessment from photos"
     ],
@@ -543,8 +545,8 @@
         "a": "Not always. If the damage goes through the paint layer down to the metal, or there are several damaged spots, the full panel may need painting, which takes longer."
       },
       {
-        "q": "Do small scratches always need painting?",
-        "a": "No. Surface scratches that don't go through the paint layer can often be removed by polishing. If a scratch reaches the metal, it needs painting."
+        "q": "How do stone chips happen?",
+        "a": "Stone chips are usually caused by small stones thrown up from the road, most often hitting the front of the car, such as the bonnet or the grille and headlight area."
       },
       {
         "q": "What determines the price?",
