@@ -182,6 +182,13 @@ export default async function ServiceDetailPage({
                     </Link>
                   </p>
                 )}
+                {id === "paint" && (
+                  <p>
+                    <Link href="/minor-damage" className="link">
+                      {t("minorDamage.h1")}
+                    </Link>
+                  </p>
+                )}
               </div>
             )}
           </div>

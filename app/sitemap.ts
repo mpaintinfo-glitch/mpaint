@@ -16,7 +16,7 @@ function alternatesFor(hrefForLocale: (locale: string) => Href): Record<string, 
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes: Href[] = ["/", "/services", "/contact", "/pricing", "/blog", "/accident", "/about", "/bumper-painting"];
+  const staticRoutes: Href[] = ["/", "/services", "/contact", "/pricing", "/blog", "/accident", "/about", "/bumper-painting", "/minor-damage"];
 
   const staticEntries = staticRoutes.flatMap((href) =>
     routing.locales.map((locale) => ({

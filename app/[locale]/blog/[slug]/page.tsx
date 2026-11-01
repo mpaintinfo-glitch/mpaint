@@ -160,6 +160,11 @@ export default async function BlogArticlePage({
                   {t("bumperPainting.h1")}
                 </Link>
               )}
+              {id === "scratchRepair" && (
+                <Link href="/minor-damage" className="link">
+                  {t("minorDamage.h1")}
+                </Link>
+              )}
             </div>
           </div>
 

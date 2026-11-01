@@ -16,6 +16,7 @@ export const routing = defineRouting({
     "/accident": { et: "/avarii", ru: "/avarii", en: "/accident" },
     "/about": { et: "/meist", ru: "/meist", en: "/about" },
     "/bumper-painting": { et: "/teenused/stange-varvimine", ru: "/teenused/stange-varvimine", en: "/services/bumper-painting" },
+    "/minor-damage": { et: "/teenused/kivitaked-ja-varvikahjustused", ru: "/teenused/kivitaked-ja-varvikahjustused", en: "/services/minor-paint-damage" },
   },
 });
 
