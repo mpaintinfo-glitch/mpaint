@@ -186,6 +186,10 @@
         {
           "q": "Mida tehakse enne värvimist?",
           "a": "Pind puhastatakse, lihvitakse, parandatakse ja krunditakse vastavalt selle seisukorrale."
+        },
+        {
+          "q": "Kas väiksemaid kahjustusi saab kiiremini parandada?",
+          "a": "Jah. Väiksemad kahjustused, näiteks kivitäked ja pindmised kriimustused, saame tihti parandada umbes ühe tööpäevaga, kui kahjustuse ulatus ja parandusviis seda võimaldavad. See ei ole garantii. Täpne ajakava selgub pärast kahjustuse nägemist."
         }
       ]
     },
@@ -208,6 +212,10 @@
         {
           "q": "Milliseid keretöid teete?",
           "a": "Teostame mõlkide, rooste- ja kerakahjustuste remonti, keevitustöid ning värvimiseks ettevalmistust."
+        },
+        {
+          "q": "Kui kaua avariijärgsed keretööd aega võtavad?",
+          "a": "Tüüpiline avariijärgne remont võtab orienteeruvalt 3-4 tööpäeva, olenevalt kahjustuse ulatusest. Pikemad tööd, varjatud kahjustused ja varuosade tarneajad võivad ajakava mõjutada. Täpse ajakava saame anda pärast kahjustuse nägemist."
         }
       ]
     },
@@ -225,6 +233,14 @@
         {
           "q": "Kas mõlki saab eemaldada ilma värvimiseta?",
           "a": "Jah, kui värvikiht on terve ja kahjustus võimaldab värvivaba mõlgieemaldust."
+        },
+        {
+          "q": "Mida tehakse, kui mõlk on spotter-meetodi jaoks liiga sügav?",
+          "a": "Hindame kahjustuse tasuta ja pakume alternatiivse lahenduse, näiteks paneeli parandust või vahetust."
+        },
+        {
+          "q": "Kas mõlkide eemaldamine sobib kõikidele autodele?",
+          "a": "Jah, teostame mõlkide eemaldamist kõikidele sõidukitüüpidele."
         }
       ]
     },
@@ -276,6 +292,14 @@
         {
           "q": "Kas poleerimine eemaldab kõik kriimustused?",
           "a": "Ainult pindmised. Kui kriimustus ulatub värvikihist läbi, on vaja ala üle värvida. Vaata meie autovärvimise teenust."
+        },
+        {
+          "q": "Kuidas faarid taastatakse?",
+          "a": "Kasutame katte seisukorrast olenevalt kas keemilist või mehaanilist meetodit."
+        },
+        {
+          "q": "Miks tasub faarisid poleerida?",
+          "a": "Selged tuled parandavad nähtavust ja ohutust pimedas sõitmisel, lisaks parandab see auto välimust."
         }
       ]
     },
@@ -293,6 +317,10 @@
         {
           "q": "Kas kasutate uusi või kasutatud varuosi?",
           "a": "Mõlemat, valiku teed sina. Kasutatud osad on odavam lahendus, uued osad sobivad, kui soovid originaalseisukorda."
+        },
+        {
+          "q": "Kas hindate kahjustust enne otsuse tegemist?",
+          "a": "Jah, enne töö algust hindame, kas osa tasub parandada või on mõistlikum välja vahetada."
         }
       ]
     }
@@ -317,6 +345,15 @@
         "q": "Kas hinnapakkumise küsimine on tasuta?",
         "a": "Jah, hinnapakkumise küsimine ei maksa midagi."
       }
+    ],
+    "factorsHeading": "Mis hinda mõjutab",
+    "factors": [
+      "Kahjustuse hindamine: saadad fotod, anname esialgse hinnangu; suurema kahjustuse korral vaatame auto kohapeal üle.",
+      "Pinna ettevalmistus: puhastamine, lihvimine ja kruntimine vastavalt kahjustuse seisukorrale, vajadusel vana värvikihi või rooste eemaldamine.",
+      "Kere- ja plekitööd: struktuurse kahjustuse korral lisandub keevitus- või plekitöö enne värvimist.",
+      "Värv ja materjalid: toon sobitatakse tehase värvikoodi järgi; metallik- ja pärlmutter-toonid on kallimad, kuna pärlmutter vajab kahte värvikihti.",
+      "Osade vahetus: kui osa tuleb vahetada, saad valida uue või kasutatud osa vahel.",
+      "Töö maht: üksiku detaili parandus erineb hinnalt oluliselt mitme detaili või täisvärvimisest."
     ]
   },
   "blog": {
@@ -394,6 +431,10 @@
       {
         "q": "Kas avariijärgsed keretööd erinevad tavapärasest remondist?",
         "a": "Kasutame samu keevitus- ja plekitöö võtteid, mis tavapärase keretöö puhul. Erinevus on hindamises: avarii järel tuleb täpsemalt selgitada, kas kahjustus on ainult kosmeetiline või mõjutab kere kandekonstruktsiooni."
+      },
+      {
+        "q": "Kui kaua avariijärgne remont aega võtab?",
+        "a": "Tüüpiline avariijärgne remont võtab orienteeruvalt 3-4 tööpäeva, olenevalt kahjustuse ulatusest. Pikemad tööd, varjatud kahjustused ja varuosade tarneajad võivad ajakava mõjutada. Täpse ajakava saame anda pärast kahjustuse nägemist."
       }
     ]
   },
@@ -420,7 +461,10 @@
     "locationHeading": "Asukoht ja kontakt",
     "locationText": "Töökoda asub Tallinnas, Magasini tn 31. Kõik kontaktandmed ja täpne asukoht leiad kontaktleheküljelt.",
     "contactLinkText": "Vaata kontaktandmeid ja asukohta",
-    "cta": "Saada päring"
+    "cta": "Saada päring",
+    "reviewsHeading": "Kliendihinnangud",
+    "reviewsText": "Meie kliendid on hinnanud Mpainti tööd Google'is 4,9 punktiga 5-st.",
+    "reviewsLinkText": "Vaata hinnanguid Google Mapsis"
   },
   "bumperPainting": {
     "meta": {
@@ -461,6 +505,50 @@
       {
         "q": "Millest hind sõltub?",
         "a": "Hind sõltub kahjustuse ulatusest ja sellest, kas stange tuleb enne värvimist eemaldada. Täpse hinnangu saame fotode põhjal."
+      }
+    ],
+    "cta": "Saada päring"
+  },
+  "minorDamage": {
+    "meta": {
+      "title": "Kivitäkete ja värvikahjustuste parandamine Tallinnas",
+      "description": "Kivitäked ja pindmised värvikahjustused parandame tihti umbes ühe tööpäevaga, kui kahjustuse ulatus seda võimaldab. Hinnang fotode põhjal, täpne hind pärast kahjustuse nägemist."
+    },
+    "h1": "Kivitäkete ja väiksemate värvikahjustuste parandamine",
+    "tagline": "Kivitäked ja pindmised värvikahjustused parandame tihti umbes ühe tööpäevaga.",
+    "bulletsHeading": "Mida parandame",
+    "bullets": [
+      "Kivitäked ja väikesed löögijäljed värvikihil",
+      "Pindmised kriimustused, mis ei ulatu metallini",
+      "Värvi täpne sobitamine auto tehase värvikoodiga",
+      "Esmane hinnang fotode põhjal"
+    ],
+    "processHeading": "Kuidas parandus käib",
+    "process": [
+      "Saadad meile fotod kahjustusest, et saaksime anda esialgse hinnangu.",
+      "Hindame, kas kahjustus sobib kiirema parandusviisiga või vajab täispaneeli värvimist.",
+      "Sobiva lahenduse korral parandame kahjustuse ja värvime meie filtreeritud, tolmuvabas kambris.",
+      "Kui kahjustuse ulatus ja parandusviis seda võimaldavad, saame väiksemad tööd tihti valmis umbes ühe tööpäevaga."
+    ],
+    "timingNote": "Umbes 1 tööpäev väiksemate kahjustuste puhul, kui ulatus ja parandusviis seda võimaldavad. See on orienteeruv aeg, mitte garantii. Täpne ajakava selgub pärast kahjustuse nägemist.",
+    "pricingNote": "Täpne hind sõltub kahjustuse ulatusest ja parandusviisist. Saada fotod ja küsi tasuta hinnapakkumist.",
+    "faqTitle": "Korduma kippuvad küsimused",
+    "faq": [
+      {
+        "q": "Kui kiiresti saab kivitäkke parandatud?",
+        "a": "Väiksemad kivitäked ja pindmised kriimustused saame tihti parandada umbes ühe tööpäevaga, kui kahjustuse ulatus ja parandusviis seda võimaldavad. See ei ole garantii. Täpne ajakava selgub pärast kahjustuse nägemist."
+      },
+      {
+        "q": "Kas iga kivitäke saab kiirelt parandada?",
+        "a": "Ei alati. Kui kahjustus ulatub värvikihist läbi metallini või on tegu mitme kahjustatud kohaga, võib olla vajalik täispaneeli värvimine, mis võtab kauem aega."
+      },
+      {
+        "q": "Kas väikesed kriimustused vajavad alati värvimist?",
+        "a": "Ei. Pindmised kriimustused, mis ei ulatu värvikihist läbi, saab tihti kõrvaldada poleerimisega. Kui kriimustus ulatub metallini, on vaja värvida."
+      },
+      {
+        "q": "Millest hind sõltub?",
+        "a": "Hind sõltub kahjustuse ulatusest ja parandusviisist. Saadame täpse hinnangu fotode põhjal."
       }
     ],
     "cta": "Saada päring"

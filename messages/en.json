@@ -186,6 +186,10 @@
         {
           "q": "What's done before painting?",
           "a": "The surface is cleaned, sanded, repaired where needed, and primed according to its condition."
+        },
+        {
+          "q": "Can smaller damage be repaired faster?",
+          "a": "Yes. Smaller damage, such as stone chips and surface scratches, can often be fixed in about one working day, when the extent of the damage and the repair method allow it. This isn't a guarantee. The exact timeframe is confirmed after we see the damage."
         }
       ]
     },
@@ -208,6 +212,10 @@
         {
           "q": "What bodywork do you do?",
           "a": "We handle dent, rust and body damage repair, welding work, and prep for painting."
+        },
+        {
+          "q": "How long does post-accident bodywork take?",
+          "a": "A typical post-accident repair takes roughly 3-4 working days, depending on the extent of the damage. Longer jobs, hidden damage, and parts delivery times can affect the schedule. We give an exact timeframe after we see the damage."
         }
       ]
     },
@@ -225,6 +233,14 @@
         {
           "q": "Can a dent be removed without painting?",
           "a": "Yes, if the paint layer is intact and the damage allows for paintless dent repair."
+        },
+        {
+          "q": "What happens if a dent is too deep for the spotter method?",
+          "a": "We assess the damage for free and offer an alternative, such as panel repair or replacement."
+        },
+        {
+          "q": "Does dent removal work on all cars?",
+          "a": "Yes, we do dent removal for all vehicle types."
         }
       ]
     },
@@ -276,6 +292,14 @@
         {
           "q": "Does polishing remove all scratches?",
           "a": "Only surface-level ones. If a scratch goes down to the paint layer, the part needs painting. See our car painting service."
+        },
+        {
+          "q": "How are headlights restored?",
+          "a": "Depending on the condition of the coating, we use either a chemical or a mechanical method."
+        },
+        {
+          "q": "Why is it worth polishing your headlights?",
+          "a": "Clear headlights improve visibility and safety when driving in the dark, and also improve how the car looks."
         }
       ]
     },
@@ -293,6 +317,10 @@
         {
           "q": "Do you use new or used parts?",
           "a": "Both, it's your choice. Used parts are the cheaper option; new parts make sense if you want to keep things factory-original."
+        },
+        {
+          "q": "Do you assess the damage before deciding?",
+          "a": "Yes, before starting work we assess whether the part is worth repairing or better off replaced."
         }
       ]
     }
@@ -317,6 +345,15 @@
         "q": "Is getting a quote free?",
         "a": "Yes, requesting a quote costs nothing."
       }
+    ],
+    "factorsHeading": "What affects the price",
+    "factors": [
+      "Damage assessment: you send photos and we give an initial estimate; for more serious damage, we look at the car in person.",
+      "Surface preparation: cleaning, sanding and priming based on the condition of the damage, removing old paint or rust where needed.",
+      "Bodywork and sheet-metal work: structural damage adds welding or sheet-metal work before painting.",
+      "Paint and materials: the shade is matched to the factory colour code; metallic and pearl finishes cost more, since pearl needs two coats of paint.",
+      "Parts replacement: if a part needs replacing, you can choose between a new or a used part.",
+      "Scope of work: repairing a single panel is priced very differently from repairing several panels or a full respray."
     ]
   },
   "blog": {
@@ -394,6 +431,10 @@
       {
         "q": "Is post-accident bodywork different from regular repair?",
         "a": "We use the same welding and sheet-metal techniques as for regular bodywork. The difference is in the assessment: after an accident, it matters more to pin down whether the damage is purely cosmetic or affects the car's structure."
+      },
+      {
+        "q": "How long does post-accident repair take?",
+        "a": "A typical post-accident repair takes roughly 3-4 working days, depending on the extent of the damage. Longer jobs, hidden damage, and parts delivery times can affect the schedule. We give an exact timeframe after we see the damage."
       }
     ]
   },
@@ -420,7 +461,10 @@
     "locationHeading": "Location and contact",
     "locationText": "The workshop is in Tallinn, at Magasini tn 31. You'll find all contact details and the exact location on our contact page.",
     "contactLinkText": "See contact details and location",
-    "cta": "Get an estimate"
+    "cta": "Get an estimate",
+    "reviewsHeading": "Customer reviews",
+    "reviewsText": "Our customers have rated Mpaint's work 4.9 out of 5 on Google.",
+    "reviewsLinkText": "See our reviews on Google Maps"
   },
   "bumperPainting": {
     "meta": {
@@ -461,6 +505,50 @@
       {
         "q": "What determines the price?",
         "a": "The price depends on the extent of the damage and whether the bumper needs to come off before painting. We give an exact estimate based on photos."
+      }
+    ],
+    "cta": "Get an estimate"
+  },
+  "minorDamage": {
+    "meta": {
+      "title": "Stone chip and minor paint damage repair in Tallinn",
+      "description": "Stone chips and surface paint damage can often be fixed in about one working day when the extent of the damage allows it. Estimate from photos, exact price after we see the damage."
+    },
+    "h1": "Stone chip and minor paint damage repair",
+    "tagline": "Stone chips and surface paint damage can often be fixed in about one working day.",
+    "bulletsHeading": "What we fix",
+    "bullets": [
+      "Stone chips and small impact marks in the paint layer",
+      "Surface scratches that don't reach the metal",
+      "Exact colour matching to the car's factory code",
+      "Initial assessment from photos"
+    ],
+    "processHeading": "How the repair works",
+    "process": [
+      "You send us photos of the damage so we can give an initial assessment.",
+      "We assess whether a faster repair method works, or whether the full panel needs painting.",
+      "If a faster fix suits, we repair and paint it in our filtered, dust-free booth.",
+      "When the extent of the damage and the repair method allow it, smaller jobs are often done in about one working day."
+    ],
+    "timingNote": "About 1 working day for minor damage, when the extent and repair method allow it. This is an indicative timeframe, not a guarantee. The exact schedule is confirmed after we see the damage.",
+    "pricingNote": "The exact price depends on the extent of the damage and the repair method. Send photos and request a free quote.",
+    "faqTitle": "Common questions",
+    "faq": [
+      {
+        "q": "How fast can a stone chip be fixed?",
+        "a": "Small stone chips and surface scratches can often be fixed in about one working day, when the extent of the damage and the repair method allow it. This isn't a guarantee. The exact timeframe is confirmed after we see the damage."
+      },
+      {
+        "q": "Can every stone chip be fixed quickly?",
+        "a": "Not always. If the damage goes through the paint layer down to the metal, or there are several damaged spots, the full panel may need painting, which takes longer."
+      },
+      {
+        "q": "Do small scratches always need painting?",
+        "a": "No. Surface scratches that don't go through the paint layer can often be removed by polishing. If a scratch reaches the metal, it needs painting."
+      },
+      {
+        "q": "What determines the price?",
+        "a": "The price depends on the extent of the damage and the repair method. We give an exact estimate based on photos."
       }
     ],
     "cta": "Get an estimate"

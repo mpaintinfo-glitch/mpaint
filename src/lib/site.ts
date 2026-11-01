@@ -15,6 +15,10 @@ export const BUSINESS = {
   geo: { latitude: 59.4221934, longitude: 24.7583585 },
   registryCode: "14939293",
   hours: { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "19:00" },
+  // Verified live on Google Maps (checked 2026-11-01): 4.9 stars, 26 reviews,
+  // matching this exact address, phone, and website. The rating/count will
+  // drift over time -- re-check before reusing the number elsewhere.
+  googleReviewsUrl: "https://maps.google.com/?cid=5687221436962611296",
 } as const;
 
 // Where lead notifications (quote requests, contact form) get sent.

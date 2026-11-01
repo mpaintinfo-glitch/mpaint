@@ -8,6 +8,7 @@ import Image from "next/image";
 import { dropBanner } from "../../../src/assets";
 import Footer from "../../../src/components/Footer";
 import OpenQuoteButton from "../../../src/components/OpenQuoteButton";
+import Icon from "../../../src/components/Icon";
 import BreadcrumbJsonLd from "../../../src/components/BreadcrumbJsonLd";
 
 export async function generateMetadata({
@@ -75,6 +76,12 @@ export default async function PricingPage({
                 </Link>
                 <span>{t("pricing.genericNote")}</span>
               </li>
+              <li className="pricing-row">
+                <Link href="/minor-damage" className="link">
+                  {t("minorDamage.h1")}
+                </Link>
+                <span>{t("pricing.genericNote")}</span>
+              </li>
             </ul>
           </div>
           <div className="container center" style={{ marginTop: "2rem" }}>
@@ -86,7 +93,19 @@ export default async function PricingPage({
       <section className="sec">
         <div className="container seo-surface">
           <div className="seo-block seo-block--first">
-            <h2>{t("pricing.faqTitle")}</h2>
+            <h2>{t("pricing.factorsHeading")}</h2>
+            <ul className="services-grid">
+              {(t.raw("pricing.factors") as string[]).map((item, i) => (
+                <li key={i}>
+                  <Icon id="i-check" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="seo-block">
+            <h3>{t("pricing.faqTitle")}</h3>
             <div className="faq-list">
               {faq.map((item, i) => (
                 <div className="faq-item" key={i}>

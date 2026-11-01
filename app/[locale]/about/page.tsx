@@ -5,7 +5,7 @@ import { Link, getPathname } from "../../../src/i18n/navigation";
 import { SERVICE_ORDER, slugsForLocale } from "../../../src/data/services";
 import { articleSlugsForLocale, getArticleContent } from "../../../src/data/blog";
 import { localeAlternates } from "../../../src/lib/alternates";
-import { SITE_URL } from "../../../src/lib/site";
+import { SITE_URL, BUSINESS } from "../../../src/lib/site";
 import { dropBanner, imgPaintBooth, imgBodywork } from "../../../src/assets";
 import Footer from "../../../src/components/Footer";
 import OpenQuoteButton from "../../../src/components/OpenQuoteButton";
@@ -99,6 +99,16 @@ export default async function AboutPage({
             <h2>{t("about.qualityHeading")}</h2>
             <p>{t("about.qualityP1")}</p>
             <p>{t("about.qualityP2")}</p>
+          </div>
+
+          <div className="article-section">
+            <h2>{t("about.reviewsHeading")}</h2>
+            <p>{t("about.reviewsText")}</p>
+            <p>
+              <a href={BUSINESS.googleReviewsUrl} target="_blank" rel="noopener" className="link">
+                {t("about.reviewsLinkText")}
+              </a>
+            </p>
           </div>
 
           <div className="article-section">
