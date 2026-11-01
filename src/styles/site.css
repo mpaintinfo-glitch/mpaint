@@ -491,9 +491,16 @@ footer>.f-in{position:relative;z-index:1}
 .header{position:sticky;top:0;z-index:200;background:var(--header-bg);backdrop-filter:blur(18px);
   border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-12);height:67px;position:relative}
-.nav-toggle{display:none;align-items:center;justify-content:center;width:40px;height:40px;
+/* Mobile-first: the toggle button and the drawer's closed/open state are
+   the unguarded default, with a single min-width:900px query switching to
+   the desktop inline row. Two adjacent breakpoints (e.g. max-width:899px
+   paired with min-width:900px) can both fail to match at once under
+   fractional device-pixel ratios (observed: Windows 125% scaling lands the
+   evaluated viewport at ~899.x, matching neither query), which left the
+   header with no nav styling at all. A single boundary can't have that gap. */
+.nav-toggle{display:flex;align-items:center;justify-content:center;width:40px;height:40px;
   border-radius:var(--r-circle);border:1px solid rgba(var(--overlay-rgb),.16);background:none;color:var(--med);
-  cursor:pointer;transition:all .2s;flex:0 0 auto}
+  cursor:pointer;transition:all .2s;flex:0 0 auto;order:2}
 .nav-toggle svg{width:18px;height:18px}
 .nav-toggle:hover{border-color:rgba(var(--overlay-rgb),.4);color:var(--white)}
 .nav-toggle[aria-expanded="true"]{border-color:var(--pink);color:var(--white)}
@@ -502,8 +509,9 @@ footer>.f-in{position:relative;z-index:1}
    a plain height+auto-width would render them at different widths. Force
    both into an identical fixed box with object-fit:contain so the rendered
    size is guaranteed pixel-identical in both themes, independent of either
-   file's native dimensions. */
-.logo img{height:32px;width:105px;object-fit:contain;object-position:left center}
+   file's native dimensions. (36px is the mobile size; min-width:900px
+   below resets it to the smaller 32px desktop size.) */
+.logo img{height:36px;width:auto;max-width:130px;object-fit:contain;object-position:left center}
 /* dark logo (white "paint" text) by default; light logo (black "paint"
    text) only in light mode -- pure CSS, gated on the same data-theme
    attribute the early inline <head> script sets before first paint, so
@@ -511,37 +519,40 @@ footer>.f-in{position:relative;z-index:1}
 .logo-light{display:none}
 :root[data-theme="light"] .logo-dark{display:none}
 :root[data-theme="light"] .logo-light{display:inline-block}
-@media(min-width:768px){
-  .nav-links{display:flex;gap:var(--sp-32);list-style:none;font-size:14px;font-weight:500}
-}
-.nav-links a{color:var(--med);padding-bottom:var(--sp-4);position:relative;cursor:pointer}
-.nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1.5px;
-  background:var(--grad);border-radius:var(--r-pill);transition:width .22s}
+.nav-links{
+  display:none;position:fixed;top:var(--nav-h);left:0;right:0;height:calc(100vh - var(--nav-h));z-index:199;
+  flex-direction:column;align-items:stretch;
+  gap:0;margin:0;padding:var(--sp-16) var(--sp-24);list-style:none;
+  background:var(--drawer-bg);backdrop-filter:blur(18px);border-top:1px solid var(--line);
+  overflow-y:auto}
+.nav-links li{border-bottom:1px solid var(--line)}
+.nav-links a{display:block;text-align:center;padding:var(--sp-16) 0;font-size:16px;font-weight:600;color:var(--white);position:relative;cursor:pointer}
 .nav-links a:hover,.nav-links a.active{color:var(--white)}
-.nav-links a:hover::after,.nav-links a.active::after{width:100%}
-.nav-right{display:flex;align-items:center;gap:var(--sp-8);flex-shrink:0}
-@media(min-width:768px){
+.header.nav-open .nav-links{display:flex}
+.nav-right{display:flex;align-items:center;gap:var(--sp-8);flex-shrink:0;order:1;margin-left:auto}
+.nav-right .btn-sm{display:none}
+/* Nav-links/hamburger switch at 900px rather than the previous 768px: at
+   exactly 768px (a common tablet width, e.g. iPad portrait) the full link
+   row - six items plus the language switcher and Broneeri button -
+   measured wider than the available header width and clipped the booking
+   button. 900px is the narrowest width that measured zero overflow. */
+@media(min-width:900px){
   :root{--nav-h:90px}
   .nav{height:90px;gap:var(--sp-16)}
-  .nav-right{gap:var(--sp-12)}
+  .nav-toggle{display:none}
+  .logo img{height:32px;width:105px;max-width:none}
+  .nav-links{display:flex;position:static;height:auto;flex-direction:row;gap:var(--sp-32);
+    padding:0;background:none;backdrop-filter:none;border-top:none;overflow:visible;list-style:none;font-size:14px;font-weight:500}
+  .nav-links li{border-bottom:none}
+  .nav-links a{display:inline;text-align:left;padding:0 0 var(--sp-4);font-size:14px;font-weight:500;color:var(--med)}
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1.5px;
+    background:var(--grad);border-radius:var(--r-pill);transition:width .22s}
+  .nav-links a:hover,.nav-links a.active{color:var(--white)}
+  .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+  .nav-right{order:0;margin-left:0;gap:var(--sp-12)}
+  .nav-right .btn-sm{display:inline-flex}
 }
 @media(max-width:767px){
-  .nav-right .btn-sm{display:none}
-  .logo img{height:36px!important;width:auto!important;max-width:130px!important}
-  /* lang sits inline to the left of the hamburger */
-  .nav-right{order:1;margin-left:auto;gap:var(--sp-8)}
-  .nav-toggle{display:flex;order:2}
-  .nav-links{
-    display:none;position:fixed;top:var(--nav-h);left:0;right:0;height:calc(100vh - var(--nav-h));z-index:199;
-    flex-direction:column;align-items:stretch;
-    gap:0;margin:0;padding:var(--sp-16) var(--sp-24);list-style:none;
-    background:var(--drawer-bg);backdrop-filter:blur(18px);border-top:1px solid var(--line);
-    overflow-y:auto}
-  .nav-links li{border-bottom:1px solid var(--line)}
-  .nav-links a{display:block;text-align:center;padding:var(--sp-16) 0;font-size:16px;font-weight:600;color:var(--white)}
-  .nav-links a::after{display:none}
-  .header.nav-open .nav-links{display:flex}
-
   /* ── HERO — mobile-only overrides ── */
   /* h1: larger on mobile */
   .page-home .hero h1{font-size:clamp(2rem,8vw,2.6rem)}
@@ -1075,7 +1086,11 @@ footer{border-top:1px solid var(--line);padding:var(--sp-32) 0 var(--sp-32);marg
      Call us / WhatsApp / Email cards so the whole contact panel fits one
      mobile screen without scrolling */
   .c-actions{gap:var(--sp-8);margin:var(--sp-24) 0 var(--sp-8)}
-  .ca{padding:var(--sp-8) var(--sp-12);gap:var(--sp-8)}
+  /* .panel loses its own background on mobile (see BOUNDED CONTENT PANEL
+     above), which otherwise left these near-transparent cards (background:
+     2% white) with nothing to block the hero's page-top-drip graphic
+     bleeding through behind the Call us / WhatsApp labels. */
+  .ca{padding:var(--sp-8) var(--sp-12);gap:var(--sp-8);background:rgba(10,7,14,.82)}
   .ca .ic{width:32px;height:32px}
   .ca .ic svg{width:15px;height:15px}
   .ca small{font-size:9px}
