@@ -294,16 +294,51 @@ footer>.f-in{position:relative;z-index:1}
 .pricing-row:last-child{border-bottom:none}
 .pricing-row span{color:var(--med);font-weight:300;font-size:14px;text-align:right}
 
-/* Repair case-study card (before/after). Unused until CASE_STUDIES in
-   src/data/caseStudies.ts has real entries - see that file. */
-.case-study-card{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden}
-.case-study-images{display:grid;grid-template-columns:1fr 1fr}
-.case-study-image{position:relative;aspect-ratio:4/3;background:var(--media-2)}
-.case-study-tag{position:absolute;top:var(--sp-8);left:var(--sp-8);background:rgba(0,0,0,.65);color:#fff;
-  font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:4px}
-.case-study-body{padding:var(--sp-16)}
-.case-study-body h3{font-size:16px;margin-bottom:var(--sp-4)}
-.case-study-body p{color:var(--med);font-weight:300;font-size:14px;line-height:1.6;margin-bottom:var(--sp-8)}
+/* Before/after comparison slider (BeforeAfterSlider.tsx). Unused in
+   production until CASE_STUDIES in src/data/caseStudies.ts has real
+   published entries - see that file. */
+.ba-slider{position:relative;aspect-ratio:4/3;background:var(--media-2);border-radius:var(--r-card);
+  overflow:hidden;user-select:none;touch-action:pan-y}
+.ba-layer{position:absolute;inset:0}
+.ba-before-wrap{position:absolute;inset:0;overflow:hidden;z-index:1}
+.ba-divider{position:absolute;top:0;bottom:0;width:3px;margin-left:-1.5px;background:#fff;
+  box-shadow:0 0 0 1px rgba(0,0,0,.25),0 0 12px rgba(0,0,0,.35);z-index:2;pointer-events:none}
+.ba-handle{position:absolute;top:50%;width:44px;height:44px;margin-left:-22px;margin-top:-22px;
+  border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 14px rgba(0,0,0,.35);z-index:3;pointer-events:none}
+.ba-handle svg{width:18px;height:18px;color:#fff}
+.ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;z-index:4;
+  -webkit-appearance:none;appearance:none;background:transparent;cursor:ew-resize}
+.ba-range::-webkit-slider-runnable-track{-webkit-appearance:none;background:transparent}
+.ba-range::-webkit-slider-thumb{-webkit-appearance:none;width:44px;height:100%;background:transparent;cursor:ew-resize}
+.ba-range::-moz-range-track{background:transparent;border:none}
+.ba-range::-moz-range-thumb{width:44px;height:100%;background:transparent;border:none;cursor:ew-resize}
+.ba-range:focus-visible{outline:2px solid var(--pink);outline-offset:-2px}
+.ba-slider--static .ba-range{display:none}
+.ba-slider--static .ba-handle{opacity:.9}
+.ba-label{position:absolute;top:var(--sp-8);background:rgba(0,0,0,.65);color:#fff;
+  font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;
+  border-radius:4px;z-index:3;pointer-events:none}
+.ba-label--before{left:var(--sp-8)}
+.ba-label--after{right:var(--sp-8)}
+
+/* Portfolio ("Tehtud tööd") gallery */
+.work-grid{display:grid;grid-template-columns:1fr;gap:var(--sp-24)}
+@media(min-width:640px){.work-grid{grid-template-columns:1fr 1fr}}
+.work-card{display:block;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;
+  background:rgba(255,255,255,.04);transition:border-color .2s}
+.work-card:hover,.work-card:focus-visible{border-color:var(--pink)}
+.work-card .ba-slider{border-radius:0}
+.work-card-body{padding:var(--sp-16)}
+.work-card-category{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--pink);margin-bottom:var(--sp-8)}
+.work-card-body h3{font-size:17px;margin-bottom:var(--sp-4)}
+.work-card-body p{color:var(--med);font-weight:300;font-size:14px;line-height:1.6}
+.work-filters{display:flex;flex-wrap:wrap;gap:var(--sp-8);justify-content:center;margin-bottom:var(--sp-32)}
+.work-filter{border:1px solid var(--line);border-radius:var(--r-pill);padding:var(--sp-8) var(--sp-16);
+  font-size:13px;font-weight:600;color:var(--med);background:none;cursor:pointer;transition:all .2s}
+.work-filter:hover{border-color:rgba(var(--overlay-rgb),.4);color:var(--white)}
+.work-filter.active{background:var(--grad);border-color:transparent;color:#fff}
 
 /* Blog index cards */
 .blog-grid{display:grid;grid-template-columns:1fr;gap:var(--sp-16)}
