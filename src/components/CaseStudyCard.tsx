@@ -1,41 +1,39 @@
-import Image from "next/image";
 import { Link } from "../i18n/navigation";
-import { slugsForLocale } from "../data/services";
-import type { CaseStudy } from "../data/caseStudies";
+import { caseStudySlug, type CaseStudy } from "../data/caseStudies";
+import BeforeAfterSlider from "./BeforeAfterSlider";
 
 type Locale = "et" | "ru" | "en";
 
 const BEFORE_LABEL: Record<Locale, string> = { et: "Enne", ru: "До", en: "Before" };
 const AFTER_LABEL: Record<Locale, string> = { et: "Pärast", ru: "После", en: "After" };
-const VIEW_SERVICE_LABEL: Record<Locale, string> = {
-  et: "Vaata teenust",
-  ru: "Смотреть услугу",
-  en: "View service",
-};
 
-export default function CaseStudyCard({ caseStudy, locale }: { caseStudy: CaseStudy; locale: Locale }) {
-  const slugs = slugsForLocale(locale);
+export default function CaseStudyCard({
+  caseStudy,
+  locale,
+  categoryLabel,
+}: {
+  caseStudy: CaseStudy;
+  locale: Locale;
+  categoryLabel: string;
+}) {
+  const slug = caseStudySlug(caseStudy, locale);
 
   return (
-    <article className="case-study-card">
-      <div className="case-study-images">
-        <div className="case-study-image">
-          <Image src={caseStudy.before} alt={`${caseStudy.vehicle} - ${BEFORE_LABEL[locale]}`} fill style={{ objectFit: "cover" }} />
-          <span className="case-study-tag">{BEFORE_LABEL[locale]}</span>
-        </div>
-        <div className="case-study-image">
-          <Image src={caseStudy.after} alt={`${caseStudy.vehicle} - ${AFTER_LABEL[locale]}`} fill style={{ objectFit: "cover" }} />
-          <span className="case-study-tag">{AFTER_LABEL[locale]}</span>
-        </div>
+    <Link href={{ pathname: "/work/[slug]", params: { slug } }} className="work-card">
+      <BeforeAfterSlider
+        before={caseStudy.before.image}
+        after={caseStudy.after.image}
+        beforeAlt={caseStudy.before.alt[locale]}
+        afterAlt={caseStudy.after.alt[locale]}
+        beforeLabel={BEFORE_LABEL[locale]}
+        afterLabel={AFTER_LABEL[locale]}
+        interactive={false}
+      />
+      <div className="work-card-body">
+        <span className="work-card-category">{categoryLabel}</span>
+        <h3>{caseStudy.title[locale]}</h3>
+        <p>{caseStudy.description[locale]}</p>
       </div>
-      <div className="case-study-body">
-        <h3>{caseStudy.vehicle}</h3>
-        <p>{caseStudy.damage[locale]}</p>
-        <p>{caseStudy.summary[locale]}</p>
-        <Link href={{ pathname: "/services/[slug]", params: { slug: slugs[caseStudy.service] } }} className="link">
-          {VIEW_SERVICE_LABEL[locale]}
-        </Link>
-      </div>
-    </article>
+    </Link>
   );
 }

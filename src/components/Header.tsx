@@ -7,8 +7,13 @@ import { Link, usePathname } from "../i18n/navigation";
 import { logoWhite } from "../assets";
 import { useModals } from "./ModalProvider";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { publishedCaseStudies } from "../data/caseStudies";
 
-const NAV_ITEMS = ["home", "about", "services", "pricing", "blog", "contact"] as const;
+const HAS_PUBLISHED_WORK = publishedCaseStudies().length > 0;
+
+const NAV_ITEMS_WITH_WORK = ["home", "about", "services", "booking", "pricing", "blog", "contact"] as const;
+const NAV_ITEMS_WITHOUT_WORK = ["home", "about", "services", "pricing", "blog", "contact"] as const;
+const NAV_ITEMS: readonly (typeof NAV_ITEMS_WITH_WORK)[number][] = HAS_PUBLISHED_WORK ? NAV_ITEMS_WITH_WORK : NAV_ITEMS_WITHOUT_WORK;
 
 export default function Header() {
   const t = useTranslations();
@@ -21,12 +26,13 @@ export default function Header() {
     if (item === "about") return pathname === "/about";
     if (item === "services") return pathname.startsWith("/services");
     if (item === "pricing") return pathname === "/pricing";
+    if (item === "booking") return pathname.startsWith("/work");
     if (item === "blog") return pathname.startsWith("/blog");
     if (item === "contact") return pathname === "/contact";
     return false;
   };
 
-  const NAV_HREF = { home: "/", about: "/about", services: "/services", pricing: "/pricing", blog: "/blog", contact: "/contact" } as const;
+  const NAV_HREF = { home: "/", about: "/about", services: "/services", booking: "/work", pricing: "/pricing", blog: "/blog", contact: "/contact" } as const;
 
   return (
     <header className={`header${navOpen ? " nav-open" : ""}`}>
@@ -64,8 +70,8 @@ export default function Header() {
               </Link>
             </li>
           ))}
-          {/* "Tehtud tööd" hidden for now - no portfolio content yet, re-add
-              once real before/after project photos exist. See Footer.tsx too. */}
+          {/* "Tehtud tööd" (nav.booking) only appears once HAS_PUBLISHED_WORK
+              is true - see src/data/caseStudies.ts. */}
         </ul>
 
         <div className="nav-right">

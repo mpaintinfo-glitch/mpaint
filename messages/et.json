@@ -555,6 +555,28 @@
     ],
     "cta": "Saada päring"
   },
+  "work": {
+    "meta": {
+      "title": "Tehtud tööd Tallinnas",
+      "description": "Mpainti tehtud autovärvimise ja keretööde näited, enne ja pärast võrdlused päris töödest."
+    },
+    "h1": "Tehtud tööd",
+    "intro": "Vaata, milliseid autovärvimise ja keretöid oleme teostanud. Iga näide on päris Mpainti töö.",
+    "filterAll": "Kõik tööd",
+    "viewProject": "Vaata tööd",
+    "cta": "Saada päring",
+    "vehicleLabel": "Sõiduk",
+    "damageHeading": "Kahjustus",
+    "workHeading": "Teostatud töö",
+    "processHeading": "Töö käik",
+    "materialsHeading": "Materjalid",
+    "durationLabel": "Kestus",
+    "durationDaySingular": "tööpäev",
+    "durationDayPlural": "tööpäeva",
+    "completedLabel": "Valmis",
+    "relatedServiceHeading": "Seotud teenus",
+    "backToGallery": "Kõik tööd"
+  },
   "warranty": {
     "title": "Garantii",
     "text": "Kuni 1 aasta garantii enamikele töödele. Garantii ei kehti, kui ettevalmistustöid ei teostanud meie, või kui roosteremont tehti kliendi soovi järgi, mitte meie soovituse kohaselt."

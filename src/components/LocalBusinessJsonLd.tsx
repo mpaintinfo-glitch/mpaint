@@ -10,6 +10,7 @@ export default async function LocalBusinessJsonLd({ locale }: { locale: string }
   const data = {
     "@context": "https://schema.org",
     "@type": "AutoBodyShop",
+    "@id": `${SITE_URL}/#business`,
     name: BUSINESS.name,
     image: `${SITE_URL}/mpaint-workshop.jpg`,
     url: SITE_URL,

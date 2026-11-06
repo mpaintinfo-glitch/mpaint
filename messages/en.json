@@ -555,6 +555,28 @@
     ],
     "cta": "Get an estimate"
   },
+  "work": {
+    "meta": {
+      "title": "Our work in Tallinn",
+      "description": "Real examples of car painting and bodywork completed by Mpaint, with before-and-after comparisons from actual jobs."
+    },
+    "h1": "Our work",
+    "intro": "See the car painting and bodywork we've completed. Every example is a real Mpaint job.",
+    "filterAll": "All work",
+    "viewProject": "View project",
+    "cta": "Get an estimate",
+    "vehicleLabel": "Vehicle",
+    "damageHeading": "Damage",
+    "workHeading": "Work performed",
+    "processHeading": "How it was done",
+    "materialsHeading": "Materials",
+    "durationLabel": "Duration",
+    "durationDaySingular": "working day",
+    "durationDayPlural": "working days",
+    "completedLabel": "Completed",
+    "relatedServiceHeading": "Related service",
+    "backToGallery": "All work"
+  },
   "warranty": {
     "title": "Warranty",
     "text": "Up to 1 year warranty on most work. The warranty doesn't apply if we didn't carry out the preparation work, or if rust repair was done at the client's request rather than our recommendation."

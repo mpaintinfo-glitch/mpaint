@@ -3,6 +3,7 @@ import { routing } from "../src/i18n/routing";
 import { getPathname } from "../src/i18n/navigation";
 import { SERVICE_ORDER, slugsForLocale } from "../src/data/services";
 import { ARTICLE_ORDER, articleSlugsForLocale } from "../src/data/blog";
+import { publishedCaseStudies, caseStudySlug } from "../src/data/caseStudies";
 import { SITE_URL } from "../src/lib/site";
 
 type Href = Parameters<typeof getPathname>[0]["href"];
@@ -49,5 +50,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...staticEntries, ...serviceEntries, ...articleEntries];
+  // The portfolio route only goes into the sitemap once it has at least one
+  // real, published case study - see src/data/caseStudies.ts.
+  const caseStudies = publishedCaseStudies();
+  const workEntries = caseStudies.length === 0
+    ? []
+    : routing.locales.flatMap((locale) => [
+        {
+          url: urlFor(locale, "/work"),
+          alternates: { languages: alternatesFor(() => "/work") },
+        },
+        ...caseStudies.map((cs) => ({
+          url: urlFor(locale, { pathname: "/work/[slug]" as const, params: { slug: caseStudySlug(cs, locale) } }),
+          alternates: {
+            languages: alternatesFor((l) => ({
+              pathname: "/work/[slug]" as const,
+              params: { slug: caseStudySlug(cs, l) },
+            })),
+          },
+        })),
+      ]);
+
+  return [...staticEntries, ...serviceEntries, ...articleEntries, ...workEntries];
 }
