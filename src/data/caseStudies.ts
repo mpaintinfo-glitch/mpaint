@@ -1,4 +1,5 @@
 import type { StaticImageData } from "next/image";
+import { mercedesCFrontBefore, mercedesCFrontAfter } from "../assets";
 import type { ServiceId } from "./services";
 import { slugsForLocale as serviceSlugsForLocale } from "./services";
 
@@ -109,6 +110,69 @@ export function categoryToServiceId(category: CaseStudyCategory): ServiceId {
 // Real before/after photos from actual completed Mpaint jobs only - no
 // placeholder, stock, or invented entries. Every other part of the
 // portfolio (route, sitemap entry, nav link, structured data) stays
-// switched off while this is empty; see work/page.tsx, work/[slug]/page.tsx,
-// Header.tsx and sitemap.ts, which all gate on publishedCaseStudies().
-export const CASE_STUDIES: CaseStudy[] = [];
+// switched off automatically if this ever goes back to empty; see
+// work/page.tsx, work/[slug]/page.tsx, Header.tsx and sitemap.ts, which
+// all gate on publishedCaseStudies().
+export const CASE_STUDIES: CaseStudy[] = [
+  {
+    id: "mercedes-c-class-w204-front-grille",
+    slug: { et: "mercedes-c-esiosa-taastamine", en: "mercedes-c-front-restoration" },
+    published: true,
+    category: "body",
+    vehicle: { make: "Mercedes-Benz", model: "C-Class (W204)" },
+    title: {
+      et: "Mercedes-Benz C-klassi esiosa taastamine Tallinnas",
+      ru: "Восстановление передней части Mercedes-Benz C-класса в Таллинне",
+      en: "Mercedes-Benz C-Class front-end restoration in Tallinn",
+    },
+    description: {
+      et: "Mercedes-Benz C-klassi esiosas oli kahjustunud esivõre piirkond. Pärast tööde teostamist on esiosa taas terviklik ja korrektse välimusega.",
+      ru: "У Mercedes-Benz C-класса была повреждена область передней решётки. После выполнения работ передняя часть снова выглядит целостно и аккуратно.",
+      en: "This Mercedes-Benz C-Class had a damaged front grille area. After the work was completed, the front end looks whole and properly finished again.",
+    },
+    damage: {
+      et: "Enne töid oli Mercedes-Benz C-klassi esivõre piirkond nähtavalt kahjustunud. Esiosa keskosa ei olnud terviklik ning auto esivaade vajas korrastamist.",
+      ru: "До начала работ область передней решётки Mercedes-Benz C-класса была заметно повреждена. Центральная часть переда не была целостной, и внешний вид передней части автомобиля требовал приведения в порядок.",
+      en: "Before the work, the front grille area of this Mercedes-Benz C-Class was visibly damaged. The centre of the front end wasn't intact, and the car's front view needed sorting out.",
+    },
+    before: {
+      image: mercedesCFrontBefore,
+      alt: {
+        et: "Mercedes-Benz C-klassi esiosa enne töid, kahjustunud esivõre piirkond",
+        ru: "Передняя часть Mercedes-Benz C-класса до работ, повреждённая область передней решётки",
+        en: "Mercedes-Benz C-Class front end before the work, damaged front grille area",
+      },
+    },
+    after: {
+      image: mercedesCFrontAfter,
+      alt: {
+        et: "Mercedes-Benz C-klassi esiosa pärast töid, taastatud esivõre piirkond",
+        ru: "Передняя часть Mercedes-Benz C-класса после работ, восстановленная область передней решётки",
+        en: "Mercedes-Benz C-Class front end after the work, restored front grille area",
+      },
+    },
+    workPerformed: {
+      et: "Töö käigus taastati esivõre piirkonna välimus ning esiosa viidi tagasi korrektse ja tervikliku üldmuljeni.",
+      ru: "В ходе работ был восстановлен внешний вид области передней решётки, и передняя часть автомобиля снова приобрела аккуратный и целостный вид.",
+      en: "The work restored the appearance of the front grille area, bringing the front end back to a correct, complete overall look.",
+    },
+    process: [
+      {
+        et: "Kahjustuse ülevaatus.",
+        ru: "Осмотр повреждения.",
+        en: "Inspecting the damage.",
+      },
+      {
+        et: "Esiosa detailide olukorra korrastamine.",
+        ru: "Приведение в порядок деталей передней части.",
+        en: "Sorting out the condition of the front-end parts.",
+      },
+      {
+        et: "Pärast tööde lõpetamist oli esivõre piirkond taas korrektne ja visuaalselt terviklik.",
+        ru: "После завершения работ область передней решётки снова стала аккуратной и визуально целостной.",
+        en: "Once the work was finished, the grille area was correct and visually whole again.",
+      },
+    ],
+  },
+];
+
