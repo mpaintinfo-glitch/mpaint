@@ -6,6 +6,8 @@ import {
   bmwE90RearDoorAfter,
   mercedesW204RearLightBefore,
   mercedesW204RearLightAfter,
+  bmwOneSeriesDoorBefore,
+  bmwOneSeriesSideAfter,
 } from "../assets";
 import type { ServiceId } from "./services";
 import { slugsForLocale as serviceSlugsForLocale } from "./services";
@@ -46,6 +48,10 @@ export type CaseStudy = {
   after: CaseStudyImage;
   /** Extra photos beyond the main before/after pair, if any exist. */
   additionalPhotos?: CaseStudyImage[];
+  /** Additional service categories to link to from the detail page, beyond the primary `category`. */
+  relatedCategories?: CaseStudyCategory[];
+  /** Project-specific call-to-action label; falls back to the shared work.cta message. */
+  cta?: LocalizedText;
   /** Longer lead-in for the detail page hero (paragraphs separated by a blank line); falls back to `description` when omitted. */
   intro?: LocalizedText;
   /** Search-result title/description when they should differ from `title`/`description`. The title is used as-is (no site suffix added). */
@@ -308,6 +314,84 @@ export const CASE_STUDIES: CaseStudy[] = [
       et: "Kui auto tagatule kate on pragunenud, tasub lasta kahjustuse ulatus üle vaadata. Väliselt nähtavad praod ei näita alati, kas kahjustatud on ka kinnitused, korpus või elektrilised osad.\n\nSobiv lahendus sõltub kahjustuse iseloomust ja detaili seisukorrast.\n\nMpaintiga saab ühendust võtta sõiduki kere- ja välisdetailidega seotud tööde hindamiseks.",
       ru: "Если рассеиватель заднего фонаря треснул, стоит показать автомобиль специалисту и оценить масштаб повреждения. Видимые снаружи трещины не всегда говорят о том, затронуты ли также крепления, корпус или электрические элементы.\n\nПодходящее решение зависит от характера повреждения и состояния детали.\n\nС Mpaint можно связаться, чтобы оценить работы, связанные с кузовом и внешними деталями автомобиля.",
       en: "If the cover of a car's rear light is cracked, it's worth having the extent of the damage checked. Cracks visible on the outside don't always show whether the mounting points, housing or electrical parts are also affected.\n\nThe right solution depends on the nature of the damage and the condition of the part.\n\nYou can contact Mpaint to have work on your vehicle's bodywork and exterior parts assessed.",
+    },
+  },
+  {
+    id: "bmw-1-series-rear-door-side-damage",
+    slug: { et: "bmw-1-seeria-tagaukse-kulgkahjustuse-remont", en: "bmw-1-series-rear-door-side-damage-repair" },
+    published: true,
+    // Primary topic is bodywork; painting is linked as a secondary service via relatedCategories.
+    category: "body",
+    relatedCategories: ["paint"],
+    // Both photos show the car's side from outside. The brief called it the left side, but the fuel flap and the car's orientation in the photos point to the right, so no side is stated anywhere in this entry.
+    vehicle: { make: "BMW", model: "1 Series, black five-door hatchback" },
+    title: {
+      et: "BMW 1. seeria tagaukse ja külje kahjustuste taastamine",
+      ru: "Восстановление задней двери и боковой части BMW 1 серии",
+      en: "BMW 1 Series rear door and side damage restoration",
+    },
+    seo: {
+      title: {
+        et: "BMW 1. seeria tagaukse keretööd Tallinnas | Mpaint",
+        ru: "Кузовной ремонт задней двери BMW 1 серии в Таллине | Mpaint",
+        en: "BMW 1 Series rear door bodywork in Tallinn | Mpaint",
+      },
+      description: {
+        et: "Vaata BMW 1. seeria tagaukse ja külje kahjustusi enne ja pärast töid. Ehtsad fotod mõlkidest, kriimustustest ja korrastatud külgpinnast.",
+        ru: "Посмотрите на вмятины и царапины на задней двери и боковой части BMW 1 серии до и после работ. Настоящие фото из мастерской Mpaint в Таллине.",
+        en: "See the dents and scratches on a BMW 1 Series rear door and side before and after the work. Real photos from Mpaint's workshop in Tallinn.",
+      },
+    },
+    description: {
+      et: "Mustal BMW 1. seerial olid tagaukse kesk- ja alaosas mõlk, pikad kriimustused ja heledad hõõrdumisjäljed. Pärast tööde teostamist on auto külje üldilme ühtlasem.",
+      ru: "На чёрном BMW 1 серии были вмятина, длинные царапины и светлые следы трения на средней и нижней части задней двери. После работ боковая часть автомобиля выглядит ровнее.",
+      en: "This black BMW 1 Series had a dent, long scratches and light scuff marks across the middle and lower part of the rear door. After the work, the side of the car looks more even overall.",
+    },
+    intro: {
+      et: "Selle BMW 1. seeria küljel oli enne töid näha ulatuslikke kahjustusi. Tagaukse kesk- ja alaosas esines suuremaid mõlke, mitut pikka kriimustust ning heledaid hõõrdumisjälgi. Kahjustused ulatusid ka tagaukse tagumise serva ja tagumise rattakoopa lähedusse.\n\nEnne ja pärast tehtud fotod näitavad sõiduki külje välimuse muutust pärast tööde teostamist.",
+      ru: "До работ на боку этого BMW 1 серии были заметны обширные повреждения. В средней и нижней части задней двери были крупные вмятины, несколько длинных царапин и светлые следы трения. Повреждения доходили до заднего края двери и области задней колёсной арки.\n\nФотографии до и после показывают, как изменился внешний вид боковой части автомобиля после работ.",
+      en: "Before the work, the side of this BMW 1 Series had extensive damage. The middle and lower part of the rear door had larger dents, several long scratches and light scuff marks. The damage also reached the rear edge of the door and the area near the rear wheel arch.\n\nThe before and after photos show how the side of the car looks after the work.",
+    },
+    damage: {
+      et: "BMW tagauksel oli näha märgatavat kerepinna deformatsiooni. Ukse keskosas oli suurem mõlk ning alumises osas mitu horisontaalset kriimustust.\n\nKahjustatud piirkonnas olid ka heledad hõõrdumisjäljed, mis paistsid tumedal värvipinnal selgelt silma.\n\nTagaukse tagumise serva ja rattakoopa ümbruses oli samuti näha külgpinna ebatasasusi.",
+      ru: "На задней двери BMW была заметна деформация кузовной панели. В средней части двери была крупная вмятина, а в нижней части — несколько горизонтальных царапин.\n\nВ повреждённой области были также светлые следы трения, хорошо заметные на тёмной краске.\n\nНеровности боковой поверхности были видны и у заднего края двери, рядом с колёсной аркой.",
+      en: "The BMW's rear door showed noticeable deformation of the body panel. There was a larger dent in the middle of the door and several horizontal scratches in the lower part.\n\nThe damaged area also had light scuff marks that stood out clearly against the dark paint.\n\nUnevenness in the side panel was also visible around the rear edge of the door and the wheel arch.",
+    },
+    before: {
+      image: bmwOneSeriesDoorBefore,
+      alt: {
+        et: "Must BMW 1. seeria enne töid: tagaukse keskosas mõlk, alaosas horisontaalsed kriimustused ja heledad hõõrdumisjäljed",
+        ru: "Чёрный BMW 1 серии до работ: вмятина в средней части задней двери, горизонтальные царапины и светлые следы трения в нижней части",
+        en: "Black BMW 1 Series before the work: a dent in the middle of the rear door, with horizontal scratches and light scuff marks lower down",
+      },
+    },
+    after: {
+      image: bmwOneSeriesSideAfter,
+      alt: {
+        et: "Must BMW 1. seeria pärast töid töökojas, tagantvaade; foto on tehtud kaugemalt ja teises valguses kui enne-foto",
+        ru: "Чёрный BMW 1 серии после работ в мастерской, вид сзади; фото сделано дальше и при другом освещении, чем снимок до работ",
+        en: "Black BMW 1 Series after the work, in the workshop, seen from behind; taken from farther away and in different lighting than the before photo",
+      },
+    },
+    workPerformed: {
+      et: "Mpainti tehtud tööde käigus korrastati BMW kahjustunud külje piirkond. Pärast tööde teostamist on suuremad enne fotol nähtavad deformatsioonid ja hõõrdumisjäljed üldvaates vähem märgatavad ning auto külje üldilme on ühtlasem.\n\nTäpsed remondietapid ei ole selle projekti juures dokumenteeritud. Seetõttu ei esitata plekitöid, pahteldamist, värvimist ega detailide asendamist kinnitatud töövõtetena.",
+      ru: "В ходе работ Mpaint была приведена в порядок повреждённая боковая часть BMW. После работ крупные деформации и следы трения, видимые на фото «до», в общем виде менее заметны, а боковая часть автомобиля выглядит ровнее.\n\nТочные этапы ремонта по этому проекту не задокументированы. Поэтому правка, шпатлёвка, покраска и замена деталей здесь не указываются как подтверждённые работы.",
+      en: "During Mpaint's work, the damaged side of the BMW was put right. After the work, the larger deformations and scuff marks visible in the before photo are less noticeable in an overall view, and the side of the car looks more even.\n\nThe exact repair stages haven't been documented for this project. For that reason, panel beating, filling, painting and part replacement are not presented here as confirmed methods.",
+    },
+    result: {
+      et: "Enne töid oli BMW tagauksel näha ulatuslikke mõlke ja kriimustusi.\n\nPärast tööde lõpetamist on sõiduki külg üldvaates ühtlasema välimusega ning suuremad kahjustused ei ole fotol enam selgelt eristatavad.\n\nFotod on tehtud erinevates valgustingimustes ja erinevalt kauguselt ning auto pind on pildil tolmune, mistõttu ei saa nende põhjal hinnata kõiki värvipinna detaile.",
+      ru: "До работ на задней двери BMW были видны обширные вмятины и царапины.\n\nПосле завершения работ боковая часть автомобиля в общем виде выглядит ровнее, а крупные повреждения на фото больше не различимы.\n\nФотографии сделаны при разном освещении и с разного расстояния, а поверхность автомобиля на снимке запылена, поэтому по ним нельзя оценить все детали лакокрасочного покрытия.",
+      en: "Before the work, the BMW's rear door had extensive dents and scratches.\n\nAfter the work, the side of the car looks more even in an overall view, and the larger damage can no longer be clearly made out in the photo.\n\nThe photos were taken in different lighting and from different distances, and the car's surface is dusty in the photo, so they can't be used to judge every detail of the paint finish.",
+    },
+    considerations: {
+      et: "Kui auto küljel esineb korraga mõlke, kriimustusi ja värvipinna hõõrdumisjälgi, tuleb hinnata nii keredetaili kuju kui ka värvkatte seisukorda.\n\nPindmiste kriimustuste korral võib mõnikord piisata poleerimisest, kuid suurema deformatsiooni või sügavama värvikahjustuse korral võib vajalik olla põhjalikum kereremont.\n\nSobiv töömeetod sõltub tegelikust kahjustusest ning seda ei saa alati ainult fotode põhjal lõplikult määrata. See on üldine info ega tõenda, millist töövõtet selle BMW puhul kasutati.\n\nMpaint teostab autode keretöid ja värvimist Tallinnas. Kahjustuse esmaseks hindamiseks saab saata fotod ning küsida hinnapakkumist.",
+      ru: "Если на боку автомобиля одновременно есть вмятины, царапины и следы трения на краске, нужно оценить и форму кузовной детали, и состояние лакокрасочного покрытия.\n\nПри поверхностных царапинах иногда достаточно полировки, но при более серьёзной деформации или глубоком повреждении краски может потребоваться более основательный кузовной ремонт.\n\nПодходящий метод зависит от реального повреждения, и его не всегда можно окончательно определить только по фотографиям. Это общая информация, она не доказывает, какой метод применялся на этом BMW.\n\nMpaint выполняет кузовные работы и покраску автомобилей в Таллине. Для первичной оценки повреждения можно отправить фотографии и запросить расчёт стоимости.",
+      en: "When a car's side has dents, scratches and scuffed paint all at once, both the shape of the body panel and the condition of the paint need to be assessed.\n\nFor surface scratches, polishing can sometimes be enough, but with larger deformation or deeper paint damage, more thorough bodywork may be needed.\n\nThe right method depends on the actual damage and can't always be settled from photos alone. This is general information and does not show which method was used on this BMW.\n\nMpaint does car bodywork and painting in Tallinn. For an initial assessment of the damage, you can send photos and ask for a quote.",
+    },
+    cta: {
+      et: "Auto küljel on mõlgid või kriimustused? Saada kahjustusest fotod ja küsi hinnapakkumist.",
+      ru: "На боку автомобиля вмятины или царапины? Отправьте фото повреждения и запросите расчёт стоимости.",
+      en: "Dents or scratches on your car's side? Send photos of the damage and ask for a quote.",
     },
   },
 ];

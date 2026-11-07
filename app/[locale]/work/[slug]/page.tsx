@@ -87,7 +87,7 @@ export default async function WorkDetailPage({
   });
   const schemaImages = [
     schemaImage(cs.before, BEFORE_LABEL[locale], paragraphs(cs.damage[locale])[0]),
-    schemaImage(cs.after, AFTER_LABEL[locale], cs.result?.[locale]),
+    schemaImage(cs.after, AFTER_LABEL[locale], cs.result && paragraphs(cs.result[locale]).join(" ")),
     ...(cs.additionalPhotos ?? []).map((p) => schemaImage(p, cs.title[locale])),
   ];
 
@@ -233,7 +233,7 @@ export default async function WorkDetailPage({
 
           <div className="container center" style={{ marginTop: "2rem" }}>
             <OpenQuoteButton service={serviceId} className="btn btn-fill btn-lg">
-              {t("work.cta")}
+              {cs.cta?.[locale] ?? t("work.cta")}
             </OpenQuoteButton>
           </div>
         </div>
@@ -247,6 +247,11 @@ export default async function WorkDetailPage({
               <Link href={serviceHref} className="link">
                 {categoryLabel(cs.category, t)}
               </Link>
+              {(cs.relatedCategories ?? []).map((c) => (
+                <Link key={c} href={categoryHref(c, locale)} className="link">
+                  {categoryLabel(c, t)}
+                </Link>
+              ))}
               <Link href="/work" className="link">
                 {t("work.backToGallery")}
               </Link>
