@@ -141,19 +141,15 @@ export default async function WorkDetailPage({
             afterLabel={AFTER_LABEL[locale]}
           />
 
-          {cs.damage && (
-            <div className="article-section">
-              <h2>{t("work.damageHeading")}</h2>
-              <p>{cs.damage[locale]}</p>
-            </div>
-          )}
+          <div className="article-section">
+            <h2>{t("work.damageHeading")}</h2>
+            <p>{cs.damage[locale]}</p>
+          </div>
 
-          {cs.workPerformed && (
-            <div className="article-section">
-              <h2>{t("work.workHeading")}</h2>
-              <p>{cs.workPerformed[locale]}</p>
-            </div>
-          )}
+          <div className="article-section">
+            <h2>{t("work.workHeading")}</h2>
+            <p>{cs.workPerformed[locale]}</p>
+          </div>
 
           {cs.process && cs.process.length > 0 && (
             <div className="article-section">
