@@ -1,5 +1,5 @@
 import type { StaticImageData } from "next/image";
-import { mercedesCFrontBefore, mercedesCFrontAfter } from "../assets";
+import { mercedesCFrontBefore, mercedesCFrontAfter, bmwE90RearDoorBefore, bmwE90RearDoorAfter } from "../assets";
 import type { ServiceId } from "./services";
 import { slugsForLocale as serviceSlugsForLocale } from "./services";
 
@@ -174,5 +174,54 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     ],
   },
+  {
+    id: "bmw-e90-rear-door-scratches",
+    slug: { et: "bmw-e90-tagaukse-kriimustuste-eemaldamine", en: "bmw-e90-rear-door-scratch-repair" },
+    published: true,
+    category: "minorDamage",
+    vehicle: { make: "BMW", model: "3 Series (E90)" },
+    title: {
+      et: "BMW 3. seeria tagaukse kriimustuste eemaldamine Tallinnas",
+      ru: "Устранение царапин на задней двери BMW 3 серии в Таллинне",
+      en: "BMW 3 Series rear door scratch removal in Tallinn",
+    },
+    description: {
+      et: "Tumesinise BMW 3. seeria tagauksel olid nähtavad pikad kriimustused. Pärast tööde teostamist ei ole varasemad kriimustused enam nähtavad ning ukse värvipind on ühtlasema välimusega.",
+      ru: "На задней двери тёмно-синего BMW 3 серии были заметны длинные царапины. После выполнения работ прежние царапины больше не видны, а лакокрасочное покрытие двери выглядит более ровным.",
+      en: "The rear door of this dark-blue BMW 3 Series had visible long scratches. After the work, the earlier scratches are no longer visible and the door's paint surface looks more even.",
+    },
+    damage: {
+      et: "BMW tagaukse värvipinnal oli mitu horisontaalset kriimustust, mis paistsid selgelt ukse keskosas ja alumisel poolel.",
+      ru: "На лакокрасочном покрытии задней двери BMW было несколько горизонтальных царапин, чётко заметных в средней и нижней части двери.",
+      en: "The paint on the BMW's rear door had several horizontal scratches, clearly visible across the middle and lower part of the door.",
+    },
+    before: {
+      image: bmwE90RearDoorBefore,
+      alt: {
+        et: "BMW 3. seeria tagauks enne töid, ukse keskosas ja alumisel poolel on nähtavad horisontaalsed kriimustused",
+        ru: "Задняя дверь BMW 3 серии до работ, в средней и нижней части видны горизонтальные царапины",
+        en: "BMW 3 Series rear door before the work, with horizontal scratches visible across the middle and lower part",
+      },
+    },
+    after: {
+      image: bmwE90RearDoorAfter,
+      alt: {
+        et: "BMW 3. seeria tagauks pärast töid, varasemad kriimustused ei ole fotol enam nähtavad",
+        ru: "Задняя дверь BMW 3 серии после работ, прежние царапины на фото больше не видны",
+        en: "BMW 3 Series rear door after the work, the earlier scratches no longer visible in the photo",
+      },
+    },
+    workPerformed: {
+      et: "Tööde käigus korrastati kahjustunud tagaukse värvipinna välimus.",
+      ru: "В ходе работ был приведён в порядок внешний вид повреждённого лакокрасочного покрытия задней двери.",
+      en: "During the work, the appearance of the damaged rear door paint surface was put right.",
+    },
+    process: [
+      {
+        et: "Pärast tööde teostamist ei ole varasemad kriimustused fotol enam eristatavad ning tagaukse pind näeb ühtlane välja.",
+        ru: "После выполнения работ прежние царапины на фото больше не различимы, а поверхность задней двери выглядит ровной.",
+        en: "After the work, the earlier scratches can no longer be made out in the photo, and the rear door surface looks even.",
+      },
+    ],
+  },
 ];
-

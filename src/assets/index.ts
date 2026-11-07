@@ -15,3 +15,5 @@ export { default as photoParts } from "./svc-parts.png";
 // Real repair case-study photos (src/data/caseStudies.ts).
 export { default as mercedesCFrontBefore } from "./mercedes-c-front-grille-before.webp";
 export { default as mercedesCFrontAfter } from "./mercedes-c-front-grille-after.webp";
+export { default as bmwE90RearDoorBefore } from "./bmw-e90-rear-door-scratches-before.webp";
+export { default as bmwE90RearDoorAfter } from "./bmw-e90-rear-door-scratches-after.webp";
