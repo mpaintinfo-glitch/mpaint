@@ -10,6 +10,7 @@ import {
   caseStudySlug,
   categoryHref,
   categoryToServiceId,
+  type CaseStudyImage,
 } from "../../../../src/data/caseStudies";
 import { categoryLabel } from "../../../../src/lib/caseStudyLabels";
 import { localeAlternates } from "../../../../src/lib/alternates";
@@ -26,6 +27,9 @@ type Locale = "et" | "ru" | "en";
 const BEFORE_LABEL: Record<Locale, string> = { et: "Enne", ru: "До", en: "Before" };
 const AFTER_LABEL: Record<Locale, string> = { et: "Pärast", ru: "После", en: "After" };
 
+// Multi-paragraph fields are stored as one string with blank-line breaks.
+const paragraphs = (text: string) => text.split(/\n\s*\n/).filter(Boolean);
+
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
     publishedCaseStudies().map((cs) => ({ locale, slug: caseStudySlug(cs, locale) }))
@@ -41,8 +45,8 @@ export async function generateMetadata({
   const cs = getCaseStudyBySlug(locale, slug);
   if (!cs) return {};
   return {
-    title: cs.title[locale],
-    description: cs.description[locale],
+    title: cs.seo ? { absolute: cs.seo.title[locale] } : cs.title[locale],
+    description: (cs.seo ?? cs).description[locale],
     alternates: localeAlternates(locale, (l) => ({
       pathname: "/work/[slug]",
       params: { slug: caseStudySlug(cs, l) },
@@ -73,10 +77,18 @@ export default async function WorkDetailPage({
   ];
 
   const toAbsolute = (src: string) => (src.startsWith("http") ? src : `${SITE_URL}${src}`);
+  const schemaImage = (img: CaseStudyImage, label: string, description?: string) => ({
+    url: toAbsolute(img.image.src),
+    name: `${cs.title[locale]} (${label})`,
+    caption: img.alt[locale],
+    description,
+    width: img.image.width,
+    height: img.image.height,
+  });
   const schemaImages = [
-    { url: toAbsolute(cs.before.image.src), caption: cs.before.alt[locale] },
-    { url: toAbsolute(cs.after.image.src), caption: cs.after.alt[locale] },
-    ...(cs.additionalPhotos ?? []).map((p) => ({ url: toAbsolute(p.image.src), caption: p.alt[locale] })),
+    schemaImage(cs.before, BEFORE_LABEL[locale], paragraphs(cs.damage[locale])[0]),
+    schemaImage(cs.after, AFTER_LABEL[locale], cs.result?.[locale]),
+    ...(cs.additionalPhotos ?? []).map((p) => schemaImage(p, cs.title[locale])),
   ];
 
   const durationLabel =
@@ -99,7 +111,7 @@ export default async function WorkDetailPage({
 
   return (
     <div className="page on">
-      <BreadcrumbJsonLd items={breadcrumbs} />
+      <BreadcrumbJsonLd items={breadcrumbs} id={`${pageUrl}#breadcrumb`} />
       <CaseStudyJsonLd
         name={cs.title[locale]}
         description={cs.description[locale]}
@@ -126,7 +138,11 @@ export default async function WorkDetailPage({
               {t("work.vehicleLabel")}: {[cs.vehicle.make, cs.vehicle.model].filter(Boolean).join(" ")}
             </p>
           )}
-          <p className="sub">{cs.description[locale]}</p>
+          {paragraphs((cs.intro ?? cs.description)[locale]).map((p, i) => (
+            <p className="sub" key={i}>
+              {p}
+            </p>
+          ))}
         </div>
       </section>
 
@@ -139,16 +155,21 @@ export default async function WorkDetailPage({
             afterAlt={cs.after.alt[locale]}
             beforeLabel={BEFORE_LABEL[locale]}
             afterLabel={AFTER_LABEL[locale]}
+            sizes="(max-width: 800px) 100vw, 760px"
           />
 
           <div className="article-section">
             <h2>{t("work.damageHeading")}</h2>
-            <p>{cs.damage[locale]}</p>
+            {paragraphs(cs.damage[locale]).map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
           </div>
 
           <div className="article-section">
             <h2>{t("work.workHeading")}</h2>
-            <p>{cs.workPerformed[locale]}</p>
+            {paragraphs(cs.workPerformed[locale]).map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
           </div>
 
           {cs.process && cs.process.length > 0 && (
@@ -161,6 +182,24 @@ export default async function WorkDetailPage({
                   </li>
                 ))}
               </ol>
+            </div>
+          )}
+
+          {cs.result && (
+            <div className="article-section">
+              <h2>{t("work.resultHeading")}</h2>
+              {paragraphs(cs.result[locale]).map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+          )}
+
+          {cs.considerations && (
+            <div className="article-section">
+              <h2>{t("work.considerationsHeading")}</h2>
+              {paragraphs(cs.considerations[locale]).map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
             </div>
           )}
 

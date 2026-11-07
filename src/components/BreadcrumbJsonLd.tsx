@@ -1,9 +1,10 @@
 type Crumb = { name: string; url: string };
 
-export default function BreadcrumbJsonLd({ items }: { items: Crumb[] }) {
+export default function BreadcrumbJsonLd({ items, id }: { items: Crumb[]; id?: string }) {
   const data = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    ...(id ? { "@id": id } : {}),
     itemListElement: items.map((item, i) => ({
       "@type": "ListItem",
       position: i + 1,

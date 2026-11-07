@@ -17,3 +17,5 @@ export { default as mercedesCFrontBefore } from "./mercedes-c-front-grille-befor
 export { default as mercedesCFrontAfter } from "./mercedes-c-front-grille-after.webp";
 export { default as bmwE90RearDoorBefore } from "./bmw-e90-rear-door-scratches-before.webp";
 export { default as bmwE90RearDoorAfter } from "./bmw-e90-rear-door-scratches-after.webp";
+export { default as mercedesW204RearLightBefore } from "./mercedes-w204-rear-light-before.webp";
+export { default as mercedesW204RearLightAfter } from "./mercedes-w204-rear-light-after.webp";

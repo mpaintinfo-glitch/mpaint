@@ -28,6 +28,7 @@ export default function CaseStudyCard({
         beforeLabel={BEFORE_LABEL[locale]}
         afterLabel={AFTER_LABEL[locale]}
         interactive={false}
+        sizes="(max-width: 640px) 100vw, 500px"
       />
       <div className="work-card-body">
         <span className="work-card-category">{categoryLabel}</span>

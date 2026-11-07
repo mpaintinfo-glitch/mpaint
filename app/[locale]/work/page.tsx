@@ -57,6 +57,7 @@ export default async function WorkIndexPage({
         name={t("work.h1")}
         description={t("work.meta.description")}
         url={`${SITE_URL}${getPathname({ href: "/work", locale })}`}
+        locale={locale}
         items={collectionItems}
       />
 
