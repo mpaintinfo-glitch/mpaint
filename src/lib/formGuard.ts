@@ -68,3 +68,8 @@ export function rateLimited(req: Request, bucket: string): boolean {
 export function withinLimits(fields: [string, number][]): boolean {
   return fields.every(([value, max]) => value.length <= max);
 }
+
+/** Single-line form fields (name, phone, car) must never carry line breaks into an email header or subject. */
+export function singleLine(value: string): string {
+  return value.replace(/\p{Cc}+/gu, " ").trim();
+}

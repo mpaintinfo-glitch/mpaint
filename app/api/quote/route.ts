@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getMailer, filesToAttachments, escapeHtml, sendNotification } from "../../../src/lib/mailer";
 import { NOTIFY_TO, NOTIFY_CC } from "../../../src/lib/site";
-import { LIMITS, isEmail, rateLimited, sameOrigin, withinLimits } from "../../../src/lib/formGuard";
+import { LIMITS, isEmail, rateLimited, sameOrigin, singleLine, withinLimits } from "../../../src/lib/formGuard";
 
 export const runtime = "nodejs";
 
@@ -33,10 +33,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
 
-  const name = String(formData.get("name") ?? "").trim();
-  const phone = String(formData.get("phone") ?? "").trim();
+  const name = singleLine(String(formData.get("name") ?? ""));
+  const phone = singleLine(String(formData.get("phone") ?? ""));
   const email = String(formData.get("email") ?? "").trim();
-  const carInfo = String(formData.get("carInfo") ?? "").trim();
+  const carInfo = singleLine(String(formData.get("carInfo") ?? ""));
   const notes = String(formData.get("notes") ?? "").trim();
   const services = formData.getAll("services").map(String);
   const photos = formData.getAll("photos").filter((f): f is File => f instanceof File);
