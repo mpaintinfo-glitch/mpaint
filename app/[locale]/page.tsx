@@ -10,6 +10,7 @@ import Arrow from "../../src/components/Arrow";
 import Icon from "../../src/components/Icon";
 import Footer from "../../src/components/Footer";
 import CaseStudyCard from "../../src/components/CaseStudyCard";
+import { GoogleG, GoldStars } from "../../src/components/GoogleReviewBadge";
 import { publishedCaseStudies } from "../../src/data/caseStudies";
 import { categoryLabel } from "../../src/lib/caseStudyLabels";
 import OpenQuoteButton from "../../src/components/OpenQuoteButton";
@@ -46,61 +47,54 @@ export default async function HomePage({
 
   return (
     <div className="page page-home on">
-      <section
-        className="hero relative w-full"
-        style={{
-          paddingTop: "28px",
-          paddingBottom: "16px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          alignItems: "center",
-          overflow: "hidden",
-        }}
-      >
-        <div className="container hero-inner text-center" style={{ zIndex: 10 }}>
-          <h1>
-            {t("hero.leadPre")}{" "}
-            <span className="grad">{t("hero.leadCity")}</span>
+      <section className="hero">
+        <div className="container hero-inner">
+          <h1 className="hero-title">
+            <span className="hero-title-line">{t("hero.titleA")}</span>{" "}
+            <span className="hero-title-line hero-title-loc">
+              <span className="grad">{t("hero.titleB")}</span>
+            </span>
           </h1>
         </div>
 
-        <div className="hero-art w-full" style={{ flexShrink: 0 }}>
-          <Image
-            src={sfondo}
-            alt={t("hero.imageAlt")}
-            className="hero-sfondo"
-            priority
-            style={{
-              display: "block",
-              width: "100%",
-              height: "auto",
-              maxHeight: "50vh",
-              objectFit: "cover",
-              objectPosition: "center 60%",
-            }}
-          />
+        <div className="hero-art">
+          <Image src={sfondo} alt={t("hero.imageAlt")} className="hero-sfondo" priority sizes="(max-width: 767px) 150vw, 100vw" />
         </div>
 
-        <div
-          className="container hero-lower flex flex-col items-center"
-          style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "2rem", zIndex: 10 }}
-        >
-          <div className="hero-btns flex gap-4" style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
-            <OpenQuoteButton className="btn btn-fill btn-lg">
-              {t("hero.ctaEstimate")}
-            </OpenQuoteButton>
+        <div className="container hero-lower">
+          <div className="hero-btns">
+            <OpenQuoteButton className="btn btn-fill btn-lg">{t("hero.ctaEstimate")}</OpenQuoteButton>
             <Link href="/work" className="btn btn-line btn-lg">
               {t("hero.ctaWork")}
             </Link>
           </div>
-          <div className="hero-trust">
-            <span><Icon id="i-spray" />{whyCards[0]?.title}</span>
-            <span><Icon id="i-check" />{whyCards[1]?.title}</span>
-            <a href={BUSINESS.googleReviewsUrl} target="_blank" rel="noopener">
-              <span><Icon id="i-star" />{t("home.reviewsLinkText")}</span>
-            </a>
-          </div>
+        </div>
+      </section>
+
+      <section className="trust" aria-label={t("home.whyMpaintTitle")}>
+        <div className="container">
+          <ul className="trust-grid">
+            {whyCards.slice(0, 2).map((card, i) => (
+              <li className="trust-item" key={i}>
+                <span className="trust-ic">
+                  <Icon id={WHY_ICONS[i]} />
+                </span>
+                <span className="trust-text">
+                  <b>{card.title}</b>
+                  <span>{card.desc}</span>
+                </span>
+              </li>
+            ))}
+            <li className="trust-item trust-item--reviews">
+              <a href={BUSINESS.googleReviewsUrl} target="_blank" rel="noopener" className="trust-link">
+                <GoogleG size={30} />
+                <span className="trust-text">
+                  <GoldStars size={17} />
+                  <b>{t("home.reviewsLinkText")}</b>
+                </span>
+              </a>
+            </li>
+          </ul>
         </div>
       </section>
 

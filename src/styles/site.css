@@ -47,17 +47,19 @@
      working; only the values moved. The original dark design is preserved on
      the backup/mpaint-before-modern-white branch. */
   --bg-center:#FFFFFF;
-  --bg-edge:#F4F5F7;
-  --ink:#15171C;                  /* graphite */
+  --bg-edge:#F5F6F8;
+  --ink:#14151A;                  /* headings */
   --overlay-rgb:21,23,28;         /* base for translucent borders/tints/med/low text */
-  --line:rgba(var(--overlay-rgb),.10);
-  --white:#15171C;                /* primary text */
-  --med:rgba(var(--overlay-rgb),.78);
-  --low:rgba(var(--overlay-rgb),.62);
+  --line:#E1E3E7;
+  --white:#272A30;                /* body text */
+  --med:#272A30;                  /* body copy */
+  --low:#50545C;                  /* secondary text / labels */
+  --nav-ink:#202127;              /* navigation */
+  --pearl:#E9EBF0;
   --pink-ink:#C2006E;             /* brand magenta for small text on white (AA contrast) */
   --surface:#FFFFFF;
-  --surface-alt:#F6F7F9;          /* off-white section band */
-  --surface-silver:#ECEEF2;       /* light silver-grey section band */
+  --surface-alt:#F5F6F8;          /* off-white section band */
+  --surface-silver:#E9EBF0;       /* light silver-grey section band */
   --shadow-sm:0 1px 2px rgba(var(--overlay-rgb),.06),0 4px 14px rgba(var(--overlay-rgb),.05);
   --shadow-md:0 2px 4px rgba(var(--overlay-rgb),.05),0 14px 34px rgba(var(--overlay-rgb),.09);
   --card-1:#FFFFFF;                /* svc card surface */
@@ -551,20 +553,6 @@ footer>.f-in{position:relative;z-index:1}
   .nav-right .btn-sm{display:inline-flex}
 }
 @media(max-width:767px){
-  /* ── HERO — mobile-only overrides ── */
-  /* h1: larger on mobile */
-  .page-home .hero h1{font-size:clamp(2rem,8vw,2.6rem)}
-  /* tight top-stack layout; free space splits above h1 and above arrow → centers content */
-  .page-home .hero{justify-content:flex-start!important;gap:2vh;padding-top:4px!important;padding-bottom:12px!important}
-  .page-home .hero .hero-inner{margin-top:auto}
-  .hero-scroll-indicator{margin-top:auto!important}
-  /* image: restore good proportions */
-  .hero-sfondo{height:36vh!important;max-height:none!important;object-fit:cover!important}
-  /* hero-lower: tighter gap on mobile */
-  .hero-lower{gap:1rem!important}
-  /* scroll arrow: pull up toward the buttons */
-  .hero-scroll-indicator{margin-top:-44px}
-
   /* ── SERVICES — mobile-only overrides ── */
   /* images section fills viewport so seo text starts below fold */
   .svc-cta-zone ~ .sec{min-height:calc(100dvh - var(--nav-h))}
@@ -622,84 +610,7 @@ footer>.f-in{position:relative;z-index:1}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
 
-/* ---------------- HERO (mobile-first, fits one screen) ---------------- */
-/* HERO -- unified text stack (.hero-inner), graphic moved below as a divider */
-/* 100dvh golden rule: header + hero together fill exactly one screen, no
-   scroll needed to see headline/CTAs/stats. Two children (.hero-inner,
-   .hero-art) space-between so the graphic sits pinned toward the bottom. */
-/* order top-to-bottom: h1 -> drip (banner, anchored to headline) -> lead ->
-   CTAs -> plain stat line -> "See our work" -> 4-icon strip. Whole hero must
-   clear one viewport on mobile AND desktop -- gaps kept tight throughout,
-   font sizes untouched. */
-/* natural top-flow, NOT vertically centered in a tall fixed-height box --
-   centering created huge, unbalanced empty space above/below on normal-height
-   screens. Only compresses at the short-viewport breakpoint below, same
-   pattern used everywhere else on this site for "real browser chrome". */
-.hero{text-align:center;position:relative;padding:0;
-  height:calc(100vh - var(--nav-h));
-  height:calc(100svh - var(--nav-h))}
-.hero-inner{display:flex;flex-direction:column;align-items:center;padding-top:var(--sp-16)}
-.badge{display:inline-flex;align-items:center;gap:var(--sp-8);font-size:11px;font-weight:600;
-  letter-spacing:.2em;text-transform:uppercase;color:rgba(var(--overlay-rgb),.6);margin-bottom:var(--sp-16)}
-.badge i{width:6px;height:6px;border-radius:var(--r-circle);background:var(--pink);
-  box-shadow:0 0 10px var(--pink);font-style:normal}
-.hero h1{max-width:14ch;margin:0}
-/* RU hero title is longer than EN/ET -- on desktop only, widen just enough
-   that "Ваш автомобиль, перекрашен" shares the first line like the other
-   languages do; "безупречно." still wraps to its own line below */
-@media(min-width:768px){
-  [data-lang="ru"] .hero h1{max-width:23ch}
-}
-/* hero-art: direct child of .hero (not inside .container), spans full viewport width */
-.hero-art{width:100%;position:relative;z-index:1}
-/* responsive height via clamp — never a fixed px on any screen size */
-.hero-art img{display:block;width:100%;height:clamp(130px,20vw,260px);object-fit:cover;object-position:center center}
-/* hero-lower: centered flex column that overlaps the transparent drip tail */
-.hero-lower{display:flex;flex-direction:column;align-items:center;text-align:center;
-  margin-top:-14px;position:relative;z-index:2;padding-bottom:var(--sp-16)}
-.hero .lead{color:var(--med);font-weight:300;font-size:clamp(0.8125rem,2.8vw,0.9375rem);
-  max-width:36ch;margin:0;line-height:1.4}
-.hero-btns{display:flex;flex-direction:row;flex-wrap:nowrap;
-  justify-content:center;gap:var(--sp-8);width:100%;padding-inline:var(--sp-16);margin-top:var(--sp-12)}
-.hero-btns .btn{flex:1 1 0;min-width:0;padding-inline:var(--sp-12)}
-/* 5-card stat row: icon (top) / number (middle) / label (bottom), fixed 16px
-   gap throughout, row centered as a whole via max-width + auto margins --
-   never stretched to page width, never right-anchored */
-.hero-quick{margin-top:var(--sp-16);display:grid;grid-template-columns:repeat(5,1fr);gap:16px;
-  width:100%;max-width:480px;margin-inline:auto}
-.hq-card{display:flex;flex-direction:column;align-items:center;
-  background:rgba(var(--overlay-rgb),.05);backdrop-filter:blur(8px);
-  border:1px solid rgba(var(--overlay-rgb),.1);border-radius:var(--r-card);padding:var(--sp-8) var(--sp-4)}
-/* fixed icon slot so card 5 (no icon) still lines its number/label up with
-   the other 4 -- each symbol carries its own fill/stroke attrs (mixed:
-   shield/cert are outline, star is solid), only size + color set here */
-.hq-card svg{width:15px;height:15px;color:var(--pink);margin-bottom:var(--sp-4)}
-.hq-card--noicon{padding-top:calc(var(--sp-8) + 15px + var(--sp-4))}
-.hq-card b{font-size:14px;font-weight:700;color:var(--white);white-space:nowrap}
-.hq-card span{font-size:9px;letter-spacing:.02em;color:var(--low);white-space:normal;margin-top:2px;word-break:break-word;line-height:1.2}
-@media(min-width:768px){
-  .hero{padding:0}
-  .hero-inner{padding-top:var(--sp-16)}
-  .badge{margin-bottom:var(--sp-24)}
-  .hero-art img{height:clamp(200px,24vw,300px);object-fit:cover;object-position:center center}
-  .hero-lower{margin-top:-20px;padding-bottom:var(--sp-24)}
-  .hero .lead{font-size:clamp(13.5px,1.35vw,15.5px);max-width:54ch;white-space:nowrap;margin-top:0}
-  .hero-btns{flex-wrap:wrap;padding-inline:0;margin-top:var(--sp-16)}
-  .hero-btns .btn{flex:0 0 auto;width:auto}
-  .hero-quick{grid-template-columns:repeat(5,auto);max-width:none;gap:16px;margin-top:var(--sp-16)}
-  .hq-card{padding:var(--sp-12) var(--sp-24)}
-  .hq-card svg{width:18px;height:18px}
-  .hq-card--noicon{padding-top:calc(var(--sp-12) + 18px + var(--sp-4))}
-  .hq-card b{font-size:17px}
-  .hq-card span{font-size:10.5px}
-}
-@media(max-height:820px) and (min-width:900px){
-  .hero-inner{padding-top:var(--sp-8)}
-  .hero-lower{padding-bottom:var(--sp-8);margin-top:-12px}
-  .hero-art img{height:clamp(160px,18vw,220px)}
-  .hero-btns{margin-top:var(--sp-8)}
-  .hero-quick{margin-top:var(--sp-8)}
-}
+/* HERO: rebuilt in modern-white.css (content-sized, no viewport-height lock). */
 
 /* ---------------- CONTACT ACTION CARDS ---------------- */
 .c-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-16);margin:var(--sp-48) 0 var(--sp-8)}
@@ -1106,13 +1017,6 @@ footer{border-top:1px solid var(--line);padding:var(--sp-32) 0 var(--sp-32);marg
 @media(max-width:380px){
   .container{padding:0 var(--sp-16)}
   .fab-item small{display:none}
-}
-
-/* landscape phone: don't lock the hero to the viewport */
-@media(max-height:520px) and (orientation:landscape){
-  .hero{min-height:auto}
-  .hero-inner{padding-top:var(--sp-16)}
-  .hero-art img{max-height:none}
 }
 
 /* touch devices: hover effects shouldn't stick */

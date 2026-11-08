@@ -15,7 +15,8 @@
 :root{ --r-card:18px; }
 
 /* ---------- typography ---------- */
-h1,h2,h3,h4{color:var(--ink)}
+h1,h2,h3,h4,b,strong{color:var(--ink)}
+.eyebrow,.svc-group-label,.f-col h4,.timing-title,.ca small{font-weight:700}
 .eyebrow,.badge{color:var(--low)}
 .sub,
 .seo-block p,.seo-block ul,
@@ -47,7 +48,7 @@ h1,h2,h3,h4{color:var(--ink)}
 /* ---------- header ---------- */
 .header{background:var(--header-bg);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);
   border-bottom:1px solid var(--line)}
-.nav-links a{color:var(--med)}
+.nav-links a{color:var(--nav-ink);font-weight:600}
 .nav-links a:hover,.nav-links a.active{color:var(--ink)}
 .nav-toggle,.lang-btn{background:#fff;border-color:rgba(var(--overlay-rgb),.14)}
 .nav-toggle:hover,.lang-btn:hover{border-color:rgba(var(--overlay-rgb),.35)}
@@ -56,22 +57,71 @@ h1,h2,h3,h4{color:var(--ink)}
 .lang-menu button.on{color:var(--pink-ink)}
 @media(max-width:899px){
   .nav-links{border-top:1px solid var(--line);box-shadow:var(--shadow-md)}
-  .nav-links a{color:var(--ink)}
+  .nav-links a{color:var(--nav-ink)}
 }
 .header .btn-fill{padding:var(--sp-8) var(--sp-24);box-shadow:0 4px 14px rgba(224,0,122,.2)}
 
-/* ---------- hero (home) ---------- */
-.hero{background:
-  radial-gradient(60% 55% at 50% -5%,rgba(255,46,146,.08) 0%,rgba(139,63,216,.04) 45%,transparent 72%)}
-.hero h1{color:var(--ink)}
-.hero .lead{color:var(--med)}
+/* ---------- hero (home) ----------
+   Content-sized: the old hero was locked to 100svh with overflow:hidden, so on
+   short windows or with longer RU text the stuff below the art (trust strip)
+   fell outside the box and was clipped. Nothing here depends on viewport
+   height any more. */
+.hero{position:relative;text-align:center;overflow-x:clip;
+  padding:clamp(24px,3.6vw,52px) 0 clamp(28px,3.4vw,48px);
+  background:linear-gradient(180deg,var(--pearl) 0%,#F5F6F8 52%,#FFFFFF 100%)}
+.hero-title{margin:0 auto;max-width:none;color:var(--ink);font-weight:800;
+  font-size:clamp(1.7rem,1.1rem + 2.7vw,3.4rem);line-height:1.08;letter-spacing:-.035em}
+/* RU line one is ~40% longer than ET/EN: scale it down so it keeps to one line on tablet/desktop */
+.hero-title:lang(ru){font-size:clamp(1.55rem,.9rem + 2.25vw,2.9rem)}
+/* two deliberate blocks: the location is always its own line; the first block
+   may wrap (balanced) on narrow phones but never merges with the location */
+.hero-title-line{display:block;text-wrap:balance}
+.hero-title-loc{margin-top:.06em}
+/* the artwork has transparent bands above/below the drips (opaque rows span
+   ~34%-83.5% of the file); trim them with margins that scale with width so
+   the headline, drips and buttons sit at a fixed, tight rhythm */
+.hero-art{width:100%;margin-top:clamp(2px,.6vw,10px)}
+.hero-art img{display:block;width:100%;height:auto;margin-top:-10.5%;margin-bottom:-4.5%}
+@media(max-width:767px){
+  /* phones: render the art 1.5x and crop the sides so the drips keep presence */
+  .hero-art{overflow:hidden}
+  .hero-art img{width:150%;max-width:none;margin-left:-25%;margin-top:-15.75%;margin-bottom:-6.75%}
+}
+.hero-lower{position:relative;z-index:2;margin-top:clamp(14px,1.8vw,26px)}
+.hero-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--sp-12)}
+.hero-btns .btn{flex:0 0 auto}
+@media(max-width:520px){
+  .hero-btns{gap:var(--sp-8)}
+  .hero-btns .btn{flex:1 1 150px;width:auto;max-width:none;padding-inline:var(--sp-12)}
+}
 .hero-secondary{color:var(--ink);font-weight:600}
 .hero-secondary:hover{color:var(--pink-ink)}
-.hero-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--sp-8) var(--sp-24);
-  margin-top:var(--sp-16);font-size:13px;font-weight:600;color:var(--med)}
-.hero-trust span{display:inline-flex;align-items:center;gap:var(--sp-8)}
-.hero-trust svg{width:15px;height:15px;color:var(--pink-ink)}
-.hero-trust a:hover{color:var(--pink-ink)}
+
+/* ---------- trust strip (own section, always fully visible) ----------
+   One bordered strip with hairline dividers. 1 column on phones/tablets,
+   3 columns from 900px; every item stays visible at every width. */
+.trust{padding:var(--sp-24) 0 var(--sp-48)}
+.trust-grid{list-style:none;display:grid;grid-template-columns:1fr;
+  background:#fff;border:1px solid var(--line);border-radius:var(--r-card);box-shadow:var(--shadow-sm);overflow:hidden}
+.trust-item{display:flex;align-items:center;min-width:0}
+.trust-item+.trust-item{border-top:1px solid var(--line)}
+.trust-item,.trust-link{gap:var(--sp-16);padding:var(--sp-16) var(--sp-24)}
+.trust-link{display:flex;align-items:center;width:100%;height:100%;transition:background .2s}
+.trust-link:hover{background:var(--surface-alt)}
+.trust-ic{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:40px;height:40px;
+  border-radius:50%;background:#FFF0F7;color:var(--pink-ink)}
+.trust-ic svg{width:19px;height:19px}
+.trust-text{display:flex;flex-direction:column;gap:2px;min-width:0;text-align:left}
+.trust-text b{font-size:15px;font-weight:700;color:var(--ink);line-height:1.3}
+.trust-text span{font-size:13.5px;color:var(--low);line-height:1.45}
+.trust-item--reviews{padding:0}
+.trust-item--reviews .trust-text b{font-weight:700}
+.trust-item--reviews .trust-link:hover b{color:var(--pink-ink)}
+.gstars{display:inline-flex;gap:2px;line-height:0}
+@media(min-width:900px){
+  .trust-grid{grid-template-columns:repeat(3,1fr)}
+  .trust-item+.trust-item{border-top:none;border-left:1px solid var(--line)}
+}
 
 /* ---------- section bands ---------- */
 .band{background:var(--surface-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -114,7 +164,7 @@ h1,h2,h3,h4{color:var(--ink)}
 .seo-content-section--home::before,.seo-content-section--quiet::before{opacity:.16}
 .seo-surface,.seo-surface--steps{background:transparent;border:none;padding-left:0;padding-right:0}
 .seo-block{border-top-color:var(--line)}
-.seo-surface .seo-block p,.seo-closing,.seo-surface .services-grid li{color:rgba(var(--overlay-rgb),.88)}
+.seo-surface .seo-block p,.seo-closing,.seo-surface .services-grid li{color:var(--med)}
 .seo-surface .services-grid svg{color:var(--pink-ink)}
 .svc-pricing-note{background:linear-gradient(135deg,rgba(255,46,146,.08) 0%,rgba(155,107,255,.08) 100%);
   border-color:rgba(194,0,110,.25);color:var(--ink)}
