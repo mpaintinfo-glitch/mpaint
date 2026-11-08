@@ -36,7 +36,7 @@ export default function Footer({ hasSplash }: { hasSplash: boolean }) {
         <div className="f-col">
           <h4>{t("footer.contactTitle")}</h4>
           <ul>
-            <li><a className="f-phone" href={BUSINESS.phoneHref}><b>{BUSINESS.phone}</b></a></li>
+            <li><a href={BUSINESS.phoneHref}><b>{BUSINESS.phone}</b></a></li>
             <li><a href={BUSINESS.whatsappHref} target="_blank" rel="noopener">WhatsApp</a></li>
             <li><a href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a></li>
           </ul>
