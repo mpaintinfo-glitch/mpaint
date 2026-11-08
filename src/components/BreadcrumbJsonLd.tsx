@@ -1,3 +1,5 @@
+import { jsonLd } from "../lib/jsonLd";
+
 type Crumb = { name: string; url: string };
 
 export default function BreadcrumbJsonLd({ items, id }: { items: Crumb[]; id?: string }) {
@@ -16,7 +18,7 @@ export default function BreadcrumbJsonLd({ items, id }: { items: Crumb[]; id?: s
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: jsonLd(data) }}
     />
   );
 }

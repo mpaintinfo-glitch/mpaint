@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { jsonLd } from "../lib/jsonLd";
 import { SERVICE_ORDER, slugsForLocale } from "../data/services";
 import { getPathname } from "../i18n/navigation";
 import { SITE_URL, BUSINESS } from "../lib/site";
@@ -58,7 +59,7 @@ export default async function LocalBusinessJsonLd({ locale }: { locale: string }
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: jsonLd(data) }}
     />
   );
 }

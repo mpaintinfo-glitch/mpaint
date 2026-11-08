@@ -159,6 +159,8 @@
   "serviceDetail": {
     "paint": {
       "h1": "Car painting",
+      "metaTitle": "Car painting in Tallinn",
+      "metaDescription": "Car painting in Tallinn: single panels and full resprays in our own filtered paint booth, matched to your car's factory colour code. Painting a panel from 250€.",
       "tagline": "Full resprays and single panels, painted in our own filtered booth.",
       "intro": "Painting a single panel takes 3-4 days on average, a full respray takes over a month. Most of that time goes into taking the car apart and putting it back together, not the paint drying.",
       "bullets": [
@@ -201,6 +203,8 @@
     },
     "body": {
       "h1": "Welding & bodywork",
+      "metaTitle": "Welding & bodywork in Tallinn",
+      "metaDescription": "Welding and bodywork in Tallinn: structural repair and sheet-metal work for any make or model. Send photos for an estimate.",
       "tagline": "Structural repair and sheet-metal work for any make or model.",
       "intro": "Cosmetic damage doesn't need special equipment. Structural damage, such as through-corrosion, needs either a part replacement or welding in a repair panel.",
       "bullets": [
@@ -227,6 +231,8 @@
     },
     "dent": {
       "h1": "Dent removal",
+      "metaTitle": "Dent removal in Tallinn",
+      "metaDescription": "Paintless dent removal with a spotter in Tallinn, when the paint layer is intact and the damage allows it. Faster and cheaper than replacing the panel.",
       "tagline": "Paintless spotter repair. Faster and cheaper than replacing the panel.",
       "intro": "If the metal isn't torn and the paint isn't broken, most dents can be pulled out with the spotter method without repainting. Keeping the original factory paint also means the car's value drops less than it would after a repainted panel.",
       "bullets": [
@@ -252,6 +258,8 @@
     },
     "rust": {
       "h1": "Rust removal and protection",
+      "metaTitle": "Rust removal and protection in Tallinn",
+      "metaDescription": "Rust removal and protection in Tallinn: we clean, treat and protect before corrosion spreads. From 50€, depending on the extent of the damage.",
       "tagline": "Stop corrosion before it spreads. We clean, treat, and protect.",
       "intro": "Damaged metal is cleaned, treated with acid to remove invisible corrosion, and protected with multiple layers of primer before painting.",
       "process": [
@@ -286,6 +294,8 @@
     },
     "polish": {
       "h1": "Body & headlight polishing",
+      "metaTitle": "Body & headlight polishing in Tallinn",
+      "metaDescription": "Body and headlight polishing in Tallinn: removes light scratches and restores headlight clarity. Ask for a quote.",
       "tagline": "Removes light scratches and restores headlight clarity.",
       "intro": "For headlight restoration we use both chemical and mechanical methods, depending on the condition of the coating. Polishing only helps with surface-level scratches: if a scratch goes down to the paint layer, the part needs repainting.",
       "bullets": [
@@ -311,6 +321,8 @@
     },
     "parts": {
       "h1": "Replacing parts",
+      "metaTitle": "Replacing parts in Tallinn",
+      "metaDescription": "Damaged or worn parts found, sourced and fitted in Tallinn. Send photos for an estimate.",
       "tagline": "Damaged or worn parts found, sourced, and fitted.",
       "intro": "Before starting any work, we assess whether a damaged part is worth repairing or better off replaced. If it needs replacing, we offer both new and used parts, depending on your budget and the car's age.",
       "bullets": [
@@ -377,7 +389,7 @@
   "accident": {
     "meta": {
       "title": "Car damaged in an accident? Bodywork and painting in Tallinn",
-      "description": "Post-accident bodywork and painting in Tallinn: how to request a quote, when an in-person inspection is needed, and how to get your car to the workshop if it is not drivable."
+      "description": "Post-accident bodywork and painting in Tallinn: requesting a quote, when an in-person inspection is needed, and getting your car to the workshop."
     },
     "h1": "Car damaged in an accident? Bodywork and painting in Tallinn",
     "intro": "After an accident, it is often hard to judge how extensive the damage really is. Here is what Mpaint takes into account for post-accident bodywork and painting, and how to get a damaged car to our workshop.",
@@ -475,7 +487,7 @@
   "bumperPainting": {
     "meta": {
       "title": "Bumper painting in Tallinn",
-      "description": "Plastic bumper painting and repair in Tallinn. Exact factory colour matching, the right primer for plastic, filtered paint booth. The exact price depends on the damage, we give a quote based on photos."
+      "description": "Plastic bumper painting and repair in Tallinn: factory colour matching, the right primer for plastic, filtered paint booth. We quote from photos."
     },
     "h1": "Bumper painting in Tallinn",
     "tagline": "Plastic bumper painting and repair in our own filtered paint booth.",
@@ -518,7 +530,7 @@
   "minorDamage": {
     "meta": {
       "title": "Stone chip and minor paint damage repair in Tallinn",
-      "description": "Stone chips and surface paint damage can often be fixed in about one working day when the extent of the damage allows it. Estimate from photos, exact price after we see the damage."
+      "description": "Stone chips and surface paint damage can often be fixed in about one working day when the damage allows it. Estimate from photos."
     },
     "h1": "Stone chip and minor paint damage repair",
     "tagline": "Stone chips and surface paint damage can often be fixed in about one working day.",
@@ -595,7 +607,7 @@
     "whatsappValue": "Message us",
     "email": "Email",
     "address": "Address",
-    "addressValue": "Tallinn, Estonia",
+    "addressValue": "Magasini tn 31, 10138 Tallinn, Estonia",
     "monFri": "Mon – Fri",
     "hours": "9:00 – 19:00",
     "saturday": "Saturday",

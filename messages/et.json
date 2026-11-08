@@ -159,6 +159,8 @@
   "serviceDetail": {
     "paint": {
       "h1": "Autovärvimine",
+      "metaTitle": "Autovärvimine Tallinnas",
+      "metaDescription": "Autovärvimine Tallinnas: üksikud detailid ja täisvärvimine meie enda filtreeritud värvikambris, värv tehase värvikoodi järgi. Elemendi värvimine alates 250€.",
       "tagline": "Täisvärvimised ja üksikud paneelid meie enda filtreeritud värvikambris.",
       "intro": "Ühe detaili värvimine võtab keskmiselt 3-4 päeva, täisvärvimine üle kuu. Suurema osa ajast võtab auto lahtivõtmine ja kokkupanek, mitte värvi kuivamine.",
       "bullets": [
@@ -201,6 +203,8 @@
     },
     "body": {
       "h1": "Keevitus ja keretööd",
+      "metaTitle": "Keevitus ja keretööd Tallinnas",
+      "metaDescription": "Keevitus ja keretööd Tallinnas: kandekonstruktsiooni remont ja plekitööd kõikidele markidele ja mudelitele. Hinnapakkumine fotode põhjal.",
       "tagline": "Kandekonstruktsiooni remont ja plekitööd kõikidele markidele ja mudelitele.",
       "intro": "Kosmeetiline kahjustus ei vaja erivarustust. Struktuurne kahjustus, näiteks läbiv korrosioon, vajab kas detaili vahetust või remondipaneeli sissekeevitamist.",
       "bullets": [
@@ -227,6 +231,8 @@
     },
     "dent": {
       "h1": "Mõlkide eemaldamine",
+      "metaTitle": "Mõlkide eemaldamine Tallinnas",
+      "metaDescription": "Mõlkide eemaldamine spotteriga ilma värvimata Tallinnas, kui värvikiht on terve ja kahjustus seda võimaldab. Kiirem ja odavam kui paneeli vahetus.",
       "tagline": "Spotteriga mõlkide eemaldamine ilma värvimata. Kiirem ja odavam kui paneeli vahetus.",
       "intro": "Kui metall pole rebenenud ega värv kahjustatud, saab enamiku mõlkidest eemaldada spotter-meetodil ilma üle värvimata. Säilinud originaalvärv tähendab ka seda, et auto väärtus ei vähene nii nagu üle värvitud paneeli puhul.",
       "bullets": [
@@ -252,6 +258,8 @@
     },
     "rust": {
       "h1": "Rooste eemaldus ja kaitse",
+      "metaTitle": "Rooste eemaldus ja kaitse Tallinnas",
+      "metaDescription": "Rooste eemaldus ja kaitse Tallinnas: puhastame, töötleme ja kaitseme enne korrosiooni levikut. Hind alates 50€, sõltuvalt kahjustuse ulatusest.",
       "tagline": "Peatame korrosiooni enne levikut. Puhastame, töötleme ja kaitseme.",
       "intro": "Kahjustatud metall puhastatakse, töödeldakse happega nähtamatu korrosiooni eemaldamiseks ja kaitstakse mitmekihilise kruntimisega enne värvimist.",
       "process": [
@@ -286,6 +294,8 @@
     },
     "polish": {
       "h1": "Kere ja tulede poleerimine",
+      "metaTitle": "Kere ja tulede poleerimine Tallinnas",
+      "metaDescription": "Kere ja tulede poleerimine Tallinnas: eemaldab kergeid kriimustusi ja taastab tulede selguse. Küsi hinnapakkumist.",
       "tagline": "Eemaldab kergeid kriimustusi ja taastab tulede selguse.",
       "intro": "Faaride taastamiseks kasutame nii keemilist kui mehaanilist meetodit, sõltuvalt katte seisukorrast. Poleerimine aitab ainult pindmiste kriimustuste puhul: kui kriimustus ulatub värvikihist läbi, on vaja ala üle värvida.",
       "bullets": [
@@ -311,6 +321,8 @@
     },
     "parts": {
       "h1": "Osade vahetus",
+      "metaTitle": "Osade vahetus Tallinnas",
+      "metaDescription": "Kahjustatud või kulunud osade leidmine, hankimine ja paigaldus Tallinnas. Hinnapakkumine fotode põhjal.",
       "tagline": "Leiame, hangime ja paigaldame kahjustatud või kulunud osad.",
       "intro": "Enne töö algust hindame, kas kahjustatud osa tasub parandada või on mõistlikum välja vahetada. Vahetuse korral pakume nii uusi kui kasutatud osi, olenevalt sinu eelarvest ja auto vanusest.",
       "bullets": [
@@ -377,7 +389,7 @@
   "accident": {
     "meta": {
       "title": "Auto sai avariis kahjustada? Keretööd ja värvimine Tallinnas",
-      "description": "Avariijärgne keretööd ja värvimine Tallinnas: kuidas küsida hinnapakkumist, millal on vaja füüsilist ülevaatust ja kuidas toimetada sõiduk töökotta, kui see ei ole sõidukorras."
+      "description": "Avariijärgsed keretööd ja värvimine Tallinnas: hinnapakkumise küsimine, füüsilise ülevaatuse vajadus ja sõiduki toimetamine töökotta."
     },
     "h1": "Auto sai avariis kahjustada? Keretööd ja värvimine Tallinnas",
     "intro": "Avarii järel on tihti raske hinnata, kui ulatuslik kahjustus tegelikult on. Siin on, mida Mpaint avariijärgse keretöö ja värvimise juures arvestab, ning kuidas toimetada kahjustatud auto meie töökotta.",
@@ -475,7 +487,7 @@
   "bumperPainting": {
     "meta": {
       "title": "Stange värvimine Tallinnas",
-      "description": "Plaststangede värvimine ja parandus Tallinnas. Tehase värvikoodi sobitus, sobiv aluskrunt plastile, filtreeritud värvikamber. Täpne hind sõltub kahjustusest, saadame hinnapakkumise fotode põhjal."
+      "description": "Plaststangede värvimine ja parandus Tallinnas: tehase värvikoodi sobitus, plastile sobiv aluskrunt, filtreeritud värvikamber. Hinnapakkumine fotode põhjal."
     },
     "h1": "Stange värvimine Tallinnas",
     "tagline": "Plaststangede värvimine ja parandus meie filtreeritud värvikambris.",
@@ -518,7 +530,7 @@
   "minorDamage": {
     "meta": {
       "title": "Kivitäkete ja värvikahjustuste parandamine Tallinnas",
-      "description": "Kivitäked ja pindmised värvikahjustused parandame tihti umbes ühe tööpäevaga, kui kahjustuse ulatus seda võimaldab. Hinnang fotode põhjal, täpne hind pärast kahjustuse nägemist."
+      "description": "Kivitäked ja pindmised värvikahjustused parandame tihti umbes ühe tööpäevaga, kui ulatus seda võimaldab. Hinnang fotode põhjal."
     },
     "h1": "Kivitäkete ja väiksemate värvikahjustuste parandamine",
     "tagline": "Kivitäked ja pindmised värvikahjustused parandame tihti umbes ühe tööpäevaga.",

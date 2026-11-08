@@ -1,4 +1,5 @@
 import { SITE_URL } from "../lib/site";
+import { jsonLd } from "../lib/jsonLd";
 
 type Item = { name: string; url: string };
 
@@ -37,5 +38,5 @@ export default function CollectionPageJsonLd({
     },
   };
 
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(data) }} />;
 }

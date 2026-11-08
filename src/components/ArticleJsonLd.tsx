@@ -1,4 +1,5 @@
 import { SITE_URL, BUSINESS } from "../lib/site";
+import { jsonLd } from "../lib/jsonLd";
 
 type Props = {
   title: string;
@@ -27,5 +28,5 @@ export default function ArticleJsonLd({ title, description, url, locale, datePub
     author: { "@type": "Organization", name: BUSINESS.name, url: SITE_URL },
   };
 
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(data) }} />;
 }

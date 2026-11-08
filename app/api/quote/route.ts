@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getMailer, filesToAttachments, escapeHtml, sendNotification } from "../../../src/lib/mailer";
 import { NOTIFY_TO, NOTIFY_CC } from "../../../src/lib/site";
+import { LIMITS, isEmail, rateLimited, sameOrigin, withinLimits } from "../../../src/lib/formGuard";
 
 export const runtime = "nodejs";
 
@@ -15,6 +16,9 @@ const SERVICE_LABEL: Record<string, string> = {
 };
 
 export async function POST(req: Request) {
+  if (!sameOrigin(req)) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  if (rateLimited(req, "quote")) return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+
   let mailer: ReturnType<typeof getMailer>;
   try {
     mailer = getMailer();
@@ -22,7 +26,12 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Email service is not configured" }, { status: 503 });
   }
 
-  const formData = await req.formData();
+  let formData: FormData;
+  try {
+    formData = await req.formData();
+  } catch {
+    return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+  }
 
   const name = String(formData.get("name") ?? "").trim();
   const phone = String(formData.get("phone") ?? "").trim();
@@ -34,6 +43,20 @@ export async function POST(req: Request) {
 
   if (!name || !phone || !email) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+  }
+  if (!isEmail(email)) {
+    return NextResponse.json({ error: "Invalid email" }, { status: 400 });
+  }
+  if (
+    !withinLimits([
+      [name, LIMITS.name],
+      [phone, LIMITS.phone],
+      [carInfo, LIMITS.carInfo],
+      [notes, LIMITS.notes],
+    ]) ||
+    services.length > Object.keys(SERVICE_LABEL).length
+  ) {
+    return NextResponse.json({ error: "Input too long" }, { status: 400 });
   }
 
   const attachments = await filesToAttachments(photos);

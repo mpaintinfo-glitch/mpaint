@@ -1,3 +1,5 @@
+import { jsonLd } from "../lib/jsonLd";
+
 type FaqItem = { q: string; a: string };
 
 export default function FaqJsonLd({ items }: { items: FaqItem[] }) {
@@ -17,7 +19,7 @@ export default function FaqJsonLd({ items }: { items: FaqItem[] }) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: jsonLd(data) }}
     />
   );
 }

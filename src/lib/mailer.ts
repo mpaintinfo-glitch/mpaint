@@ -1,5 +1,6 @@
 import sharp from "sharp";
 import nodemailer, { type Transporter } from "nodemailer";
+import { LIMITS } from "./formGuard";
 
 // Resize/compress so 5 full-resolution phone photos (often 8-12MB each)
 // reliably fit in one email instead of occasionally blowing the size limit
@@ -21,12 +22,30 @@ export function getMailer() {
   return { transport: nodemailer.createTransport({ service: "gmail", auth: { user, pass } }), from };
 }
 
+const IMAGE_EXT = /\.(jpe?g|png|webp|heic|heif|gif|avif)$/i;
+
+function isImage(file: File): boolean {
+  return file.type.startsWith("image/") || IMAGE_EXT.test(file.name);
+}
+
+// Filenames come from the visitor: keep a short, harmless basename and only
+// ever re-use a known image extension.
+function safeBase(name: string): string {
+  const base = (name || "photo").replace(/\.[^.]+$/, "").replace(/[^\w-]+/g, "_").replace(/^_+|_+$/g, "");
+  return (base || "photo").slice(0, 40);
+}
+
 export async function filesToAttachments(files: File[]) {
   const attachments: { filename: string; content: Buffer }[] = [];
 
-  for (const file of files) {
+  // Only real images, within the same limits the forms enforce client-side.
+  // Anything else (an executable, a PDF, an oversized file) is dropped rather
+  // than forwarded into the workers' inbox.
+  const accepted = files.filter((f) => f.size > 0 && f.size <= LIMITS.photoBytes && isImage(f)).slice(0, LIMITS.photos);
+
+  for (const file of accepted) {
     const original = Buffer.from(await file.arrayBuffer());
-    const baseName = (file.name || "photo").replace(/\.[^.]+$/, "");
+    const baseName = safeBase(file.name);
 
     try {
       const compressed = await sharp(original)
@@ -36,10 +55,11 @@ export async function filesToAttachments(files: File[]) {
         .toBuffer();
       attachments.push({ filename: `${baseName}.jpg`, content: compressed });
     } catch {
-      // Unsupported/corrupt format (rare) - still send the original
-      // rather than dropping the photo, so the client's upload never
-      // just silently vanishes.
-      attachments.push({ filename: file.name || "photo.jpg", content: original });
+      // Image format sharp can't decode (e.g. some HEIC files) - still send
+      // the original so the client's upload never silently vanishes, but only
+      // under a known image extension.
+      const ext = (file.name.match(IMAGE_EXT)?.[0] ?? ".jpg").toLowerCase();
+      attachments.push({ filename: `${baseName}${ext}`, content: original });
     }
   }
 

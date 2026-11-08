@@ -1,4 +1,5 @@
 import { SITE_URL } from "../lib/site";
+import { jsonLd } from "../lib/jsonLd";
 
 type Img = {
   url: string;
@@ -71,9 +72,9 @@ export default function CaseStudyJsonLd({
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(data) }} />
       {imageNodes.map((node) => (
-        <script key={node["@id"]} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(node) }} />
+        <script key={node["@id"]} type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(node) }} />
       ))}
     </>
   );

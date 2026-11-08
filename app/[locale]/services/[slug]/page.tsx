@@ -30,8 +30,8 @@ export async function generateMetadata({
   if (!id) return {};
   const t = await getTranslations({ locale, namespace: `serviceDetail.${id}` });
   return {
-    title: t("h1"),
-    description: t("tagline"),
+    title: t("metaTitle"),
+    description: t("metaDescription"),
     alternates: localeAlternates(locale, (l) => ({
       pathname: "/services/[slug]",
       params: { slug: slugsForLocale(l)[id] },
