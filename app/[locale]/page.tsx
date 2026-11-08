@@ -39,7 +39,6 @@ export default async function HomePage({
   const slugs = slugsForLocale(locale);
   const serviceHref = (id: keyof typeof slugs) =>
     ({ pathname: "/services/[slug]" as const, params: { slug: slugs[id] } });
-  const whyCards = t.raw("home.whyCards") as WhyCard[];
   const steps = t.raw("services.seoSteps") as { h3: string; p: string }[];
   // newest published projects first; real case studies only
   const recentWork = publishedCaseStudies().slice(-3).reverse();
@@ -71,30 +70,18 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="trust" aria-label={t("home.whyMpaintTitle")}>
+      <section className="reviews">
         <div className="container">
-          <ul className="trust-grid">
-            {whyCards.slice(0, 2).map((card, i) => (
-              <li className="trust-item" key={i}>
-                <span className="trust-ic">
-                  <Icon id={WHY_ICONS[i]} />
-                </span>
-                <span className="trust-text">
-                  <b>{card.title}</b>
-                  <span>{card.desc}</span>
-                </span>
-              </li>
-            ))}
-            <li className="trust-item trust-item--reviews">
-              <a href={BUSINESS.googleReviewsUrl} target="_blank" rel="noopener" className="trust-link">
-                <GoogleG size={30} />
-                <span className="trust-text">
-                  <GoldStars size={17} />
-                  <b>{t("home.reviewsLinkText")}</b>
-                </span>
-              </a>
-            </li>
-          </ul>
+          <a href={BUSINESS.googleReviewsUrl} target="_blank" rel="noopener" className="reviews-link">
+            <GoogleG size={30} />
+            <span className="reviews-body">
+              <GoldStars size={16} />
+              <span className="reviews-text">{t("home.reviewsLinkText")}</span>
+            </span>
+            <svg className="reviews-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </a>
         </div>
       </section>
 
