@@ -72,15 +72,15 @@ export default async function HomePage({
 
       <section className="reviews">
         <div className="container">
-          <a href={BUSINESS.googleReviewsUrl} target="_blank" rel="noopener" className="reviews-link">
-            <GoogleG size={30} />
-            <span className="reviews-body">
-              <GoldStars size={16} />
-              <span className="reviews-text">{t("home.reviewsLinkText")}</span>
-            </span>
-            <svg className="reviews-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
-              <path d="M9 6l6 6-6 6" />
-            </svg>
+          <a
+            href={BUSINESS.googleReviewsUrl}
+            target="_blank"
+            rel="noopener"
+            className="reviews-link"
+            aria-label={t("home.reviewsLinkText")}
+          >
+            <GoogleG size={16} />
+            <GoldStars size={13.5} />
           </a>
         </div>
       </section>

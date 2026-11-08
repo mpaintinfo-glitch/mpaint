@@ -97,26 +97,18 @@ h1,h2,h3,h4,b,strong{color:var(--ink)}
 .hero-secondary{color:var(--ink);font-weight:600}
 .hero-secondary:hover{color:var(--pink-ink)}
 
-/* ---------- Google reviews link (standalone, under the hero) ----------
-   One compact clickable element: official G + five gold stars + link text.
-   Sized by its content and centered, so it can't clip or collapse at any
-   width; the text wraps inside its own column if a language runs long. */
-.reviews{padding:var(--sp-8) 0 var(--sp-48)}
+/* ---------- Google reviews mark (under the hero) ----------
+   Just the official G and five gold stars, no text, card, border or shadow.
+   Sizes follow the compact Golog.ee version: G 16px, stars 13.5px with a 2px
+   gap, 4px between the G and the stars. The padding is invisible: it only
+   enlarges the tap target. The accessible name is the aria-label. */
+.reviews{padding:var(--sp-16) 0 var(--sp-32)}
 .reviews .container{display:flex;justify-content:center}
-.reviews-link{display:inline-flex;align-items:center;gap:14px;max-width:100%;
-  padding:12px 18px 12px 16px;background:#fff;border:1px solid var(--line);border-radius:16px;
-  box-shadow:var(--shadow-sm);transition:border-color .2s,box-shadow .2s,transform .2s}
-.reviews-link:hover,.reviews-link:focus-visible{border-color:#CDD1D8;box-shadow:var(--shadow-md);transform:translateY(-1px)}
-.reviews-link>svg:first-child{flex:0 0 auto}
-.reviews-body{display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-width:0;text-align:left}
-.reviews-text{font-size:15px;font-weight:600;line-height:1.25;color:var(--ink);text-wrap:balance}
-.reviews-arrow{flex:0 0 auto;width:16px;height:16px;color:var(--low);transition:transform .2s,color .2s}
-.reviews-link:hover .reviews-arrow,.reviews-link:focus-visible .reviews-arrow{transform:translateX(2px);color:var(--pink-ink)}
+.reviews-link{display:inline-flex;align-items:center;gap:4px;padding:var(--sp-12) var(--sp-16);
+  line-height:0;transition:opacity .2s}
+.reviews-link>svg{flex:0 0 auto}
+.reviews-link:hover{opacity:.75}
 .gstars{display:inline-flex;gap:2px;line-height:0}
-@media(max-width:400px){
-  .reviews-link{gap:12px;padding:10px 14px 10px 12px}
-  .reviews-text{font-size:14px}
-}
 
 /* ---------- section bands ---------- */
 .band{background:var(--surface-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
