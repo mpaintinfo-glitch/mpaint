@@ -5,6 +5,13 @@ export const routing = defineRouting({
   defaultLocale: "et",
   localePrefix: "as-needed",
   localeDetection: false,
+  // next-intl would also emit hreflang as HTTP "Link" headers, but it can only
+  // swap the locale prefix: for pages whose slug differs per language (services,
+  // blog articles, case studies) it produced alternates that 404 (e.g. the EN
+  // slug under /teenused/), contradicting the correct <link rel="alternate">
+  // tags every page already renders from the real slug maps. One source of
+  // truth: the HTML tags.
+  alternateLinks: false,
   pathnames: {
     "/": "/",
     "/services": { et: "/teenused", ru: "/teenused", en: "/services" },
