@@ -1,5 +1,6 @@
 export { default as sfondo } from "./sfondo.webp";
 export { default as logoWhite } from "./mpain_logo_white.png";
+export { default as logoDark } from "./mpaint-logo-dark.png";
 export { default as imgPaintBooth } from "./PHOTO-2026-08-11-15-47-32.jpg";
 export { default as imgBodywork } from "./mpaint.jpg";
 export { default as dropSplash } from "./drop-splash.png";

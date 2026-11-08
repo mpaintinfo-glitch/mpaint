@@ -27,6 +27,8 @@
     "imageAlt": "MPAINT car painting workshop in Tallinn"
   },
   "home": {
+    "processTitle": "How it works",
+    "timingTitle": "Indicative timeframes",
     "whatTitle": "What we do",
     "whatSub": "Tap any service to send it straight into the quote form.",
     "paintDesc": "Full resprays and single panels in our own paint booth.",
@@ -611,6 +613,9 @@
     }
   },
   "footer": {
+    "navTitle": "Pages",
+    "contactTitle": "Contact",
+    "visitTitle": "Workshop",
     "copyright": "Mpaint ©2020-2026",
     "company": "Mpaint OÜ, Reg: 14939293"
   },

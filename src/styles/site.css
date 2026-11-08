@@ -41,88 +41,51 @@
   --space-section-sm:clamp(var(--sp-48),7vw,var(--sp-64));
   --space-stack:var(--sp-24);
 
-  /* ---- theme tokens: dark (default) ---- */
-  --bg-center:#0B0B0D;
-  --bg-edge:#242230;
-  --overlay-rgb:255,255,255;      /* base for translucent borders/tints/med/low text */
+  /* ---- theme tokens: Modern White ----
+     Token names are unchanged from the dark theme (--white is still "primary
+     text", --overlay-rgb the base for borders/tints) so every component keeps
+     working; only the values moved. The original dark design is preserved on
+     the backup/mpaint-before-modern-white branch. */
+  --bg-center:#FFFFFF;
+  --bg-edge:#F4F5F7;
+  --ink:#15171C;                  /* graphite */
+  --overlay-rgb:21,23,28;         /* base for translucent borders/tints/med/low text */
   --line:rgba(var(--overlay-rgb),.10);
-  --white:#fff;                   /* primary text */
-  --med:rgba(var(--overlay-rgb),.80);
-  --low:rgba(var(--overlay-rgb),.56);
-  --card-1:#0B0B0E;                /* svc card surface */
-  --card-2:#131318;                /* fab-item / dropdown surface */
-  --card-3:#101014;                /* lang-menu surface */
-  --media-1:#17171E;               /* svc-media placeholder gradient */
-  --media-2:#0A0A0D;
-  --media-3:#0D0D11;               /* wk ring / map pattern */
-  --fill:#fff;                     /* solid emphasis fill: buttons, selected states, hover rings */
-  --fill-text:#0A0A0C;
-  --fill-text-rgb:10,10,12;        /* same as --fill-text, as channels, for on-fill translucent tints */
-  --input-ph:#4A4A54;
-  --header-bg:rgba(26,24,36,.88);
-  --bar-bg:rgba(10,7,14,.95);
-  --drawer-bg:rgba(10,7,14,.98);
-}
-:root[data-theme="light"]{
-  --bg-center:#F7F7F8;
-  --bg-edge:#EBEBED;
-  --overlay-rgb:23,18,32;
-  --white:#171220;
-  --card-1:#fff;
-  --card-2:#fff;
-  --card-3:#fff;
-  --media-1:#F4EFF9;
-  --media-2:#ECE4F2;
-  --media-3:#EFE9F5;
-  --fill:#171220;
-  --fill-text:#fff;
-  --fill-text-rgb:255,255,255;
-  --input-ph:#B0A7BC;
-  --header-bg:rgba(255,255,255,.82);
-  --bar-bg:rgba(255,255,255,.92);
-  --drawer-bg:rgba(255,255,255,.98);
+  --white:#15171C;                /* primary text */
+  --med:rgba(var(--overlay-rgb),.78);
+  --low:rgba(var(--overlay-rgb),.62);
+  --pink-ink:#C2006E;             /* brand magenta for small text on white (AA contrast) */
+  --surface:#FFFFFF;
+  --surface-alt:#F6F7F9;          /* off-white section band */
+  --surface-silver:#ECEEF2;       /* light silver-grey section band */
+  --shadow-sm:0 1px 2px rgba(var(--overlay-rgb),.06),0 4px 14px rgba(var(--overlay-rgb),.05);
+  --shadow-md:0 2px 4px rgba(var(--overlay-rgb),.05),0 14px 34px rgba(var(--overlay-rgb),.09);
+  --card-1:#FFFFFF;                /* svc card surface */
+  --card-2:#FFFFFF;                /* fab-item / dropdown surface */
+  --card-3:#FFFFFF;                /* lang-menu surface */
+  --media-1:#F1F2F5;               /* svc-media placeholder gradient */
+  --media-2:#E9EBEF;
+  --media-3:#EEF0F3;               /* wk ring / map pattern */
+  --fill:#15171C;                  /* solid emphasis fill: selected states, hover rings */
+  --fill-text:#FFFFFF;
+  --fill-text-rgb:255,255,255;     /* same as --fill-text, as channels, for on-fill translucent tints */
+  --input-ph:#8A8F99;
+  --header-bg:rgba(255,255,255,.88);
+  --bar-bg:rgba(255,255,255,.95);
+  --drawer-bg:#FFFFFF;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:hidden;overscroll-behavior-x:none}
 /* solid fallback matching the vignette's edge tone, in case ::before is slow
    to paint -- avoids a flash of the wrong colour before it loads */
-body{background:var(--bg-edge);
+body{background:#fff;
   color:var(--white);font-family:var(--font-sans);
   font-size:var(--fs-md);font-weight:400;line-height:var(--lh-base);-webkit-font-smoothing:antialiased;overflow-x:hidden;overscroll-behavior-x:none}
-/* one continuous ambient vignette for the whole page, fixed to the viewport
-   so it never repeats/bands on tall scrollable pages -- a real fixed-position
-   layer rather than background-attachment:fixed, which mobile Safari handles
-   unreliably (jank or silently ignores it) */
+/* Modern White page ground: clean white with a barely-there silver wash at
+   the very bottom of the viewport -- no ambient lights, flares or sweeps. */
 body::before{
   content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:
-    /* Overhead softbox: strong center-top bloom, the primary studio light */
-    radial-gradient(ellipse 110% 52% at 50% -8%,
-      rgba(255,255,255,.34) 0%,
-      rgba(210,220,255,.12) 30%,
-      transparent 65%),
-    /* Anamorphic lens flare: sharp cool streak, top-right corner */
-    radial-gradient(ellipse 38% 110% at 106% -6%,
-      rgba(180,210,255,.28) 0%,
-      rgba(140,175,245,.07) 42%,
-      transparent 68%),
-    /* Bounce fill: warm violet ghost from bottom-left */
-    radial-gradient(ellipse 58% 48% at -6% 92%,
-      rgba(160,140,220,.13) 0%,
-      transparent 62%),
-    /* Chrome sweep: wide, diffused liquid-metal sheen — soft ramp in and out, bright centre */
-    linear-gradient(128deg,
-      transparent           8%,
-      rgba(255,255,255,.01)  22%,
-      rgba(255,255,255,.06)  35%,
-      rgba(255,255,255,.16)  46%,
-      rgba(255,255,255,.25)  52%,
-      rgba(255,255,255,.16)  58%,
-      rgba(255,255,255,.06)  70%,
-      rgba(255,255,255,.01)  80%,
-      transparent           92%),
-    /* Studio base – cool dark steel, a shade lighter than before */
-    #141220
+  background:linear-gradient(180deg,#FFFFFF 0%,#FFFFFF 55%,#F7F8FA 100%)
 }
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}

@@ -27,6 +27,8 @@
     "imageAlt": "MPAINT autovärvimistöökoda Tallinnas"
   },
   "home": {
+    "processTitle": "Kuidas töö käib",
+    "timingTitle": "Orienteeruvad ajad",
     "whatTitle": "Mida me teeme",
     "whatSub": "Puuduta mõnda teenust, et see kohe hinnapäringu vormi lisada.",
     "paintDesc": "Täisvärvimised ja üksikud paneelid meie enda värvikambris.",
@@ -611,6 +613,9 @@
     }
   },
   "footer": {
+    "navTitle": "Leheküljed",
+    "contactTitle": "Kontakt",
+    "visitTitle": "Töökoda",
     "copyright": "Mpaint ©2020-2026",
     "company": "Mpaint OÜ, Reg: 14939293"
   },

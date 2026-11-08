@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "../i18n/navigation";
-import { logoWhite } from "../assets";
+import { logoDark } from "../assets";
 import { useModals } from "./ModalProvider";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { publishedCaseStudies } from "../data/caseStudies";
@@ -39,7 +39,7 @@ export default function Header() {
       <div className="container nav">
         <Link href="/" className="logo" onClick={() => setNavOpen(false)}>
           <Image
-            src={logoWhite}
+            src={logoDark}
             alt="Mpaint"
             style={{
               height: "48px",

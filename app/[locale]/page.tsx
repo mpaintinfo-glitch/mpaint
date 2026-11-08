@@ -9,6 +9,9 @@ import { sfondo, imgPaintBooth, imgBodywork } from "../../src/assets";
 import Arrow from "../../src/components/Arrow";
 import Icon from "../../src/components/Icon";
 import Footer from "../../src/components/Footer";
+import CaseStudyCard from "../../src/components/CaseStudyCard";
+import { publishedCaseStudies } from "../../src/data/caseStudies";
+import { categoryLabel } from "../../src/lib/caseStudyLabels";
 import OpenQuoteButton from "../../src/components/OpenQuoteButton";
 
 type WhyCard = { title: string; desc: string };
@@ -35,6 +38,11 @@ export default async function HomePage({
   const slugs = slugsForLocale(locale);
   const serviceHref = (id: keyof typeof slugs) =>
     ({ pathname: "/services/[slug]" as const, params: { slug: slugs[id] } });
+  const whyCards = t.raw("home.whyCards") as WhyCard[];
+  const steps = t.raw("services.seoSteps") as { h3: string; p: string }[];
+  // newest published projects first; real case studies only
+  const recentWork = publishedCaseStudies().slice(-3).reverse();
+  const loc = locale as "et" | "ru" | "en";
 
   return (
     <div className="page page-home on">
@@ -79,9 +87,19 @@ export default async function HomePage({
           style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "2rem", zIndex: 10 }}
         >
           <div className="hero-btns flex gap-4" style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
-            <OpenQuoteButton className="btn btn-fill btn-lg text-[#944ba2]">
+            <OpenQuoteButton className="btn btn-fill btn-lg">
               {t("hero.ctaEstimate")}
             </OpenQuoteButton>
+            <Link href="/work" className="btn btn-line btn-lg">
+              {t("hero.ctaWork")}
+            </Link>
+          </div>
+          <div className="hero-trust">
+            <span><Icon id="i-spray" />{whyCards[0]?.title}</span>
+            <span><Icon id="i-check" />{whyCards[1]?.title}</span>
+            <a href={BUSINESS.googleReviewsUrl} target="_blank" rel="noopener">
+              <span><Icon id="i-star" />{t("home.reviewsLinkText")}</span>
+            </a>
           </div>
         </div>
       </section>
@@ -132,6 +150,62 @@ export default async function HomePage({
           </Link>
         </div>
       </section>
+
+      <section className="sec band">
+        <div className="container">
+          <div className="section-head">
+            <h2>{t("home.processTitle")}</h2>
+          </div>
+          <ol className="steps">
+            {steps.map((step, i) => (
+              <li className="step" key={i}>
+                <span className="step-n">{i + 1}</span>
+                <h3>{step.h3}</h3>
+                <p>{step.p}</p>
+              </li>
+            ))}
+          </ol>
+
+          <div className="timing">
+            <h3 className="timing-title">{t("home.timingTitle")}</h3>
+            <div className="timing-grid">
+              <div className="timing-card">
+                <b>{t("catalog.paint")}</b>
+                <p>{t("serviceDetail.paint.intro")}</p>
+              </div>
+              <div className="timing-card">
+                <b>{t("minorDamage.h1")}</b>
+                <p>{t("minorDamage.timingNote")}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="center section-cta">
+            <OpenQuoteButton className="btn btn-fill btn-lg">{t("hero.ctaEstimate")}</OpenQuoteButton>
+          </div>
+        </div>
+      </section>
+
+      {recentWork.length > 0 && (
+        <section className="sec">
+          <div className="container">
+            <div className="section-head">
+              <h2>{t("work.h1")}</h2>
+              <p className="sub">{t("work.intro")}</p>
+            </div>
+            <div className="work-grid work-grid--home">
+              {recentWork.map((cs) => (
+                <CaseStudyCard key={cs.id} caseStudy={cs} locale={loc} categoryLabel={categoryLabel(cs.category, t)} />
+              ))}
+            </div>
+            <div className="center section-cta">
+              <Link href="/work" className="btn btn-line">
+                {t("work.filterAll")}
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="sec section-compact seo-content-section seo-content-section--home">
         <div className="container seo-surface">
