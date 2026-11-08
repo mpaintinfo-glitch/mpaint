@@ -682,9 +682,8 @@
     "notesPh": "e.g., specific paint color codes, specific restoration desires, insurance company info, etc.",
     "disclaimer": "We reply as soon as possible, on working days.",
     "close": "Close",
-    "successTitle": "Thank you!",
-    "successDesc": "Your request has been received. We'll get back to you as soon as possible, on working days.",
-    "done": "Done"
+    "successTitle": "Request sent!",
+    "successDesc": "Thank you! We'll review your request and contact you shortly."
   },
   "aria": {
     "openMenu": "Open menu"

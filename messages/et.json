@@ -682,9 +682,8 @@
     "notesPh": "nt värvi koodid, konkreetsed restaureerimissoovid, kindlustusseltsi info jne.",
     "disclaimer": "Vastame niipea kui võimalik, tööpäevadel.",
     "close": "Sulge",
-    "successTitle": "Aitäh!",
-    "successDesc": "Sinu päring on vastu võetud. Võtame sinuga ühendust niipea kui võimalik, tööpäevadel.",
-    "done": "Valmis"
+    "successTitle": "Päring saadetud!",
+    "successDesc": "Aitäh! Vaatame Teie päringu üle ja võtame Teiega peagi ühendust."
   },
   "aria": {
     "openMenu": "Ava menüü"

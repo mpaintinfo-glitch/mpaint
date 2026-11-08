@@ -10,6 +10,10 @@ import "./quote-funnel.css";
 
 const SERVICE_IDS: Exclude<ServiceId, never>[] = ["paint", "body", "dent", "rust", "polish", "parts"];
 
+// How long the confirmation stays on screen in total, and how much of that is the fade-out.
+const SUCCESS_VISIBLE_MS = 7000;
+const SUCCESS_FADE_MS = 400;
+
 export default function QuoteFunnel({
   open,
   onClose,
@@ -33,6 +37,9 @@ export default function QuoteFunnel({
   const [email, setEmail] = useState("");
   const [notes, setNotes] = useState("");
   const [sent, setSent] = useState(false);
+  // Set at the start of the fade and deliberately kept until unmount: dropping it when the
+  // dialog closes would flash the card back to full opacity before Radix's exit animation.
+  const [fading, setFading] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState(false);
   const [photos, setPhotos] = useState<{ file: File; url: string }[]>([]);
@@ -86,6 +93,42 @@ export default function QuoteFunnel({
     return () => clearTimeout(timer);
   }, [open]);
 
+  // Keep the latest onClose in a ref so a parent re-render never restarts the timers.
+  const onCloseRef = useRef(onClose);
+  useEffect(() => {
+    onCloseRef.current = onClose;
+  }, [onClose]);
+
+  // After a confirmed submission the confirmation dismisses itself: 7s on screen in
+  // total, fading out over the last 400ms (no fade under prefers-reduced-motion).
+  // Both timers belong to this open dialog: closing early (Escape, outside click)
+  // or unmounting runs the cleanup and cancels them. A form opened later is a
+  // fresh instance (ModalProvider re-keys it on every open), so an old timer can
+  // never close a new form.
+  useEffect(() => {
+    if (!sent || !open) return;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const fadeTimer = reduceMotion ? undefined : setTimeout(() => setFading(true), SUCCESS_VISIBLE_MS - SUCCESS_FADE_MS);
+    const closeTimer = setTimeout(() => onCloseRef.current(), SUCCESS_VISIBLE_MS);
+    return () => {
+      if (fadeTimer) clearTimeout(fadeTimer);
+      clearTimeout(closeTimer);
+    };
+  }, [sent, open]);
+
+  // Called only after the server has confirmed the submission.
+  const resetForm = () => {
+    photos.forEach((p) => URL.revokeObjectURL(p.url));
+    setPhotos([]);
+    setServices(new Set());
+    setCarInfo("");
+    setName("");
+    setPhone("");
+    setEmail("");
+    setNotes("");
+    setStep(0);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
@@ -104,6 +147,7 @@ export default function QuoteFunnel({
     try {
       const res = await fetch("/api/quote", { method: "POST", body: formData });
       if (!res.ok) throw new Error("request failed");
+      resetForm();
       setSent(true);
     } catch {
       setSubmitError(true);
@@ -115,10 +159,10 @@ export default function QuoteFunnel({
   return (
     <Dialog.Root open={open} onOpenChange={handleOpenChange}>
       <Dialog.Portal>
-        <Dialog.Overlay className="qf-overlay" />
-        <Dialog.Content className="qf-root qf-content" aria-describedby={undefined}>
+        <Dialog.Overlay className={`qf-overlay${fading ? " qf-fading" : ""}`} />
+        <Dialog.Content className={`qf-root qf-content${fading ? " qf-fading" : ""}`} aria-describedby={undefined}>
           <Dialog.Title style={{ position: "absolute", width: 1, height: 1, overflow: "hidden", clip: "rect(0,0,0,0)" }}>
-            {step === 0 ? t("step1Title") : t("step2Title")}
+            {sent ? t("successTitle") : step === 0 ? t("step1Title") : t("step2Title")}
           </Dialog.Title>
 
           <div className="qf-scroll">
@@ -140,7 +184,7 @@ export default function QuoteFunnel({
 
             <div className="qf-body">
               {sent ? (
-                <div className="qf-success">
+                <div className="qf-success" role="status">
                   <div className="qf-success-icon">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5 13l4 4L19 7" />
@@ -148,7 +192,6 @@ export default function QuoteFunnel({
                   </div>
                   <h3>{t("successTitle")}</h3>
                   <p>{t("successDesc")}</p>
-                  <button className="qf-btn qf-btn-primary" onClick={onClose} type="button">{t("done")}</button>
                 </div>
               ) : step === 0 ? (
                 <div key="step0" className={`qf-step qf-step-${dir}`}>

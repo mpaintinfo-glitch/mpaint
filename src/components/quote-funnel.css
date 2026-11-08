@@ -224,7 +224,7 @@
 .qf-btn-secondary:hover { border-color: var(--qf-text-soft); }
 
 /* ── Success state ── */
-.qf-success { text-align: center; padding: 1rem 0 .5rem; }
+.qf-success { text-align: center; padding: 1.5rem 0 1rem; }
 .qf-success-icon {
   width: 56px; height: 56px; border-radius: 50%; background: var(--qf-accent);
   display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;
@@ -232,7 +232,15 @@
 .qf-success-icon svg { width: 24px; height: 24px; }
 .qf-success h3 { font-size: 22px; font-weight: 800; color: var(--qf-text); margin: 0 0 .6rem; }
 .qf-success p { font-size: 14.5px; color: var(--qf-text-soft); font-weight: 500; line-height: 1.6; max-width: 34ch; margin: 0 auto; }
-.qf-success .qf-btn { margin-top: 1.75rem; max-width: 220px; margin-inline: auto; }
+
+/* Auto-dismiss: the whole dialog (card + backdrop) fades out over 400ms before it closes.
+   The component skips this class entirely under prefers-reduced-motion. */
+.qf-content.qf-fading,
+.qf-overlay.qf-fading { opacity: 0; transition: opacity 400ms ease; }
+/* Once the fade has taken the dialog to 0, skip Radix's own exit animation: its keyframes
+   start at opacity 1 and would flash the card back before closing. */
+.qf-content.qf-fading[data-state="closed"],
+.qf-overlay.qf-fading[data-state="closed"] { animation: none; opacity: 0; }
 
 /* ══════════════════ MOBILE: full-screen dedicated takeover ══════════════════ */
 @media (max-width: 760px) {
