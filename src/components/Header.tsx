@@ -41,6 +41,8 @@ export default function Header() {
           <Image
             src={logoDark}
             alt="Mpaint"
+            sizes="160px"
+            priority
             style={{
               height: "48px",
               width: "auto",
@@ -77,9 +79,9 @@ export default function Header() {
         <div className="nav-right">
           <LanguageSwitcher />
 
-          <a className="btn btn-fill btn-sm" onClick={() => { openQuote(); setNavOpen(false); }} style={{ cursor: "pointer" }}>
+          <button type="button" className="btn btn-fill btn-sm" onClick={() => { openQuote(); setNavOpen(false); }}>
             {t("nav.bookNow")}
-          </a>
+          </button>
         </div>
       </div>
     </header>

@@ -127,7 +127,7 @@ export default async function WorkDetailPage({
         className="sec svc-page-sec"
         style={{ minHeight: "calc(35svh - var(--nav-h))", display: "flex", flexDirection: "column", justifyContent: "center" }}
       >
-        <Image src={dropBanner} alt="" aria-hidden="true" className="page-top-drip" />
+        <Image src={dropBanner} alt="" aria-hidden="true" className="page-top-drip" loading="eager" sizes="(max-width: 768px) 36vw, 480px" />
         <div className="container" style={{ maxWidth: 760 }}>
           <Link href="/work" className="link svc-page-back">
             {t("work.backToGallery")}
@@ -156,6 +156,7 @@ export default async function WorkDetailPage({
             beforeLabel={BEFORE_LABEL[locale]}
             afterLabel={AFTER_LABEL[locale]}
             sizes="(max-width: 800px) 100vw, 760px"
+            priority
           />
 
           <div className="article-section">

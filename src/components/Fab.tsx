@@ -22,14 +22,14 @@ export default function Fab() {
           <span className="fi"><Icon id="i-wa" /></span>
           <b>{t("whatsapp")}</b>
         </a>
-        <a className="fab-item" onClick={() => { openEmail(); setOpen(false); }} style={{ cursor: "pointer" }}>
+        <button type="button" className="fab-item" onClick={() => { openEmail(); setOpen(false); }}>
           <span className="fi"><Icon id="i-mail" /></span>
           <b>{t("email")}</b>
-        </a>
-        <a className="fab-item" onClick={() => { openQuote(); setOpen(false); }} style={{ cursor: "pointer" }}>
+        </button>
+        <button type="button" className="fab-item" onClick={() => { openQuote(); setOpen(false); }}>
           <span className="fi"><Icon id="i-doc" /></span>
           <b>{t("estimate")}</b>
-        </a>
+        </button>
       </div>
       <button className="fab" aria-label={t("ariaContact")} onClick={() => setOpen((o) => !o)}>
         <svg className="ic-phone"><use href="#i-phone" /></svg>

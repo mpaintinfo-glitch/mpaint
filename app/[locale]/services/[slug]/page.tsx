@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "../../../../src/i18n/routing";
 import { Link, getPathname } from "../../../../src/i18n/navigation";
 import { SERVICE_PHOTO, RELATED_SERVICES, getServiceBySlug, slugsForLocale } from "../../../../src/data/services";
+import { publishedCaseStudies, categoryToServiceId } from "../../../../src/data/caseStudies";
 import { SERVICE_RELATED_ARTICLES, articleSlugsForLocale, getArticleContent } from "../../../../src/data/blog";
 import { dropBanner } from "../../../../src/assets";
 import { localeAlternates } from "../../../../src/lib/alternates";
@@ -66,6 +67,8 @@ export default async function ServiceDetailPage({
   const svcT = await getTranslations(`serviceDetail.${id}`);
   const detail = t.raw(`serviceDetail.${id}`) as ServiceDetailContent;
   const { h1, tagline, bullets, intro, process, techNotes, pricingNote, warningNote, secondarySection, faq } = detail;
+  // real completed projects for this service (paint also covers the bumper / minor-damage ones)
+  const hasCompletedWork = publishedCaseStudies().some((cs) => categoryToServiceId(cs.category) === id);
   const related = RELATED_SERVICES[id];
   const slugs = slugsForLocale(locale);
   const relatedArticles = SERVICE_RELATED_ARTICLES[id];
@@ -95,7 +98,7 @@ export default async function ServiceDetailPage({
         className="sec svc-page-sec"
         style={{ minHeight: "calc(100svh - var(--nav-h))", display: "flex", flexDirection: "column", justifyContent: "center" }}
       >
-        <Image src={dropBanner} alt="" aria-hidden="true" className="page-top-drip" />
+        <Image src={dropBanner} alt="" aria-hidden="true" className="page-top-drip" loading="eager" sizes="(max-width: 768px) 36vw, 480px" />
         <div className="container" style={{ maxWidth: 900 }}>
           <Link href="/services" className="link svc-page-back">
             {t("services.backToServices")}
@@ -103,7 +106,7 @@ export default async function ServiceDetailPage({
           <div className="svc-page-layout">
             <h1 className="svc-page-title">{h1}</h1>
             <div className="svc-page-photo">
-              <Image src={SERVICE_PHOTO[id]} alt={h1} />
+              <Image src={SERVICE_PHOTO[id]} alt={h1} priority />
             </div>
             <div className="svc-page-desc">
               <p className="sub">{tagline}</p>
@@ -135,7 +138,7 @@ export default async function ServiceDetailPage({
 
             {bullets.length > 0 && (
               <div className="svc-group">
-                {bulletsHeading && <h4 className="svc-group-label">{bulletsHeading}</h4>}
+                {bulletsHeading && <h2 className="svc-group-label">{bulletsHeading}</h2>}
                 <ul className="svc-chip-list">
                   {bullets.map((b, i) => (
                     <li className="svc-chip" key={i}>
@@ -149,7 +152,7 @@ export default async function ServiceDetailPage({
 
             {techNotes && techNotes.length > 0 && (
               <div className="svc-group">
-                {techNotesHeading && <h4 className="svc-group-label">{techNotesHeading}</h4>}
+                {techNotesHeading && <h2 className="svc-group-label">{techNotesHeading}</h2>}
                 <ul className="svc-chip-list">
                   {techNotes.map((b, i) => (
                     <li className="svc-chip" key={i}>
@@ -163,7 +166,7 @@ export default async function ServiceDetailPage({
 
             {warningNote && (
               <div className="svc-group">
-                {warningHeading && <h4 className="svc-group-label">{warningHeading}</h4>}
+                {warningHeading && <h2 className="svc-group-label">{warningHeading}</h2>}
                 <div className="svc-warning-note">
                   <Icon id="i-shield" />
                   <p>{warningNote}</p>
@@ -232,6 +235,11 @@ export default async function ServiceDetailPage({
                   <Link href="/pricing" className="link">
                     {t("nav.pricing")}
                   </Link>
+                  {hasCompletedWork && (
+                    <Link href="/work" className="link">
+                      {t("nav.booking")}
+                    </Link>
+                  )}
                 </div>
               </div>
             )}

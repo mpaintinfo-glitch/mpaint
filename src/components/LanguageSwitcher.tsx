@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLocale } from "next-intl";
-import { useParams } from "next/navigation";
+import { useParams, useRouter as useNextRouter } from "next/navigation";
 import { usePathname, useRouter } from "../i18n/navigation";
 import type { Locale } from "../i18n/routing";
 import { getServiceBySlug, slugsForLocale } from "../data/services";
@@ -19,6 +19,7 @@ export default function LanguageSwitcher() {
   const locale = useLocale() as Locale;
   const pathname = usePathname();
   const router = useRouter();
+  const nextRouter = useNextRouter();
   const routeParams = useParams();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -35,6 +36,22 @@ export default function LanguageSwitcher() {
 
   const switchTo = (code: Locale) => {
     setOpen(false);
+
+    // Every page already publishes the exact URL of itself in each language
+    // (<link rel="alternate" hreflang>, built from the same slug maps as the
+    // canonical URLs). Following that handles every dynamic route - services,
+    // blog articles, case studies - without duplicating their slug tables here.
+    // Only the path is used so it also works on localhost / preview deployments.
+    const alt = document.head.querySelector<HTMLLinkElement>(`link[rel="alternate"][hreflang="${code}"]`);
+    if (alt) {
+      try {
+        const url = new URL(alt.href);
+        nextRouter.replace(url.pathname + url.search);
+        return;
+      } catch {
+        // fall through to the route-based logic below
+      }
+    }
 
     // Service detail pages have a locale-specific slug value (not just a
     // translated static segment), so the slug itself has to be remapped

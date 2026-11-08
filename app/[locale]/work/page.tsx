@@ -65,7 +65,7 @@ export default async function WorkIndexPage({
         className="sec svc-page-sec"
         style={{ minHeight: "calc(45svh - var(--nav-h))", display: "flex", flexDirection: "column", justifyContent: "center" }}
       >
-        <Image src={dropBanner} alt="" aria-hidden="true" className="page-top-drip" />
+        <Image src={dropBanner} alt="" aria-hidden="true" className="page-top-drip" loading="eager" sizes="(max-width: 768px) 36vw, 480px" />
         <div className="container center" style={{ maxWidth: 760 }}>
           <h1>{t("work.h1")}</h1>
           <p className="sub">{t("work.intro")}</p>

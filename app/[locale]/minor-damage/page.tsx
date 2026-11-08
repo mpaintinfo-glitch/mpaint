@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link, getPathname } from "../../../src/i18n/navigation";
 import { slugsForLocale } from "../../../src/data/services";
+import { caseStudiesByCategory } from "../../../src/data/caseStudies";
 import { articleSlugsForLocale, getArticleContent } from "../../../src/data/blog";
 import { localeAlternates } from "../../../src/lib/alternates";
 import { SITE_URL } from "../../../src/lib/site";
@@ -55,12 +56,12 @@ export default async function MinorDamagePage({
         className="sec svc-page-sec"
         style={{ minHeight: "calc(100svh - var(--nav-h))", display: "flex", flexDirection: "column", justifyContent: "center" }}
       >
-        <Image src={dropBanner} alt="" aria-hidden="true" className="page-top-drip" />
+        <Image src={dropBanner} alt="" aria-hidden="true" className="page-top-drip" loading="eager" sizes="(max-width: 768px) 36vw, 480px" />
         <div className="container" style={{ maxWidth: 900 }}>
           <div className="svc-page-layout">
             <h1 className="svc-page-title">{t("minorDamage.h1")}</h1>
             <div className="svc-page-photo">
-              <Image src={photoPaint} alt={t("minorDamage.h1")} />
+              <Image src={photoPaint} alt={t("minorDamage.h1")} priority />
             </div>
             <div className="svc-page-desc">
               <p className="sub">{t("minorDamage.tagline")}</p>
@@ -78,7 +79,7 @@ export default async function MinorDamagePage({
       <section className="sec svc-detail-sec">
         <div className="container" style={{ maxWidth: 720 }}>
           <div className="svc-group">
-            <h4 className="svc-group-label">{t("minorDamage.bulletsHeading")}</h4>
+            <h2 className="svc-group-label">{t("minorDamage.bulletsHeading")}</h2>
             <ul className="svc-chip-list">
               {bullets.map((b, i) => (
                 <li className="svc-chip" key={i}>
@@ -135,6 +136,11 @@ export default async function MinorDamagePage({
               <Link href={{ pathname: "/services/[slug]", params: { slug: serviceSlugs.polish } }} className="link">
                 {t("catalog.polish")}
               </Link>
+              {caseStudiesByCategory("minorDamage").length > 0 && (
+                <Link href="/work" className="link">
+                  {t("nav.booking")}
+                </Link>
+              )}
             </div>
           </div>
 

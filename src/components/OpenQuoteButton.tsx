@@ -15,8 +15,8 @@ export default function OpenQuoteButton({
 }) {
   const { openQuote } = useModals();
   return (
-    <a className={className} onClick={() => openQuote(service)} style={{ cursor: "pointer" }}>
+    <button type="button" className={className} onClick={() => openQuote(service)}>
       {children}
-    </a>
+    </button>
   );
 }

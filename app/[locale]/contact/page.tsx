@@ -30,7 +30,7 @@ export default async function ContactPage({
   return (
     <div className="page on">
       <section className="sec contact-main-sec" style={{ minHeight: "calc(100svh - var(--nav-h))" }}>
-        <Image src={dropBanner} alt="" aria-hidden="true" className="page-top-drip" />
+        <Image src={dropBanner} alt="" aria-hidden="true" className="page-top-drip" loading="eager" sizes="(max-width: 768px) 36vw, 480px" />
         <div className="container center">
           <h1>{t("contact.h1")}</h1>
         </div>

@@ -88,7 +88,7 @@ export default async function BlogArticlePage({
         className="sec svc-page-sec"
         style={{ minHeight: "calc(45svh - var(--nav-h))", display: "flex", flexDirection: "column", justifyContent: "center" }}
       >
-        <Image src={dropBanner} alt="" aria-hidden="true" className="page-top-drip" />
+        <Image src={dropBanner} alt="" aria-hidden="true" className="page-top-drip" loading="eager" sizes="(max-width: 768px) 36vw, 480px" />
         <div className="container" style={{ maxWidth: 760 }}>
           <Link href="/blog" className="link svc-page-back">
             {t("blog.backToBlog")}

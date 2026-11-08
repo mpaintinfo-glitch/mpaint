@@ -12,6 +12,9 @@ export async function GET() {
     return `- [${catalog(id)}](${SITE_URL}${getPathname({ href, locale: "en" })})`;
   }).join("\n");
 
+  const page = (href: "/bumper-painting" | "/minor-damage" | "/pricing" | "/accident" | "/work" | "/blog" | "/about") =>
+    `${SITE_URL}${getPathname({ href, locale: "en" })}`;
+
   const etServicesPath = getPathname({ href: "/services", locale: "et" });
   const etContactPath = getPathname({ href: "/contact", locale: "et" });
 
@@ -29,6 +32,12 @@ ${serviceLines}
 
 - [Home](${SITE_URL}/en): overview of the workshop and services
 - [All services](${SITE_URL}/en/services): full service list with an FAQ
+- [Bumper painting](${page("/bumper-painting")}) and [stone chip and minor paint damage repair](${page("/minor-damage")})
+- [Pricing](${page("/pricing")}): confirmed starting prices only
+- [Accident repair](${page("/accident")}): how to request a quote after a collision
+- [Our work](${page("/work")}): real before-and-after projects
+- [Blog](${page("/blog")}): guides on painting, scratches, bumpers and rust
+- [About the workshop](${page("/about")})
 - [Contact](${SITE_URL}/en/contact): phone, WhatsApp, email, address, opening hours
 
 Estonian is the default locale and lives at the root without a prefix, but

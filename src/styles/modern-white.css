@@ -16,7 +16,7 @@
 
 /* ---------- typography ---------- */
 h1,h2,h3,h4,b,strong{color:var(--ink)}
-.eyebrow,.svc-group-label,.f-col h4,.timing-title,.ca small{font-weight:700}
+.eyebrow,.svc-group-label,.f-col .f-title,.timing-title,.ca small{font-weight:700}
 .eyebrow,.badge{color:var(--low)}
 .sub,
 .seo-block p,.seo-block ul,
@@ -194,7 +194,7 @@ footer{background:var(--surface-alt);border-top:1px solid var(--line);margin-top
   padding:var(--sp-64) var(--sp-24) var(--sp-48)}
 .f-brand img{height:40px;width:auto;margin-bottom:var(--sp-16)}
 .f-brand p{color:var(--med);font-size:14px;line-height:1.6;max-width:30ch}
-.f-col h4{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+.f-col .f-title{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
   color:var(--low);margin:0 0 var(--sp-16)}
 .f-col ul{list-style:none;display:flex;flex-direction:column;gap:var(--sp-12);font-size:14.5px}
 .f-col a{color:var(--ink);transition:color .2s}
@@ -251,3 +251,12 @@ footer{background:var(--surface-alt);border-top:1px solid var(--line);margin-top
      body copy -- keep it smaller and lighter where it sits behind text */
   .page-top-drip{width:36vw;max-width:210px;opacity:.55;left:-4%}
 }
+
+/* Quote/email openers are real <button>s now (focusable, announced as buttons).
+   These resets keep them looking exactly like the anchors they replaced. */
+button{cursor:pointer}
+.fab-item,.ca{color:inherit;font:inherit;text-align:left;cursor:pointer}
+.ca{width:100%}
+
+/* label headings are <h2> now (heading order); keep the old h4 line height */
+.svc-group-label{line-height:var(--lh-base)}

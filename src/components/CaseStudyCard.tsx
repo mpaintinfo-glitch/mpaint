@@ -11,11 +11,15 @@ export default function CaseStudyCard({
   caseStudy,
   locale,
   categoryLabel,
+  headingLevel = "h3",
 }: {
   caseStudy: CaseStudy;
   locale: Locale;
   categoryLabel: string;
+  /** h2 on the gallery (directly under the page h1), h3 where a section heading already sits above (home). */
+  headingLevel?: "h2" | "h3";
 }) {
+  const Heading = headingLevel;
   const slug = caseStudySlug(caseStudy, locale);
 
   return (
@@ -32,7 +36,7 @@ export default function CaseStudyCard({
       />
       <div className="work-card-body">
         <span className="work-card-category">{categoryLabel}</span>
-        <h3>{caseStudy.title[locale]}</h3>
+        <Heading>{caseStudy.title[locale]}</Heading>
         <p>{caseStudy.description[locale]}</p>
       </div>
     </Link>

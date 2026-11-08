@@ -3,7 +3,6 @@ import { useTranslations } from "next-intl";
 import { Link } from "../i18n/navigation";
 import { BUSINESS } from "../lib/site";
 import { logoDark } from "../assets";
-import Icon from "./Icon";
 
 // Every fact here comes from BUSINESS (site.ts) or the existing contact/nav
 // messages -- nothing is invented for the footer.
@@ -15,14 +14,14 @@ export default function Footer({ hasSplash }: { hasSplash: boolean }) {
     <footer className={hasSplash ? "footer-has-splash" : ""}>
       <div className="container f-main">
         <div className="f-brand">
-          <Image src={logoDark} alt="Mpaint" />
+          <Image src={logoDark} alt="Mpaint" sizes="120px" />
           <p>
             {t("hero.leadPre")} {t("hero.leadCity")}
           </p>
         </div>
 
         <nav className="f-col" aria-label={t("footer.navTitle")}>
-          <h4>{t("footer.navTitle")}</h4>
+          <p className="f-title">{t("footer.navTitle")}</p>
           <ul>
             <li><Link href="/services">{t("nav.services")}</Link></li>
             <li><Link href="/work">{t("nav.booking")}</Link></li>
@@ -34,7 +33,7 @@ export default function Footer({ hasSplash }: { hasSplash: boolean }) {
         </nav>
 
         <div className="f-col">
-          <h4>{t("footer.contactTitle")}</h4>
+          <p className="f-title">{t("footer.contactTitle")}</p>
           <ul>
             <li><a href={BUSINESS.phoneHref}><b>{BUSINESS.phone}</b></a></li>
             <li><a href={BUSINESS.whatsappHref} target="_blank" rel="noopener">WhatsApp</a></li>
@@ -43,7 +42,7 @@ export default function Footer({ hasSplash }: { hasSplash: boolean }) {
         </div>
 
         <div className="f-col">
-          <h4>{t("footer.visitTitle")}</h4>
+          <p className="f-title">{t("footer.visitTitle")}</p>
           <ul>
             <li>
               <span>

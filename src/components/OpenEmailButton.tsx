@@ -12,8 +12,8 @@ export default function OpenEmailButton({
 }) {
   const { openEmail } = useModals();
   return (
-    <a className={className} onClick={() => openEmail()} style={{ cursor: "pointer" }}>
+    <button type="button" className={className} onClick={() => openEmail()}>
       {children}
-    </a>
+    </button>
   );
 }

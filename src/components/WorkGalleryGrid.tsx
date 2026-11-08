@@ -48,7 +48,7 @@ export default function WorkGalleryGrid({
 
       <div className="work-grid">
         {visible.map((cs) => (
-          <CaseStudyCard key={cs.id} caseStudy={cs} locale={locale} categoryLabel={categoryLabels[cs.category]} />
+          <CaseStudyCard headingLevel="h2" key={cs.id} caseStudy={cs} locale={locale} categoryLabel={categoryLabels[cs.category]} />
         ))}
       </div>
     </>

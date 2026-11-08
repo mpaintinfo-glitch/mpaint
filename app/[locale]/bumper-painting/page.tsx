@@ -55,12 +55,12 @@ export default async function BumperPaintingPage({
         className="sec svc-page-sec"
         style={{ minHeight: "calc(100svh - var(--nav-h))", display: "flex", flexDirection: "column", justifyContent: "center" }}
       >
-        <Image src={dropBanner} alt="" aria-hidden="true" className="page-top-drip" />
+        <Image src={dropBanner} alt="" aria-hidden="true" className="page-top-drip" loading="eager" sizes="(max-width: 768px) 36vw, 480px" />
         <div className="container" style={{ maxWidth: 900 }}>
           <div className="svc-page-layout">
             <h1 className="svc-page-title">{t("bumperPainting.h1")}</h1>
             <div className="svc-page-photo">
-              <Image src={photoPaint} alt={t("bumperPainting.h1")} />
+              <Image src={photoPaint} alt={t("bumperPainting.h1")} priority />
             </div>
             <div className="svc-page-desc">
               <p className="sub">{t("bumperPainting.tagline")}</p>
@@ -78,7 +78,7 @@ export default async function BumperPaintingPage({
       <section className="sec svc-detail-sec">
         <div className="container" style={{ maxWidth: 720 }}>
           <div className="svc-group">
-            <h4 className="svc-group-label">{t("bumperPainting.bulletsHeading")}</h4>
+            <h2 className="svc-group-label">{t("bumperPainting.bulletsHeading")}</h2>
             <ul className="svc-chip-list">
               {bullets.map((b, i) => (
                 <li className="svc-chip" key={i}>

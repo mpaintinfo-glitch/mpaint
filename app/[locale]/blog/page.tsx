@@ -41,7 +41,7 @@ export default async function BlogIndexPage({
         className="sec svc-page-sec"
         style={{ minHeight: "calc(45svh - var(--nav-h))", display: "flex", flexDirection: "column", justifyContent: "center" }}
       >
-        <Image src={dropBanner} alt="" aria-hidden="true" className="page-top-drip" />
+        <Image src={dropBanner} alt="" aria-hidden="true" className="page-top-drip" loading="eager" sizes="(max-width: 768px) 36vw, 480px" />
         <div className="container center" style={{ maxWidth: 760 }}>
           <h1>{t("blog.h1")}</h1>
           <p className="sub">{t("blog.intro")}</p>
@@ -59,7 +59,7 @@ export default async function BlogIndexPage({
                   href={{ pathname: "/blog/[slug]", params: { slug: slugs[id] } }}
                   className="blog-card"
                 >
-                  <h3>{content.title}</h3>
+                  <h2>{content.title}</h2>
                   <p>{content.excerpt}</p>
                   <span className="link">{t("blog.readMore")}</span>
                 </Link>

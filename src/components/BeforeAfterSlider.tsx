@@ -20,6 +20,8 @@ type Props = {
   interactive?: boolean;
   className?: string;
   sizes?: string;
+  /** Load both photos eagerly (set on the case-study page, where the slider is the first thing visible). */
+  priority?: boolean;
 };
 
 // Single accessible comparison slider: one frame, two images, a draggable
@@ -49,18 +51,19 @@ export default function BeforeAfterSlider({
   interactive = true,
   className,
   sizes = "(max-width: 640px) 100vw, 50vw",
+  priority = false,
 }: Props) {
   const [position, setPosition] = useState(initialPosition);
 
   return (
     <div className={`ba-slider${interactive ? "" : " ba-slider--static"}${className ? ` ${className}` : ""}`}>
       <div className="ba-layer">
-        <Image src={after} alt={afterAlt} fill sizes={sizes} style={{ objectFit: "cover" }} />
+        <Image src={after} alt={afterAlt} fill sizes={sizes} priority={priority} style={{ objectFit: "cover" }} />
       </div>
 
       <div className="ba-before-wrap" style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}>
         <div className="ba-layer">
-          <Image src={before} alt={beforeAlt} fill sizes={sizes} style={{ objectFit: "cover" }} />
+          <Image src={before} alt={beforeAlt} fill sizes={sizes} priority={priority} style={{ objectFit: "cover" }} />
         </div>
       </div>
 
