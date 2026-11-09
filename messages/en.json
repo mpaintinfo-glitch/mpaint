@@ -11,7 +11,7 @@
   },
   "catalog": {
     "paint": "Car painting",
-    "body": "Welding & bodywork",
+    "body": "Bodywork and welding",
     "dent": "Dent removal",
     "rust": "Rust removal",
     "polish": "Polishing",
@@ -34,7 +34,7 @@
     "whatTitle": "What we do",
     "whatSub": "Tap any service to send it straight into the quote form.",
     "paintDesc": "Full resprays and single panels in our own paint booth.",
-    "bodyDesc": "Sheet metal repair and structural bodywork for all vehicles.",
+    "bodyDesc": "Sheet-metal work, welding, and repair of damaged body panels.",
     "pick": "Get an estimate",
     "seeAll": "See all services",
     "seoTitle": "Car painting and bodywork in Tallinn",
@@ -84,7 +84,7 @@
   "services": {
     "h1": "Car painting and bodywork services in Tallinn",
     "paintDesc": "Full resprays and single panels in our own filtered paint booth.",
-    "bodyDesc": "Sheet metal repair and structural bodywork for all vehicle types.",
+    "bodyDesc": "Sheet-metal work, welding, and repair of damaged body panels.",
     "pick": "Get an estimate",
     "cta": "Get an estimate",
     "callUs": "Or call us: +372 58-100-810",
@@ -202,22 +202,17 @@
       ]
     },
     "body": {
-      "h1": "Welding & bodywork",
-      "metaTitle": "Welding & bodywork in Tallinn",
-      "metaDescription": "Welding and bodywork in Tallinn: structural repair and sheet-metal work for any make or model. Send photos for an estimate.",
-      "tagline": "Structural repair and sheet-metal work for any make or model.",
-      "intro": "Cosmetic damage doesn't need special equipment. Structural damage, such as through-corrosion, needs either a part replacement or welding in a repair panel.",
+      "h1": "Bodywork and welding",
+      "metaTitle": "Bodywork and welding in Tallinn",
+      "metaDescription": "Bodywork and welding in Tallinn: we repair dent and body-panel damage and carry out the welding and sheet-metal work needed. Send photos for an estimate.",
+      "tagline": "We repair dent and body-panel damage and carry out the welding and sheet-metal work needed.",
+      "intro": "We carry out bodywork, dent repair, welding work, and the repair or replacement of damaged body panels, within the workshop's capabilities. The scope of work depends on the nature and extent of the damage.",
       "bullets": [
-        "Sheet-metal & structural repair",
-        "Damaged panel replacement",
-        "Quality materials, modern equipment",
-        "Long-lasting repairs, not quick patches"
+        "Dent and body-panel damage repair",
+        "Welding and sheet-metal work as needed",
+        "Replacement of damaged panels when repair isn't practical"
       ],
-      "techNotes": [
-        "If the metal's too thin for the spotter, we use either chemical thinning or tin thinning, choosing the technique based on the situation.",
-        "We also restore plastic body parts with structural epoxy paint and fit panels to match the gaps."
-      ],
-      "warningNote": "We don't do frame pulling on a bench, full sill replacement, or take on oversized vehicles.",
+      "warningNote": "We don't take on oversized vehicles.",
       "faq": [
         {
           "q": "What bodywork do you do?",
@@ -257,10 +252,10 @@
       ]
     },
     "rust": {
-      "h1": "Rust removal and protection",
-      "metaTitle": "Rust removal and protection in Tallinn",
-      "metaDescription": "Rust removal and protection in Tallinn: we clean, treat and protect before corrosion spreads. From 50€, depending on the extent of the damage.",
-      "tagline": "Stop corrosion before it spreads. We clean, treat, and protect.",
+      "h1": "Rust damage repair",
+      "metaTitle": "Rust damage repair in Tallinn",
+      "metaDescription": "Rust damage repair in Tallinn: we repair rust damage to the car body. The right solution depends on the extent of the rust and the condition of the metal. From 50€.",
+      "tagline": "We repair rust damage to the car body. The right solution depends on the extent of the rust and the condition of the metal.",
       "intro": "Damaged metal is cleaned, treated with acid to remove invisible corrosion, and protected with multiple layers of primer before painting.",
       "process": [
         "Cleaning the damaged area before pressure washing",
@@ -432,9 +427,8 @@
       }
     ],
     "safetyNote": "If the steering feels harder to turn after an accident, the car pulls to one side while driving, you hear an unusual sound when braking, or a body or plastic part is loose, the car should not be driven any further.",
-    "towingHeading": "How to get your car to the workshop if it is not drivable",
-    "towingText": "If it is not safe to drive the car, it can be brought to our workshop by a suitable recovery or towing service. Mpaint does not provide towing itself, but we will give you clear directions and the workshop address, and agree on a time for the car to arrive.",
-    "towingCta": "Car not drivable? Get in touch with us and arrange to bring it to the workshop.",
+    "towingHeading": "Car not drivable after an accident?",
+    "towingText": "If your car cannot be driven safely after an accident, it can be transported directly to the Mpaint workshop by a recovery provider. Please contact us before arranging delivery so we can coordinate receiving the vehicle.",
     "cta": "Get an estimate",
     "faqTitle": "Common questions",
     "faq": [
@@ -454,7 +448,8 @@
         "q": "How long does post-accident repair take?",
         "a": "A typical post-accident repair takes roughly 3-4 working days, depending on the extent of the damage. This is an indicative timeframe, not a guarantee. Longer jobs, hidden damage, and parts delivery times can affect the schedule. We give an exact timeframe after we see the damage."
       }
-    ]
+    ],
+    "linkLabel": "Post-accident repair"
   },
   "about": {
     "meta": {
@@ -475,7 +470,7 @@
     "qualityP1": "Paint is matched to the car's factory colour code and existing shade. For trickier cases, we do a spectrophotometer test spray before the full repaint so the tone matches the neighbouring panels.",
     "qualityP2": "Up to 1 year warranty on most work. The warranty doesn't apply if we didn't carry out the preparation work, or if rust repair was done at the client's request rather than our recommendation.",
     "limitsHeading": "What we don't do",
-    "limitsText": "To be upfront: we don't do frame pulling on a bench, full sill replacement, or take on oversized vehicles.",
+    "limitsText": "To be upfront: we don't take on oversized vehicles.",
     "locationHeading": "Location and contact",
     "locationText": "The workshop is in Tallinn, at Magasini tn 31. You'll find all contact details and the exact location on our contact page.",
     "contactLinkText": "See contact details and location",
@@ -486,11 +481,11 @@
   },
   "bumperPainting": {
     "meta": {
-      "title": "Bumper painting in Tallinn",
-      "description": "Plastic bumper painting and repair in Tallinn: factory colour matching, the right primer for plastic, filtered paint booth. We quote from photos."
+      "title": "Bumper repair and painting in Tallinn",
+      "description": "Bumper repair and painting in Tallinn: we repair scratches and other bumper damage and carry out the painting work needed. Send photos for an estimate."
     },
-    "h1": "Bumper painting in Tallinn",
-    "tagline": "Plastic bumper painting and repair in our own filtered paint booth.",
+    "h1": "Bumper repair and painting",
+    "tagline": "We repair scratches and other bumper damage and carry out the painting work needed.",
     "bulletsHeading": "What the service includes",
     "bullets": [
       "Repairing cracks, scratches and dents before painting",

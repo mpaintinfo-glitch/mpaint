@@ -232,6 +232,11 @@ export default async function ServiceDetailPage({
                       {t(`catalog.${relId}`)}
                     </Link>
                   ))}
+                  {id === "body" && (
+                    <Link href="/accident" className="link">
+                      {t("accident.linkLabel")}
+                    </Link>
+                  )}
                   <Link href="/pricing" className="link">
                     {t("nav.pricing")}
                   </Link>

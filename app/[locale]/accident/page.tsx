@@ -81,7 +81,6 @@ export default async function AccidentPage({
           <div className="article-section">
             <h2>{t("accident.towingHeading")}</h2>
             <p>{t("accident.towingText")}</p>
-            <p style={{ fontWeight: 600 }}>{t("accident.towingCta")}</p>
           </div>
 
           <div className="container center" style={{ marginTop: "2rem" }}>

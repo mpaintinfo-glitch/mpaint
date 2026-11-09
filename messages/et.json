@@ -11,7 +11,7 @@
   },
   "catalog": {
     "paint": "Autovärvimine",
-    "body": "Keevitus ja keretööd",
+    "body": "Keretööd ja keevitustööd",
     "dent": "Mõlkide eemaldamine",
     "rust": "Rooste eemaldus",
     "polish": "Poleerimine",
@@ -34,7 +34,7 @@
     "whatTitle": "Mida me teeme",
     "whatSub": "Puuduta mõnda teenust, et see kohe hinnapäringu vormi lisada.",
     "paintDesc": "Täisvärvimised ja üksikud paneelid meie enda värvikambris.",
-    "bodyDesc": "Plekitööd ja kere kandekonstruktsiooni remont kõikidele sõidukitele.",
+    "bodyDesc": "Plekitööd, keevitustööd ja kahjustatud keredetailide parandamine.",
     "pick": "Saada päring",
     "seeAll": "Vaata kõiki teenuseid",
     "seoTitle": "Autovärvimine ja keretööd Tallinnas",
@@ -84,7 +84,7 @@
   "services": {
     "h1": "Autovärvimise ja kerekoja teenused Tallinnas",
     "paintDesc": "Täisvärvimised ja üksikud paneelid meie enda filtreeritud värvikambris.",
-    "bodyDesc": "Plekitööd ja kere kandekonstruktsiooni remont kõikidele sõidukitüüpidele.",
+    "bodyDesc": "Plekitööd, keevitustööd ja kahjustatud keredetailide parandamine.",
     "pick": "Saada päring",
     "cta": "Saada päring",
     "callUs": "Või helista meile: +372 58-100-810",
@@ -202,22 +202,17 @@
       ]
     },
     "body": {
-      "h1": "Keevitus ja keretööd",
-      "metaTitle": "Keevitus ja keretööd Tallinnas",
-      "metaDescription": "Keevitus ja keretööd Tallinnas: kandekonstruktsiooni remont ja plekitööd kõikidele markidele ja mudelitele. Hinnapakkumine fotode põhjal.",
-      "tagline": "Kandekonstruktsiooni remont ja plekitööd kõikidele markidele ja mudelitele.",
-      "intro": "Kosmeetiline kahjustus ei vaja erivarustust. Struktuurne kahjustus, näiteks läbiv korrosioon, vajab kas detaili vahetust või remondipaneeli sissekeevitamist.",
+      "h1": "Keretööd ja keevitustööd",
+      "metaTitle": "Keretööd ja keevitustööd Tallinnas",
+      "metaDescription": "Keretööd ja keevitustööd Tallinnas: parandame mõlke ja keredetailide kahjustusi ning teostame vajalikke keevitus- ja plekitöid. Hinnapakkumine fotode põhjal.",
+      "tagline": "Parandame mõlke ja keredetailide kahjustusi ning teostame vajalikke pleki- ja keevitustöid.",
+      "intro": "Teostame keretöid, mõlkide parandust, vajalikke keevitustöid ning kahjustatud keredetailide parandust ja vahetust vastavalt töökoja võimalustele. Töö maht sõltub kahjustuse iseloomust ja ulatusest.",
       "bullets": [
-        "Plekitööd ja kandekonstruktsiooni remont",
-        "Kahjustatud paneelide asendamine",
-        "Kvaliteetsed materjalid, kaasaegne varustus",
-        "Püsivad remondid, mitte kiirlapid"
+        "Mõlkide ja keredetailide kahjustuste parandus",
+        "Vajalikud keevitus- ja plekitööd",
+        "Kahjustatud paneelide vahetus, kui parandus ei ole otstarbekas"
       ],
-      "techNotes": [
-        "Kui metall on liiga õhuke spotteri jaoks, kasutame kas keemilist õhemist või tinaga õhemist. Valime tehnika vastavalt olukorrale.",
-        "Teostame ka kere plastdetailide taastamist struktuurse epoksiidvärviga ja elementide sobitamist vahede järgi."
-      ],
-      "warningNote": "Ei tee stapliga raami väljavenitamist, täielikku porde vahetust ega võta vastu suuremõõtmelisi sõidukeid.",
+      "warningNote": "Ei võta vastu suuremõõtmelisi sõidukeid.",
       "faq": [
         {
           "q": "Milliseid keretöid teete?",
@@ -257,10 +252,10 @@
       ]
     },
     "rust": {
-      "h1": "Rooste eemaldus ja kaitse",
-      "metaTitle": "Rooste eemaldus ja kaitse Tallinnas",
-      "metaDescription": "Rooste eemaldus ja kaitse Tallinnas: puhastame, töötleme ja kaitseme enne korrosiooni levikut. Hind alates 50€, sõltuvalt kahjustuse ulatusest.",
-      "tagline": "Peatame korrosiooni enne levikut. Puhastame, töötleme ja kaitseme.",
+      "h1": "Roostekahjustuste remont",
+      "metaTitle": "Roostekahjustuste remont Tallinnas",
+      "metaDescription": "Roostekahjustuste remont Tallinnas: parandame auto kere roostekahjustusi. Sobiv lahendus sõltub rooste ulatusest ja metalli seisukorrast. Hind alates 50€.",
+      "tagline": "Parandame auto kere roostekahjustusi. Sobiv lahendus sõltub rooste ulatusest ja metalli seisukorrast.",
       "intro": "Kahjustatud metall puhastatakse, töödeldakse happega nähtamatu korrosiooni eemaldamiseks ja kaitstakse mitmekihilise kruntimisega enne värvimist.",
       "process": [
         "Kahjustatud ala puhastamine enne pritsipesu",
@@ -432,9 +427,8 @@
       }
     ],
     "safetyNote": "Kui pärast avariid on rooliseade raskem liikuda, auto tõmbab sõidu ajal ühele poole, kuuled pidurdades ebatavalist heli, või mõni kere- või plastidetail on lahti, ei tohi autoga enam sõita.",
-    "towingHeading": "Kuidas toimetada sõiduk töökotta, kui see ei ole sõidukorras",
-    "towingText": "Kui auto ei ole ohutu sõita, saab selle meie töökotta toimetada sobiva evakuaatori või puksiiriteenusega. Mpaint ise puksiiriteenust ei paku, kuid anname sulle täpsed suunised ja töökoja aadressi ning lepime kokku, millal auto kohale tuua.",
-    "towingCta": "Auto ei ole sõidukorras? Võta meiega ühendust ja lepi kokku auto töökotta toomine.",
+    "towingHeading": "Auto ei ole pärast avariid sõidukorras?",
+    "towingText": "Kui autoga ei saa pärast avariid ohutult sõita, saab selle tuua puksiiriga otse Mpainti töökotta. Palume enne transporti meiega ühendust võtta, et sõiduki vastuvõtt kokku leppida.",
     "cta": "Küsi hinnapakkumist",
     "faqTitle": "Korduma kippuvad küsimused",
     "faq": [
@@ -454,7 +448,8 @@
         "q": "Kui kaua avariijärgne remont aega võtab?",
         "a": "Tüüpiline avariijärgne remont võtab orienteeruvalt 3-4 tööpäeva, olenevalt kahjustuse ulatusest. See on orienteeruv aeg, mitte garantii. Pikemad tööd, varjatud kahjustused ja varuosade tarneajad võivad ajakava mõjutada. Täpse ajakava saame anda pärast kahjustuse nägemist."
       }
-    ]
+    ],
+    "linkLabel": "Avariijärgne remont"
   },
   "about": {
     "meta": {
@@ -475,7 +470,7 @@
     "qualityP1": "Värv valitakse auto tehase värvikoodi ja olemasoleva tooni järgi. Keerulisematel juhtudel teeme spektrofotomeetriga testvärvingu enne täisvärvimist, et toon sobituks naaberpaneelidega.",
     "qualityP2": "Kuni 1 aasta garantii enamikele töödele. Garantii ei kehti, kui ettevalmistustöid ei teostanud meie, või kui roosteremont tehti kliendi soovi järgi, mitte meie soovituse kohaselt.",
     "limitsHeading": "Mida me ei teosta",
-    "limitsText": "Ausalt öeldes: ei tee stapliga raami väljavenitamist, täielikku porde vahetust ega võta vastu suuremõõtmelisi sõidukeid.",
+    "limitsText": "Ausalt öeldes: ei võta vastu suuremõõtmelisi sõidukeid.",
     "locationHeading": "Asukoht ja kontakt",
     "locationText": "Töökoda asub Tallinnas, Magasini tn 31. Kõik kontaktandmed ja täpne asukoht leiad kontaktleheküljelt.",
     "contactLinkText": "Vaata kontaktandmeid ja asukohta",
@@ -486,11 +481,11 @@
   },
   "bumperPainting": {
     "meta": {
-      "title": "Stange värvimine Tallinnas",
-      "description": "Plaststangede värvimine ja parandus Tallinnas: tehase värvikoodi sobitus, plastile sobiv aluskrunt, filtreeritud värvikamber. Hinnapakkumine fotode põhjal."
+      "title": "Stange parandamine ja värvimine Tallinnas",
+      "description": "Stange parandamine ja värvimine Tallinnas: pragude ja kriimustuste parandus enne värvimist, tehase värvikoodi sobitus, filtreeritud värvikamber. Hinnapakkumine fotode põhjal."
     },
-    "h1": "Stange värvimine Tallinnas",
-    "tagline": "Plaststangede värvimine ja parandus meie filtreeritud värvikambris.",
+    "h1": "Stange parandamine ja värvimine",
+    "tagline": "Parandame stangede kriimustusi ja muid kahjustusi ning teostame vajalikud värvitööd.",
     "bulletsHeading": "Mida teenus sisaldab",
     "bullets": [
       "Pragude, kriimustuste ja löökaukude parandus enne värvimist",
