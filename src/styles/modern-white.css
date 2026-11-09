@@ -149,7 +149,14 @@ h1,h2,h3,h4,b,strong{color:var(--ink)}
 .seo-content-section{background:var(--surface-alt);border-top:1px solid var(--line)}
 .seo-content-section::before{opacity:.28}
 .seo-content-section--home::before,.seo-content-section--quiet::before{opacity:.16}
-.seo-surface,.seo-surface--steps{background:transparent;border:none;padding-left:0;padding-right:0}
+/* Every .seo-surface in the markup also carries .container, so zeroing its
+   side padding here (as the card-removal below still does for top/bottom)
+   used to strip .container's own 24px gutter too, since padding-left/right
+   is one property the cascade can't split between the two classes - text
+   sat flush against the viewport edge on every page that uses this block.
+   Leaving side padding alone lets site.css's own clamp()-based inset (or the
+   480px media query's fixed 20px) provide the gutter instead. */
+.seo-surface,.seo-surface--steps{background:transparent;border:none}
 .seo-block{border-top-color:var(--line)}
 .seo-surface .seo-block p,.seo-closing,.seo-surface .services-grid li{color:var(--med)}
 .seo-surface .services-grid svg{color:var(--pink-ink)}

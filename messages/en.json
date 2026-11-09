@@ -11,11 +11,11 @@
   },
   "catalog": {
     "paint": "Car painting",
-    "body": "Bodywork and welding",
+    "body": "Bodywork",
     "dent": "Dent removal",
     "rust": "Rust removal",
     "polish": "Polishing",
-    "parts": "Replacing parts"
+    "parts": "Body-part replacement"
   },
   "hero": {
     "titleA": "Car Painting and Bodywork",
@@ -202,9 +202,9 @@
       ]
     },
     "body": {
-      "h1": "Bodywork and welding",
-      "metaTitle": "Bodywork and welding in Tallinn",
-      "metaDescription": "Bodywork and welding in Tallinn: we repair dent and body-panel damage and carry out the welding and sheet-metal work needed. Send photos for an estimate.",
+      "h1": "Bodywork",
+      "metaTitle": "Bodywork in Tallinn",
+      "metaDescription": "Bodywork in Tallinn: we repair dent and body-panel damage and carry out the welding and sheet-metal work needed. Send photos for an estimate.",
       "tagline": "We repair dent and body-panel damage and carry out the welding and sheet-metal work needed.",
       "intro": "We carry out bodywork, dent repair, welding work, and the repair or replacement of damaged body panels, within the workshop's capabilities. The scope of work depends on the nature and extent of the damage.",
       "bullets": [
@@ -222,7 +222,8 @@
           "q": "How long does post-accident bodywork take?",
           "a": "A typical post-accident repair takes roughly 3-4 working days, depending on the extent of the damage. This is an indicative timeframe, not a guarantee. Longer jobs, hidden damage, and parts delivery times can affect the schedule. We give an exact timeframe after we see the damage."
         }
-      ]
+      ],
+      "priceFactor": "Price depends on the damage and the scope of the repair."
     },
     "dent": {
       "h1": "Dent removal",
@@ -249,7 +250,8 @@
           "q": "Does dent removal work on all cars?",
           "a": "Yes, we do dent removal for all vehicle types."
         }
-      ]
+      ],
+      "priceFactor": "Price depends on the dent's size, location and severity."
     },
     "rust": {
       "h1": "Rust damage repair",
@@ -312,12 +314,13 @@
           "q": "Why is it worth polishing your headlights?",
           "a": "Clear headlights improve visibility and safety when driving in the dark, and also improve how the car looks."
         }
-      ]
+      ],
+      "priceFactor": "Price depends on the car's size and the condition of the paint surface."
     },
     "parts": {
-      "h1": "Replacing parts",
-      "metaTitle": "Replacing parts in Tallinn",
-      "metaDescription": "Damaged or worn parts found, sourced and fitted in Tallinn. Send photos for an estimate.",
+      "h1": "Body-part replacement",
+      "metaTitle": "Body-part replacement in Tallinn",
+      "metaDescription": "Body-part replacement in Tallinn: damaged or worn parts found, sourced and fitted. Send photos for an estimate.",
       "tagline": "Damaged or worn parts found, sourced, and fitted.",
       "intro": "Before starting any work, we assess whether a damaged part is worth repairing or better off replaced. If it needs replacing, we offer both new and used parts, depending on your budget and the car's age.",
       "bullets": [
@@ -335,7 +338,8 @@
           "q": "Do you assess the damage before deciding?",
           "a": "Yes, before starting work we assess whether the part is worth repairing or better off replaced."
         }
-      ]
+      ],
+      "priceFactor": "Price depends on the part being replaced and the work involved."
     }
   },
   "pricing": {
@@ -345,7 +349,6 @@
     },
     "h1": "Car painting and bodywork pricing",
     "intro": "The final price always depends on the extent of the damage, how much work is needed, and the condition of the car. Below are our confirmed starting prices. For the other services we give a more exact quote once we have seen the damage.",
-    "genericNote": "Price depends on the extent of the damage and the work involved. Request a free quote.",
     "viewService": "View service",
     "cta": "Get an estimate",
     "faqTitle": "Common questions",
@@ -520,14 +523,15 @@
         "a": "The price depends on the extent of the damage and whether the bumper needs to come off before painting. We give an exact estimate based on photos."
       }
     ],
-    "cta": "Get an estimate"
+    "cta": "Get an estimate",
+    "priceFactor": "Price depends on the damage, plus the repair and painting work needed."
   },
   "minorDamage": {
     "meta": {
       "title": "Stone chip and minor paint damage repair in Tallinn",
       "description": "Stone chips and surface paint damage can often be fixed in about one working day when the damage allows it. Estimate from photos."
     },
-    "h1": "Stone chip and minor paint damage repair",
+    "h1": "Minor paint damage repair",
     "tagline": "Stone chips and surface paint damage can often be fixed in about one working day.",
     "bulletsHeading": "What we fix",
     "bullets": [
@@ -564,7 +568,8 @@
         "a": "The price depends on the extent of the damage and the repair method. We give an exact estimate based on photos."
       }
     ],
-    "cta": "Get an estimate"
+    "cta": "Get an estimate",
+    "priceFactor": "Price depends on how deep the damage is and the area to be repaired."
   },
   "work": {
     "meta": {
@@ -588,7 +593,8 @@
     "durationDayPlural": "working days",
     "completedLabel": "Completed",
     "relatedServiceHeading": "Related service",
-    "backToGallery": "All work"
+    "backToGallery": "All work",
+    "categoryBodyParts": "Body-part repair"
   },
   "warranty": {
     "title": "Warranty",

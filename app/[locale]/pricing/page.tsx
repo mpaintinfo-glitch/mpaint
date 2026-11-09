@@ -22,7 +22,7 @@ export async function generateMetadata({
 }
 
 type FaqItem = { q: string; a: string };
-type ServiceDetailEntry = { pricingNote?: string };
+type ServiceDetailEntry = { pricingNote?: string; priceFactor?: string };
 
 export default async function PricingPage({
   params,
@@ -61,26 +61,27 @@ export default async function PricingPage({
             <ul className="pricing-list">
               {SERVICE_ORDER.map((id) => {
                 const price = serviceDetail[id]?.pricingNote;
+                const detail = price || serviceDetail[id]?.priceFactor;
                 return (
                   <li key={id} className="pricing-row">
-                    <Link href={{ pathname: "/services/[slug]", params: { slug: slugs[id] } }} className="link">
+                    <Link href={{ pathname: "/services/[slug]", params: { slug: slugs[id] } }} className="link pricing-row-name">
                       {t(`catalog.${id}`)}
                     </Link>
-                    <span>{price || t("pricing.genericNote")}</span>
+                    <span className={price ? "pricing-row-detail pricing-row-detail--price" : "pricing-row-detail"}>{detail}</span>
                   </li>
                 );
               })}
               <li className="pricing-row">
-                <Link href="/bumper-painting" className="link">
+                <Link href="/bumper-painting" className="link pricing-row-name">
                   {t("bumperPainting.h1")}
                 </Link>
-                <span>{t("pricing.genericNote")}</span>
+                <span className="pricing-row-detail">{t("bumperPainting.priceFactor")}</span>
               </li>
               <li className="pricing-row">
-                <Link href="/minor-damage" className="link">
+                <Link href="/minor-damage" className="link pricing-row-name">
                   {t("minorDamage.h1")}
                 </Link>
-                <span>{t("pricing.genericNote")}</span>
+                <span className="pricing-row-detail">{t("minorDamage.priceFactor")}</span>
               </li>
             </ul>
           </div>

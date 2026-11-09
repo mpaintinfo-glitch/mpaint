@@ -17,8 +17,12 @@ export type LocalizedText = { et: string; ru: string; en: string };
 // The repair categories a case study can belong to. Mirrors ServiceId for
 // the six core services, plus "bumper" and "minorDamage" for the two
 // dedicated sub-pages (/bumper-painting, /minor-damage) that aren't their
-// own ServiceId. categoryHref() below resolves each to its actual page.
-export type CaseStudyCategory = ServiceId | "bumper" | "minorDamage";
+// own ServiceId, and "bodyParts" for an exterior-part repair whose exact
+// method (repaired vs replaced) isn't documented - too specific a claim for
+// "body" (bodywork/welding) or "parts" (replacement), so it gets its own
+// neutral label while still linking to the closest real page (parts).
+// categoryHref() below resolves each to its actual page.
+export type CaseStudyCategory = ServiceId | "bumper" | "minorDamage" | "bodyParts";
 
 export type CaseStudyImage = {
   image: StaticImageData;
@@ -119,12 +123,14 @@ export function categoryHref(category: CaseStudyCategory, locale: string) {
   if (category === "bumper") return { pathname: "/bumper-painting" } as const;
   if (category === "minorDamage") return { pathname: "/minor-damage" } as const;
   const slugs = serviceSlugsForLocale(locale);
-  return { pathname: "/services/[slug]", params: { slug: slugs[category] } } as const;
+  const serviceId = category === "bodyParts" ? "parts" : category;
+  return { pathname: "/services/[slug]", params: { slug: slugs[serviceId] } } as const;
 }
 
-/** For the quote-funnel preselect, which only knows the six core ServiceIds - bumper/minorDamage map to the closest real service (paint). */
+/** For the quote-funnel preselect, which only knows the six core ServiceIds - bumper/minorDamage map to the closest real service (paint), bodyParts to parts. */
 export function categoryToServiceId(category: CaseStudyCategory): ServiceId {
   if (category === "bumper" || category === "minorDamage") return "paint";
+  if (category === "bodyParts") return "parts";
   return category;
 }
 
@@ -139,7 +145,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "mercedes-c-class-w204-front-grille",
     slug: { et: "mercedes-c-esiosa-taastamine", en: "mercedes-c-front-restoration" },
     published: true,
-    category: "body",
+    // The grille is an attached exterior part, not a structural panel, and
+    // the exact repair method was never confirmed as bodywork specifically.
+    category: "bodyParts",
     vehicle: { make: "Mercedes-Benz", model: "C-Class (W204)" },
     title: {
       et: "Mercedes-Benz C-klassi esiosa taastamine Tallinnas",
@@ -249,8 +257,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "mercedes-c-class-w204-rear-light",
     slug: { et: "mercedes-c-klassi-tagatule-taastamine", en: "mercedes-c-class-rear-light-restoration" },
     published: true,
-    // The closest existing service for a body/exterior part; "parts" (replacing parts) is deliberately not used, since replacement was never confirmed.
-    category: "body",
+    // A rear light is an attached exterior part, not a structural panel -
+    // "body" would overstate it as bodywork, "parts" would imply the light
+    // was replaced, which was never confirmed either.
+    category: "bodyParts",
     vehicle: { make: "Mercedes-Benz", model: "C-Class (W204) 4MATIC, white" },
     title: {
       et: "Mercedes-Benz C-klassi tagatule kahjustuse kõrvaldamine",

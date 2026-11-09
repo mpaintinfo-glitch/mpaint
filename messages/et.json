@@ -11,11 +11,11 @@
   },
   "catalog": {
     "paint": "Autovärvimine",
-    "body": "Keretööd ja keevitustööd",
+    "body": "Keretööd",
     "dent": "Mõlkide eemaldamine",
     "rust": "Rooste eemaldus",
     "polish": "Poleerimine",
-    "parts": "Osade vahetus"
+    "parts": "Keredetailide vahetus"
   },
   "hero": {
     "titleA": "Autode värvimine ja keretööd",
@@ -202,9 +202,9 @@
       ]
     },
     "body": {
-      "h1": "Keretööd ja keevitustööd",
-      "metaTitle": "Keretööd ja keevitustööd Tallinnas",
-      "metaDescription": "Keretööd ja keevitustööd Tallinnas: parandame mõlke ja keredetailide kahjustusi ning teostame vajalikke keevitus- ja plekitöid. Hinnapakkumine fotode põhjal.",
+      "h1": "Keretööd",
+      "metaTitle": "Keretööd Tallinnas",
+      "metaDescription": "Keretööd Tallinnas: parandame mõlke ja keredetailide kahjustusi ning teostame vajalikke keevitus- ja plekitöid. Hinnapakkumine fotode põhjal.",
       "tagline": "Parandame mõlke ja keredetailide kahjustusi ning teostame vajalikke pleki- ja keevitustöid.",
       "intro": "Teostame keretöid, mõlkide parandust, vajalikke keevitustöid ning kahjustatud keredetailide parandust ja vahetust vastavalt töökoja võimalustele. Töö maht sõltub kahjustuse iseloomust ja ulatusest.",
       "bullets": [
@@ -222,7 +222,8 @@
           "q": "Kui kaua avariijärgsed keretööd aega võtavad?",
           "a": "Tüüpiline avariijärgne remont võtab orienteeruvalt 3-4 tööpäeva, olenevalt kahjustuse ulatusest. See on orienteeruv aeg, mitte garantii. Pikemad tööd, varjatud kahjustused ja varuosade tarneajad võivad ajakava mõjutada. Täpse ajakava saame anda pärast kahjustuse nägemist."
         }
-      ]
+      ],
+      "priceFactor": "Hind sõltub kahjustusest ja remondimahust."
     },
     "dent": {
       "h1": "Mõlkide eemaldamine",
@@ -249,7 +250,8 @@
           "q": "Kas mõlkide eemaldamine sobib kõikidele autodele?",
           "a": "Jah, teostame mõlkide eemaldamist kõikidele sõidukitüüpidele."
         }
-      ]
+      ],
+      "priceFactor": "Hind sõltub mõlgi suurusest, asukohast ja kahjustusest."
     },
     "rust": {
       "h1": "Roostekahjustuste remont",
@@ -312,12 +314,13 @@
           "q": "Miks tasub faarisid poleerida?",
           "a": "Selged tuled parandavad nähtavust ja ohutust pimedas sõitmisel, lisaks parandab see auto välimust."
         }
-      ]
+      ],
+      "priceFactor": "Hind sõltub auto suurusest ja värvipinna seisukorrast."
     },
     "parts": {
-      "h1": "Osade vahetus",
-      "metaTitle": "Osade vahetus Tallinnas",
-      "metaDescription": "Kahjustatud või kulunud osade leidmine, hankimine ja paigaldus Tallinnas. Hinnapakkumine fotode põhjal.",
+      "h1": "Keredetailide vahetus",
+      "metaTitle": "Keredetailide vahetus Tallinnas",
+      "metaDescription": "Keredetailide vahetus Tallinnas: kahjustatud või kulunud osade leidmine, hankimine ja paigaldus. Hinnapakkumine fotode põhjal.",
       "tagline": "Leiame, hangime ja paigaldame kahjustatud või kulunud osad.",
       "intro": "Enne töö algust hindame, kas kahjustatud osa tasub parandada või on mõistlikum välja vahetada. Vahetuse korral pakume nii uusi kui kasutatud osi, olenevalt sinu eelarvest ja auto vanusest.",
       "bullets": [
@@ -335,7 +338,8 @@
           "q": "Kas hindate kahjustust enne otsuse tegemist?",
           "a": "Jah, enne töö algust hindame, kas osa tasub parandada või on mõistlikum välja vahetada."
         }
-      ]
+      ],
+      "priceFactor": "Hind sõltub vahetatavast detailist ja vajalikust tööst."
     }
   },
   "pricing": {
@@ -345,7 +349,6 @@
     },
     "h1": "Autovärvimise ja keretöö hinnad",
     "intro": "Lõplik hind sõltub alati kahjustuse ulatusest, vajaliku töö mahust ja auto seisukorrast. Allpool on meie kinnitatud alghinnad. Ülejäänud teenuste puhul anname täpsema hinnapakkumise pärast kahjustuse nägemist.",
-    "genericNote": "Hind sõltub kahjustuse ulatusest ja vajalikust tööst. Küsi tasuta hinnapakkumist.",
     "viewService": "Vaata teenust",
     "cta": "Saada päring",
     "faqTitle": "Korduma kippuvad küsimused",
@@ -520,14 +523,15 @@
         "a": "Hind sõltub kahjustuse ulatusest ja sellest, kas stange tuleb enne värvimist eemaldada. Täpse hinnangu saame fotode põhjal."
       }
     ],
-    "cta": "Saada päring"
+    "cta": "Saada päring",
+    "priceFactor": "Hind sõltub kahjustusest ning vajalikust remondist ja värvimisest."
   },
   "minorDamage": {
     "meta": {
       "title": "Kivitäkete ja värvikahjustuste parandamine Tallinnas",
       "description": "Kivitäked ja pindmised värvikahjustused parandame tihti umbes ühe tööpäevaga, kui ulatus seda võimaldab. Hinnang fotode põhjal."
     },
-    "h1": "Kivitäkete ja väiksemate värvikahjustuste parandamine",
+    "h1": "Väiksemate värvikahjustuste parandamine",
     "tagline": "Kivitäked ja pindmised värvikahjustused parandame tihti umbes ühe tööpäevaga.",
     "bulletsHeading": "Mida parandame",
     "bullets": [
@@ -564,7 +568,8 @@
         "a": "Hind sõltub kahjustuse ulatusest ja parandusviisist. Saadame täpse hinnangu fotode põhjal."
       }
     ],
-    "cta": "Saada päring"
+    "cta": "Saada päring",
+    "priceFactor": "Hind sõltub kahjustuse sügavusest ja parandatavast alast."
   },
   "work": {
     "meta": {
@@ -588,7 +593,8 @@
     "durationDayPlural": "tööpäeva",
     "completedLabel": "Valmis",
     "relatedServiceHeading": "Seotud teenus",
-    "backToGallery": "Kõik tööd"
+    "backToGallery": "Kõik tööd",
+    "categoryBodyParts": "Keredetailide remont"
   },
   "warranty": {
     "title": "Garantii",
